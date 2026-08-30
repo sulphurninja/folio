@@ -23,7 +23,11 @@ export function cn(...classes: Array<string | false | null | undefined>) {
 }
 
 export function siteUrl(path = "") {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3001";
+  const vercel =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (vercel ? `https://${vercel}` : "http://localhost:3001");
   return `${base.replace(/\/$/, "")}${path}`;
 }
 
