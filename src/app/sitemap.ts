@@ -4,5 +4,6 @@ export default function sitemap() {
   return [
     { url: siteUrl("/"), lastModified: new Date() },
     { url: siteUrl("/m/saj"), lastModified: new Date() },
+    { url: siteUrl("/m/espey"), lastModified: new Date() },
   ];
 }

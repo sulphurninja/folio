@@ -6,6 +6,13 @@ export const revalidate = 60;
 
 const ISSUES = [
   {
+    href: "/m/espey",
+    src: "/issues/espey/cover.jpg",
+    kicker: "Vol. II · The Legacy Issue",
+    title: "Ego Trip",
+    meta: "16 pages",
+  },
+  {
     href: "/m/saj",
     src: "/issues/saj/cover.jpg",
     kicker: "Vol. I · The Caribbean Issue",
