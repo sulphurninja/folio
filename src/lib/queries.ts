@@ -18,6 +18,10 @@ export type PublicMagazine = {
   description: string;
   coverImage: string;
   pages: PublicPage[];
+  kind?: "images" | "html";
+  pagesHtml?: string[];
+  toc?: { page: number; label: string }[];
+  ogImage?: string;
   publishedAt?: string | null;
   views: number;
   createdAt?: string;
@@ -27,7 +31,7 @@ export async function getPublishedMagazines() {
   await dbConnect();
   const items = await Magazine.find({ published: true })
     .sort({ publishedAt: -1, createdAt: -1 })
-    .select("title slug issueLabel description coverImage publishedAt views pages")
+    .select("title slug issueLabel description coverImage publishedAt views kind pagesHtml pages")
     .lean();
   return serialize<PublicMagazine[]>(items);
 }

@@ -1,10 +1,21 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import Link from "next/link";
 import { Wordmark } from "@/components/site/Wordmark";
+import { getPublishedMagazines } from "@/lib/queries";
 
 export const revalidate = 60;
 
-const ISSUES = [
+type IssueCard = {
+  href: string;
+  src: string;
+  kicker: string;
+  title: string;
+  meta: string;
+  remote?: boolean;
+};
+
+const STATIC_ISSUES: IssueCard[] = [
   {
     href: "/m/espey",
     src: "/issues/espey/cover.jpg",
@@ -21,7 +32,24 @@ const ISSUES = [
   },
 ];
 
-export default function HomePage() {
+async function getIssues(): Promise<IssueCard[]> {
+  const staticSlugs = new Set(STATIC_ISSUES.map((i) => i.href.split("/").pop()));
+  const db = await getPublishedMagazines().catch(() => []);
+  const dbCards: IssueCard[] = db
+    .filter((m) => !staticSlugs.has(m.slug) && m.coverImage)
+    .map((m) => ({
+      href: `/m/${m.slug}`,
+      src: m.coverImage,
+      kicker: m.issueLabel,
+      title: m.title,
+      meta: m.kind === "html" ? `${m.pagesHtml?.length ?? 0} pages` : `${m.pages?.length ?? 0} pages`,
+      remote: true,
+    }));
+  return [...dbCards, ...STATIC_ISSUES];
+}
+
+export default async function HomePage() {
+  const issues = await getIssues();
   return (
     <div className="min-h-dvh bg-stage">
       <header className="border-b border-line">
@@ -40,18 +68,26 @@ export default function HomePage() {
         </p>
 
         <ul className="stagger mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {ISSUES.map((issue) => (
+          {issues.map((issue) => (
             <li key={issue.href}>
               <Link href={issue.href} className="group block no-underline">
                 <div className="cover-card relative aspect-[3/4] overflow-hidden bg-stage-3">
-                  <Image
-                    priority
-                    src={issue.src}
-                    alt={issue.title}
-                    fill
-                    className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
-                    sizes="(min-width: 1024px) 360px, 90vw"
-                  />
+                  {issue.remote ? (
+                    <img
+                      src={issue.src}
+                      alt={issue.title}
+                      className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <Image
+                      priority
+                      src={issue.src}
+                      alt={issue.title}
+                      fill
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+                      sizes="(min-width: 1024px) 360px, 90vw"
+                    />
+                  )}
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent p-5">
                     <p className="font-sans text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-accent">
                       {issue.kicker}
@@ -69,6 +105,18 @@ export default function HomePage() {
       <footer className="border-t border-line py-8">
         <p className="text-center font-serif text-[0.85rem] italic text-fog-dim">
           Turn the page. Stay a while.
+        </p>
+        <p className="mt-3 text-center font-sans text-[0.7rem] tracking-[0.08em] text-fog-dim">
+          Published by{" "}
+          <a
+            href="https://thefortiora.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-fog no-underline transition-colors hover:text-paper"
+          >
+            Fortiora Group LLC
+          </a>{" "}
+          · 30 N Gould St Ste R, Sheridan, WY 82801 · Hello@thefortiora.com
         </p>
       </footer>
     </div>

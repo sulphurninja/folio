@@ -11,6 +11,14 @@ const PageSchema = new Schema(
   { _id: true },
 );
 
+const TocSchema = new Schema(
+  {
+    page: { type: Number, required: true },
+    label: { type: String, required: true },
+  },
+  { _id: false },
+);
+
 const MagazineSchema = new Schema(
   {
     title: { type: String, required: true, trim: true },
@@ -19,6 +27,11 @@ const MagazineSchema = new Schema(
     description: { type: String, default: "" },
     coverImage: { type: String, default: "" },
     pages: { type: [PageSchema], default: [] },
+    /* HTML issues (crafted leaves, rendered by HtmlFlipbook) */
+    kind: { type: String, enum: ["images", "html"], default: "images" },
+    pagesHtml: { type: [String], default: [] },
+    toc: { type: [TocSchema], default: [] },
+    ogImage: { type: String, default: "" },
     published: { type: Boolean, default: false },
     publishedAt: { type: Date, default: null },
     views: { type: Number, default: 0 },

@@ -98,6 +98,36 @@ The proven 16-page arc (adapt, don't copy blindly):
 Rhythm rule: never two dense text pages adjacent except the editorial spread. Text
 page → photo page → text page. The reader must be able to breathe.
 
+### Art direction — every issue looks different, the essence stays
+
+Before crafting, declare a one-line art direction and check it against the
+registry below — an issue must not repeat the accent or motif of the previous
+two issues. The essence that never changes: the 840×1120 canvas, the serif
+voice, cream paper, generous whitespace, and the Fortiora house furniture.
+
+Pick one from each column:
+
+| Accent | Display treatment | Signature motif |
+|--------|-------------------|-----------------|
+| Brandy gold `#e8c56b` | Roman, tight tracking | Ledger rows / oversized numerals |
+| Oxblood `#7a1d3a` | Italic display heads | Ghost letters behind content |
+| Racing green `#1e3d2f` | Uppercase condensed kickers | Vertical spine words |
+| Steel blue `#2c4a63` | Mixed roman + italic | Duotone photography |
+| Burnt copper `#b0561f` | Serif with hairline rules | Split-spread photos |
+| Charcoal + one hot hue | Oversized drop caps | Full-page statement panels |
+
+Also vary: light-vs-dark page balance, banner color (`mag-banner` can be
+restyled inline per issue), drop-cap treatment, and the contents-spread
+composition. Introduce ONE new page pattern per issue that no previous issue
+used — that pattern joins the vocabulary for later issues.
+
+**Issue registry** (update with every publish):
+
+| Issue | Direction |
+|-------|-----------|
+| `saj` — Master of the Deal | Caribbean warmth: red banner, warm paper, split-spread resort photography, gold pulls |
+| `espey` — Ego Trip | Whisky and mahogany: dark-dominant, gold-on-black ledgers and numerals, cinematic crops of one portrait |
+
 ### House furniture — required in every issue
 
 Three non-negotiables on every issue, all branded to the publisher
@@ -173,29 +203,43 @@ Palette: paper creams (`#f7f2ea → #efe4d6` gradients), ink, and the house gold
 `#e8c56b` / `#8a5a12` for accents. On photos, type is `#fff` / `rgba(244,239,230,…)`.
 Use `objectPosition` inline to art-direct crops (faces near top: `center 20%`).
 
-## 5. Assembly checklist
+## 5. Assembly — the no-deploy pipeline
+
+New issues go live WITHOUT a deploy: pages are stored in MongoDB, photography
+on Cloudinary, and the dynamic `/m/[slug]` route serves them immediately. The
+homepage and sitemap pick up published issues automatically.
 
 For a new issue with slug `<slug>` (short, lowercase):
 
 1. **Assets** — copy images to `public/issues/<slug>/`, renamed semantically
-   (`cover.jpg`, `portrait.jpg`, `studio.jpg`, …). Pick the strongest vertical
-   image with headroom for the cover. Reuse the cover (darkened via `filter`)
-   for the back cover.
+   (`cover.jpg`, `portrait.jpg`, …). Pick the strongest vertical image with
+   headroom for the cover. Derive extra crops (hands, eyes, texture) with
+   PIL when photography is scarce — see the Espey issue.
 2. **Content** — `src/content/<Name>Pages.tsx` exporting `<Name>Pages()` and
-   `<NAME>_TOC` (`{ page, label }[]`, page = 0-based leaf index). Model it on
-   `src/content/SajPages.tsx`.
-3. **Route** — `src/app/m/<slug>/page.tsx`: metadata (title = issue title + subject,
-   real description) and `<HtmlFlipbook title toc>` wrapping the pages. No "Folio"
-   in user-facing metadata.
-4. **Homepage** — add the issue to `ISSUES` in `src/app/page.tsx` (href, cover src,
-   kicker, title, page-count meta).
-5. **Sitemap** — add `/m/<slug>` to `src/app/sitemap.ts`.
+   `<NAME>_TOC` (`{ page, label }[]`, page = 0-based leaf index). Reference
+   images by local path (`/issues/<slug>/…`); the publisher rewrites them.
+3. **Register** — add the issue to `ISSUE_REGISTRY` in
+   `src/content/registry.tsx` (slug, title, kicker, description, toc, Pages).
+4. **OG card** — `python scripts/make-og.py <slug> "<title>" "<kicker>"`.
+5. **Publish** — `npx tsx --env-file=.env.local scripts/publish-issue.tsx <slug>`.
+   This renders the leaves to HTML, uploads all photography + the OG card to
+   Cloudinary, and upserts the published issue in MongoDB. Live immediately.
+6. **Registry table** — add the issue's art direction to §3's issue registry
+   and commit the repo so the source of truth is versioned.
+
+Committing/pushing the repo is for source housekeeping only — the live site
+does not depend on it. (The first two issues, `saj` and `espey`, predate the
+pipeline and also exist as static routes; leave them be.)
 
 ### QA before calling it done
 
 - [ ] Even number of `<article>` leaves; first and last have `data-density="hard"`.
 - [ ] Cover carries the `mag-qr` plate; the issue has a credits/colophon leaf
-      with the Fortiora Group LLC imprint (see §3 House furniture).
+      with the Fortiora Group LLC imprint; the final leaf is the Fortiora
+      publisher page (see §3 House furniture).
+- [ ] Art direction declared and distinct from the previous two issues (§3).
+- [ ] OG card generated and shipped through the publish script; check
+      `/m/<slug>` metadata renders it.
 - [ ] TOC page numbers match actual leaf order; contents-page numbers match too.
 - [ ] Run `bun run build` — clean.
 - [ ] Open `/m/<slug>` in the browser at desktop size; step through every spread.
@@ -213,5 +257,7 @@ Something like:
 > New issue. Questionnaire: `<path>`. Images: `<folder path>`.
 
 That's the trigger. Read this document, read the questionnaire, inventory the
-images, propose the spine + page map in one short message, then craft the whole
-issue in a single pass.
+images, propose the spine + page map + art direction in one short message, then
+craft the whole issue in a single pass: content file → registry entry → OG card
+→ publish script (live, no deploy) → visual QA of every spread → commit the
+source. Report the live URL when done.
