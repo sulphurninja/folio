@@ -22,12 +22,18 @@ export function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
 }
 
+const PROD_URL = "https://folio-one-lemon.vercel.app";
+
 export function siteUrl(path = "") {
   const vercel =
     process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL;
   const base =
     process.env.NEXT_PUBLIC_SITE_URL ||
-    (vercel ? `https://${vercel}` : "http://localhost:3001");
+    (vercel
+      ? `https://${vercel}`
+      : process.env.NODE_ENV === "production"
+        ? PROD_URL
+        : "http://localhost:3001");
   return `${base.replace(/\/$/, "")}${path}`;
 }
 
