@@ -19,8 +19,8 @@ const STATIC_ISSUES: IssueCard[] = [
   {
     href: "/m/espey",
     src: "/issues/espey/cover.jpg",
-    kicker: "Vol. II · The Legacy Issue",
-    title: "Ego Trip",
+    kicker: "PrimeCrest · Vol. II · The Legacy Issue",
+    title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
     meta: "16 pages",
   },
   {

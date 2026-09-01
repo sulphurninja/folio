@@ -16,10 +16,10 @@ export type IssueDefinition = {
 export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   espey: {
     slug: "espey",
-    title: "Ego Trip",
-    kicker: "Vol. II · The Legacy Issue",
+    title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
+    kicker: "PrimeCrest · Vol. II · The Legacy Issue",
     description:
-      "Baileys, Malibu, Johnnie Walker Blue Label, Chivas 18 — sixty years behind the world's back bar, told by the man who poured it.",
+      "James Espey — Investor & Chairman, Wiltshire Whisky Distillery, England. Sixty years behind the world's back bar, told in PrimeCrest's Legacy Issue.",
     toc: ESPEY_TOC,
     Pages: EspeyPages,
   },

@@ -51,7 +51,14 @@ def base_canvas():
     return img
 
 
-def draw_lockup(img, draw, x, y, mark_h=54):
+def draw_lockup(img, draw, x, y, mark_h=54, brand="fortiora"):
+    if brand == "primecrest":
+        pc = Image.open(os.path.join(ROOT, "public", "brand", "logo-primecrest.png")).convert("RGBA")
+        ph = 58 * S
+        pw = int(pc.width * (ph / pc.height))
+        pc = pc.resize((pw, ph), Image.LANCZOS)
+        img.alpha_composite(pc, (x, y))
+        return y + ph
     mark = Image.open(MARK).convert("RGBA")
     mw = int(mark.width * (mark_h * S / mark.height))
     mark = mark.resize((mw, mark_h * S), Image.LANCZOS)
@@ -79,7 +86,7 @@ def wrap_title(draw, title, fnt, max_w):
     return lines[:3]
 
 
-def make_issue(slug, title, kicker):
+def make_issue(slug, title, kicker, brand="fortiora"):
     cover_path = os.path.join(ROOT, "public", "issues", slug, "cover.jpg")
     img = base_canvas().convert("RGBA")
     draw = ImageDraw.Draw(img, "RGBA")
@@ -106,20 +113,26 @@ def make_issue(slug, title, kicker):
               (0, H * S - 160 * S), foot_grad.resize((W * S, 160 * S)))
 
     PAD = 72 * S
-    draw_lockup(img, draw, PAD, 64 * S)
+    draw_lockup(img, draw, PAD, 64 * S, brand=brand)
 
     kick_f = font(INTER, 19, 650)
     tracked(draw, (PAD, 236 * S), kicker.upper(), kick_f, 0.24, GOLD)
 
-    title_f = font(NEWSREADER, 74, 640, opsz=72)
+    title_size, line_h = (74, 82) if len(title) <= 46 else (54, 62)
+    title_f = font(NEWSREADER, title_size, 640, opsz=72)
     lines = wrap_title(draw, title, title_f, int(W * S * 0.52))
     ty = 286 * S
     for line in lines:
         draw.text((PAD, ty), line, font=title_f, fill=CREAM)
-        ty += 82 * S
+        ty += line_h * S
 
     foot_f = font(INTER, 15, 600)
-    tracked(draw, (PAD, (H - 92) * S), "PUBLISHED BY FORTIORA GROUP  ·  THEFORTIORA.COM", foot_f, 0.22, DIM)
+    foot = (
+        "PRIMECREST  ·  A PRODUCT OF FORTIORA GROUP  ·  THEPRIMECREST.COM"
+        if brand == "primecrest"
+        else "PUBLISHED BY FORTIORA GROUP  ·  THEFORTIORA.COM"
+    )
+    tracked(draw, (PAD, (H - 92) * S), foot, foot_f, 0.22, DIM)
 
     out = os.path.join(ROOT, "public", "issues", slug, "og.jpg")
     img.convert("RGB").resize((W, H), Image.LANCZOS).save(out, "JPEG", quality=90)
@@ -161,5 +174,7 @@ if __name__ == "__main__":
     if "--default" in sys.argv:
         make_default()
     else:
-        slug, title, kicker = sys.argv[1], sys.argv[2], sys.argv[3]
-        make_issue(slug, title, kicker)
+        args = [a for a in sys.argv[1:] if not a.startswith("--")]
+        brand = "primecrest" if "--primecrest" in sys.argv else "fortiora"
+        slug, title, kicker = args[0], args[1], args[2]
+        make_issue(slug, title, kicker, brand=brand)

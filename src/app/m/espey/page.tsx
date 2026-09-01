@@ -4,12 +4,12 @@ import { issueMetadata, IssueJsonLdScript } from "@/lib/issue-seo";
 import { siteUrl } from "@/lib/utils";
 
 const SEO = {
-  title: "Ego Trip — James Espey OBE",
+  title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026 — James Espey",
   description:
-    "Baileys, Malibu, Johnnie Walker Blue Label, Chivas 18 — sixty years behind the world's back bar, told by the man who poured it.",
+    "James Espey — Investor & Chairman, Wiltshire Whisky Distillery, England. Sixty years behind the world's back bar, told in PrimeCrest's Legacy Issue.",
   slug: "espey",
   ogImage: siteUrl("/issues/espey/og.jpg"),
-  kicker: "Vol. II · The Legacy Issue",
+  kicker: "PrimeCrest · Vol. II · The Legacy Issue",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -18,7 +18,7 @@ export default function EspeyIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="Ego Trip" toc={ESPEY_TOC}>
+      <HtmlFlipbook title="PrimeCrest — The Legacy Issue" toc={ESPEY_TOC}>
         <EspeyPages />
       </HtmlFlipbook>
     </>

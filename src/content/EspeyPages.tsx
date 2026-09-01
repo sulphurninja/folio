@@ -18,7 +18,7 @@ export const ESPEY_TOC = [
   { page: 11, label: "Second Acts" },
   { page: 12, label: "Giving Back" },
   { page: 13, label: "Outlook" },
-  { page: 15, label: "The Publisher" },
+  { page: 15, label: "PrimeCrest" },
 ];
 
 export function EspeyPages() {
@@ -35,46 +35,104 @@ export function EspeyPages() {
         />
         <div className="mag-scrim" />
         <div className="mag-overlay">
-          <p className="mag-kicker mag-kicker-light" style={{ letterSpacing: "0.22em", marginBottom: 0 }}>
-            Vol. II · The Legacy Issue
-          </p>
-          <div style={{ marginTop: "auto", maxWidth: 600 }}>
-            <h1
-              className="mag-display"
-              style={{ color: "#fff", fontSize: 84, textShadow: "0 8px 32px rgba(0,0,0,0.45)" }}
-            >
-              Ego
-              <br />
-              Trip.
-            </h1>
-            <p
+          {/* Masthead — the magazine, front and centre */}
+          <div style={{ textAlign: "center" }}>
+            <img
+              src="/brand/logo-primecrest.png"
+              alt="PrimeCrest"
               style={{
-                marginTop: 22,
+                width: "76%",
+                maxWidth: 560,
+                height: "auto",
+                filter: "drop-shadow(0 6px 22px rgba(0,0,0,0.55))",
+              }}
+            />
+            <div
+              style={{
+                margin: "18px auto 0",
+                paddingTop: 12,
+                borderTop: "1px solid rgba(244,239,230,0.45)",
+                maxWidth: 560,
                 fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 15,
-                letterSpacing: "0.12em",
+                fontSize: 11.5,
+                fontWeight: 600,
+                letterSpacing: "0.26em",
                 textTransform: "uppercase",
                 color: CREAM,
               }}
             >
-              James Espey OBE
-            </p>
+              Vol. II · The Legacy Issue · theprimecrest.com
+            </div>
+          </div>
+
+          {/* Cover line */}
+          <div style={{ marginTop: "auto", maxWidth: 620 }}>
             <p
               style={{
-                marginTop: 8,
-                fontFamily: "var(--font-serif), Georgia, serif",
-                fontSize: 18,
-                fontStyle: "italic",
-                color: "rgba(244,239,230,0.85)",
-                maxWidth: 520,
+                margin: 0,
+                fontFamily: "var(--font-sans), system-ui, sans-serif",
+                fontSize: 13.5,
+                fontWeight: 700,
+                letterSpacing: "0.3em",
+                textTransform: "uppercase",
+                color: GOLD,
               }}
             >
-              Baileys. Malibu. Johnnie Walker Blue. Chivas 18. Sixty years behind the
-              world&apos;s back bar — the story, told by the man who poured it.
+              Making a difference in 2026
             </p>
+            <h1
+              className="mag-display"
+              style={{
+                marginTop: 14,
+                color: "#fff",
+                fontSize: 74,
+                textShadow: "0 8px 32px rgba(0,0,0,0.5)",
+              }}
+            >
+              Top 10 Unstoppable Business Leaders<span style={{ color: "#d4545c" }}>.</span>
+            </h1>
+            <div
+              style={{
+                marginTop: 26,
+                paddingTop: 18,
+                borderTop: "1px solid rgba(244,239,230,0.4)",
+                maxWidth: 460,
+              }}
+            >
+              <p
+                className="mag-display"
+                style={{ fontSize: 40, color: CREAM }}
+              >
+                James Espey
+              </p>
+              <p
+                style={{
+                  margin: "10px 0 0",
+                  fontFamily: "var(--font-sans), system-ui, sans-serif",
+                  fontSize: 13,
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: CREAM,
+                }}
+              >
+                Investor &amp; Chairman
+              </p>
+              <p
+                style={{
+                  margin: "6px 0 0",
+                  fontFamily: "var(--font-serif), Georgia, serif",
+                  fontSize: 17,
+                  fontStyle: "italic",
+                  color: "rgba(244,239,230,0.88)",
+                }}
+              >
+                Wiltshire Whisky Distillery · England
+              </p>
+            </div>
           </div>
         </div>
-        <img className="mag-qr" src="/brand/barcode-fortiora.png" alt="Scan to visit thefortiora.com" />
+        <img className="mag-qr" src="/brand/barcode-primecrest.png" alt="Scan to visit theprimecrest.com" />
       </article>
 
       {/* 02 Credits — left, dark */}
@@ -89,6 +147,10 @@ export function EspeyPages() {
           Credits.
         </h2>
         <ul className="mag-credits-list">
+          <li>
+            <b>Magazine</b>
+            <span>PrimeCrest · theprimecrest.com</span>
+          </li>
           <li>
             <b>Published by</b>
             <span>Fortiora Group LLC</span>
@@ -124,17 +186,21 @@ export function EspeyPages() {
             textAlign: "center",
           }}
         >
-          <img src="/brand/logo-fortiora.png" alt="Fortiora Group" style={{ height: 52, width: "auto" }} />
+          <img
+            src="/brand/logo-primecrest.png"
+            alt="PrimeCrest"
+            style={{ width: 300, height: "auto" }}
+          />
           <p className="mag-imprint">
-            <strong>Fortiora Group LLC</strong>
+            <strong>PrimeCrest</strong> · a product of Fortiora Group LLC
             <br />
             30 N Gould St Ste R, Sheridan, WY 82801, United States
             <br />
-            Hello@thefortiora.com · thefortiora.com
+            Hello@thefortiora.com · <strong>theprimecrest.com</strong>
           </p>
           <img
-            src="/brand/barcode-fortiora.png"
-            alt="Scan to visit thefortiora.com"
+            src="/brand/barcode-primecrest.png"
+            alt="Scan to visit theprimecrest.com"
             style={{ width: 178, height: "auto" }}
           />
           <p className="mag-imprint" style={{ fontSize: 11, color: "rgba(244,239,230,0.45)", maxWidth: 520 }}>
@@ -591,96 +657,94 @@ export function EspeyPages() {
         </div>
       </article>
 
-      {/* 16 Back cover — the publisher's page, single, hard */}
-      <article className="mag-page mag-pad mag-dark" data-density="hard">
-        <p className="mag-kicker" style={{ color: GOLD }}>
-          From the publisher
-        </p>
+      {/* 16 Back cover — PrimeCrest house page over the issue collage, single, hard */}
+      <article className="mag-page mag-bleed mag-dark" data-density="hard">
+        <img className="mag-fill" src={`${IMG}/backcover.jpg`} alt="" />
         <div
-          style={{
-            margin: "auto 0",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            gap: 0,
-          }}
+          className="mag-overlay"
+          style={{ alignItems: "center", textAlign: "center", padding: "60px 52px 44px" }}
         >
-          <img src="/brand/logo-fortiora.png" alt="Fortiora Group" style={{ height: 104, width: "auto" }} />
-          <p
+          <div
             style={{
-              margin: "34px 0 0",
-              fontFamily: "var(--font-sans), system-ui, sans-serif",
-              fontSize: 30,
-              fontWeight: 700,
-              letterSpacing: "0.34em",
-              textIndent: "0.34em",
-              color: CREAM,
+              margin: "auto 0",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            FORTIORA
-          </p>
-          <p
+            <img
+              src="/brand/logo-primecrest.png"
+              alt="PrimeCrest"
+              style={{
+                width: "84%",
+                maxWidth: 600,
+                height: "auto",
+                filter: "drop-shadow(0 10px 34px rgba(0,0,0,0.65))",
+              }}
+            />
+            <p
+              style={{
+                margin: "26px 0 0",
+                fontFamily: "var(--font-sans), system-ui, sans-serif",
+                fontSize: 13,
+                fontWeight: 700,
+                letterSpacing: "0.5em",
+                textIndent: "0.5em",
+                textTransform: "uppercase",
+                color: GOLD,
+              }}
+            >
+              Where Vision Meets Voice
+            </p>
+            <p
+              style={{
+                margin: "34px 0 0",
+                fontFamily: "var(--font-serif), Georgia, serif",
+                fontSize: 19,
+                fontStyle: "italic",
+                lineHeight: 1.65,
+                color: "rgba(244,239,230,0.85)",
+                maxWidth: 470,
+              }}
+            >
+              A journal of affairs, business, and culture — independent reporting, considered
+              writing, and the people who shape what comes next.
+            </p>
+          </div>
+          <div
             style={{
-              margin: "10px 0 0",
-              fontFamily: "var(--font-sans), system-ui, sans-serif",
-              fontSize: 13,
-              fontWeight: 600,
-              letterSpacing: "0.52em",
-              textIndent: "0.52em",
-              color: GOLD,
+              marginTop: "auto",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 18,
             }}
           >
-            GROUP
-          </p>
-          <p
-            style={{
-              margin: "38px 0 0",
-              fontFamily: "var(--font-serif), Georgia, serif",
-              fontSize: 20,
-              fontStyle: "italic",
-              lineHeight: 1.6,
-              color: "rgba(244,239,230,0.82)",
-              maxWidth: 480,
-            }}
-          >
-            Stories of consequence, designed to be kept. Ego Trip was researched, written, and
-            published by Fortiora Group.
-          </p>
-          <p className="mag-imprint" style={{ marginTop: 36 }}>
-            <strong>Fortiora Group LLC</strong>
-            <br />
-            30 N Gould St Ste R, Sheridan, WY 82801, United States
-            <br />
-            Hello@thefortiora.com · thefortiora.com
-          </p>
-        </div>
-        <div
-          style={{
-            marginTop: "auto",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 18,
-          }}
-        >
-          <img
-            src="/brand/barcode-fortiora.png"
-            alt="Scan to visit thefortiora.com"
-            style={{ width: 196, height: "auto" }}
-          />
-          <p
-            style={{
-              margin: 0,
-              fontFamily: "var(--font-sans), system-ui, sans-serif",
-              fontSize: 12,
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: GOLD,
-            }}
-          >
-            The Legacy Issue · Vol. II
-          </p>
+            <img
+              src="/brand/barcode-primecrest.png"
+              alt="Scan to visit theprimecrest.com"
+              style={{ width: 210, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
+            />
+            <p className="mag-imprint">
+              <strong>PrimeCrest</strong> · a product of Fortiora Group LLC
+              <br />
+              30 N Gould St Ste R, Sheridan, WY 82801, United States
+              <br />
+              Hello@thefortiora.com · <strong>theprimecrest.com</strong>
+            </p>
+            <p
+              style={{
+                margin: 0,
+                fontFamily: "var(--font-sans), system-ui, sans-serif",
+                fontSize: 12,
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
+                color: GOLD,
+              }}
+            >
+              The Legacy Issue · Vol. II
+            </p>
+          </div>
         </div>
       </article>
     </>
