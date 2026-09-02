@@ -28,12 +28,10 @@ export function EspeyPages() {
       <article className="mag-page mag-bleed" data-density="hard">
         <img
           className="mag-fill"
-          src={`${IMG}/cover.jpg`}
+          src={`${IMG}/coverart.jpg`}
           alt="James Espey OBE"
-          style={{ objectPosition: "center 18%" }}
           fetchPriority="high"
         />
-        <div className="mag-scrim" />
         <div className="mag-overlay">
           {/* Masthead — the magazine, front and centre */}
           <div style={{ textAlign: "center" }}>
@@ -65,51 +63,56 @@ export function EspeyPages() {
             </div>
           </div>
 
-          {/* Cover line */}
-          <div style={{ marginTop: "auto", maxWidth: 620 }}>
+          {/* Cover line — kept in the clear left column, off the portrait */}
+          <div style={{ marginTop: "auto", maxWidth: 330 }}>
             <p
               style={{
                 margin: 0,
                 fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 13.5,
+                fontSize: 12.5,
                 fontWeight: 700,
-                letterSpacing: "0.3em",
+                letterSpacing: "0.26em",
                 textTransform: "uppercase",
                 color: GOLD,
               }}
             >
-              Making a difference in 2026
+              Making a difference
+              <br />
+              in 2026
             </p>
             <h1
               className="mag-display"
               style={{
-                marginTop: 14,
+                marginTop: 16,
                 color: "#fff",
-                fontSize: 74,
-                textShadow: "0 8px 32px rgba(0,0,0,0.5)",
+                fontSize: 52,
+                lineHeight: 1.02,
+                textShadow: "0 8px 32px rgba(0,0,0,0.55)",
               }}
             >
-              Top 10 Unstoppable Business Leaders<span style={{ color: "#d4545c" }}>.</span>
+              Top 10
+              <br />
+              Unstoppable
+              <br />
+              Business
+              <br />
+              Leaders<span style={{ color: "#d4545c" }}>.</span>
             </h1>
             <div
               style={{
-                marginTop: 26,
-                paddingTop: 18,
+                marginTop: 24,
+                paddingTop: 16,
                 borderTop: "1px solid rgba(244,239,230,0.4)",
-                maxWidth: 460,
               }}
             >
-              <p
-                className="mag-display"
-                style={{ fontSize: 40, color: CREAM }}
-              >
+              <p className="mag-display" style={{ fontSize: 34, color: CREAM }}>
                 James Espey
               </p>
               <p
                 style={{
-                  margin: "10px 0 0",
+                  margin: "8px 0 0",
                   fontFamily: "var(--font-sans), system-ui, sans-serif",
-                  fontSize: 13,
+                  fontSize: 12.5,
                   fontWeight: 700,
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
@@ -122,7 +125,7 @@ export function EspeyPages() {
                 style={{
                   margin: "6px 0 0",
                   fontFamily: "var(--font-serif), Georgia, serif",
-                  fontSize: 17,
+                  fontSize: 16,
                   fontStyle: "italic",
                   color: "rgba(244,239,230,0.88)",
                 }}
@@ -137,6 +140,7 @@ export function EspeyPages() {
 
       {/* 02 Credits — left, dark */}
       <article className="mag-page mag-pad mag-dark">
+        <div className="mag-body">
         <p className="mag-kicker" style={{ color: GOLD }}>
           The imprint
         </p>
@@ -146,7 +150,10 @@ export function EspeyPages() {
         >
           Credits.
         </h2>
-        <ul className="mag-credits-list">
+        <ul
+          className="mag-credits-list"
+          style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}
+        >
           <li>
             <b>Magazine</b>
             <span>PrimeCrest · theprimecrest.com</span>
@@ -209,10 +216,12 @@ export function EspeyPages() {
             publisher.
           </p>
         </div>
+        </div>
       </article>
 
       {/* 03 The subject — right */}
       <article className="mag-page mag-pad">
+        <div className="mag-body">
         <p className="mag-kicker">The Subject</p>
         <h2 className="mag-h mag-h-sm">Eighty-two next May. Still laying down stock.</h2>
         <div style={{ display: "flex", gap: 28, alignItems: "flex-start" }}>
@@ -238,12 +247,16 @@ export function EspeyPages() {
             <p className="mag-role">Brand builder · Intrapreneur</p>
           </div>
         </div>
+        <blockquote className="mag-pull" style={{ margin: "auto 12px" }}>
+          Long odds, longer view.
+        </blockquote>
         <p
           className="mag-folio"
           style={{ marginTop: "auto", fontStyle: "italic", textAlign: "right", color: "#8a5a12", fontSize: 16 }}
         >
           He titled the memoir &ldquo;Ego Trip&rdquo; — the joke of a man who no longer needs one.
         </p>
+        </div>
       </article>
 
       {/* 04–05 Contents spread over the hands */}
@@ -331,9 +344,10 @@ export function EspeyPages() {
 
       {/* 06 The Journey */}
       <article className="mag-page mag-pad">
+        <div className="mag-body">
         <p className="mag-kicker">The Journey</p>
         <h2 className="mag-h">&ldquo;A savage from the colonies.&rdquo;</h2>
-        <div className="mag-cols mag-folio mag-dropcap">
+        <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.9 }}>
           <p style={{ margin: "0 0 14px" }}>
             In 1970 he joined Gilbeys South Africa as sales director. In January 1977 Anthony
             Tennant visited, and asked him to London: global marketing director of International
@@ -355,19 +369,33 @@ export function EspeyPages() {
             billion for Diageo. He keeps the arithmetic. They keep the brands.
           </p>
         </div>
-        <blockquote className="mag-pull">Think global. Act local.</blockquote>
+        <blockquote className="mag-pull" style={{ margin: "auto 12px", fontSize: 32 }}>
+          Think global. Act local.
+        </blockquote>
         <p className="mag-foot">The Legacy Issue · 06</p>
+        </div>
       </article>
 
       {/* 07 The Back Bar — dark ledger */}
       <article className="mag-page mag-pad mag-dark">
+        <div className="mag-body">
         <p className="mag-kicker" style={{ color: GOLD }}>
           The Back Bar
         </p>
         <h2 className="mag-h mag-h-light" style={{ fontSize: 34 }}>
           What he put on the world&apos;s shelf.
         </h2>
-        <ul style={{ listStyle: "none", margin: "10px 0 0", padding: 0 }}>
+        <ul
+          style={{
+            listStyle: "none",
+            margin: "10px 0 0",
+            padding: 0,
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+          }}
+        >
           {[
             ["1977", "Baileys Irish Cream", "Remade into the world's No. 1 liqueur. Some six million cases a year."],
             ["1979", "Malibu", "Born in Stellenbosch as Coco Rico, billed as Caribbean. The world's No. 2 liqueur."],
@@ -422,6 +450,7 @@ export function EspeyPages() {
         <p className="mag-foot" style={{ color: "rgba(244,239,230,0.4)" }}>
           The Legacy Issue · 07
         </p>
+        </div>
       </article>
 
       {/* 08 Photo — wood portrait */}
@@ -432,9 +461,13 @@ export function EspeyPages() {
 
       {/* 09 The Record */}
       <article className="mag-page mag-pad">
+        <div className="mag-body">
         <p className="mag-kicker">The Record</p>
         <h2 className="mag-h mag-h-sm">The honours, and what they mark.</h2>
-        <ul className="mag-list">
+        <ul
+          className="mag-list"
+          style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}
+        >
           <li>
             <strong>1988 · Scotland</strong>
             Founder of The Keepers of the Quaich, Scotland&apos;s exclusive whisky society; its
@@ -461,13 +494,15 @@ export function EspeyPages() {
         <p className="mag-note">
           Two terms on the Council of The Scotch Whisky Association — 1992–1998 and 2003–2008.
         </p>
+        </div>
       </article>
 
       {/* 10 The Chivas Play */}
       <article className="mag-page mag-pad">
+        <div className="mag-body">
         <p className="mag-kicker">The Chivas Play</p>
         <h2 className="mag-h mag-h-sm">A hundred million dollars, and a kilt on Chinese television.</h2>
-        <div className="mag-cols mag-folio mag-dropcap">
+        <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.9 }}>
           <p style={{ margin: "0 0 14px" }}>
             Joining Seagram in 1992 to run Chivas Bros, he set one condition: $100 million. Ninety
             for whisky to sleep in barrels for the next twenty years, ten for the distilleries and
@@ -482,16 +517,28 @@ export function EspeyPages() {
             billions to a company that, he suspects, knows nothing about the decision that did it.
           </p>
         </div>
-        <blockquote className="mag-pull">Drink better.</blockquote>
+        <blockquote className="mag-pull" style={{ margin: "auto 12px", fontSize: 32 }}>
+          Drink better.
+        </blockquote>
         <p className="mag-foot">The Legacy Issue · 10</p>
+        </div>
       </article>
 
       {/* 11 The Numbers — dark stats */}
       <article className="mag-page mag-pad mag-dark">
+        <div className="mag-body">
         <p className="mag-kicker" style={{ color: GOLD }}>
           The Numbers
         </p>
-        <div style={{ display: "flex", flexDirection: "column", gap: 26, marginTop: 8 }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+            flex: 1,
+            marginTop: 8,
+          }}
+        >
           {[
             ["£10bn+", "brand value delivered to the UK economy"],
             ["10,000", "jobs he counts against his career"],
@@ -539,13 +586,15 @@ export function EspeyPages() {
         >
           His arithmetic, cheerfully offered. The auditors are welcome to argue.
         </p>
+        </div>
       </article>
 
       {/* 12 Second Acts */}
       <article className="mag-page mag-pad">
+        <div className="mag-body">
         <p className="mag-kicker">Second Acts</p>
         <h2 className="mag-h mag-h-sm">Retired. Three exclamation marks.</h2>
-        <div className="mag-cols mag-folio mag-dropcap">
+        <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.9 }}>
           <p style={{ margin: "0 0 14px" }}>
             His CV gives 2008 a single line — &ldquo;Retired ! ! !&rdquo; — and nobody believed
             the punctuation. In 2003 he had already backed two young men, one a 28-year-old chief
@@ -561,53 +610,57 @@ export function EspeyPages() {
             bought it in 2017 and keeps it at the very top of the portfolio.
           </p>
         </div>
-        <blockquote className="mag-pull">
+        <blockquote className="mag-pull" style={{ margin: "auto 12px", fontSize: 30 }}>
           Never be arrogant, and never forget from whence you come.
         </blockquote>
         <p className="mag-foot">The Legacy Issue · 12</p>
+        </div>
       </article>
 
       {/* 13 Giving Back */}
       <article className="mag-page mag-pad">
+        <div className="mag-body">
         <p className="mag-kicker">Giving Back</p>
         <h2 className="mag-h mag-h-sm">&ldquo;Poor, likes sport, reasonably bright.&rdquo;</h2>
-        <p className="mag-folio mag-dropcap">
+        <p className="mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.85 }}>
           That is the written criterion for the Espey scholarship at his old school in Cape Town —
           his own file, in other words. Thulile Dodwana, from a remote part of South Africa, was
           the first scholar; a second has just started. More than £60,000 committed, the trust
           paying through to university.
         </p>
-        <p className="mag-folio">
+        <p className="mag-folio" style={{ fontSize: 17.5, lineHeight: 1.85 }}>
           In Livingstone, where he was born, he pays the school fees of two girls, and recently
           bought one a bicycle so she rides to school instead of walking an hour each way. Further
           up-country, wells for drinking water. And quietly, he covers medical bills for two
           friends of forty years who fell on hard times — one of them was good to him when he was
           a young man in Cape Town with little money.
         </p>
-        <p className="mag-folio">
+        <p className="mag-folio" style={{ fontSize: 17.5, lineHeight: 1.85 }}>
           Two books for the next generation — <em>Making Your Marque</em> and <em>365 Quotes to
           Accelerate Your Career</em> — and a standing habit of mentoring. One mentee has been
           calling since the late 1990s. He is now in his sixties.
         </p>
-        <blockquote className="mag-quote">
+        <blockquote className="mag-quote" style={{ margin: "auto 0" }}>
           We all have a responsibility to help future generations.
         </blockquote>
         <p className="mag-foot">The Legacy Issue · 13</p>
+        </div>
       </article>
 
       {/* 14 Outlook */}
       <article className="mag-page mag-pad mag-pb0">
+        <div className="mag-body">
         <div style={{ padding: "0 0 28px" }}>
           <p className="mag-kicker">Outlook</p>
           <h2 className="mag-h mag-h-sm">Whisky near Stonehenge, roads without fire, a plan to ninety.</h2>
-          <p className="mag-folio mag-dropcap">
+          <p className="mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.85 }}>
             At an age when most men curate their memoirs, he chairs The Wiltshire Distillery —
             English whisky sleeping in barrels in a very old building on the Fonthill Estate,
             twenty miles from Stonehenge, distilling since 2024. His daughter Caroline sits on the
             board; his daughter Jessica, an associate professor who spent a decade at the United
             Nations, keeps its environmental conscience.
           </p>
-          <p className="mag-folio">
+          <p className="mag-folio" style={{ fontSize: 17.5, lineHeight: 1.85 }}>
             His largest investment is Uberbinder, a cold-applied polymer to replace heated bitumen
             in road-building — a tenth of global greenhouse gas traces to roads, runs the argument.
             Mimecast&apos;s founder owns half; Espey holds fifteen percent; the head office has
@@ -615,8 +668,12 @@ export function EspeyPages() {
             and means it as encouragement.
           </p>
         </div>
-        <div className="mag-darkband" style={{ margin: "auto -58px 0" }}>
+        <blockquote className="mag-pull" style={{ margin: "auto 12px", fontSize: 30 }}>
+          A plan to ninety, and whisky laid down for longer.
+        </blockquote>
+        <div className="mag-darkband" style={{ margin: "0 -58px" }}>
           If you never leave the shore, you will never reach the other side.
+        </div>
         </div>
       </article>
 

@@ -471,6 +471,23 @@ textarea:focus-visible {
   height: 100%;
 }
 
+/*
+ * page-flip overwrites the root article's inline display, breaking the flex
+ * column above. .mag-body is an absolutely-positioned inner flex wrapper that
+ * the library never touches, so full-height layouts survive inside the book.
+ */
+.mag-body {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 64px 58px 52px;
+}
+
+.mag-pb0 .mag-body {
+  padding-bottom: 0;
+}
+
 .mag-kicker {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 12px;

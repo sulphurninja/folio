@@ -179,7 +179,62 @@ def make_backcover():
     print("saved:", out, page.size)
 
 
+def make_coverart():
+    """Front cover plate: blurred ground with the subject anchored bottom-right,
+    leaving a clean left column and headroom for masthead + cover lines."""
+    from PIL import ImageEnhance, ImageFilter
+
+    src = os.path.join(ROOT, "public", "issues", "espey", "cover.jpg")
+    PW, PH = 1000, 1414
+    photo = Image.open(src).convert("RGB")
+
+    # Ground: the same photo blown up, blurred, and darkened.
+    scale = max(PW / photo.width, PH / photo.height) * 1.15
+    bg = photo.resize((int(photo.width * scale), int(photo.height * scale)), Image.LANCZOS)
+    bx = (bg.width - PW) // 2
+    by = (bg.height - PH) // 2
+    bg = bg.crop((bx, by, bx + PW, by + PH))
+    bg = bg.filter(ImageFilter.GaussianBlur(48))
+    bg = ImageEnhance.Brightness(bg).enhance(0.32)
+
+    # Subject: sharp, ~88% page height, anchored bottom-right.
+    sh = int(PH * 0.88)
+    sw = int(photo.width * (sh / photo.height))
+    subj = photo.resize((sw, sh), Image.LANCZOS)
+    strip_w = 660
+    left = (sw - strip_w) // 2 + 30  # bias right to keep his chair arm
+    subj = subj.crop((max(0, left), 0, max(0, left) + strip_w, sh))
+    sx, sy = PW - strip_w, PH - sh
+
+    # Seam mask: multiplied left-edge and top-edge fades for a smooth corner.
+    from PIL import ImageChops
+
+    fade_w, fade_h = 210, 170
+    mh = Image.new("L", (strip_w, sh), 255)
+    dm = ImageDraw.Draw(mh)
+    for x in range(fade_w):
+        dm.line([(x, 0), (x, sh)], fill=int(255 * (x / fade_w)))
+    mv = Image.new("L", (strip_w, sh), 255)
+    dv = ImageDraw.Draw(mv)
+    for y in range(fade_h):
+        dv.line([(0, y), (strip_w, y)], fill=int(255 * (y / fade_h)))
+    mask = ImageChops.multiply(mh, mv)
+    bg.paste(subj, (sx, sy), mask)
+
+    # Gentle bottom-left vignette so the name block reads.
+    grad = Image.new("L", (1, 320))
+    for y in range(320):
+        grad.putpixel((0, y), int(120 * (y / 320)))
+    dark = Image.new("RGB", (PW, 320), (8, 9, 8))
+    bg.paste(dark, (0, PH - 320), grad.resize((PW, 320)))
+
+    out = os.path.join(ROOT, "public", "issues", "espey", "coverart.jpg")
+    bg.save(out, "JPEG", quality=90)
+    print("saved:", out, bg.size)
+
+
 if __name__ == "__main__":
     make_logo()
     make_barcode()
     make_backcover()
+    make_coverart()
