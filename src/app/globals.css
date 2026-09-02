@@ -488,6 +488,51 @@ textarea:focus-visible {
   padding-bottom: 0;
 }
 
+/* Short text pages: pin the footer and let the main block occupy the well. */
+.mag-fill-page {
+  justify-content: space-between;
+}
+
+.mag-fill-page .mag-folio {
+  font-size: 18.5px;
+  line-height: 1.82;
+}
+
+.mag-fill-page > .mag-cols,
+.mag-fill-page > .mag-folio,
+.mag-fill-page > .mag-list,
+.mag-fill-page > .mag-credits-list,
+.mag-fill-page > .mag-toc,
+.mag-grow {
+  flex: 1 1 auto;
+}
+
+.mag-fill-page > .mag-cols {
+  font-size: 19px;
+  line-height: 1.88;
+}
+
+.mag-grow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.mag-fill-page > .mag-list,
+.mag-fill-page > .mag-credits-list,
+.mag-fill-page > .mag-toc,
+.mag-fill-page > ul.mag-grow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.mag-fill-page .mag-foot,
+.mag-fill-page .mag-note {
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
 .mag-kicker {
   font-family: var(--font-sans), system-ui, sans-serif;
   font-size: 12px;
@@ -1003,8 +1048,8 @@ textarea:focus-visible {
 .mag-fosk-toc {
   list-style: none;
   margin: 0;
-  padding: 0;
-  flex: 1;
+  padding: 8px 0 0;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -1045,27 +1090,36 @@ textarea:focus-visible {
 }
 
 .mag-fosk-state {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
 }
 
+.mag-fosk-inpage {
+  width: 100%;
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
+}
+
 .mag-fosk-mani {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .mag-fosk-mani p {
   margin: 0;
-  padding: 20px 12px;
+  padding: 18px 8px;
   text-align: center;
   font-family: var(--font-display), Georgia, serif;
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 500;
   letter-spacing: -0.02em;
   color: #f4efe6;

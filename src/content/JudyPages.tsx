@@ -118,7 +118,7 @@ export function JudyPages() {
 
       {/* 02 Credits — left, deep forest */}
       <article className="mag-page mag-pad mag-dark mag-forest">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ ...KICK, color: CREAM }}>
             The imprint
           </p>
@@ -195,7 +195,7 @@ export function JudyPages() {
 
       {/* 03 Opening letter — right, single column, ghost J */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p
             className="mag-giant"
             style={{
@@ -260,7 +260,7 @@ export function JudyPages() {
 
       {/* 05 TOC — 2×4 card grid, cream, right */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
             In this issue
           </p>
@@ -345,7 +345,7 @@ export function JudyPages() {
 
       {/* 06 The Field — three columns, green hairline — left */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
             The field
           </p>
@@ -404,7 +404,7 @@ export function JudyPages() {
 
       {/* 08 Philosophy — unique full-page italic quote, racing green — left */}
       <article className="mag-page mag-pad mag-dark mag-racing">
-        <div className="mag-body" style={{ justifyContent: "center" }}>
+        <div className="mag-body mag-fill-page" style={{ justifyContent: "center" }}>
           <p className="mag-kicker mag-kicker-light" style={{ ...KICK, color: CREAM, marginBottom: 28 }}>
             The standard
           </p>
@@ -442,7 +442,7 @@ export function JudyPages() {
 
       {/* 09 Record — two-column list, green year labels — right */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
             The record
           </p>
@@ -541,7 +541,7 @@ export function JudyPages() {
 
       {/* 11 Method — single wide column + left-rule quote — right */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
             The method
           </p>
@@ -572,7 +572,7 @@ export function JudyPages() {
 
       {/* 12 Numbers — 2×3 card grid — left */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
             The numbers
           </p>
@@ -645,7 +645,7 @@ export function JudyPages() {
 
       {/* 13 Vision + darkband — right */}
       <article className="mag-page mag-pad mag-pb0">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
             The question
           </p>
@@ -712,7 +712,7 @@ export function JudyPages() {
 
       {/* 15 Advice / close — right */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
             Close
           </p>

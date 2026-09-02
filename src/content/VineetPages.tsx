@@ -209,7 +209,7 @@ export function VineetPages() {
 
       {/* 02 Credits — left, teal-dark */}
       <article className="mag-page mag-pad mag-teal">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker light>The imprint</Kicker>
           <h2
             className="mag-h"
@@ -284,7 +284,7 @@ export function VineetPages() {
 
       {/* 03 Opener — text top, landscape strip bottom */}
       <article className="mag-page mag-pad mag-pb0">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker>The subject</Kicker>
           <h2 className="mag-h" style={{ letterSpacing: "-0.038em", maxWidth: 620 }}>
             Sales is the last number you see.
@@ -322,7 +322,7 @@ export function VineetPages() {
 
       {/* 05 Contents — 2-column card grid, teal L-corners */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker>In this issue</Kicker>
           <h2 className="mag-h" style={{ letterSpacing: "-0.04em", marginBottom: 22 }}>
             The commercial engine.
@@ -391,7 +391,7 @@ export function VineetPages() {
 
       {/* 06 Feature — diagnosis */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker>Diagnosis</Kicker>
           <h2 className="mag-h" style={{ letterSpacing: "-0.038em" }}>
             What is usually hiding underneath.
@@ -432,7 +432,7 @@ export function VineetPages() {
 
       {/* 08 Feature — growth vs execution */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker>The split</Kicker>
           <h2 className="mag-h mag-h-sm" style={{ letterSpacing: "-0.036em" }}>
             A growth problem is strategic. An execution problem is a leak.
@@ -460,7 +460,7 @@ export function VineetPages() {
 
       {/* 09 Record — compact teal-ruled rows */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker>The record</Kicker>
           <h2 className="mag-h" style={{ letterSpacing: "-0.04em", marginBottom: 18 }}>
             The file, as given.
@@ -522,7 +522,7 @@ export function VineetPages() {
 
       {/* 10 Vision board — unique photo grid */}
       <article className="mag-page mag-pad mag-teal">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker light>Vision board</Kicker>
           <h2
             className="mag-h mag-h-light"
@@ -582,7 +582,7 @@ export function VineetPages() {
 
       {/* 11 Philosophy */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker>The 90 percent</Kicker>
           <h2 className="mag-h mag-h-sm" style={{ letterSpacing: "-0.036em" }}>
             Strategy is ten. Execution is the rest.
@@ -619,7 +619,7 @@ export function VineetPages() {
 
       {/* 13 Outlook + teal darkband */}
       <article className="mag-page mag-pad mag-pb0">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <div style={{ paddingBottom: 18 }}>
             <Kicker>Through 2030</Kicker>
             <h2 className="mag-h mag-h-sm" style={{ letterSpacing: "-0.036em" }}>
@@ -681,7 +681,7 @@ export function VineetPages() {
 
       {/* 15 Close */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <Kicker>Close</Kicker>
           <h2 className="mag-h mag-h-sm" style={{ letterSpacing: "-0.036em" }}>
             No pure mistakes. Only learnings.

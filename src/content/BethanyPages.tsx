@@ -170,7 +170,7 @@ export function BethanyPages() {
 
       {/* 02 Credits — left, steel-dark */}
       <article className="mag-page mag-pad mag-steel">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL_LIGHT }}>
             The imprint
           </p>
@@ -281,7 +281,7 @@ export function BethanyPages() {
           }}
         />
         <div
-          className="mag-body"
+          className="mag-body mag-fill-page"
           style={{ padding: "52px 40px 44px 454px" }}
         >
           <p className="mag-kicker" style={{ color: STEEL }}>
@@ -326,7 +326,7 @@ export function BethanyPages() {
 
       {/* 04 Editorial note — left, cream, giant N */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             From the desk
           </p>
@@ -376,7 +376,7 @@ export function BethanyPages() {
 
       {/* 05 Contents — right, vertical timeline */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             In this issue
           </p>
@@ -458,7 +458,7 @@ export function BethanyPages() {
 
       {/* 06 The Floor — left, two-col dropcap */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             The floor
           </p>
@@ -518,7 +518,7 @@ export function BethanyPages() {
 
       {/* 08 Leadership philosophy — left, quote + body */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             Philosophy
           </p>
@@ -561,7 +561,7 @@ export function BethanyPages() {
 
       {/* 09 Challenges — right, 01/02/03 steel numerals */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             Challenges
           </p>
@@ -659,7 +659,7 @@ export function BethanyPages() {
 
       {/* 11 Impact statistics — right, 2×2 steel figures on cream */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             The record
           </p>
@@ -753,7 +753,7 @@ export function BethanyPages() {
 
       {/* 12 Innovation — left */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             New methods
           </p>
@@ -799,7 +799,7 @@ export function BethanyPages() {
 
       {/* 13 Vision + darkband — right */}
       <article className="mag-page mag-pad mag-pb0">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             The vision
           </p>
@@ -848,7 +848,7 @@ export function BethanyPages() {
 
       {/* 14 Advice — left, single column, italic closer */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: STEEL }}>
             Counsel
           </p>

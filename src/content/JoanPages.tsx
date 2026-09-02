@@ -123,7 +123,7 @@ export function JoanPages() {
 
       {/* 02 Credits — navy */}
       <article className="mag-page mag-pad mag-navy">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
             The imprint
           </p>
@@ -186,7 +186,7 @@ export function JoanPages() {
 
       {/* 03 Opener — gold-framed portrait */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
             The Subject
           </p>
@@ -276,7 +276,7 @@ export function JoanPages() {
 
       {/* 05 Contents — gold-ruled ledger */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
             In this issue
           </p>
@@ -362,7 +362,7 @@ export function JoanPages() {
 
       {/* 06 Feature — two-col */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
             The Classroom
           </p>
@@ -435,7 +435,7 @@ export function JoanPages() {
 
       {/* 08 The record — gold ledger list */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
             The Record
           </p>
@@ -488,7 +488,7 @@ export function JoanPages() {
 
       {/* 09 Horizontal milestones — unique page */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
             Milestones
           </p>
@@ -605,7 +605,7 @@ export function JoanPages() {
 
       {/* 11 Classroom / method */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
             The Method
           </p>
@@ -673,7 +673,7 @@ export function JoanPages() {
 
       {/* 13 Outlook + navy darkband */}
       <article className="mag-page mag-pad mag-pb0">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <div style={{ padding: "0 0 18px" }}>
             <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
               Outlook
@@ -746,7 +746,7 @@ export function JoanPages() {
 
       {/* 15 Close */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
             Close
           </p>

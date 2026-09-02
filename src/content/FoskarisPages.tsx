@@ -129,7 +129,7 @@ export function FoskarisPages() {
 
       {/* 02 Credits */}
       <article className="mag-page mag-pad mag-dark mag-charcoal">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: MAGENTA }}>
             The imprint
           </p>
@@ -210,41 +210,35 @@ export function FoskarisPages() {
 
       {/* 03 Opener */}
       <article className="mag-page mag-pad mag-fosk">
-        <div className="mag-body">
-          <p className="mag-kicker" style={{ color: MAGENTA }}>
+        <div className="mag-body mag-fill-page">
+          <img
+            className="mag-fosk-inpage"
+            src={`${IMG}/produce.jpg`}
+            alt="Penny Foskaris preparing food"
+            style={{ height: 292, objectPosition: "center 40%", marginBottom: 18 }}
+          />
+          <p className="mag-kicker" style={{ color: MAGENTA, marginBottom: 10 }}>
             The Opening
           </p>
-          <h2 className="mag-h mag-h-sm">The room she could not find.</h2>
-          <div style={{ display: "flex", gap: 26, alignItems: "flex-start" }}>
-            <div style={{ flex: 1 }}>
-              <p className="mag-folio mag-dropcap">
-                Penny Foskaris was a teenager in a library because an aunt had Type 1 diabetes and
-                another relative had heart disease. She wanted to know if food could help. She did
-                not yet know those hours would become a life.
-              </p>
-              <p className="mag-folio">
-                In her mid-thirties the question turned on her. More than two and a half years of
-                dizzy spells, chronic fatigue, continuous abdominal pain. Doctor to doctor. Test
-                after test. No one could say what was wrong. It was expensive. It was exhausting.
-              </p>
-            </div>
-            <div style={{ width: 176, flexShrink: 0, textAlign: "center", paddingTop: 6 }}>
-              <img
-                className="mag-avatar"
-                src={`${IMG}/portrait2.jpg`}
-                alt="Penny Foskaris"
-                style={{ borderColor: MAGENTA }}
-              />
-              <p className="mag-by">Penny Foskaris</p>
-              <p className="mag-role">Founder</p>
-            </div>
-          </div>
-          <p className="mag-folio">
+          <h2 className="mag-h mag-h-sm" style={{ marginBottom: 14 }}>
+            The room she could not find.
+          </h2>
+          <p className="mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.68 }}>
+            Penny Foskaris was a teenager in a library because an aunt had Type 1 diabetes and
+            another relative had heart disease. She wanted to know if food could help. She did
+            not yet know those hours would become a life.
+          </p>
+          <p className="mag-folio" style={{ fontSize: 18, lineHeight: 1.68 }}>
+            In her mid-thirties the question turned on her. More than two and a half years of
+            dizzy spells, chronic fatigue, continuous abdominal pain. Doctor to doctor. Test
+            after test. No one could say what was wrong. It was expensive. It was exhausting.
+          </p>
+          <p className="mag-folio" style={{ fontSize: 18, lineHeight: 1.68, marginBottom: 0 }}>
             A holistic wellness center. Within a week she began to feel better. She went back to
             school. She opened Foskaris Wellness — the kind of place she had needed and could not
             find. People were not rushed out the door. She looked at the whole person.
           </p>
-          <blockquote className="mag-pull" style={{ margin: "auto 8px 0", color: CHARCOAL }}>
+          <blockquote className="mag-pull" style={{ margin: "auto 8px 0", color: CHARCOAL, fontSize: 28 }}>
             Reveal. Restore. Reverse.
           </blockquote>
         </div>
@@ -265,7 +259,7 @@ export function FoskarisPages() {
 
       {/* 05 Contents — magenta numbered 01–08 */}
       <article className="mag-page mag-pad mag-fosk">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: MAGENTA }}>
             In this issue
           </p>
@@ -319,18 +313,26 @@ export function FoskarisPages() {
 
       {/* 06 Feature */}
       <article className="mag-page mag-pad mag-fosk">
-        <div className="mag-body">
-          <p className="mag-kicker" style={{ color: MAGENTA }}>
+        <div className="mag-body mag-fill-page">
+          <img
+            className="mag-fosk-inpage"
+            src={`${IMG}/extract_p7_i0.jpg`}
+            alt="Penny Foskaris"
+            style={{ height: 248, objectPosition: "center 18%", marginBottom: 16 }}
+          />
+          <p className="mag-kicker" style={{ color: MAGENTA, marginBottom: 8 }}>
             Five Thousand
           </p>
-          <h2 className="mag-h mag-h-sm">She looks at the whole picture.</h2>
+          <h2 className="mag-h mag-h-sm" style={{ marginBottom: 12 }}>
+            She looks at the whole picture.
+          </h2>
           <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.72 }}>
-            <p style={{ margin: "0 0 12px" }}>
+            <p style={{ margin: "0 0 16px" }}>
               She approaches health like a researcher. A symptom is often the end result. Rather
               than chase it, she asks for a history — sleep, food, whether a person is eating
               enough, medications, stress, body composition, visceral fat.
             </p>
-            <p style={{ margin: "0 0 12px" }}>
+            <p style={{ margin: "0 0 16px" }}>
               Sleep first. If the body does not rest, it cannot repair. She has watched
               under-nourished clients start sleeping once the fuel was there. Everything, she
               says, is interconnected.
@@ -339,10 +341,10 @@ export function FoskarisPages() {
               She does not order every test on day one. A conversation. A plan a person can
               actually follow. Then another layer if the body asks for it. More than five thousand
               people have come through that method — less pain, less fat, better markers, a chance
-              at vitality.
+              at vitality. The figure is not the point. The point is they were heard.
             </p>
           </div>
-          <blockquote className="mag-pull" style={{ margin: "auto 8px 0", color: CHARCOAL, fontSize: 26 }}>
+          <blockquote className="mag-pull" style={{ margin: "12px 8px 0", color: CHARCOAL, fontSize: 28 }}>
             Longevity is not simply how many years you live.
           </blockquote>
           <p className="mag-foot">The Vitality Issue · 06</p>
@@ -351,7 +353,7 @@ export function FoskarisPages() {
 
       {/* 07 STATEMENT */}
       <article className="mag-page mag-pad mag-dark mag-charcoal">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <div className="mag-fosk-state">
             <p
               className="mag-kicker"
@@ -363,13 +365,26 @@ export function FoskarisPages() {
               className="mag-display"
               style={{
                 color: MAGENTA,
-                fontSize: 44,
-                lineHeight: 1.18,
+                fontSize: 56,
+                lineHeight: 1.16,
                 textAlign: "center",
-                maxWidth: 620,
+                maxWidth: 680,
               }}
             >
               If you don&apos;t feel well enough to enjoy those years, that&apos;s not truly living.
+            </p>
+            <p
+              style={{
+                margin: 0,
+                fontFamily: "var(--font-serif), Georgia, serif",
+                fontSize: 20,
+                fontStyle: "italic",
+                lineHeight: 1.55,
+                color: "rgba(246,240,230,0.7)",
+                maxWidth: 480,
+              }}
+            >
+              Five thousand people through the door. The years only count if they can be used.
             </p>
           </div>
         </div>
@@ -377,7 +392,7 @@ export function FoskarisPages() {
 
       {/* 08 MANIFESTO */}
       <article className="mag-page mag-pad mag-dark mag-charcoal">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <p
             className="mag-kicker"
             style={{ color: MAGENTA, textAlign: "center", letterSpacing: "0.28em" }}
@@ -390,25 +405,36 @@ export function FoskarisPages() {
             <p>Look at the whole person.</p>
             <p>Do not rush them out the door.</p>
             <p>Everything is interconnected.</p>
+            <p>Sleep first.</p>
+            <p>If I would not use it, it does not carry my name.</p>
+            <p>Start with why.</p>
           </div>
         </div>
       </article>
 
       {/* 09 Feature */}
       <article className="mag-page mag-pad mag-fosk">
-        <div className="mag-body">
-          <p className="mag-kicker" style={{ color: MAGENTA }}>
+        <div className="mag-body mag-fill-page">
+          <img
+            className="mag-fosk-inpage"
+            src={`${IMG}/extract_p1_i0.jpg`}
+            alt="Penny Foskaris"
+            style={{ height: 248, objectPosition: "center 12%", marginBottom: 16 }}
+          />
+          <p className="mag-kicker" style={{ color: MAGENTA, marginBottom: 8 }}>
             Home Use
           </p>
-          <h2 className="mag-h mag-h-sm">The manufacturer said no.</h2>
+          <h2 className="mag-h mag-h-sm" style={{ marginBottom: 12 }}>
+            The manufacturer said no.
+          </h2>
           <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.72 }}>
-            <p style={{ margin: "0 0 12px" }}>
+            <p style={{ margin: "0 0 16px" }}>
               Red Light Pro Devices was not a second brand in search of a market. Clients had
               used the professional system at Foskaris Wellness for about three years. They asked
               for something they could take home. She tested about a dozen devices. Wrap one
               around a knee and little happened. The clinic machine was another story.
             </p>
-            <p style={{ margin: "0 0 12px" }}>
+            <p style={{ margin: "0 0 16px" }}>
               The company behind the roughly $28,000 system was not interested in a smaller unit.
               She found engineers at another red-light firm. Months of LED layouts and power.
               The test was simple. If she would not use it in her own center, it would not carry
@@ -416,10 +442,11 @@ export function FoskarisPages() {
             </p>
             <p style={{ margin: 0 }}>
               That gap — clinic quality, home format — is the company. Not a trend she decided
-              to join.
+              to join. A rent-to-buy month in Anaheim Hills lets a person try the light at home
+              and put the rental toward a purchase.
             </p>
           </div>
-          <blockquote className="mag-pull" style={{ margin: "auto 8px 0", color: CHARCOAL, fontSize: 24 }}>
+          <blockquote className="mag-pull" style={{ margin: "12px 8px 0", color: CHARCOAL, fontSize: 28 }}>
             It had to be something I would actually use myself.
           </blockquote>
           <p className="mag-foot">The Vitality Issue · 09</p>
@@ -441,19 +468,27 @@ export function FoskarisPages() {
 
       {/* 11 Feature */}
       <article className="mag-page mag-pad mag-fosk">
-        <div className="mag-body">
-          <p className="mag-kicker" style={{ color: MAGENTA }}>
+        <div className="mag-body mag-fill-page">
+          <img
+            className="mag-fosk-inpage"
+            src={`${IMG}/portrait2.jpg`}
+            alt="Penny Foskaris"
+            style={{ height: 248, objectPosition: "center 18%", marginBottom: 16 }}
+          />
+          <p className="mag-kicker" style={{ color: MAGENTA, marginBottom: 8 }}>
             The Measure
           </p>
-          <h2 className="mag-h mag-h-sm">Not a milestone. A place to be heard.</h2>
-          <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.7 }}>
-            <p style={{ margin: "0 0 12px" }}>
+          <h2 className="mag-h mag-h-sm" style={{ marginBottom: 12 }}>
+            Not a milestone. A place to be heard.
+          </h2>
+          <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.72 }}>
+            <p style={{ margin: "0 0 16px" }}>
               What she is most proud of is not a figure on a ledger. It is a room people can
               enter when they do not feel like themselves, tell the story, and leave with a
               path. She knows the years of unanswered tests. She turned that stretch into less
               struggle for someone else.
             </p>
-            <p style={{ margin: "0 0 12px" }}>
+            <p style={{ margin: "0 0 16px" }}>
               One client used to fly in twice a month. The fare and the hours piled up. Remote
               work, testing, and devices shipped to the door changed the map. Someone should
               not have to live next to the office to get help.
@@ -465,13 +500,16 @@ export function FoskarisPages() {
               center: take down the barrier.
             </p>
           </div>
+          <blockquote className="mag-pull" style={{ margin: "12px 8px 0", color: CHARCOAL, fontSize: 26 }}>
+            Someone should not have to live next door to get help.
+          </blockquote>
           <p className="mag-foot">The Vitality Issue · 11</p>
         </div>
       </article>
 
       {/* 12 STATEMENT 2 */}
       <article className="mag-page mag-pad mag-dark mag-charcoal">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
           <div className="mag-fosk-state">
             <p
               className="mag-kicker"
@@ -483,13 +521,26 @@ export function FoskarisPages() {
               className="mag-display"
               style={{
                 color: MAGENTA,
-                fontSize: 44,
-                lineHeight: 1.18,
+                fontSize: 56,
+                lineHeight: 1.16,
                 textAlign: "center",
-                maxWidth: 620,
+                maxWidth: 680,
               }}
             >
               Setbacks can be the springboard for innovation.
+            </p>
+            <p
+              style={{
+                margin: 0,
+                fontFamily: "var(--font-serif), Georgia, serif",
+                fontSize: 20,
+                fontStyle: "italic",
+                lineHeight: 1.55,
+                color: "rgba(246,240,230,0.7)",
+                maxWidth: 480,
+              }}
+            >
+              The manufacturer said no. She found other engineers. The light still carries her name.
             </p>
           </div>
         </div>
@@ -497,22 +548,27 @@ export function FoskarisPages() {
 
       {/* 13 Outlook + darkband */}
       <article className="mag-page mag-pad mag-fosk mag-pb0">
-        <div className="mag-body">
-          <p className="mag-kicker" style={{ color: MAGENTA }}>
+        <div className="mag-body mag-fill-page">
+          <p className="mag-kicker" style={{ color: MAGENTA, marginBottom: 10 }}>
             The Horizon
           </p>
-          <h2 className="mag-h mag-h-sm">Still early days for the light.</h2>
-          <p className="mag-folio mag-dropcap" style={{ fontSize: 17, lineHeight: 1.68 }}>
+          <h2 className="mag-h" style={{ fontSize: 36, marginBottom: 16 }}>
+            Still early days for the light.
+          </h2>
+          <p className="mag-folio mag-dropcap" style={{ fontSize: 19, lineHeight: 1.85 }}>
             She thinks photobiomodulation is only beginning. More papers. More clinicians.
             She wants red light in high-school and college athletic rooms — not only after a
             sprain, but before the match. Recovery rooms at home, the way people now keep a
             gym. Cognitive research over the next decade. A hub of longevity information
             people can reach from anywhere: education, telehealth, remote testing.
           </p>
-          <p className="mag-folio" style={{ fontSize: 17, lineHeight: 1.68 }}>
+          <p className="mag-folio" style={{ fontSize: 19, lineHeight: 1.85 }}>
             Technology is a piece. The foundation is still nutrition, sleep, movement, stress,
             and what goes into the body every day. The point is not only more years. It is
             staying active enough to use them — ten, twenty, thirty years from now.
+          </p>
+          <p className="mag-folio" style={{ fontSize: 19, lineHeight: 1.85 }}>
+            She is still early. The papers will keep coming. The rooms have to exist first.
           </p>
           <div className="mag-darkband" style={{ margin: "auto -58px 0", background: CHARCOAL, color: MAGENTA }}>
             Stay committed to the purpose. Stay flexible about the path.
@@ -546,24 +602,30 @@ export function FoskarisPages() {
 
       {/* 15 Close */}
       <article className="mag-page mag-pad mag-fosk">
-        <div className="mag-body">
-          <p className="mag-kicker" style={{ color: MAGENTA }}>
+        <div className="mag-body mag-fill-page">
+          <p className="mag-kicker" style={{ color: MAGENTA, marginBottom: 10 }}>
             Unstoppable
           </p>
-          <h2 className="mag-h mag-h-sm">Ask why. Then put a floor under it.</h2>
-          <p className="mag-folio mag-dropcap" style={{ fontSize: 17, lineHeight: 1.68 }}>
+          <h2 className="mag-h" style={{ fontSize: 36, marginBottom: 16 }}>
+            Ask why. Then put a floor under it.
+          </h2>
+          <p className="mag-folio mag-dropcap" style={{ fontSize: 19, lineHeight: 1.85 }}>
             More than ten years in, she has had to pivot as markets moved and clients changed.
             Unstoppable, to her, is not a life without setbacks. It is learning, adapting, and
             finding another way. A strong vision gives direction. It should not freeze the
             route.
           </p>
-          <p className="mag-folio" style={{ fontSize: 17, lineHeight: 1.68 }}>
+          <p className="mag-folio" style={{ fontSize: 19, lineHeight: 1.85 }}>
             To women who want to build something: start with why. She came out of the family
             restaurant trade. People told her a restaurant was easy money. She told them they
             would be married to it. Passion keeps you in the room. A plan — costs, licenses,
             books, year one and year five — is what lets the thing last.
           </p>
-          <blockquote className="mag-quote" style={{ margin: "auto 0 0", color: CHARCOAL, borderLeftColor: MAGENTA }}>
+          <p className="mag-folio" style={{ fontSize: 19, lineHeight: 1.85 }}>
+            Stay committed to the purpose. Stay flexible about the path. The light was a no
+            until it wasn&apos;t.
+          </p>
+          <blockquote className="mag-quote" style={{ margin: "8px 0 0", color: CHARCOAL, borderLeftColor: MAGENTA, fontSize: 26 }}>
             Your why has to be strong enough to carry you through the parts that aren&apos;t exciting.
           </blockquote>
         </div>

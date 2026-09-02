@@ -140,7 +140,7 @@ export function EspeyPages() {
 
       {/* 02 Credits — left, dark */}
       <article className="mag-page mag-pad mag-dark">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker" style={{ color: GOLD }}>
           The imprint
         </p>
@@ -221,7 +221,7 @@ export function EspeyPages() {
 
       {/* 03 The subject — right */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker">The Subject</p>
         <h2 className="mag-h mag-h-sm">Eighty-two next May. Still laying down stock.</h2>
         <div style={{ display: "flex", gap: 28, alignItems: "flex-start" }}>
@@ -344,7 +344,7 @@ export function EspeyPages() {
 
       {/* 06 The Journey */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker">The Journey</p>
         <h2 className="mag-h">&ldquo;A savage from the colonies.&rdquo;</h2>
         <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.9 }}>
@@ -378,7 +378,7 @@ export function EspeyPages() {
 
       {/* 07 The Back Bar — dark ledger */}
       <article className="mag-page mag-pad mag-dark">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker" style={{ color: GOLD }}>
           The Back Bar
         </p>
@@ -461,7 +461,7 @@ export function EspeyPages() {
 
       {/* 09 The Record */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker">The Record</p>
         <h2 className="mag-h mag-h-sm">The honours, and what they mark.</h2>
         <ul
@@ -499,7 +499,7 @@ export function EspeyPages() {
 
       {/* 10 The Chivas Play */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker">The Chivas Play</p>
         <h2 className="mag-h mag-h-sm">A hundred million dollars, and a kilt on Chinese television.</h2>
         <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.9 }}>
@@ -526,7 +526,7 @@ export function EspeyPages() {
 
       {/* 11 The Numbers — dark stats */}
       <article className="mag-page mag-pad mag-dark">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker" style={{ color: GOLD }}>
           The Numbers
         </p>
@@ -591,7 +591,7 @@ export function EspeyPages() {
 
       {/* 12 Second Acts */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker">Second Acts</p>
         <h2 className="mag-h mag-h-sm">Retired. Three exclamation marks.</h2>
         <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.9 }}>
@@ -619,7 +619,7 @@ export function EspeyPages() {
 
       {/* 13 Giving Back */}
       <article className="mag-page mag-pad">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <p className="mag-kicker">Giving Back</p>
         <h2 className="mag-h mag-h-sm">&ldquo;Poor, likes sport, reasonably bright.&rdquo;</h2>
         <p className="mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.85 }}>
@@ -649,7 +649,7 @@ export function EspeyPages() {
 
       {/* 14 Outlook */}
       <article className="mag-page mag-pad mag-pb0">
-        <div className="mag-body">
+        <div className="mag-body mag-fill-page">
         <div style={{ padding: "0 0 28px" }}>
           <p className="mag-kicker">Outlook</p>
           <h2 className="mag-h mag-h-sm">Whisky near Stonehenge, roads without fire, a plan to ninety.</h2>
