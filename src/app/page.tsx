@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Wordmark } from "@/components/site/Wordmark";
+import { ISSUE_REGISTRY } from "@/content/registry";
 import { getPublishedMagazines } from "@/lib/queries";
 
 export const revalidate = 60;
@@ -15,22 +16,28 @@ type IssueCard = {
   remote?: boolean;
 };
 
-const STATIC_ISSUES: IssueCard[] = [
-  {
-    href: "/m/espey",
-    src: "/issues/espey/cover.jpg",
-    kicker: "PrimeCrest · Vol. II · The Legacy Issue",
-    title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    meta: "16 pages",
-  },
-  {
-    href: "/m/saj",
-    src: "/issues/saj/cover.jpg",
-    kicker: "Vol. I · The Caribbean Issue",
-    title: "Master of the Deal",
-    meta: "16 pages",
-  },
+const HOME_ORDER = [
+  "espey",
+  "judy",
+  "bethany",
+  "kohila",
+  "pallavi",
+  "joan",
+  "foskaris",
+  "vineet",
+  "saj",
 ];
+
+const STATIC_ISSUES: IssueCard[] = HOME_ORDER.filter((slug) => ISSUE_REGISTRY[slug]).map((slug) => {
+  const issue = ISSUE_REGISTRY[slug];
+  return {
+    href: `/m/${issue.slug}`,
+    src: `/issues/${issue.slug}/cover.jpg`,
+    kicker: issue.kicker,
+    title: issue.title,
+    meta: "16 pages",
+  };
+});
 
 async function getIssues(): Promise<IssueCard[]> {
   const staticSlugs = new Set(STATIC_ISSUES.map((i) => i.href.split("/").pop()));

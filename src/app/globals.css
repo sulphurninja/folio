@@ -600,6 +600,11 @@ textarea:focus-visible {
 .mag-pull::before { content: "“"; margin-bottom: 8px; }
 .mag-pull::after { content: "”"; margin-top: 4px; }
 
+.mag-pull.is-green::before,
+.mag-pull.is-green::after {
+  color: #1e3d2f;
+}
+
 .mag-quote {
   margin: 8px 0 22px;
   padding: 4px 0 4px 18px;
@@ -795,6 +800,290 @@ textarea:focus-visible {
   background-color: #100c09;
   background-image: linear-gradient(168deg, #17120d 0%, #0d0a07 100%);
   color: #f4efe6;
+}
+
+/* Navy editorial ground — Joan / prestige issues. Never inline on the page root. */
+.mag-page.mag-navy {
+  background-color: #1a2744;
+  background-image: none;
+  color: #f4efe6;
+}
+
+/* Steel-dark editorial ground — Bethany / cool-blue issues. */
+.mag-page.mag-steel {
+  background-color: #0e1824;
+  background-image: linear-gradient(168deg, #152436 0%, #0e1824 100%);
+  color: #f4f0e8;
+}
+
+.mag-steel .mag-credits-list b {
+  color: #8aa8bd;
+}
+
+.mag-steel .mag-imprint {
+  color: rgba(244, 240, 232, 0.55);
+}
+
+.mag-steel .mag-imprint strong {
+  color: #f4f0e8;
+}
+
+.mag-scrim-steel {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(20, 40, 70, 0.5) 0%,
+      rgba(20, 40, 70, 0.22) 30%,
+      rgba(20, 40, 70, 0.18) 54%,
+      rgba(14, 24, 36, 0.84) 100%
+    );
+}
+
+/* Judy — racing-green issue. Root grounds must be classes; page-flip wipes inline. */
+.mag-page.mag-dark.mag-forest {
+  background-color: #0f1f18;
+  background-image: linear-gradient(168deg, #163024 0%, #0f1f18 100%);
+}
+
+.mag-page.mag-dark.mag-racing {
+  background-color: #1e3d2f;
+  background-image: linear-gradient(172deg, #26503c 0%, #1e3d2f 56%, #163226 100%);
+}
+
+/* Kohila — burnt copper. Root grounds must be classes; page-flip wipes inline. */
+.mag-page.mag-dark.mag-copper {
+  background-color: #1a1008;
+  background-image: linear-gradient(168deg, #24160c 0%, #1a1008 100%);
+  color: #f4efe6;
+}
+
+/* Vineet — rich teal. Root grounds must be classes; page-flip wipes inline. */
+.mag-page.mag-teal {
+  background-color: #062e30;
+  background-image: linear-gradient(168deg, #08383b 0%, #062e30 100%);
+  color: #f4efe6;
+}
+
+.mag-teal .mag-credits-list b {
+  color: #3aa8a4;
+}
+
+.mag-teal .mag-imprint {
+  color: rgba(244, 239, 230, 0.55);
+}
+
+.mag-teal .mag-imprint strong {
+  color: #f4efe6;
+}
+
+.mag-scrim-teal {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(6, 46, 48, 0.42) 0%,
+      rgba(6, 46, 48, 0.16) 34%,
+      rgba(6, 46, 48, 0.2) 56%,
+      rgba(6, 46, 48, 0.88) 100%
+    );
+}
+
+.mag-kicker-hair::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: #b0561f;
+  margin-top: 10px;
+}
+
+.mag-toc-copper li {
+  border-bottom: 1px solid #b0561f;
+}
+
+.mag-toc-copper em {
+  color: #d4783a;
+}
+
+.mag-copper .mag-credits-list b {
+  color: #b0561f;
+}
+
+/* Pallavi — oxblood dark. Root grounds must be classes; page-flip wipes inline. */
+.mag-page.mag-dark.mag-oxblood {
+  background-color: #1a0a10;
+  background-image: linear-gradient(168deg, #2a1018 0%, #1a0a10 100%);
+  color: #f4efe6;
+}
+
+.mag-oxblood .mag-credits-list b {
+  color: #c45a72;
+}
+
+.mag-caption-bar.mag-caption-oxblood {
+  background: #7a1d3a;
+  padding: 22px 28px 20px;
+}
+
+/* Foskaris — charcoal + hot magenta. Root grounds must be classes. */
+.mag-page.mag-fosk:not(.mag-bleed):not(.mag-dark) {
+  background-color: #f6f0e6;
+  background-image: radial-gradient(rgba(28, 28, 28, 0.045) 0.6px, transparent 0.6px);
+}
+
+.mag-page.mag-dark.mag-charcoal {
+  background-color: #1c1c1c;
+  background-image: linear-gradient(180deg, #1c1c1c 0%, #111 100%);
+  color: #f4efe6;
+}
+
+.mag-charcoal .mag-credits-list b {
+  color: #e84393;
+}
+
+.mag-fosk .mag-pull::before,
+.mag-fosk .mag-pull::after {
+  color: #e84393;
+}
+
+.mag-fosk .mag-body > p.mag-folio:first-of-type::first-letter,
+.mag-fosk .mag-dropcap::first-letter {
+  float: left;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 96px;
+  font-weight: 600;
+  line-height: 0.72;
+  padding: 4px 12px 0 0;
+  color: #e84393;
+}
+
+.mag-fosk-cover > img.mag-fill {
+  bottom: auto;
+  height: 60%;
+  object-position: top center;
+}
+
+.mag-fosk-slab {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  background: #1c1c1c;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  padding: 26px 32px 22px;
+  gap: 22px;
+}
+
+.mag-fosk-slab-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mag-fosk-slab-bar {
+  width: 148px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.mag-fosk-slab-bar img {
+  width: 148px;
+  height: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+}
+
+.mag-fosk-toc {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.mag-fosk-toc li {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(232, 67, 147, 0.22);
+}
+
+.mag-fosk-toc b {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 52px;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: #e84393;
+  line-height: 0.85;
+  min-width: 1.35em;
+}
+
+.mag-fosk-toc span {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 22px;
+  color: #1c1c1c;
+}
+
+.mag-fosk-toc em {
+  margin-left: auto;
+  font-style: normal;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #e84393;
+}
+
+.mag-fosk-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.mag-fosk-mani {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mag-fosk-mani p {
+  margin: 0;
+  padding: 20px 12px;
+  text-align: center;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #f4efe6;
+  border-bottom: 1px solid rgba(232, 67, 147, 0.38);
+}
+
+.mag-fosk-mani p:last-child {
+  border-bottom: 0;
+}
+
+.mag-fosk-footslab {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: #1c1c1c;
+  padding: 28px 36px 26px;
 }
 
 .mag-page.mag-pb0 {

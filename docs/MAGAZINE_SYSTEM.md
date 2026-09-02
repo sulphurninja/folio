@@ -127,6 +127,13 @@ used — that pattern joins the vocabulary for later issues.
 |-------|-----------|
 | `saj` — Master of the Deal | Caribbean warmth: red banner, warm paper, split-spread resort photography, gold pulls |
 | `espey` — Ego Trip | Whisky and mahogany: dark-dominant, gold-on-black ledgers and numerals, cinematic crops of one portrait |
+| `judy` — The Wisdom Issue | Racing green and cream: condensed kickers, vertical spine words, card-grid TOC/stats, one full-page italic philosophy panel |
+| `bethany` — Making a Difference | Steel and cream: left-ribbon cover, half-bleed opener, vertical timeline contents, 2×2 impact grid, cool blue photo scrims |
+| `kohila` — The Readiness Issue | Burnt copper `#b0561f` on cream paper and dark `#1a1008`: serif heads with 80px copper hairlines, one split-spread, credentials mosaic 2×2 |
+| `pallavi` — The Table Issue | Oxblood `#7a1d3a` on cream and dark `#1a0a10`: italic display heads, ghost letters, hairline running-head contents, leaf 9 year-numeral timeline |
+| `joan` — The Classroom Issue | Deep navy `#1a2744` + classic gold `#c9a227`: cream paper, roman heads, 0.32em kickers, gold ledger rules on every list, horizontal milestone boxes |
+| `foskaris` — The Vitality Issue | Charcoal `#1c1c1c` + hot magenta `#e84393`: cream paper, 96px drop caps, 60/40 slab cover, magenta numbered TOC, full-page statement panels, leaf-8 manifesto |
+| `vineet` — The Evolution Issue | Rich teal `#0d7377` on cream and dark `#062e30`: tighter serif, teal-cap kickers, 8px squares and L-corners, vision-board photo grid |
 
 ### House furniture — required in every issue
 

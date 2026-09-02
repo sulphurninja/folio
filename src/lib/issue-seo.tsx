@@ -33,7 +33,7 @@ export function issueMetadata(input: IssueSeoInput): Metadata {
     alternates: { canonical: url },
     openGraph: {
       type: "article",
-      siteName: "Fortiora Editions",
+      siteName: "PrimeCrest",
       title: input.title,
       description: input.description,
       url,
@@ -61,7 +61,7 @@ export function issueJsonLd(input: IssueSeoInput & { datePublished?: string | nu
     datePublished: input.datePublished || undefined,
     isPartOf: {
       "@type": "Periodical",
-      name: "Fortiora Editions",
+      name: "PrimeCrest",
       publisher: {
         "@type": "Organization",
         name: PUBLISHER.name,
