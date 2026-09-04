@@ -36,6 +36,8 @@ type Props = {
   children: React.ReactNode;
   title: string;
   toc: MagTocItem[];
+  /** Per-issue type system. Applied to every cloned leaf. */
+  tone?: string;
 };
 
 function waitImages(root: ParentNode) {
@@ -55,7 +57,7 @@ function waitImages(root: ParentNode) {
   );
 }
 
-export function HtmlFlipbook({ children, title, toc = [] }: Props) {
+export function HtmlFlipbook({ children, title, toc = [], tone }: Props) {
   const outerRef = useRef<HTMLDivElement>(null);
   const bookRef = useRef<HTMLDivElement>(null);
   const flipRef = useRef<PageFlip | null>(null);
@@ -172,7 +174,11 @@ export function HtmlFlipbook({ children, title, toc = [] }: Props) {
       clickEventForward: true,
     });
 
-    const clones = Array.from(sources).map((el) => el.cloneNode(true) as HTMLElement);
+    const clones = Array.from(sources).map((el) => {
+      const clone = el.cloneNode(true) as HTMLElement;
+      if (tone) clone.classList.add(`mag-tone-${tone}`);
+      return clone;
+    });
 
     pf.on("flip", (e) => {
       const page = Number(e.data) || 0;
@@ -200,7 +206,7 @@ export function HtmlFlipbook({ children, title, toc = [] }: Props) {
     flipRef.current = pf;
     setReady(true);
     requestAnimationFrame(() => computeLayout());
-  }, [computeLayout]);
+  }, [computeLayout, tone]);
 
   useEffect(() => {
     let cancelled = false;

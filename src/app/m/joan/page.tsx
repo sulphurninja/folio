@@ -18,7 +18,7 @@ export default function JoanIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The Classroom Issue" toc={JOAN_TOC}>
+      <HtmlFlipbook title="PrimeCrest — The Classroom Issue" toc={JOAN_TOC} tone="joan">
         <JoanPages />
       </HtmlFlipbook>
     </>

@@ -18,7 +18,7 @@ export default function BethanyIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The Purpose Issue" toc={BETHANY_TOC}>
+      <HtmlFlipbook title="PrimeCrest — The Purpose Issue" toc={BETHANY_TOC} tone="bethany">
         <BethanyPages />
       </HtmlFlipbook>
     </>

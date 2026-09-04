@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { HouseAdSpread, IssueCover, IssueCredits, PhotoCopy } from "./IssueChrome";
+
 const IMG = "/issues/pallavi";
 
 const CREAM = "#f4efe6";
@@ -38,227 +40,83 @@ export const PALLAVI_TOC = [
   { page: 10, label: "Direct" },
   { page: 12, label: "Still Growing" },
   { page: 13, label: "The Work" },
-  { page: 15, label: "PrimeCrest" },
+  { page: 15, label: "The Sink" },
+  { page: 17, label: "PrimeCrest" },
 ];
 
 export function PallaviPages() {
   return (
     <>
-      {/* 01 Cover — title at TOP of left column; name bottom-left */}
-      <article className="mag-page mag-bleed" data-density="hard">
-        <img
-          className="mag-fill"
-          src={`${IMG}/coverart.jpg`}
-          alt="Pallavi Pande"
-          fetchPriority="high"
-        />
-        <div className="mag-overlay">
-          <div style={{ textAlign: "center" }}>
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{
-                width: "38%",
-                maxWidth: 280,
-                height: "auto",
-                filter: "drop-shadow(0 6px 18px rgba(0,0,0,0.55))",
-              }}
-            />
-            <div
-              style={{
-                margin: "10px auto 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 10.5,
-                fontWeight: 600,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              Vol. VI · The Table Issue · theprimecrest.com
-            </div>
-          </div>
+      <IssueCover
+        img={`${IMG}/coverart.jpg`}
+        alt="Pallavi Pande"
+        vol="Vol. VI · The Table Issue · 2026"
+        accent={ROSE}
+        icon="leaf"
+        layout="italic"
+        name="Pallavi Pande"
+        role="Mompreneur · Owner & Founder"
+        place="Dtocs & Dtocs Consulting · Portland, Oregon"
+        teasers={[
+          ["The sink", "Banana leaves at home. Then a party, and the sink."],
+          ["Two firms", "DTOCS is the plates. Consulting is the other founders."],
+        ]}
+      />
 
-          <div style={{ marginTop: 28, maxWidth: 318 }}>
-            <p
-              style={{
-                margin: 0,
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 11.5,
-                fontWeight: 700,
-                letterSpacing: "0.24em",
-                textTransform: "uppercase",
-                color: ROSE,
-              }}
-            >
-              Making a difference in 2026
+      <IssueCredits
+        accent={ROSE}
+        groundClass="mag-dark mag-oxblood"
+        subject="Pallavi Pande — Owner & Founder, Dtocs & Dtocs Consulting, Portland, Oregon"
+        words="From the interviews of Pallavi Pande. Banana leaves, a kitchen sink, and more than twenty million single-use pieces taken off events."
+        volume="Vol. VI · The Table Issue"
+        note={
+          <>
+            <p>
+              The Table Issue is Pallavi Pande in Portland: two companies, a title she will still
+              joke is Chief Dishwashing Officer, and a plate problem that started after a party.
+              She grew up in India eating on banana leaves. In the United States the sink, or the
+              landfill, was the other option. Ten years in supply chain. Then DTOCS.
             </p>
-            <h1
-              className="mag-display"
-              style={{
-                marginTop: 12,
-                color: "#fff",
-                fontSize: 44,
-                lineHeight: 1.02,
-                fontStyle: "italic",
-                textShadow: "0 8px 32px rgba(0,0,0,0.55)",
-              }}
-            >
-              Top 10
-              <br />
-              Unstoppable
-              <br />
-              Business
-              <br />
-              Leaders<span style={{ color: ROSE }}>.</span>
-            </h1>
-          </div>
-
-          <div style={{ marginTop: "auto", maxWidth: 318, paddingBottom: 8 }}>
-            <p className="mag-display" style={{ fontSize: 32, color: CREAM, fontStyle: "italic" }}>
-              Pallavi Pande
+            <p>
+              DTOCS Consulting came because other product founders started asking. She wants her
+              children to see the work, not a perfect life. Seven years. More than twenty million
+              single-use pieces taken off events and foodservice. That is the table we set.
             </p>
-            <p
-              style={{
-                margin: "8px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              Mompreneur · Owner &amp; Founder
-            </p>
-            <p
-              style={{
-                margin: "6px 0 0",
-                fontFamily: "var(--font-serif), Georgia, serif",
-                fontSize: 16,
-                fontStyle: "italic",
-                color: "rgba(244,239,230,0.88)",
-              }}
-            >
-              Dtocs &amp; Dtocs Consulting · Portland, Oregon
-            </p>
-          </div>
-        </div>
-        <img className="mag-qr" src="/brand/barcode-primecrest.png" alt="Scan to visit theprimecrest.com" />
-      </article>
-
-      {/* 02 Credits — left, oxblood-dark */}
-      <article className="mag-page mag-pad mag-dark mag-oxblood">
-        <div className="mag-body">
-          <p className="mag-kicker" style={{ color: ROSE }}>
-            The imprint
-          </p>
-          <h2
-            className="mag-h"
-            style={{ color: CREAM, fontStyle: "italic", fontWeight: 500, fontSize: 58, marginBottom: 28 }}
-          >
-            Credits.
-          </h2>
-          <ul
-            className="mag-credits-list"
-            style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}
-          >
-            <li>
-              <b>Magazine</b>
-              <span>PrimeCrest · theprimecrest.com</span>
-            </li>
-            <li>
-              <b>Published by</b>
-              <span>Fortiora Group LLC</span>
-            </li>
-            <li>
-              <b>Editorial &amp; Design</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b>Digital Production</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b>Featured Subject</b>
-              <span>Pallavi Pande</span>
-            </li>
-            <li>
-              <b>Words</b>
-              <span>From the interviews of Pallavi Pande</span>
-            </li>
-            <li>
-              <b>Issue</b>
-              <span>Vol. VI · The Table Issue</span>
-            </li>
-          </ul>
-          <div
-            style={{
-              marginTop: "auto",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 14,
-              textAlign: "center",
-            }}
-          >
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{ width: 280, height: "auto" }}
-            />
-            <p className="mag-imprint">
-              <strong>PrimeCrest</strong> · a product of Fortiora Group LLC
-              <br />
-              30 N Gould St Ste R, Sheridan, WY 82801, United States
-              <br />
-              Hello@thefortiora.com · <strong>theprimecrest.com</strong>
-            </p>
-            <img
-              src="/brand/barcode-primecrest.png"
-              alt="Scan to visit theprimecrest.com"
-              style={{ width: 168, height: "auto" }}
-            />
-            <p className="mag-imprint" style={{ fontSize: 11, color: "rgba(244,239,230,0.42)", maxWidth: 520 }}>
-              © 2026 Fortiora Group LLC. All rights reserved. No part of this publication may be
-              reproduced or transmitted in any form without prior written permission from the
-              publisher.
-            </p>
-          </div>
-        </div>
-      </article>
+          </>
+        }
+      />
 
       {/* 03 Profile opener — right. Large rectangular portrait, text below */}
       <article className="mag-page mag-pad">
         <div className="mag-body">
-          <img
-            src={`${IMG}/portrait.jpg`}
-            alt="Pallavi Pande"
-            style={{
-              width: "100%",
-              height: 372,
-              objectFit: "cover",
-              objectPosition: "center 14%",
-              flexShrink: 0,
-              marginBottom: 22,
-            }}
-          />
           <p className="mag-kicker" style={{ color: OXBLOOD, marginBottom: 10 }}>
             The Subject
           </p>
-          <h2 className="mag-h" style={{ fontStyle: "italic", fontSize: 34, color: INK, marginBottom: 16 }}>
+          <h2 className="mag-h" style={{ fontStyle: "italic", fontSize: 34, color: INK, marginBottom: 12 }}>
             She kept seeing problems.
           </h2>
-          <p className="mag-folio mag-dropcap" style={{ marginBottom: 12 }}>
-            Pallavi Pande did not wake up one morning and decide to become an entrepreneur. She
-            kept seeing problems and wanting to solve them. Two companies now sit in Portland,
-            Oregon: DTOCS, the tableware, and DTOCS Consulting, the other founders.
-          </p>
-          <p className="mag-folio" style={{ marginBottom: 0 }}>
-            She calls herself a mompreneur. Owner. Founder. Some days the Chief Dishwashing
-            Officer. Some days the person running both firms. She wants her children to see the
-            work, not a perfect life.
-          </p>
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
+            <p>
+              Pallavi Pande did not wake up one morning and decide to become an entrepreneur. She
+              kept seeing problems and wanting to solve them. Two companies now sit in Portland,
+              Oregon: DTOCS, the tableware, and DTOCS Consulting, the other founders.
+            </p>
+            <p className="mag-sub" style={{ color: OXBLOOD }}>Chief Dishwashing Officer</p>
+            <p>
+              She calls herself a mompreneur. Owner. Founder. Some days the Chief Dishwashing
+              Officer. Some days the person running both firms. She wants her children to see the
+              work, not a perfect life.
+            </p>
+            <p className="mag-sub" style={{ color: OXBLOOD }}>Banana leaves, then the sink</p>
+            <p>
+              She grew up in India eating on banana leaves. After the move, a party left her at
+              the sink, or guilty of paper and plastic headed for landfill. Ten years in supply
+              chain. She put the two together.
+            </p>
+          </div>
+          <div className="mag-qframe" style={{ color: OXBLOOD }}>
+            <p>Sustainability should just be a better, healthier choice.</p>
+          </div>
           <p className="mag-foot" style={{ color: OXBLOOD }}>
             The Table Issue · 03
           </p>
@@ -291,16 +149,21 @@ export function PallaviPages() {
             <h2 className="mag-h" style={{ fontStyle: "italic", fontSize: 40, color: INK }}>
               A plate is a small thing.
             </h2>
-            <p className="mag-folio" style={{ fontSize: 18.5, lineHeight: 1.68 }}>
+            <p className="mag-folio">
               Until you replace millions of them. Pallavi Pande grew up in India eating on banana
-              leaves. After the move to the United States, a party left her at the sink, or guilty
-              of paper and plastic headed for landfill. Ten years in supply chain. She put the two
-              together.
+              leaves — used, gone, no plastic pile. After the move to the United States, a party
+              left her at the sink, or guilty of paper and plastic headed for landfill. Ten years
+              in supply chain before a plate carried her name. She put the two together. Chief
+              Dishwashing Officer is still the joke she will tell. The companies are not a joke.
             </p>
-            <p className="mag-folio" style={{ fontSize: 18.5, lineHeight: 1.68 }}>
-              What follows is her account. Direct. Unvarnished. She does not claim to have
-              mastered balance. She asks what really needs to happen today. We printed the
-              answers as she gave them.
+            <p className="mag-folio">
+              Seven years. More than twenty million single-use pieces taken off events and
+              foodservice. Two firms in Portland: DTOCS is the plates; DTOCS Consulting came
+              because other product founders started asking how she was selling on Amazon. What
+              she had learned. What she would avoid if she started again. Direct. Treat people
+              like adults. She wants her children to see a real business — still growing, still
+              learning in 2026. She does not claim to have mastered balance. She asks what really
+              needs to happen today. We printed the answers as she gave them.
             </p>
             <blockquote className="mag-pull" style={{ color: OXBLOOD, margin: "auto 8px 0" }}>
               Sustainability should just be a better, healthier choice.
@@ -336,7 +199,8 @@ export function PallaviPages() {
               flex: 1,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-evenly",
+              justifyContent: "flex-start",
+              gap: 8,
             }}
           >
             {CONTENTS.map(([num, title, line]) => (
@@ -451,9 +315,20 @@ export function PallaviPages() {
           alt="Pallavi Pande with a Business Magic sign"
           style={{ objectPosition: "center 22%" }}
         />
-        <div className="mag-caption-bar mag-caption-oxblood">
-          After the party: a sign she can stand behind. DTOCS began as a better option than plastic.
-        </div>
+        <PhotoCopy kicker="The sink" title="After the party: a sign she can stand behind.">
+          <p>
+            Banana leaves at home. Then a party in the United States. Then the sink. Ten years in
+            supply chain. DTOCS began as a better option than paper and plastic headed for
+            landfill. Seven years on, more than twenty million single-use pieces taken off events
+            and foodservice. Sustainability, she says, should just be a better, healthier choice.
+          </p>
+          <p>
+            DTOCS is the plates. Consulting is the other founders — the ones who asked how she was
+            selling on Amazon, what she would avoid if she started again. Two firms. Portland,
+            Oregon. She wants her children to see it. Still a real business. Still growing. Still
+            learning. Direct. Treat people like adults.
+          </p>
+        </PhotoCopy>
       </article>
 
       {/* 08 Feature — left. Two companies */}
@@ -503,7 +378,8 @@ export function PallaviPages() {
               flex: 1,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-evenly",
+              justifyContent: "flex-start",
+              gap: 8,
             }}
           >
             {YEARS.map(([year, line]) => (
@@ -735,7 +611,50 @@ export function PallaviPages() {
         </div>
       </article>
 
-      {/* 16 PrimeCrest back — collage + QR */}
+      <HouseAdSpread
+        variant="quote"
+        accent={ROSE}
+        kicker="The table, at length"
+        headlineLead="Banana leaves at home. Then a party."
+        headlineHero="Then the sink."
+        tag="The Table"
+        foot="The Table Issue"
+        photo={`${IMG}/magic.jpg`}
+        photoAlt=""
+        caption=""
+        quote="Chief Dishwashing Officer is still the joke she will tell. The companies are not a joke."
+        sections={[
+          {
+            heading: "India, then Portland",
+            body:
+              "Banana leaves were everyday tableware — used, gone, no plastic pile. A party in the United States left a sink. Pallavi Pande still calls the title Chief Dishwashing Officer. Ten years in supply chain before a plate carried her name. Then Dtocs, and Dtocs Consulting for the founders who asked how.",
+          },
+          {
+            heading: "The count",
+            body:
+              "Seven years. More than twenty million single-use pieces taken off events and foodservice. Two firms in Portland. The Table Issue does not turn that number into a sermon. It is the work: plates, consulting, a kitchen that started it.",
+          },
+          {
+            heading: "The children",
+            body:
+              "She wants her children to see a real business — still growing, still learning in 2026. Direct, she says. Treat people like adults. That line is hers.",
+          },
+        ]}
+        continued={[
+          {
+            heading: "Two firms",
+            body:
+              "DTOCS is the plates. Consulting is the other founders. The oxblood pages keep those two jobs separate so the reader can see both. This spread is the long setting: leaves, sink, count, Portland.",
+          },
+          {
+            heading: "How to read it",
+            body:
+              "Kitchen first. Then the years. The work page is the close. Scan the QR for theprimecrest.com.",
+          },
+        ]}
+      />
+
+      {/* 18 PrimeCrest back — collage + QR */}
       <article className="mag-page mag-bleed mag-dark mag-oxblood" data-density="hard">
         <img className="mag-fill" src={`${IMG}/backcover.jpg`} alt="" />
         <div
@@ -754,8 +673,8 @@ export function PallaviPages() {
               src="/brand/logo-primecrest.png"
               alt="PrimeCrest"
               style={{
-                width: "84%",
-                maxWidth: 600,
+                width: "92%",
+                maxWidth: 700,
                 height: "auto",
                 filter: "drop-shadow(0 10px 34px rgba(0,0,0,0.65))",
               }}
@@ -799,9 +718,9 @@ export function PallaviPages() {
             }}
           >
             <img
-              src="/brand/barcode-primecrest.png"
+              src="/brand/qr-primecrest.png"
               alt="Scan to visit theprimecrest.com"
-              style={{ width: 210, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
+              style={{ width: 160, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
             />
             <p className="mag-imprint" style={{ color: CREAM_DIM }}>
               <strong style={{ color: CREAM }}>PrimeCrest</strong> · a product of Fortiora Group LLC

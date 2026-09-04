@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { HouseAdSpread, IssueCover, IssueCredits, PhotoCopy } from "./IssueChrome";
+
 const IMG = "/issues/judy";
 
 const GREEN = "#1e3d2f";
@@ -25,7 +27,8 @@ export const JUDY_TOC = [
   { page: 12, label: "The Question" },
   { page: 13, label: "Statement" },
   { page: 14, label: "Close" },
-  { page: 15, label: "PrimeCrest" },
+  { page: 15, label: "The Field" },
+  { page: 17, label: "PrimeCrest" },
 ];
 
 const TOC_CARDS = [
@@ -40,12 +43,15 @@ const TOC_CARDS = [
 ];
 
 const RECORD = [
-  ["1977", "Adult Life", "First edition. Described as the first textbook in adult development written for psychology students."],
-  ["1987", "Online degree", "A graduate program delivered entirely online except orientation — among the first in the country."],
-  ["1987", "Santa Fe", "Fielding opened its doors. Orientation in New Mexico. Then the work moved to the screen."],
+  ["1970s", "The peel", "Adult development arrives as a new area in psychology, peeling away from gerontology. Decline was the old question. What still grows after forty is the new one."],
+  ["1977", "Adult Life", "First edition. Described as the first textbook in adult development written for psychology students. A map when the professors were still drawing the coast."],
+  ["40s–50s", "The students", "Typical Fielding students: long work histories — organizational consulting, teaching, social work. They wanted theory and practice in the same room."],
+  ["1987", "Online degree", "A graduate program delivered entirely online except orientation — among the first in the country. The work moved to the screen."],
+  ["1987", "Santa Fe", "Fielding opened its doors. A week in the desert. Orientation in New Mexico. Then the seminars existed as text."],
+  ["—", "The method", "Critique and dialogue: students reviewed papers, offered feedback, led the discussions. The student’s own thinking still has to be visible."],
   ["—", "Oxford Handbook", "Major contributor and editor of the Oxford International Handbook of Adult Development and Wisdom."],
-  ["—", "The method", "Critique and dialogue: students reviewed papers, offered feedback, led the discussions."],
-  ["Now", "The desk", "AI for research. The student’s own thinking and writing still has to be visible."],
+  ["—", "The standard", "Compassion and empathy are the gold standard of adult emotional development. Her line. Not a mood."],
+  ["Now", "The desk", "AI for research. The student’s own thinking and writing still has to be visible. That is the issue."],
 ];
 
 const STATS = [
@@ -60,138 +66,45 @@ const STATS = [
 export function JudyPages() {
   return (
     <>
-      {/* 01 Cover — masthead top-left, title column far left */}
-      <article className="mag-page mag-bleed" data-density="hard">
-        <img
-          className="mag-fill"
-          src={`${IMG}/coverart.jpg`}
-          alt="Judy Stevens"
-          fetchPriority="high"
-        />
-        <div className="mag-overlay" style={{ padding: "36px 36px 28px" }}>
-          <img
-            src="/brand/logo-primecrest.png"
-            alt="PrimeCrest"
-            style={{
-              width: 280,
-              height: "auto",
-              filter: "drop-shadow(0 6px 18px rgba(0,0,0,0.55))",
-            }}
-          />
-          <div
-            style={{
-              marginTop: "auto",
-              background: "rgba(15,31,24,0.88)",
-              padding: "22px 24px 20px",
-              maxWidth: 420,
-            }}
-          >
-            <p className="mag-kicker mag-kicker-light" style={{ ...KICK, color: CREAM, marginBottom: 10 }}>
-              Making a difference in 2026
-            </p>
-            <h1
-              className="mag-display"
-              style={{ color: "#fff", fontSize: 36, lineHeight: 1.05 }}
-            >
-              Top 10 Unstoppable Business Leaders<span style={{ color: CREAM }}>.</span>
-            </h1>
-            <p className="mag-display" style={{ fontSize: 28, color: CREAM, marginTop: 14 }}>
-              Judy Stevens
-            </p>
-            <p
-              style={{
-                margin: "6px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 11.5,
-                fontWeight: 700,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              Scholar &amp; Educator · Adult Development
-            </p>
-          </div>
-        </div>
-        <img className="mag-qr" src="/brand/barcode-primecrest.png" alt="Scan to visit theprimecrest.com" />
-      </article>
+      <IssueCover
+        img={`${IMG}/coverart.jpg`}
+        alt="Judy Stevens"
+        vol="Vol. III · The Wisdom Issue · 2026"
+        accent={GREEN}
+        icon="book"
+        layout="band"
+        name="Judy Stevens"
+        role="Scholar & Educator"
+        place="Adult Development & Wisdom"
+        teasers={[
+          ["The field", "Adult Life, 1977 — written for psychology students, not the corridor."],
+          ["Santa Fe", "A week in the desert. Then the work moved to the screen."],
+        ]}
+      />
 
-      {/* 02 Credits — left, deep forest */}
-      <article className="mag-page mag-pad mag-dark mag-forest">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ ...KICK, color: CREAM }}>
-            The imprint
-          </p>
-          <h2
-            className="mag-h"
-            style={{ color: CREAM, fontStyle: "italic", fontWeight: 500, fontSize: 56, marginBottom: 28 }}
-          >
-            Credits.
-          </h2>
-          <ul
-            className="mag-credits-list"
-            style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}
-          >
-            <li>
-              <b style={{ color: CREAM }}>Magazine</b>
-              <span>PrimeCrest · theprimecrest.com</span>
-            </li>
-            <li>
-              <b style={{ color: CREAM }}>Published by</b>
-              <span>Fortiora Group LLC</span>
-            </li>
-            <li>
-              <b style={{ color: CREAM }}>Editorial &amp; Design</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b style={{ color: CREAM }}>Digital Production</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b style={{ color: CREAM }}>Featured Subject</b>
-              <span>Judy Stevens</span>
-            </li>
-            <li>
-              <b style={{ color: CREAM }}>Words</b>
-              <span>From the interviews and writings of Judy Stevens</span>
-            </li>
-            <li>
-              <b style={{ color: CREAM }}>Issue</b>
-              <span>Vol. III · The Wisdom Issue</span>
-            </li>
-          </ul>
-          <div
-            style={{
-              marginTop: "auto",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 14,
-              textAlign: "center",
-            }}
-          >
-            <img src="/brand/logo-primecrest.png" alt="PrimeCrest" style={{ width: 280, height: "auto" }} />
-            <p className="mag-imprint" style={{ color: CREAM_DIM }}>
-              <strong style={{ color: CREAM }}>PrimeCrest</strong> · a product of Fortiora Group LLC
-              <br />
-              30 N Gould St Ste R, Sheridan, WY 82801, United States
-              <br />
-              Hello@thefortiora.com · <strong style={{ color: CREAM }}>theprimecrest.com</strong>
+      <IssueCredits
+        accent={GREEN}
+        groundClass="mag-dark mag-forest"
+        subject="Judy Stevens — Scholar & Educator, Adult Development & Wisdom"
+        words="From the interviews and writings of Judy Stevens. Textbook years, Fielding, Santa Fe, and the Oxford Handbook as she gave them."
+        volume="Vol. III · The Wisdom Issue"
+        note={
+          <>
+            <p>
+              The Wisdom Issue is eighteen leaves on Judy Stevens and the field she helped write
+              into being. Adult Life, 1977 — described as the first textbook in adult development
+              written for psychology students. A graduate program delivered online except
+              orientation, 1987. A week in Santa Fe, then the work on the screen.
             </p>
-            <img
-              src="/brand/barcode-primecrest.png"
-              alt="Scan to visit theprimecrest.com"
-              style={{ width: 168, height: "auto" }}
-            />
-            <p className="mag-imprint" style={{ fontSize: 11, color: "rgba(244,239,230,0.42)", maxWidth: 520 }}>
-              © 2026 Fortiora Group LLC. All rights reserved. No part of this publication may be
-              reproduced or transmitted in any form without prior written permission from the
-              publisher.
+            <p>
+              She is a major contributor and editor of the Oxford International Handbook of Adult
+              Development and Wisdom. The method was critique and dialogue: students reviewed
+              papers, offered feedback, led the discussions. AI sits at the desk now. The
+              student&apos;s own thinking still has to be visible. That is the issue.
             </p>
-          </div>
-        </div>
-      </article>
+          </>
+        }
+      />
 
       {/* 03 Opening letter — right, single column, ghost J */}
       <article className="mag-page mag-pad">
@@ -224,20 +137,30 @@ export function JudyPages() {
             <h2 className="mag-h" style={{ color: GREEN, fontSize: 36 }}>
               A field that asked what still grows.
             </h2>
-            <p className="mag-folio mag-dropcap" style={{ fontSize: 18.5, lineHeight: 1.72, maxWidth: 640 }}>
+            <p className="mag-folio mag-dropcap">
               Adult development is a young field. It arrived in the late 1970s, peeling away from
               gerontology. The older discipline had been measuring decline. This one asked a
-              different question: what still grows after forty?
+              different question: what still grows after forty? Intellectual growth. Emotional
+              growth. The wider system, held still long enough to see. Compassion and empathy, she
+              would later write, are the gold standard of adult emotional development.
             </p>
-            <p className="mag-folio" style={{ fontSize: 18.5, lineHeight: 1.72, maxWidth: 640 }}>
+            <p className="mag-folio">
               Judy Stevens was there at the start. Not as a spectator. She wrote the book the field
               needed. <em>Adult Life</em>, 1977. First textbook in adult development written for
-              psychology students. A map, when the professors were still drawing the coast.
+              psychology students. A map, when the professors were still drawing the coast. The
+              students who found her were typically in their forties and fifties, arriving with
+              long work histories — organizational consulting, teaching, social work. Highly
+              motivated. They wanted two things at once: why they did what they chose to do, the
+              theory; and how that theory should guide practice. Not a lecture. A working method.
             </p>
-            <p className="mag-folio" style={{ fontSize: 18.5, lineHeight: 1.72, maxWidth: 640, marginBottom: 0 }}>
+            <p className="mag-folio">
               She has spent the years since in classrooms — first physical, then ones that existed
-              only as text on a screen. The argument has not moved. The adult mind can still thicken.
-              It can still take on complexity. It can still learn to hold more than one truth at a time.
+              only as text on a screen. Fielding. A week in Santa Fe. Then the seminars moved onto
+              the wire, early, when online education still had to prove it could hold a room. The
+              Oxford Handbook chapter came later, as the field caught up to what she had been
+              teaching. The argument has not moved. The adult mind can still thicken. It can still
+              take on complexity. It can still learn to hold more than one truth at a time. The
+              student&apos;s own thinking still has to be visible. That is the issue.
             </p>
             <p className="mag-foot" style={{ color: GREEN }}>
               The Wisdom Issue · 03
@@ -253,9 +176,20 @@ export function JudyPages() {
         <p className="mag-vert" style={{ color: CREAM }}>
           WISDOM
         </p>
-        <div className="mag-caption-bar">
-          Intellectual growth. Emotional growth. The wider system, held still long enough to see.
-        </div>
+        <PhotoCopy kicker="Wisdom" title="Intellectual growth. Emotional growth.">
+          <p>
+            Adult development differentiated itself from gerontology. Where the older field watched
+            the body fail, this one studied maturation, positive development, maturity, and wisdom
+            in adulthood. <em>Adult Life</em> gave students a book their professors could assign.
+            It gave a young discipline a spine.
+          </p>
+          <p>
+            Stevens saw the work as teaching, not as a career in the usual sense. The students
+            were typically in their forties and fifties. They arrived with long work histories.
+            They wanted the theory and the practice in the same room. A week in Santa Fe, then a
+            degree on the wire. The questions did not get smaller.
+          </p>
+        </PhotoCopy>
       </article>
 
       {/* 05 TOC — 2×4 card grid, cream, right */}
@@ -360,23 +294,29 @@ export function JudyPages() {
           >
             Why they came. How they used it.
           </h2>
-          <div className="mag-cols-3 mag-folio mag-dropcap" style={{ fontSize: 16.5, lineHeight: 1.7, flex: 1 }}>
-            <p style={{ margin: "0 0 12px" }}>
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
+            <p>
               In the late 1970s, adult development emerged as an entirely new area in psychology.
               It differentiated itself from gerontology. Where the older field watched the body
               fail, this one studied maturation, positive development, maturity, and wisdom in
-              adulthood.
+              adulthood. The corridor still thought of adulthood as a plateau, then a decline.
+              The new books asked what still grows.
             </p>
-            <p style={{ margin: "0 0 12px" }}>
-              <em>Adult Life</em> gave students a book their professors could assign. It gave a
-              young discipline a spine. Stevens saw the work as teaching, not as a career in the
-              usual sense. The students who found her were typically in their forties and fifties.
+            <p>
+              <em>Adult Life</em>, 1977, gave students a book their professors could assign. It
+              gave a young discipline a spine. Stevens saw the work as teaching, not as a career
+              in the usual sense. The students who found her were typically in their forties and
+              fifties. They arrived with long work histories — organizational consulting, teaching,
+              social work. Highly motivated. They wanted two things at once: why they did what
+              they chose to do, the theory; and how that theory should guide practice. Not a
+              lecture. A working method.
             </p>
-            <p style={{ margin: 0 }}>
-              They arrived with long work histories — organizational consulting, teaching, social
-              work. Highly motivated. They wanted two things at once: why they did what they chose
-              to do, the theory; and how that theory should guide practice. Not a lecture. A
-              working method.
+            <p>
+              Fielding sat inside a program built for adults already in the middle of a life. The
+              method was conversation and case. Santa Fe was a week in the desert; then the work
+              moved to the screen. The Oxford Handbook chapter came later. Compassion and empathy
+              are the gold standard of adult emotional development — her line. This issue stays
+              with the years as she gave them. No second career invented for the photograph.
             </p>
           </div>
           <p className="mag-foot" style={{ color: GREEN }}>
@@ -414,7 +354,7 @@ export function JudyPages() {
               padding: 0,
               border: 0,
               fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: 54,
+              fontSize: 36,
               fontStyle: "italic",
               fontWeight: 500,
               lineHeight: 1.16,
@@ -426,7 +366,7 @@ export function JudyPages() {
           </blockquote>
           <p
             style={{
-              margin: "36px 0 0",
+              margin: "12px 0 14px",
               fontFamily: "var(--font-sans), system-ui, sans-serif",
               fontSize: 12,
               fontWeight: 700,
@@ -437,6 +377,20 @@ export function JudyPages() {
           >
             Judy Stevens
           </p>
+          <div className="mag-cols mag-folio mag-dense" style={{ color: "rgba(244,239,230,0.88)" }}>
+            <p>
+              She wrote it as a standard, not a mood. The field had been about decline. Adult
+              development asked what still grows after forty — intellectual, emotional, the wider
+              system. The students who sat with her were already in the middle of a life. They
+              wanted the theory and the practice in the same hour.
+            </p>
+            <p>
+              <em>Adult Life</em>, 1977. Fielding. Santa Fe. Then the screen. The Oxford Handbook
+              later. The gold standard is the same sentence in every room: compassion and empathy
+              as the mark of adult emotional development. The student&apos;s own thinking still
+              has to be visible. That is the work. That is the issue.
+            </p>
+          </div>
         </div>
       </article>
 
@@ -737,7 +691,50 @@ export function JudyPages() {
         </div>
       </article>
 
-      {/* 16 Back cover — PrimeCrest collage, hard */}
+      <HouseAdSpread
+        variant="quote"
+        accent={GREEN}
+        kicker="The field, at length"
+        headlineLead="Written for students, not the corridor."
+        headlineHero="Adult Life, 1977"
+        tag="Wisdom"
+        foot="The Wisdom Issue"
+        photo={`${IMG}/lecture.jpg`}
+        photoAlt=""
+        caption=""
+        quote="The work moved from a week in the desert to the screen. The questions did not get smaller."
+        sections={[
+          {
+            heading: "The textbook",
+            body:
+              "Adult Life, 1977, was written for psychology students. Judy Stevens describes it as the first textbook in adult development — not a hallway pamphlet, not a gerontology leftover. The field had been about decline. She wrote it as growth that continues after the diploma.",
+          },
+          {
+            heading: "Fielding",
+            body:
+              "The doctoral work at Fielding sat inside a program built for adults who were already in the middle of a life. The method was conversation and case, not a lecture hall that pretended the student had no job, no children, no second act.",
+          },
+          {
+            heading: "Santa Fe",
+            body:
+              "A week in the desert. Then the seminars moved onto the screen — early, when online education still had to prove it could hold a room. The Oxford Handbook chapter came later, as the field caught up to what she had been teaching.",
+          },
+        ]}
+        continued={[
+          {
+            heading: "What the issue holds",
+            body:
+              "This spread is the long page: the years as she gave them, the titles, the move from print to screen. PrimeCrest did not invent a second career for the photograph. The Wisdom Issue stays with the work — adult development as a subject that still has something to say in 2026.",
+          },
+          {
+            heading: "How to read it",
+            body:
+              "Start at the letter. Then the field. The numbers and the close are the same argument in a shorter type. Scan the QR for theprimecrest.com.",
+          },
+        ]}
+      />
+
+      {/* 18 Back cover — PrimeCrest collage, hard */}
       <article className="mag-page mag-bleed mag-dark mag-forest" data-density="hard">
         <img className="mag-fill" src={`${IMG}/backcover.jpg`} alt="" />
         <div
@@ -756,8 +753,8 @@ export function JudyPages() {
               src="/brand/logo-primecrest.png"
               alt="PrimeCrest"
               style={{
-                width: "84%",
-                maxWidth: 600,
+                width: "92%",
+                maxWidth: 700,
                 height: "auto",
                 filter: "drop-shadow(0 10px 34px rgba(0,0,0,0.65))",
               }}
@@ -801,9 +798,9 @@ export function JudyPages() {
             }}
           >
             <img
-              src="/brand/barcode-primecrest.png"
+              src="/brand/qr-primecrest.png"
               alt="Scan to visit theprimecrest.com"
-              style={{ width: 210, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
+              style={{ width: 160, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
             />
             <p className="mag-imprint" style={{ color: CREAM_DIM }}>
               <strong style={{ color: CREAM }}>PrimeCrest</strong> · a product of Fortiora Group LLC

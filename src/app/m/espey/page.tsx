@@ -18,7 +18,7 @@ export default function EspeyIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The Legacy Issue" toc={ESPEY_TOC}>
+      <HtmlFlipbook title="PrimeCrest — The Legacy Issue" toc={ESPEY_TOC} tone="espey">
         <EspeyPages />
       </HtmlFlipbook>
     </>

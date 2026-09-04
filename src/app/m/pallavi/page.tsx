@@ -18,7 +18,7 @@ export default function PallaviIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The Table Issue" toc={PALLAVI_TOC}>
+      <HtmlFlipbook title="PrimeCrest — The Table Issue" toc={PALLAVI_TOC} tone="pallavi">
         <PallaviPages />
       </HtmlFlipbook>
     </>

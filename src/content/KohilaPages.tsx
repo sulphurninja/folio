@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { HouseAdSpread, IssueCover, IssueCredits, PhotoCopy } from "./IssueChrome";
+
 const IMG = "/issues/kohila";
 
 const CREAM = "#f4efe6";
@@ -19,7 +21,8 @@ export const KOHILA_TOC = [
   { page: 12, label: "Outlook" },
   { page: 13, label: "The Stage" },
   { page: 14, label: "Close" },
-  { page: 15, label: "PrimeCrest" },
+  { page: 15, label: "Readiness" },
+  { page: 17, label: "PrimeCrest" },
 ];
 
 function Kicker({
@@ -42,201 +45,54 @@ function Kicker({
 export function KohilaPages() {
   return (
     <>
-      {/* 01 Cover — stacked title FAR LEFT, portrait right */}
-      <article className="mag-page mag-bleed" data-density="hard">
-        <img
-          className="mag-fill"
-          src={`${IMG}/coverart.jpg`}
-          alt="Kohila Sivas"
-          fetchPriority="high"
-          style={{ objectPosition: "right center" }}
-        />
-        <div
-          className="mag-scrim"
-          style={{
-            background:
-              "linear-gradient(90deg, rgba(26,16,8,0.82) 0%, rgba(26,16,8,0.42) 28%, rgba(26,16,8,0.08) 48%, transparent 62%)",
-          }}
-        />
-        <div className="mag-overlay">
-          <div style={{ textAlign: "center" }}>
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{
-                width: "76%",
-                maxWidth: 560,
-                height: "auto",
-                filter: "drop-shadow(0 6px 22px rgba(0,0,0,0.55))",
-              }}
-            />
-            <div
-              style={{
-                margin: "18px auto 0",
-                paddingTop: 12,
-                borderTop: "1px solid rgba(244,239,230,0.45)",
-                maxWidth: 560,
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 11.5,
-                fontWeight: 600,
-                letterSpacing: "0.26em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              Vol. V · The Readiness Issue · theprimecrest.com
-            </div>
-          </div>
+      <IssueCover
+        img={`${IMG}/coverart.jpg`}
+        alt="Kohila Sivas"
+        objectPosition="right center"
+        vol="Vol. V · The Readiness Issue · 2026"
+        accent={COPPER}
+        icon="flow"
+        layout="script"
+        scriptWord="Readiness"
+        name="Kohila Sivas"
+        role="Founder & Master Coach"
+        place="Wholistic SuccessCodes · Blocks to Flow"
+        title={
+          <>
+            <br />
+            before the
+            <br />
+            result.
+          </>
+        }
+        teasers={[
+          ["Readiness", "She no longer begins with the result."],
+          ["The lesson", "Learning challenges are rarely just about learning."],
+        ]}
+      />
 
-          <div style={{ marginTop: "auto", maxWidth: 280 }}>
-            <p
-              style={{
-                margin: 0,
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 11.5,
-                fontWeight: 700,
-                letterSpacing: "0.26em",
-                textTransform: "uppercase",
-                color: COPPER,
-              }}
-            >
-              Making a difference
-              <br />
-              in 2026
+      <IssueCredits
+        accent={COPPER}
+        groundClass="mag-dark mag-copper"
+        subject="Kohila Sivas — Founder & Master Coach, Wholistic SuccessCodes"
+        words="From the interviews and writings of Kohila Sivas. Readiness before performance; the human underneath the marks."
+        volume="Vol. V · The Readiness Issue"
+        note={
+          <>
+            <p>
+              The Readiness Issue is Kohila Sivas at twelve, when the systems had no language for
+              her, and Kohila Sivas two decades later, still asking what is blocking a person from
+              what is already there. Learning challenges, she says, are rarely just about
+              learning. There is always something underneath.
             </p>
-            <div style={{ width: 80, height: 1, background: COPPER, margin: "12px 0 0" }} />
-            <h1
-              className="mag-display"
-              style={{
-                marginTop: 16,
-                color: "#fff",
-                fontSize: 44,
-                lineHeight: 1.02,
-                textShadow: "0 8px 32px rgba(0,0,0,0.55)",
-              }}
-            >
-              Top 10
-              <br />
-              Unstoppable
-              <br />
-              Business
-              <br />
-              Leaders<span style={{ color: COPPER }}>.</span>
-            </h1>
-            <div
-              style={{
-                marginTop: 22,
-                paddingTop: 14,
-                borderTop: "1px solid rgba(244,239,230,0.4)",
-              }}
-            >
-              <p className="mag-display" style={{ fontSize: 30, color: CREAM }}>
-                Kohila Sivas
-              </p>
-              <p
-                style={{
-                  margin: "8px 0 0",
-                  fontFamily: "var(--font-sans), system-ui, sans-serif",
-                  fontSize: 11.5,
-                  fontWeight: 700,
-                  letterSpacing: "0.16em",
-                  textTransform: "uppercase",
-                  color: CREAM,
-                }}
-              >
-                Founder &amp; Master Coach
-              </p>
-              <p
-                style={{
-                  margin: "6px 0 0",
-                  fontFamily: "var(--font-serif), Georgia, serif",
-                  fontSize: 15,
-                  fontStyle: "italic",
-                  color: "rgba(244,239,230,0.88)",
-                }}
-              >
-                Wholistic SuccessCodes · Blocks to Flow
-              </p>
-            </div>
-          </div>
-        </div>
-        <img className="mag-qr" src="/brand/barcode-primecrest.png" alt="Scan to visit theprimecrest.com" />
-      </article>
-
-      {/* 02 Credits — copper-dark */}
-      <article className="mag-page mag-pad mag-dark mag-copper">
-        <div className="mag-body">
-          <Kicker>The imprint</Kicker>
-          <h2
-            className="mag-h"
-            style={{ color: CREAM, fontStyle: "italic", fontWeight: 500, fontSize: 58, marginBottom: 34 }}
-          >
-            Credits.
-          </h2>
-          <ul
-            className="mag-credits-list"
-            style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}
-          >
-            <li>
-              <b>Magazine</b>
-              <span>PrimeCrest · theprimecrest.com</span>
-            </li>
-            <li>
-              <b>Published by</b>
-              <span>Fortiora Group LLC</span>
-            </li>
-            <li>
-              <b>Editorial &amp; Design</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b>Digital Production</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b>Featured Subject</b>
-              <span>Kohila Sivas</span>
-            </li>
-            <li>
-              <b>Words</b>
-              <span>From the interviews and writings of Kohila Sivas</span>
-            </li>
-            <li>
-              <b>Issue</b>
-              <span>Vol. V · The Readiness Issue</span>
-            </li>
-          </ul>
-          <div
-            style={{
-              marginTop: "auto",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 16,
-              textAlign: "center",
-            }}
-          >
-            <img src="/brand/logo-primecrest.png" alt="PrimeCrest" style={{ width: 300, height: "auto" }} />
-            <p className="mag-imprint">
-              <strong>PrimeCrest</strong> · a product of Fortiora Group LLC
-              <br />
-              30 N Gould St Ste R, Sheridan, WY 82801, United States
-              <br />
-              Hello@thefortiora.com · <strong>theprimecrest.com</strong>
+            <p>
+              Wholistic SuccessCodes and Blocks to Flow are the names she put on that work —
+              children, then parents, then teachers, then people who run companies. This edition
+              stays with her facts. The QR is theprimecrest.com.
             </p>
-            <img
-              src="/brand/barcode-primecrest.png"
-              alt="Scan to visit theprimecrest.com"
-              style={{ width: 178, height: "auto" }}
-            />
-            <p className="mag-imprint" style={{ fontSize: 11, color: "rgba(244,239,230,0.45)", maxWidth: 520 }}>
-              © 2026 Fortiora Group LLC. All rights reserved. No part of this publication may be
-              reproduced or transmitted in any form without prior written permission from the
-              publisher.
-            </p>
-          </div>
-        </div>
-      </article>
+          </>
+        }
+      />
 
       {/* 03 Opener — drop cap + hairline + portrait bottom-right */}
       <article className="mag-page mag-pad">
@@ -245,44 +101,27 @@ export function KohilaPages() {
           <h2 className="mag-h mag-h-sm" style={{ color: DARK }}>
             At twelve, the systems had no language for her.
           </h2>
-          <p className="mag-folio mag-dropcap">
-            Kohila Sivas reached a point, at twelve, where she attempted to take her own life. She
-            was not incapable. She was not a problem child. She was a human being struggling inside
-            systems that did not understand what sat underneath the behaviour and the marks.
-          </p>
-          <p className="mag-folio">
-            That fact never left her. Later, as an educator and a learning coach, she watched the
-            same pattern in children, then in parents, then in teachers, then in people who run
-            companies. The work kept landing on the performance. The human underneath went unread.
-          </p>
-          <p className="mag-folio">
-            For more than two decades she has worked with learners and families. The deeper she
-            went, the clearer it became: learning challenges are rarely just about learning. There
-            is always something underneath.
-          </p>
-          <div
-            style={{
-              marginTop: "auto",
-              display: "flex",
-              justifyContent: "flex-end",
-              alignItems: "flex-end",
-              gap: 16,
-            }}
-          >
-            <div style={{ textAlign: "right", paddingBottom: 8 }}>
-              <p className="mag-by" style={{ color: DARK }}>
-                Kohila Sivas
-              </p>
-              <p className="mag-role" style={{ color: COPPER }}>
-                Master Coach · Readiness OS
-              </p>
-            </div>
-            <img
-              className="mag-avatar"
-              src={`${IMG}/portrait.jpg`}
-              alt="Kohila Sivas"
-              style={{ width: 132, height: 132, boxShadow: `0 0 0 6px #efe6d6` }}
-            />
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
+            <p>
+              Kohila Sivas reached a point, at twelve, where she attempted to take her own life. She
+              was not incapable. She was not a problem child. She was a human being struggling inside
+              systems that did not understand what sat underneath the behaviour and the marks.
+            </p>
+            <p className="mag-sub" style={{ color: COPPER }}>The same pattern</p>
+            <p>
+              That fact never left her. Later, as an educator and a learning coach, she watched the
+              same pattern in children, then in parents, then in teachers, then in people who run
+              companies. The work kept landing on the performance. The human underneath went unread.
+            </p>
+            <p className="mag-sub" style={{ color: COPPER }}>Two decades</p>
+            <p>
+              For more than two decades she has worked with learners and families. The deeper she
+              went, the clearer it became: learning challenges are rarely just about learning. There
+              is always something underneath.
+            </p>
+          </div>
+          <div className="mag-qframe" style={{ color: COPPER }}>
+            <p>Learning challenges are rarely just about learning.</p>
           </div>
         </div>
       </article>
@@ -352,37 +191,61 @@ export function KohilaPages() {
         </p>
         <div className="mag-overlay" style={{ paddingRight: 120 }}>
           <Kicker light>In this issue</Kicker>
-          <ol className="mag-toc mag-toc-copper">
+          <ol className="mag-toc mag-toc-copper mag-toc-fill">
             <li>
-              <span>The Question</span>
+              <div>
+                <span>The Question</span>
+                <small>Why do capable people stay stuck?</small>
+              </div>
               <em>06</em>
             </li>
             <li>
-              <span>The Lesson</span>
+              <div>
+                <span>The Lesson</span>
+                <small>Readiness precedes performance.</small>
+              </div>
               <em>08</em>
             </li>
             <li>
-              <span>The Record</span>
+              <div>
+                <span>The Record</span>
+                <small>What she built from the question.</small>
+              </div>
               <em>09</em>
             </li>
             <li>
-              <span>Credentials</span>
+              <div>
+                <span>Credentials</span>
+                <small>Four facts, four photographs.</small>
+              </div>
               <em>10</em>
             </li>
             <li>
-              <span>Philosophy</span>
+              <div>
+                <span>Philosophy</span>
+                <small>Flow is not forcing yourself forward.</small>
+              </div>
               <em>11</em>
             </li>
             <li>
-              <span>Outlook</span>
+              <div>
+                <span>Outlook</span>
+                <small>A campus, a ripple, 1.5 billion.</small>
+              </div>
               <em>13</em>
             </li>
             <li>
-              <span>The Stage</span>
+              <div>
+                <span>The Stage</span>
+                <small>The TEDx stage in Spoleto, 9 January 2027.</small>
+              </div>
               <em>14</em>
             </li>
             <li>
-              <span>Close</span>
+              <div>
+                <span>Close</span>
+                <small>Pain, turned into a mission.</small>
+              </div>
               <em>15</em>
             </li>
           </ol>
@@ -396,20 +259,29 @@ export function KohilaPages() {
           <h2 className="mag-h" style={{ color: DARK }}>
             Why do capable people stay stuck?
           </h2>
-          <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.85 }}>
-            <p style={{ margin: "0 0 14px" }}>
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
+            <p>
               Wholistic SuccessCodes grew out of one question Kohila kept asking. Why do
-              intelligent, capable people struggle even when they know what to do?
+              intelligent, capable people struggle even when they know what to do? She watched
+              students take more tutoring and stay stuck. Parents collected strategies and still
+              felt helpless. Educators worked harder and burned out. Adults read the books, sat
+              the courses, hired the coaches — and repeated the pattern. The visible problem was
+              rarely the problem.
             </p>
-            <p style={{ margin: "0 0 14px" }}>
-              She watched students take more tutoring and stay stuck. Parents collected strategies
-              and still felt helpless. Educators worked harder and burned out. Adults read the
-              books, sat the courses, hired the coaches — and repeated the pattern.
+            <p>
+              She stopped asking what was wrong with the person. She started asking what was
+              blocking them from accessing what was already within them. That shift became the
+              work. Two decades of it: readiness before performance. The world prefers the other
+              order. Do the strategy. Push. Measure. She begins under the score — the block, the
+              body, the room the student is actually in.
             </p>
-            <p style={{ margin: 0 }}>
-              The visible problem was rarely the problem. She stopped asking what was wrong with
-              the person. She started asking what was blocking them from accessing what was already
-              within them. That shift became the work.
+            <p>
+              Learning challenges are rarely just about learning. When we become curious about the
+              pattern instead of judging the person, we can finally find the block. The piano in
+              these pages is not decoration. It is how the issue shows work that is not a slide
+              deck. The TEDx stage in Spoleto is dated 9 January 2027 in the contents. The issue
+              stays with the interviews and writings she supplied. No second method invented for
+              the caption.
             </p>
           </div>
           <blockquote className="mag-pull" style={{ margin: "auto 12px", fontSize: 30, color: COPPER }}>
@@ -429,9 +301,22 @@ export function KohilaPages() {
           alt=""
           style={{ objectPosition: "center 18%" }}
         />
-        <div className="mag-caption-bar">
-          Kohila Sivas · Master Wholistic NeuroGrowth Success Coach · Blocks to Flow
-        </div>
+        <PhotoCopy kicker="The question" title="Why do capable people stay stuck?">
+          <p>
+            Wholistic SuccessCodes grew out of one question Kohila kept asking. Why do intelligent,
+            capable people struggle even when they know what to do? She watched students take more
+            tutoring and stay stuck. Parents collected strategies and still felt helpless.
+            Educators worked harder and burned out. Adults read the books, sat the courses, hired
+            the coaches — and repeated the pattern.
+          </p>
+          <p>
+            The visible problem was rarely the problem. She stopped asking what was wrong with the
+            person. She started asking what was blocking them from accessing what was already
+            within them. Readiness precedes performance. A strategy can be excellent and still
+            fail if the human system is not ready to use it. Learning challenges are rarely just
+            about learning.
+          </p>
+        </PhotoCopy>
       </article>
 
       {/* 08 Feature */}
@@ -480,7 +365,8 @@ export function KohilaPages() {
               flex: 1,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-evenly",
+              justifyContent: "flex-start",
+              gap: 8,
             }}
           >
             {[
@@ -627,9 +513,20 @@ export function KohilaPages() {
           alt=""
           style={{ objectPosition: "center 20%" }}
         />
-        <div className="mag-caption-bar">
-          Founder of Wholistic SuccessCodes · readiness before the result
-        </div>
+        <PhotoCopy kicker="Readiness" title="A strategy can be excellent and still fail.">
+          <p>
+            The biggest lesson of more than twenty years: a strategy can be excellent and still
+            fail if the human system is not ready to use it. She no longer begins with the result.
+            She begins with the block. When we become curious about the pattern instead of judging
+            the person, we can finally find the block.
+          </p>
+          <p>
+            Wholistic SuccessCodes. Blocks to Flow. Master Wholistic NeuroGrowth Success Coach.
+            The piano is how this issue shows the work. A campus, a ripple, 1.5 billion — the
+            outlook she names later. Pain, turned into a mission. The TEDx date in the contents
+            is 9 January 2027, Spoleto. The copy stays with what she supplied.
+          </p>
+        </PhotoCopy>
       </article>
 
       {/* 13 Outlook + darkband */}
@@ -728,7 +625,39 @@ export function KohilaPages() {
         </div>
       </article>
 
-      {/* 16 PrimeCrest back */}
+      <HouseAdSpread
+        variant="visual"
+        accent={COPPER}
+        kicker="House spread"
+        headlineLead="She no longer begins with"
+        headlineHero="The Result"
+        tag="Readiness"
+        foot="The Readiness Issue"
+        photo={`${IMG}/piano.jpg`}
+        photoAlt="Kohila Sivas at the piano"
+        objectPosition="center 30%"
+        caption="The piano · the human underneath the marks"
+        quote="Learning challenges are rarely just about learning."
+        sections={[
+          {
+            heading: "Twelve",
+            body:
+              "The Readiness Issue opens where she does: at twelve, when the systems had no language for what was in the way. Kohila Sivas built Wholistic SuccessCodes and Blocks to Flow on a single order of operations — readiness before performance. Two decades of that argument, told without a converted origin myth.",
+          },
+          {
+            heading: "The lesson",
+            body:
+              "She treats a stuck mark as a human problem first. Coaching, in her account, starts under the score: the block, the body, the room the student is actually in. The piano in these pages is not decoration. It is how the issue shows work that is not a slide deck.",
+          },
+          {
+            heading: "This spread",
+            body:
+              "A full opening, then the photograph. The copy stays with the interviews and writings she supplied. PrimeCrest did not invent a second method for the caption.",
+          },
+        ]}
+      />
+
+      {/* 18 PrimeCrest back */}
       <article className="mag-page mag-bleed mag-dark" data-density="hard">
         <img className="mag-fill" src={`${IMG}/backcover.jpg`} alt="" />
         <div
@@ -747,8 +676,8 @@ export function KohilaPages() {
               src="/brand/logo-primecrest.png"
               alt="PrimeCrest"
               style={{
-                width: "84%",
-                maxWidth: 600,
+                width: "92%",
+                maxWidth: 700,
                 height: "auto",
                 filter: "drop-shadow(0 10px 34px rgba(0,0,0,0.65))",
               }}
@@ -792,9 +721,9 @@ export function KohilaPages() {
             }}
           >
             <img
-              src="/brand/barcode-primecrest.png"
+              src="/brand/qr-primecrest.png"
               alt="Scan to visit theprimecrest.com"
-              style={{ width: 210, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
+              style={{ width: 160, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
             />
             <p className="mag-imprint" style={{ color: CREAM_DIM }}>
               <strong style={{ color: CREAM }}>PrimeCrest</strong> · a product of Fortiora Group LLC

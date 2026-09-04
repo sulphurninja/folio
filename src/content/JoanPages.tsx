@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { CSSProperties } from "react";
+import { HouseAdSpread, IssueCover, IssueCredits, PhotoCopy } from "./IssueChrome";
 
 const IMG = "/issues/joan";
 
@@ -25,7 +26,8 @@ export const JOAN_TOC = [
   { page: 12, label: "Outlook" },
   { page: 13, label: "The Charge" },
   { page: 14, label: "Close" },
-  { page: 15, label: "PrimeCrest" },
+  { page: 15, label: "The Classroom" },
+  { page: 17, label: "PrimeCrest" },
 ];
 
 const LEDGER: CSSProperties = {
@@ -35,156 +37,46 @@ const LEDGER: CSSProperties = {
 export function JoanPages() {
   return (
     <>
-      {/* 01 Cover — classic magazine, hard */}
-      <article className="mag-page mag-bleed" data-density="hard">
-        <img
-          className="mag-fill"
-          src={`${IMG}/coverart.jpg`}
-          alt="Joan Gillman"
-          fetchPriority="high"
-        />
-        <div className="mag-overlay" style={{ padding: "36px 36px 28px" }}>
-          <div>
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{
-                width: 300,
-                height: "auto",
-                filter: "drop-shadow(0 6px 18px rgba(0,0,0,0.45))",
-              }}
-            />
-            <p
-              style={{
-                margin: "12px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: "0.32em",
-                textTransform: "uppercase",
-                color: GOLD,
-              }}
-            >
-              Vol. VII · The Classroom Issue
-            </p>
-          </div>
+      <IssueCover
+        img={`${IMG}/coverart.jpg`}
+        alt="Joan Gillman"
+        vol="Vol. VII · The Classroom Issue · 2026"
+        accent={GOLD}
+        icon="atom"
+        layout="right"
+        name="Joan Gillman"
+        role="Science Teacher"
+        place="The Browning School · New York"
+        teasers={[
+          ["The classroom", "Forty-four years. Blackboard, then a SmartBoard."],
+          ["Times Square", "The Green Team, on a board the city could not miss."],
+        ]}
+      />
 
-          <div
-            style={{
-              marginTop: "auto",
-              background: "rgba(26,39,68,0.92)",
-              padding: "22px 26px 20px",
-              maxWidth: 440,
-            }}
-          >
-            <h1
-              className="mag-display"
-              style={{
-                color: CREAM,
-                fontSize: 40,
-                lineHeight: 1.04,
-                fontWeight: 600,
-                letterSpacing: "-0.03em",
-              }}
-            >
-              Top 10 Unstoppable Leaders in 2026<span style={{ color: GOLD }}>.</span>
-            </h1>
-            <p className="mag-display" style={{ fontSize: 30, color: CREAM, marginTop: 14 }}>
-              Joan Gillman
+      <IssueCredits
+        accent={GOLD}
+        groundClass="mag-navy"
+        subject="Joan Gillman — Science Teacher, The Browning School, New York"
+        words="From the interviews and papers of Joan Gillman. Forty-four years in the science classroom, the Green Team, and the work of making room for wonder."
+        volume="Vol. VII · The Classroom Issue"
+        note={
+          <>
+            <p>
+              The Classroom Issue is Joan Gillman: bathroom chemistry before she had a lab, a
+              yardstick in the snow, shoe-box robots, then forty-four years at the Browning School
+              in New York. Blackboard and chalk. Then a SmartBoard. The Green Team on a board in
+              Times Square.
             </p>
-            <p
-              style={{
-                margin: "8px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: GOLD,
-              }}
-            >
-              Science Teacher
+            <p>
+              She taught recorder, tutored math, ran playground games so the children who were not
+              the athletes still played. Inclusiveness, she says, is still how she teaches.
+              Kindergarten is next. The older students stay. That is the record we printed.
             </p>
-            <p
-              style={{
-                margin: "6px 0 0",
-                fontFamily: "var(--font-serif), Georgia, serif",
-                fontSize: 16,
-                fontStyle: "italic",
-                color: "rgba(244,239,230,0.88)",
-              }}
-            >
-              The Browning School · New York
-            </p>
-          </div>
-        </div>
-        <img className="mag-qr" src="/brand/barcode-primecrest.png" alt="Scan to visit theprimecrest.com" />
-      </article>
+          </>
+        }
+      />
 
-      {/* 02 Credits — navy */}
-      <article className="mag-page mag-pad mag-navy">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
-            The imprint
-          </p>
-          <h2
-            className="mag-h"
-            style={{ color: CREAM, fontStyle: "italic", fontWeight: 500, fontSize: 58, marginBottom: 28 }}
-          >
-            Credits.
-          </h2>
-          <ul
-            className="mag-credits-list"
-            style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}
-          >
-            {[
-              ["Magazine", "PrimeCrest · theprimecrest.com"],
-              ["Published by", "Fortiora Group LLC"],
-              ["Editorial & Design", "Fortiora Studio"],
-              ["Digital Production", "Fortiora Studio"],
-              ["Featured Subject", "Joan Ava Gillman"],
-              ["Words", "From the interviews and papers of Joan Gillman"],
-              ["Issue", "Vol. VII · The Classroom Issue"],
-            ].map(([role, name]) => (
-              <li key={role} style={LEDGER}>
-                <b style={{ color: GOLD }}>{role}</b>
-                <span style={{ color: CREAM }}>{name}</span>
-              </li>
-            ))}
-          </ul>
-          <div
-            style={{
-              marginTop: "auto",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 14,
-              textAlign: "center",
-            }}
-          >
-            <img src="/brand/logo-primecrest.png" alt="PrimeCrest" style={{ width: 280, height: "auto" }} />
-            <p className="mag-imprint">
-              <strong>PrimeCrest</strong> · a product of Fortiora Group LLC
-              <br />
-              30 N Gould St Ste R, Sheridan, WY 82801, United States
-              <br />
-              Hello@thefortiora.com · <strong>theprimecrest.com</strong>
-            </p>
-            <img
-              src="/brand/barcode-primecrest.png"
-              alt="Scan to visit theprimecrest.com"
-              style={{ width: 168, height: "auto" }}
-            />
-            <p className="mag-imprint" style={{ fontSize: 11, color: "rgba(244,239,230,0.45)", maxWidth: 520 }}>
-              © 2026 Fortiora Group LLC. All rights reserved. No part of this publication may be
-              reproduced or transmitted in any form without prior written permission from the
-              publisher.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      {/* 03 Opener — gold-framed portrait */}
+      {/* 03 Opener — dense two-col */}
       <article className="mag-page mag-pad">
         <div className="mag-body mag-fill-page">
           <p className="mag-kicker" style={{ color: GOLD, ...KICK }}>
@@ -193,45 +85,29 @@ export function JoanPages() {
           <h2 className="mag-h mag-h-sm" style={{ color: NAVY }}>
             She measured the snow with a yardstick.
           </h2>
-          <div style={{ display: "flex", gap: 26, alignItems: "flex-start" }}>
-            <div style={{ flex: 1 }}>
-              <p className="mag-folio mag-dropcap">
-                Joan Gillman was mixing powders in the bathroom before she had a lab. She was sure
-                a new product would come of it if she kept going. After a snowfall she used a
-                yardstick for the rate, checked the temperature and the barometer, and kept a
-                camera ready. With her older brother she built robots from shoe boxes and a model
-                city they named Kinderkamack Village.
-              </p>
-              <p className="mag-folio">
-                High school required community service. She taught recorder, tutored math, and ran
-                playground games so the children who were not the athletes still played. She taught
-                swimming at the local JCC, including some special-needs children, and filled in as
-                a ballet teacher. Inclusiveness, she says, is still how she teaches.
-              </p>
-            </div>
-            <div style={{ width: 176, flexShrink: 0, textAlign: "center", paddingTop: 4 }}>
-              <img
-                src={`${IMG}/portrait-studio.jpg`}
-                alt="Joan Gillman"
-                style={{
-                  width: 168,
-                  height: 210,
-                  objectFit: "cover",
-                  objectPosition: "center 12%",
-                  boxShadow: `0 0 0 1px ${GOLD}, 0 0 0 6px #efe6d6`,
-                }}
-              />
-              <p className="mag-by" style={{ color: NAVY }}>
-                Joan Gillman
-              </p>
-              <p className="mag-role" style={{ color: GOLD }}>
-                Science Teacher
-              </p>
-            </div>
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
+            <p>
+              Joan Gillman was mixing powders in the bathroom before she had a lab. She was sure
+              a new product would come of it if she kept going. After a snowfall she used a
+              yardstick for the rate, checked the temperature and the barometer, and kept a
+              camera ready.
+            </p>
+            <p className="mag-sub" style={{ color: GOLD }}>Kinderkamack Village</p>
+            <p>
+              With her older brother she built robots from shoe boxes and a model city they named
+              Kinderkamack Village. The science was already a habit. The classroom came later.
+            </p>
+            <p className="mag-sub" style={{ color: GOLD }}>The ones who were not the athletes</p>
+            <p>
+              High school required community service. She taught recorder, tutored math, and ran
+              playground games so the children who were not the athletes still played. She taught
+              swimming at the local JCC, including some special-needs children, and filled in as
+              a ballet teacher. Inclusiveness, she says, is still how she teaches.
+            </p>
           </div>
-          <blockquote className="mag-pull" style={{ margin: "auto 8px 0", color: NAVY }}>
-            Give each child an opportunity to shine.
-          </blockquote>
+          <div className="mag-qframe" style={{ color: GOLD }}>
+            <p>Give each child an opportunity to shine.</p>
+          </div>
           <p className="mag-foot" style={{ color: GOLD }}>
             The Classroom Issue · 03
           </p>
@@ -369,23 +245,28 @@ export function JoanPages() {
           <h2 className="mag-h" style={{ color: NAVY }}>
             Blackboard and chalk. Then a computer she could not switch on.
           </h2>
-          <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17, lineHeight: 1.72 }}>
-            <p style={{ margin: "0 0 12px" }}>
-              She has been teaching since 1982. The first tools were a blackboard and chalk. The
-              first computer in her room arrived as a puzzle. She could not find the power switch.
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
+            <p>
+              She has been teaching since 1982. Forty-four years. The first tools were a
+              blackboard and chalk. The first computer in her room arrived as a puzzle. She could
+              not find the power switch. Bathroom chemistry before she had a lab. A yardstick in
+              the snow. Shoe-box robots. Then a SmartBoard. The subject did not change.
             </p>
-            <p style={{ margin: "0 0 12px" }}>
+            <p>
               At The Browning School in New York every classroom now has a SmartBoard and a
               supply of Chromebooks. She teaches across divisions, which means three platforms:
               Seesaw for the youngest, Google Classroom for the older lower-school students,
-              Canvas for the middle school.
+              Canvas for the middle school. Early on she used fewer labs. That changed. Students
+              hold a topic longer when they have to build a model, write a song, run an
+              experiment, or teach it to someone else.
             </p>
-            <p style={{ margin: 0 }}>
-              Early on she used fewer labs. That changed. Students hold a topic longer when they
-              have to build a model, write a song, run an experiment, or teach it to someone else.
+            <p>
               As a student teacher at P.S. 47 Junior High School for the Deaf, she watched
               seventh-, eighth-, and ninth-graders take an electronics unit and make a mini
-              amusement park with working rides. Hands-on stayed.
+              amusement park with working rides. Hands-on stayed. The Green Team put the school
+              on a board in Times Square the city could not miss. IAOTP named her Top Educator of
+              the Year; the announcement ran on the Nasdaq board. She talks about making room for
+              wonder as a job, not a slogan. The Classroom Issue is that room.
             </p>
           </div>
           <blockquote className="mag-pull" style={{ margin: "auto 8px 0", color: NAVY, fontSize: 24 }}>
@@ -777,7 +658,50 @@ export function JoanPages() {
         </div>
       </article>
 
-      {/* 16 PrimeCrest back — hard */}
+      <HouseAdSpread
+        variant="quote"
+        accent={GOLD}
+        kicker="The classroom, at length"
+        headlineLead="Bathroom chemistry before she had a lab."
+        headlineHero="Forty-four years."
+        tag="Classroom"
+        foot="The Classroom Issue"
+        photo={`${IMG}/conference.jpg`}
+        photoAlt=""
+        caption=""
+        quote="A yardstick in the snow. Shoe-box robots. Then a SmartBoard. The subject did not change."
+        sections={[
+          {
+            heading: "Browning",
+            body:
+              "Joan Gillman has taught science at the Browning School in New York for forty-four years. Blackboard, then a SmartBoard. The Classroom Issue is that room: bathroom chemistry before there was a lab, a yardstick in the snow, shoe-box robots, and a Green Team that put the school on a board in Times Square the city could not miss.",
+          },
+          {
+            heading: "Wonder, as work",
+            body:
+              "She talks about making room for wonder as a job, not a slogan. The award pages in this edition reproduce what was supplied. The method pages stay with how a class actually runs — the charge she still gives, the close that does not dress the years up as a farewell.",
+          },
+          {
+            heading: "This spread",
+            body:
+              "The long setting before the house back page. Navy and gold as the issue already uses them. The type is Bodoni for a reason: a school magazine that still believes a headline can be a sentence.",
+          },
+        ]}
+        continued={[
+          {
+            heading: "Times Square",
+            body:
+              "The Green Team reached a board the city walks past. PrimeCrest did not invent a second campaign. The photograph and the line sit together; the reader can decide what the board was for.",
+          },
+          {
+            heading: "How to read it",
+            body:
+              "Kansas City, then the classroom, then the record. The charge is the last word she wanted in type. Scan the QR for theprimecrest.com.",
+          },
+        ]}
+      />
+
+      {/* 18 PrimeCrest back — hard */}
       <article className="mag-page mag-bleed mag-navy" data-density="hard">
         <img className="mag-fill" src={`${IMG}/backcover.jpg`} alt="" />
         <div
@@ -796,8 +720,8 @@ export function JoanPages() {
               src="/brand/logo-primecrest.png"
               alt="PrimeCrest"
               style={{
-                width: "84%",
-                maxWidth: 600,
+                width: "92%",
+                maxWidth: 700,
                 height: "auto",
                 filter: "drop-shadow(0 10px 34px rgba(0,0,0,0.65))",
               }}
@@ -841,9 +765,9 @@ export function JoanPages() {
             }}
           >
             <img
-              src="/brand/barcode-primecrest.png"
+              src="/brand/qr-primecrest.png"
               alt="Scan to visit theprimecrest.com"
-              style={{ width: 210, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
+              style={{ width: 160, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
             />
             <p className="mag-imprint" style={{ color: CREAM_DIM }}>
               <strong style={{ color: CREAM }}>PrimeCrest</strong> · a product of Fortiora Group LLC

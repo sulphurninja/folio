@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { HouseAdSpread, IssueCover, IssueCredits, PhotoCopy } from "./IssueChrome";
+
 const IMG = "/issues/bethany";
 
 const CREAM = "#f4f0e8";
@@ -20,7 +22,8 @@ export const BETHANY_TOC = [
   { page: 11, label: "Innovation" },
   { page: 12, label: "The Vision" },
   { page: 13, label: "Advice" },
-  { page: 15, label: "PrimeCrest" },
+  { page: 15, label: "The House" },
+  { page: 17, label: "PrimeCrest" },
 ];
 
 const TIMELINE = [
@@ -38,222 +41,45 @@ const TIMELINE = [
 export function BethanyPages() {
   return (
     <>
-      {/* 01 Cover — hard. Small left masthead, steel ribbon, stacked title, portrait right. */}
-      <article className="mag-page mag-bleed" data-density="hard">
-        <img
-          className="mag-fill"
-          src={`${IMG}/coverart.jpg`}
-          alt="Nick Hill"
-          fetchPriority="high"
-          style={{ objectPosition: "78% center" }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 1,
-            background:
-              "linear-gradient(90deg, rgba(14,24,36,0.78) 0%, rgba(14,24,36,0.35) 40%, rgba(20,40,70,0.12) 100%)",
-          }}
-        />
-        <div className="mag-overlay" style={{ padding: "36px 40px 36px" }}>
-          <div>
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{
-                width: 260,
-                height: "auto",
-                filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.5))",
-              }}
-            />
-            <p
-              style={{
-                margin: "12px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              Vol. IV · The Purpose Issue · theprimecrest.com
-            </p>
-          </div>
+      <IssueCover
+        img={`${IMG}/coverart.jpg`}
+        alt="Nick Hill"
+        objectPosition="78% center"
+        vol="Vol. IV · The Purpose Issue · 2026"
+        accent={STEEL_LIGHT}
+        icon="house"
+        layout="split"
+        name="Nick Hill"
+        role="President / Chief Executive Officer"
+        place="Bethany Children's Home · Philadelphia, Pennsylvania"
+        teasers={[
+          ["The floor", "Twelve years from the cottage floor to the chair."],
+          ["The door", "The work is still the children at the door."],
+        ]}
+      />
 
-          <div style={{ marginTop: 28, maxWidth: 360 }}>
-            <span
-              className="mag-banner"
-              style={{
-                background: STEEL,
-                color: "#fff",
-                marginBottom: 16,
-                maxWidth: "100%",
-                whiteSpace: "normal",
-                lineHeight: 1.35,
-              }}
-            >
-              Making a difference in 2026
-            </span>
-            <h1
-              className="mag-display"
-              style={{
-                color: "#fff",
-                fontSize: 46,
-                lineHeight: 1.02,
-                textShadow: "0 8px 28px rgba(0,0,0,0.5)",
-              }}
-            >
-              Top 10
-              <br />
-              Unstoppable
-              <br />
-              Leaders
-              <em style={{ fontStyle: "italic", color: STEEL_LIGHT, fontWeight: 500 }}>.</em>
-            </h1>
-            <p
-              style={{
-                margin: "18px 0 0",
-                fontFamily: "var(--font-serif), Georgia, serif",
-                fontSize: 17,
-                fontStyle: "italic",
-                lineHeight: 1.45,
-                color: "rgba(244,240,232,0.9)",
-                maxWidth: 340,
-              }}
-            >
-              Twelve years from the cottage floor to the chair. The work is still the children
-              at the door.
+      <IssueCredits
+        accent={STEEL_LIGHT}
+        groundClass="mag-steel"
+        subject="Nick Hill — President / Chief Executive Officer, Bethany Children's Home, Philadelphia"
+        words="From the interviews of Nick Hill. Twelve years on the cottage floor, then the chair in July 2026."
+        volume="Vol. IV · The Purpose Issue"
+        note={
+          <>
+            <p>
+              The Purpose Issue is the house on the Philadelphia side: Bethany Children&apos;s
+              Home, and Nick Hill, who spent twelve years on the cottage floor before he took the
+              chair. The work did not change when the title did. Children still arrive at the
+              door. The staff still have to be the adults in the room.
             </p>
-          </div>
-
-          <div
-            style={{
-              marginTop: "auto",
-              paddingTop: 16,
-              borderTop: "1px solid rgba(244,240,232,0.38)",
-              maxWidth: 360,
-            }}
-          >
-            <p className="mag-display" style={{ fontSize: 34, color: CREAM }}>
-              Nick Hill
+            <p>
+              What follows is his account of that floor, the hard years, the figures the house
+              will stand on, and the counsel he gives anyone who wants the job: start at the
+              bottom. PrimeCrest printed it as he said it. The QR opens theprimecrest.com.
             </p>
-            <p
-              style={{
-                margin: "8px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 12,
-                fontWeight: 700,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              President / Chief Executive Officer
-            </p>
-            <p
-              style={{
-                margin: "6px 0 0",
-                fontFamily: "var(--font-serif), Georgia, serif",
-                fontSize: 16,
-                fontStyle: "italic",
-                color: "rgba(244,240,232,0.88)",
-              }}
-            >
-              Bethany Children&apos;s Home · Philadelphia, Pennsylvania
-            </p>
-          </div>
-        </div>
-        <img className="mag-qr" src="/brand/barcode-primecrest.png" alt="Scan to visit theprimecrest.com" />
-      </article>
-
-      {/* 02 Credits — left, steel-dark */}
-      <article className="mag-page mag-pad mag-steel">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ color: STEEL_LIGHT }}>
-            The imprint
-          </p>
-          <h2
-            className="mag-h"
-            style={{
-              color: CREAM,
-              fontStyle: "italic",
-              fontWeight: 500,
-              fontSize: 58,
-              marginBottom: 28,
-            }}
-          >
-            Credits.
-          </h2>
-          <ul
-            className="mag-credits-list"
-            style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}
-          >
-            <li>
-              <b>Magazine</b>
-              <span>PrimeCrest · theprimecrest.com</span>
-            </li>
-            <li>
-              <b>Published by</b>
-              <span>Fortiora Group LLC</span>
-            </li>
-            <li>
-              <b>Editorial &amp; Design</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b>Digital Production</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b>Featured Subject</b>
-              <span>Nick Hill</span>
-            </li>
-            <li>
-              <b>Words</b>
-              <span>From the interviews of Nick Hill</span>
-            </li>
-            <li>
-              <b>Issue</b>
-              <span>Vol. IV · The Purpose Issue</span>
-            </li>
-          </ul>
-          <div
-            style={{
-              marginTop: "auto",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 14,
-              textAlign: "center",
-            }}
-          >
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{ width: 280, height: "auto" }}
-            />
-            <p className="mag-imprint">
-              <strong>PrimeCrest</strong> · a product of Fortiora Group LLC
-              <br />
-              30 N Gould St Ste R, Sheridan, WY 82801, United States
-              <br />
-              Hello@thefortiora.com · <strong>theprimecrest.com</strong>
-            </p>
-            <img
-              src="/brand/barcode-primecrest.png"
-              alt="Scan to visit theprimecrest.com"
-              style={{ width: 168, height: "auto" }}
-            />
-            <p className="mag-imprint" style={{ fontSize: 11, color: "rgba(244,240,232,0.4)", maxWidth: 520 }}>
-              © 2026 Fortiora Group LLC. All rights reserved. No part of this publication may be
-              reproduced or transmitted in any form without prior written permission from the
-              publisher.
-            </p>
-          </div>
-        </div>
-      </article>
+          </>
+        }
+      />
 
       {/* 03 Subject opener — right. Full-bleed left half, text on the right. */}
       <article className="mag-page">
@@ -302,18 +128,24 @@ export function BethanyPages() {
           >
             Cottage Support Staff to President and Chief Executive Officer.
           </p>
-          <p className="mag-folio" style={{ fontSize: 16, lineHeight: 1.58 }}>
+          <p className="mag-folio">
             Nick Hill began at Bethany Children&apos;s Home on the cottage floor. Direct work
-            with youth. Relationships. Consistency. A room that felt safe.
+            with youth. Relationships. Consistency. A room that felt safe. Twelve years inside
+            one house before the board moved him to the chair. Cottage Support Staff is the
+            first line on the file. President and Chief Executive Officer is the last.
           </p>
-          <p className="mag-folio" style={{ fontSize: 16, lineHeight: 1.58 }}>
+          <p className="mag-folio">
             He moved through leadership posts and served as Deputy CEO and Chief Human
             Resources Officer. In July 2026 the board named him President and Chief
-            Executive Officer.
+            Executive Officer. Circumstances should never determine potential. A title does
+            not make someone a leader. People. Accountability. Purpose — what he asks when
+            the week turns hard.
           </p>
-          <p className="mag-folio" style={{ fontSize: 16, lineHeight: 1.58, marginBottom: 0 }}>
+          <p className="mag-folio">
             The work now is to protect the mission, hold the teams, keep programs honest,
-            and make sure each decision lands on a young person.
+            and make sure each decision lands on a young person. The children still arrive.
+            The house still has to be ready. The title changed. The floor did not. This
+            issue stays inside one institution. No invented satellite campus.
           </p>
           <blockquote
             className="mag-quote"
@@ -388,7 +220,8 @@ export function BethanyPages() {
               flex: 1,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-evenly",
+              justifyContent: "flex-start",
+              gap: 8,
               borderLeft: `2px solid ${STEEL}`,
               paddingLeft: 28,
               margin: "8px 0 0 6px",
@@ -511,9 +344,21 @@ export function BethanyPages() {
           style={{ objectPosition: "center 18%" }}
         />
         <div className="mag-scrim-steel" style={{ position: "absolute", inset: 0, zIndex: 1 }} />
-        <div className="mag-caption-bar">
-          Nick Hill · President &amp; Chief Executive Officer, Bethany Children&apos;s Home
-        </div>
+        <PhotoCopy kicker="The floor" title="Cottage Support Staff to the chair.">
+          <p>
+            Nick Hill began at Bethany Children&apos;s Home on the cottage floor. Direct work with
+            youth. Relationships. Consistency. A room that felt safe. Twelve years inside one
+            house. He moved through leadership posts and served as Deputy CEO and Chief Human
+            Resources Officer. In July 2026 the board named him President and Chief Executive
+            Officer.
+          </p>
+          <p>
+            Circumstances should never determine potential — his line. A title does not make
+            someone a leader. The work now is to protect the mission, hold the teams, keep
+            programs honest, and make sure each decision lands on a young person. The children
+            still arrive. The house still has to be ready. The title changed. The floor did not.
+          </p>
+        </PhotoCopy>
       </article>
 
       {/* 08 Leadership philosophy — left, quote + body */}
@@ -584,7 +429,8 @@ export function BethanyPages() {
               flex: 1,
               display: "flex",
               flexDirection: "column",
-              justifyContent: "space-evenly",
+              justifyContent: "flex-start",
+              gap: 8,
             }}
           >
             {[
@@ -654,7 +500,19 @@ export function BethanyPages() {
           style={{ objectPosition: "center 20%" }}
         />
         <div className="mag-scrim-steel" style={{ position: "absolute", inset: 0, zIndex: 1 }} />
-        <div className="mag-caption-bar">Philadelphia · Bethany Children&apos;s Home</div>
+        <PhotoCopy kicker="The house" title="Philadelphia · the door is still the work.">
+          <p>
+            The Purpose Issue stays inside one institution. Cottage, staff, the door. No invented
+            satellite campus. The photographs are the house and the man who still talks about the
+            floor when he talks about the job. Advice pages in this edition are operational, not
+            a keynote. How a house holds when the news cycle moves on.
+          </p>
+          <p>
+            July 2026 is the chair. The years under it are not. PrimeCrest printed the chronology
+            as he gave it — cottage first, then the office — and left the moral to the reader.
+            People. Accountability. Purpose. What he asks of a leader when the week turns hard.
+          </p>
+        </PhotoCopy>
       </article>
 
       {/* 11 Impact statistics — right, 2×2 steel figures on cream */}
@@ -928,7 +786,50 @@ export function BethanyPages() {
         </div>
       </article>
 
-      {/* 16 PrimeCrest back — hard, collage + barcode */}
+      <HouseAdSpread
+        variant="quote"
+        accent={STEEL_LIGHT}
+        kicker="The house, at length"
+        headlineLead="Twelve years on the cottage floor."
+        headlineHero="Then the chair."
+        tag="Purpose"
+        foot="The Purpose Issue"
+        photo={`${IMG}/portrait2.jpg`}
+        photoAlt=""
+        caption=""
+        quote="The work is still the children at the door. The title changed. The floor did not."
+        sections={[
+          {
+            heading: "The floor",
+            body:
+              "Nick Hill came up inside Bethany Children's Home on the Philadelphia side — twelve years on the cottage floor before the appointment as President and Chief Executive Officer. The date he gives for the chair is July 2026. The work he describes is the same work: the children at the door, not a rebrand.",
+          },
+          {
+            heading: "One house",
+            body:
+              "The Purpose Issue stays inside one institution. Cottage, staff, the door. No invented satellite campus. The photographs are the house and the man who still talks about the floor when he talks about the job.",
+          },
+          {
+            heading: "What follows",
+            body:
+              "Advice pages in this edition are operational, not a keynote. How a house holds when the news cycle moves on. How a title sits on a person who learned the place from the inside.",
+          },
+        ]}
+        continued={[
+          {
+            heading: "July 2026",
+            body:
+              "The chair is new. The years under it are not. PrimeCrest printed the chronology as he gave it — cottage first, then the office — and left the moral to the reader.",
+          },
+          {
+            heading: "The door",
+            body:
+              "Every spread in this issue returns to the same fact. The children still arrive. The house still has to be ready. That is the whole argument.",
+          },
+        ]}
+      />
+
+      {/* 18 PrimeCrest back — hard, collage + QR */}
       <article className="mag-page mag-bleed mag-steel" data-density="hard">
         <img className="mag-fill" src={`${IMG}/backcover.jpg`} alt="" />
         <div
@@ -955,8 +856,8 @@ export function BethanyPages() {
               src="/brand/logo-primecrest.png"
               alt="PrimeCrest"
               style={{
-                width: "84%",
-                maxWidth: 600,
+                width: "92%",
+                maxWidth: 700,
                 height: "auto",
                 filter: "drop-shadow(0 10px 34px rgba(0,0,0,0.65))",
               }}
@@ -1000,9 +901,9 @@ export function BethanyPages() {
             }}
           >
             <img
-              src="/brand/barcode-primecrest.png"
+              src="/brand/qr-primecrest.png"
               alt="Scan to visit theprimecrest.com"
-              style={{ width: 210, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
+              style={{ width: 160, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
             />
             <p className="mag-imprint">
               <strong>PrimeCrest</strong> · a product of Fortiora Group LLC

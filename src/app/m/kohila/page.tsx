@@ -18,7 +18,7 @@ export default function KohilaIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The Readiness Issue" toc={KOHILA_TOC}>
+      <HtmlFlipbook title="PrimeCrest — The Readiness Issue" toc={KOHILA_TOC} tone="kohila">
         <KohilaPages />
       </HtmlFlipbook>
     </>

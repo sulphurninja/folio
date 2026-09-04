@@ -40,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# proofs and scratch
+/.proof/
+__pycache__/
+*.pyc
+scripts/_audit/
+public/issues/*/_extract/

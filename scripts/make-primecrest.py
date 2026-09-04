@@ -2,7 +2,8 @@
 
 Outputs:
   public/brand/logo-primecrest.png      transparent lockup (crest + wordmark, cream, red period)
-  public/brand/barcode-primecrest.png   decorative Code128 + scannable QR -> theprimecrest.com
+  public/brand/qr-primecrest.png        scannable QR only -> theprimecrest.com
+  public/brand/barcode-primecrest.png   (legacy; no longer used in issues)
   public/issues/espey/backcover.jpg     Insights-style rotated cover collage, ink wash
 """
 import os
@@ -129,6 +130,39 @@ def make_barcode():
     print("saved:", out, plate.size)
 
 
+def make_qr():
+    import qrcode
+
+    qr = qrcode.QRCode(border=2, box_size=14, error_correction=qrcode.constants.ERROR_CORRECT_M)
+    qr.add_data("https://theprimecrest.com")
+    qr.make(fit=True)
+    qr_img = qr.make_image(fill_color="black", back_color="white").convert("RGB")
+
+    qr_side = 360
+    qr_img = qr_img.resize((qr_side, qr_side), Image.NEAREST)
+
+    label_f = font(INTER, 22, 700)
+    label = "THEPRIMECREST.COM"
+    pad = 22
+    gap = 16
+    track = label_f.size * 0.16
+    lw = sum(label_f.getlength(c) for c in label) + track * (len(label) - 1)
+    w = pad * 2 + qr_side
+    h = pad + qr_side + gap + 32 + pad
+    plate = Image.new("RGB", (w, h), "white")
+    plate.paste(qr_img, (pad, pad))
+    d = ImageDraw.Draw(plate)
+    x = (w - lw) / 2
+    y = pad + qr_side + gap
+    for ch in label:
+        d.text((x, y), ch, font=label_f, fill=(10, 10, 10))
+        x += label_f.getlength(ch) + track
+
+    out = os.path.join(BRAND, "qr-primecrest.png")
+    plate.save(out)
+    print("saved:", out, plate.size)
+
+
 def make_backcover():
     src_dir = os.path.join(ROOT, "public", "issues", "espey")
     names = ["cover.jpg", "wood.jpg", "expo.jpg", "gaze.jpg", "hands.jpg"]
@@ -235,6 +269,7 @@ def make_coverart():
 
 if __name__ == "__main__":
     make_logo()
+    make_qr()
     make_barcode()
     make_backcover()
     make_coverart()

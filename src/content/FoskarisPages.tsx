@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { HouseAdSpread, IssueCover, IssueCredits, PhotoCopy } from "./IssueChrome";
+
 const IMG = "/issues/foskaris";
 
 const CREAM = "#f6f0e6";
@@ -18,229 +20,85 @@ export const FOSKARIS_TOC = [
   { page: 11, label: "Statement" },
   { page: 12, label: "The Horizon" },
   { page: 14, label: "Unstoppable" },
-  { page: 15, label: "PrimeCrest" },
+  { page: 15, label: "The Room" },
+  { page: 17, label: "PrimeCrest" },
 ];
 
 export function FoskarisPages() {
   return (
     <>
-      {/* 01 Cover — portrait top 60%, charcoal slab bottom 40% */}
-      <article className="mag-page mag-bleed mag-fosk-cover" data-density="hard">
-        <img
-          className="mag-fill"
-          src={`${IMG}/coverart.jpg`}
-          alt="Penny Foskaris"
-          fetchPriority="high"
-        />
-        <div className="mag-fosk-slab">
-          <div className="mag-fosk-slab-main">
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{ width: "72%", maxWidth: 420, height: "auto" }}
-            />
-            <p
-              style={{
-                margin: "10px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 11,
-                fontWeight: 600,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              Vol. VIII · The Vitality Issue · theprimecrest.com
-            </p>
-            <p
-              style={{
-                margin: "16px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 11.5,
-                fontWeight: 700,
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                color: MAGENTA,
-              }}
-            >
-              Making a difference in 2026
-            </p>
-            <h1
-              className="mag-display"
-              style={{
-                marginTop: 8,
-                color: "#fff",
-                fontSize: 34,
-                lineHeight: 1.05,
-              }}
-            >
-              Top 10 Unstoppable
-              <br />
-              Business Leaders<span style={{ color: MAGENTA }}>.</span>
-            </h1>
-            <div
-              style={{
-                marginTop: "auto",
-                paddingTop: 12,
-                borderTop: "1px solid rgba(246,240,230,0.22)",
-              }}
-            >
-              <p className="mag-display" style={{ fontSize: 30, color: CREAM }}>
-                Penny Foskaris
-              </p>
-              <p
-                style={{
-                  margin: "6px 0 0",
-                  fontFamily: "var(--font-sans), system-ui, sans-serif",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  letterSpacing: "0.16em",
-                  textTransform: "uppercase",
-                  color: CREAM,
-                }}
-              >
-                Founder
-              </p>
-              <p
-                style={{
-                  margin: "5px 0 0",
-                  fontFamily: "var(--font-serif), Georgia, serif",
-                  fontSize: 15,
-                  fontStyle: "italic",
-                  color: "rgba(246,240,230,0.86)",
-                }}
-              >
-                Red Light Pro Devices &amp; Foskaris Wellness
-                <br />
-                Anaheim Hills, California · United States
-              </p>
-            </div>
-          </div>
-          <div className="mag-fosk-slab-bar">
-            <img
-              className="mag-qr"
-              src="/brand/barcode-primecrest.png"
-              alt="Scan to visit theprimecrest.com"
-              style={{ position: "static", width: 148, boxShadow: "0 8px 20px rgba(0,0,0,0.45)" }}
-            />
-          </div>
-        </div>
-      </article>
+      <IssueCover
+        img={`${IMG}/coverart.jpg`}
+        alt="Penny Foskaris"
+        objectPosition="top center"
+        vol="Vol. VIII · The Vitality Issue · 2026"
+        accent={MAGENTA}
+        icon="ray"
+        layout="hot"
+        name="Penny Foskaris"
+        role="Founder"
+        place="Red Light Pro Devices & Foskaris Wellness · Anaheim Hills, California"
+        teasers={[
+          ["The room", "The wellness center she needed and could not find."],
+          ["Home use", "The manufacturer said no. She found other engineers."],
+        ]}
+      />
 
-      {/* 02 Credits */}
-      <article className="mag-page mag-pad mag-dark mag-charcoal">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ color: MAGENTA }}>
-            The imprint
-          </p>
-          <h2
-            className="mag-h"
-            style={{ color: CREAM, fontStyle: "italic", fontWeight: 500, fontSize: 58, marginBottom: 28 }}
-          >
-            Credits.
-          </h2>
-          <ul
-            className="mag-credits-list"
-            style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "space-evenly" }}
-          >
-            <li>
-              <b>Magazine</b>
-              <span>PrimeCrest · theprimecrest.com</span>
-            </li>
-            <li>
-              <b>Published by</b>
-              <span>Fortiora Group LLC</span>
-            </li>
-            <li>
-              <b>Editorial &amp; Design</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b>Digital Production</b>
-              <span>Fortiora Studio</span>
-            </li>
-            <li>
-              <b>Featured Subject</b>
-              <span>Penny Foskaris</span>
-            </li>
-            <li>
-              <b>Words</b>
-              <span>From the interviews of Penny Foskaris</span>
-            </li>
-            <li>
-              <b>Issue</b>
-              <span>Vol. VIII · The Vitality Issue</span>
-            </li>
-          </ul>
-          <div
-            style={{
-              marginTop: "auto",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 14,
-              textAlign: "center",
-            }}
-          >
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{ width: 280, height: "auto" }}
-            />
-            <p className="mag-imprint">
-              <strong>PrimeCrest</strong> · a product of Fortiora Group LLC
-              <br />
-              30 N Gould St Ste R, Sheridan, WY 82801, United States
-              <br />
-              Hello@thefortiora.com · <strong>theprimecrest.com</strong>
+      <IssueCredits
+        accent={MAGENTA}
+        groundClass="mag-dark mag-charcoal"
+        subject="Penny Foskaris — Founder, Red Light Pro Devices & Foskaris Wellness, Anaheim Hills, California"
+        words="From the interviews of Penny Foskaris. The library years, the unanswered tests, the clinic machine, and the home unit the first manufacturer would not build."
+        volume="Vol. VIII · The Vitality Issue"
+        note={
+          <>
+            <p>
+              The Vitality Issue is Penny Foskaris: a teenager in a library because an aunt had
+              Type 1 diabetes and another relative had heart disease; then two and a half years
+              of dizzy spells, fatigue, and abdominal pain that no doctor could name. A holistic
+              center. Within a week she felt better. She went back to school and opened the room
+              she had needed.
             </p>
-            <img
-              src="/brand/barcode-primecrest.png"
-              alt="Scan to visit theprimecrest.com"
-              style={{ width: 168, height: "auto" }}
-            />
-            <p className="mag-imprint" style={{ fontSize: 11, color: "rgba(246,240,230,0.42)", maxWidth: 520 }}>
-              © 2026 Fortiora Group LLC. All rights reserved. No part of this publication may be
-              reproduced or transmitted in any form without prior written permission from the
-              publisher.
+            <p>
+              More than five thousand people have come through that method. Clients asked for the
+              clinic light at home. The company behind the roughly $28,000 system said no. She
+              found other engineers. If she would not use it in her own center, it would not
+              carry her name. That is the company, and this is the issue.
             </p>
-          </div>
-        </div>
-      </article>
+          </>
+        }
+      />
 
-      {/* 03 Opener */}
+      {/* 03 Opener — dense two-col */}
       <article className="mag-page mag-pad mag-fosk">
         <div className="mag-body mag-fill-page">
-          <img
-            className="mag-fosk-inpage"
-            src={`${IMG}/produce.jpg`}
-            alt="Penny Foskaris preparing food"
-            style={{ height: 292, objectPosition: "center 40%", marginBottom: 18 }}
-          />
-          <p className="mag-kicker" style={{ color: MAGENTA, marginBottom: 10 }}>
+          <p className="mag-kicker" style={{ color: MAGENTA }}>
             The Opening
           </p>
-          <h2 className="mag-h mag-h-sm" style={{ marginBottom: 14 }}>
-            The room she could not find.
-          </h2>
-          <p className="mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.68 }}>
-            Penny Foskaris was a teenager in a library because an aunt had Type 1 diabetes and
-            another relative had heart disease. She wanted to know if food could help. She did
-            not yet know those hours would become a life.
-          </p>
-          <p className="mag-folio" style={{ fontSize: 18, lineHeight: 1.68 }}>
-            In her mid-thirties the question turned on her. More than two and a half years of
-            dizzy spells, chronic fatigue, continuous abdominal pain. Doctor to doctor. Test
-            after test. No one could say what was wrong. It was expensive. It was exhausting.
-          </p>
-          <p className="mag-folio" style={{ fontSize: 18, lineHeight: 1.68, marginBottom: 0 }}>
-            A holistic wellness center. Within a week she began to feel better. She went back to
-            school. She opened Foskaris Wellness — the kind of place she had needed and could not
-            find. People were not rushed out the door. She looked at the whole person.
-          </p>
-          <blockquote className="mag-pull" style={{ margin: "auto 8px 0", color: CHARCOAL, fontSize: 28 }}>
-            Reveal. Restore. Reverse.
-          </blockquote>
+          <h2 className="mag-h mag-h-sm">The room she could not find.</h2>
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
+            <p>
+              Penny Foskaris was a teenager in a library because an aunt had Type 1 diabetes and
+              another relative had heart disease. She wanted to know if food could help. She did
+              not yet know those hours would become a life.
+            </p>
+            <p className="mag-sub" style={{ color: MAGENTA }}>Two and a half years</p>
+            <p>
+              In her mid-thirties the question turned on her. Dizzy spells, chronic fatigue,
+              continuous abdominal pain. Doctor to doctor. Test after test. No one could say what
+              was wrong. It was expensive. It was exhausting.
+            </p>
+            <p className="mag-sub" style={{ color: MAGENTA }}>The room</p>
+            <p>
+              A holistic wellness center. Within a week she began to feel better. She went back to
+              school. She opened Foskaris Wellness — the kind of place she had needed and could not
+              find. People were not rushed out the door. She looked at the whole person.
+            </p>
+          </div>
+          <div className="mag-qframe" style={{ color: MAGENTA }}>
+            <p>Reveal. Restore. Reverse.</p>
+          </div>
+          <p className="mag-foot">The Vitality Issue · 03</p>
         </div>
       </article>
 
@@ -252,9 +110,20 @@ export function FoskarisPages() {
           alt="Penny Foskaris in the kitchen"
           style={{ objectPosition: "center 22%" }}
         />
-        <div className="mag-caption-bar">
-          Penny Foskaris · Foskaris Wellness · Anaheim Hills, California
-        </div>
+        <PhotoCopy kicker="The kitchen" title="The room she needed and could not find.">
+          <p>
+            Penny Foskaris was a teenager in a library because an aunt had unanswered tests. Years
+            later she wanted a wellness room she could not find, then a clinic machine, then a
+            unit a person could take home. Foskaris Wellness and Red Light Pro Devices, Anaheim
+            Hills, California. More than five thousand people have come through that method.
+          </p>
+          <p>
+            She approaches health like a researcher. A symptom is often the end result. Sleep
+            first. Food. Whether a person is eating enough. Medications, stress, body composition,
+            visceral fat. A conversation. A plan a person can actually follow. Then another layer
+            if the body asks for it. If she would not use it, it does not carry her name.
+          </p>
+        </PhotoCopy>
       </article>
 
       {/* 05 Contents — magenta numbered 01–08 */}
@@ -269,42 +138,42 @@ export function FoskarisPages() {
           <ol className="mag-fosk-toc">
             <li>
               <b>01</b>
-              <span>The Opening</span>
+              <span>The Opening<small>The library, then two and a half years of tests nobody could read. She opened the room she could not find.</small></span>
               <em>03</em>
             </li>
             <li>
               <b>02</b>
-              <span>Five Thousand</span>
+              <span>Five Thousand<small>Sleep, food, stress, visceral fat. A conversation first. Then another layer if the body asks.</small></span>
               <em>06</em>
             </li>
             <li>
               <b>03</b>
-              <span>The Sentence</span>
+              <span>The Sentence<small>Longevity is not simply how many years you live. If you cannot use them, that is not living.</small></span>
               <em>07</em>
             </li>
             <li>
               <b>04</b>
-              <span>Manifesto</span>
+              <span>Manifesto<small>Reveal. Restore. Reverse.</small></span>
               <em>08</em>
             </li>
             <li>
               <b>05</b>
-              <span>Home Use</span>
+              <span>Home Use<small>The $28,000 clinic machine. A dozen home devices that did nothing. Then engineers who would build one she would use.</small></span>
               <em>09</em>
             </li>
             <li>
               <b>06</b>
-              <span>The Measure</span>
+              <span>The Measure<small>Not a ledger. A client who flew in twice a month. Remote work, and a rent-to-buy month in Anaheim Hills.</small></span>
               <em>11</em>
             </li>
             <li>
               <b>07</b>
-              <span>The Horizon</span>
+              <span>The Horizon<small>Photobiomodulation still early. Athletic rooms, home recovery, a hub people can reach from anywhere.</small></span>
               <em>13</em>
             </li>
             <li>
               <b>08</b>
-              <span>Unstoppable</span>
+              <span>Unstoppable<small>The family restaurant. You will be married to it. A plan for year one and year five. Start with why.</small></span>
               <em>15</em>
             </li>
           </ol>
@@ -326,7 +195,7 @@ export function FoskarisPages() {
           <h2 className="mag-h mag-h-sm" style={{ marginBottom: 12 }}>
             She looks at the whole picture.
           </h2>
-          <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.72 }}>
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
             <p style={{ margin: "0 0 16px" }}>
               She approaches health like a researcher. A symptom is often the end result. Rather
               than chase it, she asks for a history — sleep, food, whether a person is eating
@@ -427,7 +296,7 @@ export function FoskarisPages() {
           <h2 className="mag-h mag-h-sm" style={{ marginBottom: 12 }}>
             The manufacturer said no.
           </h2>
-          <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.72 }}>
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
             <p style={{ margin: "0 0 16px" }}>
               Red Light Pro Devices was not a second brand in search of a market. Clients had
               used the professional system at Foskaris Wellness for about three years. They asked
@@ -461,9 +330,21 @@ export function FoskarisPages() {
           alt="Penny Foskaris"
           style={{ objectPosition: "center 18%" }}
         />
-        <div className="mag-caption-bar">
-          Founder · Red Light Pro Devices &amp; Foskaris Wellness
-        </div>
+        <PhotoCopy kicker="Home use" title="The manufacturer said no.">
+          <p>
+            Clients had used the professional system at Foskaris Wellness for about three years.
+            They asked for something they could take home. She tested about a dozen devices. Wrap
+            one around a knee and little happened. The clinic machine was another story. The
+            company behind the roughly $28,000 system was not interested in a smaller unit.
+          </p>
+          <p>
+            She found engineers at another red-light firm. Months of LED layouts and power. The
+            test was simple. If she would not use it in her own center, it would not carry her
+            name. A rent-to-buy month in Anaheim Hills lets a person try the light at home and
+            put the rental toward a purchase. She wants that model in offices across the United
+            States. Same purpose as the wellness center: take down the barrier.
+          </p>
+        </PhotoCopy>
       </article>
 
       {/* 11 Feature */}
@@ -481,7 +362,7 @@ export function FoskarisPages() {
           <h2 className="mag-h mag-h-sm" style={{ marginBottom: 12 }}>
             Not a milestone. A place to be heard.
           </h2>
-          <div className="mag-cols mag-folio mag-dropcap" style={{ fontSize: 17.5, lineHeight: 1.72 }}>
+          <div className="mag-cols mag-folio mag-dropcap mag-dense">
             <p style={{ margin: "0 0 16px" }}>
               What she is most proud of is not a figure on a ledger. It is a room people can
               enter when they do not feel like themselves, tell the story, and leave with a
@@ -631,7 +512,39 @@ export function FoskarisPages() {
         </div>
       </article>
 
-      {/* 16 PrimeCrest back */}
+      <HouseAdSpread
+        variant="visual"
+        accent={MAGENTA}
+        kicker="House spread"
+        headlineLead="The wellness center she needed"
+        headlineHero="And could not find"
+        tag="Vitality"
+        foot="The Vitality Issue"
+        photo={`${IMG}/kitchen.jpg`}
+        photoAlt="The Foskaris kitchen"
+        objectPosition="center 40%"
+        caption="Home use · the unit the first manufacturer would not build"
+        quote="The manufacturer said no. She found other engineers."
+        sections={[
+          {
+            heading: "The library",
+            body:
+              "Penny Foskaris was a teenager in a library because an aunt had unanswered tests. The Vitality Issue starts there — not in a studio. Years later she wanted a wellness room she could not find, then a clinic machine, then a unit a person could take home. Red Light Pro Devices and Foskaris Wellness, Anaheim Hills, California.",
+          },
+          {
+            heading: "Home use",
+            body:
+              "The first manufacturer would not build the home unit. She found other engineers. The manifesto pages in this edition are her list, not a brand deck rewritten for the flipbook. More than five thousand people through that method is a number she gave; we printed it.",
+          },
+          {
+            heading: "This spread",
+            body:
+              "Dark left, the kitchen right. The type is tight on purpose — a different system from the whisky issue and the school issue. Scan the QR for theprimecrest.com.",
+          },
+        ]}
+      />
+
+      {/* 18 PrimeCrest back */}
       <article className="mag-page mag-bleed mag-dark mag-charcoal" data-density="hard">
         <img className="mag-fill" src={`${IMG}/backcover.jpg`} alt="" />
         <div
@@ -650,8 +563,8 @@ export function FoskarisPages() {
               src="/brand/logo-primecrest.png"
               alt="PrimeCrest"
               style={{
-                width: "84%",
-                maxWidth: 600,
+                width: "92%",
+                maxWidth: 700,
                 height: "auto",
                 filter: "drop-shadow(0 10px 34px rgba(0,0,0,0.65))",
               }}
@@ -695,9 +608,9 @@ export function FoskarisPages() {
             }}
           >
             <img
-              src="/brand/barcode-primecrest.png"
+              src="/brand/qr-primecrest.png"
               alt="Scan to visit theprimecrest.com"
-              style={{ width: 210, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
+              style={{ width: 160, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
             />
             <p className="mag-imprint">
               <strong>PrimeCrest</strong> · a product of Fortiora Group LLC

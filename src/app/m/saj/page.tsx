@@ -18,7 +18,7 @@ export default function SajIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="Master of the Deal" toc={SAJ_TOC}>
+      <HtmlFlipbook title="Master of the Deal" toc={SAJ_TOC} tone="saj">
         <SajPages />
       </HtmlFlipbook>
     </>

@@ -18,7 +18,7 @@ export default function FoskarisIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The Vitality Issue" toc={FOSKARIS_TOC}>
+      <HtmlFlipbook title="PrimeCrest — The Vitality Issue" toc={FOSKARIS_TOC} tone="foskaris">
         <FoskarisPages />
       </HtmlFlipbook>
     </>

@@ -18,7 +18,7 @@ export default function JudyIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The Wisdom Issue" toc={JUDY_TOC}>
+      <HtmlFlipbook title="PrimeCrest — The Wisdom Issue" toc={JUDY_TOC} tone="judy">
         <JudyPages />
       </HtmlFlipbook>
     </>
