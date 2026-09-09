@@ -330,8 +330,14 @@ export function VineetPages() {
 
         <div className="pc-cover-ui">
           <header className="pc-mast">
-            <div className="pc-mast-mark">
-              <img src="/brand/logo-primecrest.png" alt="PrimeCrest" />
+            <div className="pc-mast-word">
+              <svg className="pc-mast-crest" viewBox="0 0 48 42" aria-hidden>
+                <path d="M24 1.2 46 20.4h-7.2L24 8.6 9.2 20.4H2Z" fill="#f4efe6" />
+                <path d="M24 15.2 46 34.4h-7.2L24 22.6 9.2 34.4H2Z" fill="#c39a4b" />
+              </svg>
+              <b>
+                PRIMECREST<span>.</span>
+              </b>
             </div>
             <p className="pc-mast-tag">Where Vision Meets Voice</p>
             <div className="pc-mast-hair" />
@@ -339,7 +345,7 @@ export function VineetPages() {
 
           <div className="pc-cover-date">
             <p>September</p>
-            <p>Vol. IX · No. 09</p>
+            <p>Vol. I · No. 01</p>
             <p>2026</p>
           </div>
 

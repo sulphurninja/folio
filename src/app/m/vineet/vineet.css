@@ -585,7 +585,7 @@
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(180deg, rgba(12, 18, 20, 0.82) 0%, rgba(12, 18, 20, 0.52) 14%, rgba(12, 18, 20, 0) 26%),
+    linear-gradient(180deg, rgba(12, 18, 20, 0.88) 0%, rgba(12, 18, 20, 0.48) 16%, rgba(12, 18, 20, 0) 28%),
     linear-gradient(0deg, rgba(12, 18, 20, 0.86) 0%, rgba(12, 18, 20, 0.62) 16%, rgba(12, 18, 20, 0.18) 32%, rgba(12, 18, 20, 0) 44%),
     linear-gradient(90deg, rgba(12, 18, 20, 0.62) 0%, rgba(12, 18, 20, 0.22) 18%, rgba(12, 18, 20, 0) 34%),
     linear-gradient(270deg, rgba(12, 18, 20, 0.68) 0%, rgba(12, 18, 20, 0.28) 20%, rgba(12, 18, 20, 0) 38%),
@@ -602,9 +602,9 @@
   position: absolute;
 }
 
-/* Masthead lockup — same float as before, mark sits on its own plate. */
+/* Masthead — type lockup, not a boxed PNG. */
 .pc-mast {
-  top: 32px;
+  top: 28px;
   left: 0;
   right: 0;
   display: flex;
@@ -612,54 +612,65 @@
   align-items: center;
 }
 
-.pc-mast-mark {
-  padding: 16px 28px 12px;
-  background: rgba(6, 10, 11, 0.82);
-  border: 1px solid rgba(229, 201, 140, 0.45);
-  box-shadow:
-    0 0 0 1px rgba(0, 0, 0, 0.45),
-    0 14px 36px rgba(0, 0, 0, 0.55);
+.pc-mast-word {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.78));
 }
 
-.pc-mast img {
-  width: 560px;
-  height: auto;
-  filter:
-    drop-shadow(0 0 0.6px #fff)
-    drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7));
+.pc-mast-crest {
+  width: 52px;
+  height: 46px;
+  flex: 0 0 auto;
+}
+
+.pc-mast-word b {
+  margin: 0;
+  font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 0.88;
+  letter-spacing: 0.04em;
+  color: #f7f2e8;
+}
+
+.pc-mast-word b span {
+  color: #c43a32;
+  margin-left: 1px;
 }
 
 .pc-mast-tag {
-  margin: 6px 0 0;
+  margin: 8px 0 0;
   font-family: var(--pc-sans);
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.42em;
-  text-indent: 0.42em;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.46em;
+  text-indent: 0.46em;
   text-transform: uppercase;
-  color: rgba(242, 237, 227, 0.78);
+  color: rgba(242, 237, 227, 0.82);
 }
 
 .pc-mast-hair {
-  margin: 12px 0 0;
-  width: 300px;
+  margin: 11px 0 0;
+  width: 340px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(195, 154, 75, 0.85), transparent);
+  background: linear-gradient(90deg, transparent, rgba(195, 154, 75, 0.9), transparent);
 }
 
 /* Dateline rail, top-left */
 .pc-cover-date {
-  top: 196px;
+  top: 178px;
   left: 46px;
-  width: 168px;
+  width: 214px;
   border-top: 2px solid var(--pc-brass);
-  padding-top: 10px;
+  padding-top: 12px;
 }
 
 .pc-cover-date p {
-  margin: 0 0 3px;
+  margin: 0 0 4px;
   font-family: var(--pc-sans);
-  font-size: 12.5px;
+  font-size: 16.5px;
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -673,16 +684,16 @@
 
 /* Cover teasers */
 .pc-teaser {
-  width: 186px;
+  width: 248px;
 }
 
 .pc-teaser-a {
-  top: 306px;
+  top: 308px;
   left: 46px;
 }
 
 .pc-teaser-b {
-  top: 726px;
+  top: 748px;
   right: 46px;
   text-align: right;
 }
@@ -690,7 +701,7 @@
 .pc-teaser h3 {
   margin: 0;
   font-family: var(--pc-serif);
-  font-size: 17px;
+  font-size: 23px;
   font-weight: 600;
   font-style: italic;
   line-height: 1.16;
@@ -702,13 +713,13 @@
   border: 0;
   height: 1px;
   background: rgba(242, 237, 227, 0.42);
-  margin: 9px 0 9px;
+  margin: 11px 0 11px;
 }
 
 .pc-teaser p {
   margin: 0;
   font-family: var(--pc-sans);
-  font-size: 12.5px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 1.35;
   color: rgba(242, 237, 227, 0.92);
@@ -716,25 +727,25 @@
 
 /* Series badge, right rail */
 .pc-cover-badge {
-  top: 300px;
+  top: 286px;
   right: 46px;
-  width: 260px;
+  width: 300px;
   text-align: right;
 }
 
 .pc-cover-badge .pc-badge-dot {
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--pc-brass-lt), var(--pc-brass));
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .pc-cover-badge h2 {
   margin: 0;
   font-family: var(--pc-serif);
-  font-size: 22px;
+  font-size: 28px;
   font-weight: 500;
   font-style: italic;
   letter-spacing: -0.01em;
@@ -747,7 +758,7 @@
   margin: -2px 0 -4px;
   font-family: var(--pc-didone);
   font-weight: 600;
-  font-size: 62px;
+  font-size: 80px;
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--pc-brass-lt);
@@ -756,7 +767,7 @@
 .pc-cover-badge span {
   display: block;
   font-family: var(--pc-sans);
-  font-size: 15px;
+  font-size: 19px;
   font-weight: 300;
   letter-spacing: 0.04em;
   color: rgba(242, 237, 227, 0.9);
@@ -766,25 +777,25 @@
   display: block;
   font-family: var(--pc-didone);
   font-style: italic;
-  font-size: 26px;
+  font-size: 34px;
   color: var(--pc-brass-lt);
   line-height: 1.1;
 }
 
 /* Role block, right rail */
 .pc-cover-role {
-  top: 546px;
+  top: 568px;
   right: 46px;
-  width: 224px;
+  width: 268px;
   text-align: right;
   border-right: 2px solid var(--pc-brass);
-  padding-right: 14px;
+  padding-right: 16px;
 }
 
 .pc-cover-role p {
   margin: 0;
   font-family: var(--pc-sans);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 300;
   line-height: 1.28;
   color: rgba(242, 237, 227, 0.92);
@@ -792,9 +803,9 @@
 
 .pc-cover-role strong {
   display: block;
-  margin-top: 5px;
+  margin-top: 7px;
   font-family: var(--pc-sans);
-  font-size: 14.5px;
+  font-size: 18.5px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
