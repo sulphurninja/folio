@@ -585,7 +585,7 @@
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(180deg, rgba(12, 18, 20, 0.88) 0%, rgba(12, 18, 20, 0.48) 16%, rgba(12, 18, 20, 0) 28%),
+    linear-gradient(180deg, rgba(12, 18, 20, 0.9) 0%, rgba(12, 18, 20, 0.5) 18%, rgba(12, 18, 20, 0) 30%),
     linear-gradient(0deg, rgba(12, 18, 20, 0.86) 0%, rgba(12, 18, 20, 0.62) 16%, rgba(12, 18, 20, 0.18) 32%, rgba(12, 18, 20, 0) 44%),
     linear-gradient(90deg, rgba(12, 18, 20, 0.62) 0%, rgba(12, 18, 20, 0.22) 18%, rgba(12, 18, 20, 0) 34%),
     linear-gradient(270deg, rgba(12, 18, 20, 0.68) 0%, rgba(12, 18, 20, 0.28) 20%, rgba(12, 18, 20, 0) 38%),
@@ -602,75 +602,84 @@
   position: absolute;
 }
 
-/* Masthead — type lockup, not a boxed PNG. */
+/* Masthead — full width, small side inset. */
 .pc-mast {
-  top: 28px;
-  left: 0;
-  right: 0;
+  top: 22px;
+  left: 36px;
+  right: 36px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
 }
 
 .pc-mast-word {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 14px;
+  width: 100%;
   filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.78));
 }
 
 .pc-mast-crest {
-  width: 52px;
-  height: 46px;
+  width: 58px;
+  height: 51px;
   flex: 0 0 auto;
 }
 
 .pc-mast-word b {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   margin: 0;
   font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
-  font-size: 72px;
+  font-size: 84px;
   font-weight: 700;
-  line-height: 0.88;
-  letter-spacing: 0.04em;
+  line-height: 0.86;
   color: #f7f2e8;
+}
+
+.pc-mast-word b i {
+  font-style: normal;
+  font-weight: 700;
 }
 
 .pc-mast-word b span {
   color: #c43a32;
-  margin-left: 1px;
 }
 
 .pc-mast-tag {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   font-family: var(--pc-sans);
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 500;
-  letter-spacing: 0.46em;
-  text-indent: 0.46em;
+  letter-spacing: 0.52em;
+  text-indent: 0.52em;
+  text-align: center;
   text-transform: uppercase;
   color: rgba(242, 237, 227, 0.82);
 }
 
 .pc-mast-hair {
-  margin: 11px 0 0;
-  width: 340px;
+  margin: 12px 0 0;
+  width: 100%;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(195, 154, 75, 0.9), transparent);
 }
 
 /* Dateline rail, top-left */
 .pc-cover-date {
-  top: 178px;
-  left: 46px;
-  width: 214px;
+  top: 196px;
+  left: 36px;
+  width: 250px;
   border-top: 2px solid var(--pc-brass);
-  padding-top: 12px;
+  padding-top: 14px;
 }
 
 .pc-cover-date p {
-  margin: 0 0 4px;
+  margin: 0 0 5px;
   font-family: var(--pc-sans);
-  font-size: 16.5px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -684,27 +693,27 @@
 
 /* Cover teasers */
 .pc-teaser {
-  width: 248px;
+  width: 292px;
 }
 
 .pc-teaser-a {
-  top: 308px;
-  left: 46px;
+  top: 400px;
+  left: 36px;
 }
 
 .pc-teaser-b {
-  top: 748px;
-  right: 46px;
+  top: 736px;
+  right: 36px;
   text-align: right;
 }
 
 .pc-teaser h3 {
   margin: 0;
   font-family: var(--pc-serif);
-  font-size: 23px;
+  font-size: 28px;
   font-weight: 600;
   font-style: italic;
-  line-height: 1.16;
+  line-height: 1.14;
   letter-spacing: -0.018em;
   color: var(--pc-brass-lt);
 }
@@ -713,44 +722,44 @@
   border: 0;
   height: 1px;
   background: rgba(242, 237, 227, 0.42);
-  margin: 11px 0 11px;
+  margin: 12px 0 12px;
 }
 
 .pc-teaser p {
   margin: 0;
   font-family: var(--pc-sans);
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 300;
-  line-height: 1.35;
+  line-height: 1.34;
   color: rgba(242, 237, 227, 0.92);
 }
 
 /* Series badge, right rail */
 .pc-cover-badge {
-  top: 286px;
-  right: 46px;
-  width: 300px;
+  top: 268px;
+  right: 36px;
+  width: 332px;
   text-align: right;
 }
 
 .pc-cover-badge .pc-badge-dot {
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--pc-brass-lt), var(--pc-brass));
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 
 .pc-cover-badge h2 {
   margin: 0;
   font-family: var(--pc-serif);
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 500;
   font-style: italic;
   letter-spacing: -0.01em;
   color: #f4eee2;
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
 .pc-cover-badge strong {
@@ -758,8 +767,8 @@
   margin: -2px 0 -4px;
   font-family: var(--pc-didone);
   font-weight: 600;
-  font-size: 80px;
-  line-height: 1;
+  font-size: 84px;
+  line-height: 0.96;
   letter-spacing: -0.03em;
   color: var(--pc-brass-lt);
 }
@@ -767,7 +776,7 @@
 .pc-cover-badge span {
   display: block;
   font-family: var(--pc-sans);
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 300;
   letter-spacing: 0.04em;
   color: rgba(242, 237, 227, 0.9);
@@ -777,16 +786,16 @@
   display: block;
   font-family: var(--pc-didone);
   font-style: italic;
-  font-size: 34px;
+  font-size: 40px;
   color: var(--pc-brass-lt);
-  line-height: 1.1;
+  line-height: 1.08;
 }
 
 /* Role block, right rail */
 .pc-cover-role {
-  top: 568px;
-  right: 46px;
-  width: 268px;
+  top: 578px;
+  right: 36px;
+  width: 300px;
   text-align: right;
   border-right: 2px solid var(--pc-brass);
   padding-right: 16px;
@@ -795,17 +804,17 @@
 .pc-cover-role p {
   margin: 0;
   font-family: var(--pc-sans);
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 300;
-  line-height: 1.28;
+  line-height: 1.26;
   color: rgba(242, 237, 227, 0.92);
 }
 
 .pc-cover-role strong {
   display: block;
-  margin-top: 7px;
+  margin-top: 8px;
   font-family: var(--pc-sans);
-  font-size: 18.5px;
+  font-size: 21px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;

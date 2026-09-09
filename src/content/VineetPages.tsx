@@ -335,8 +335,18 @@ export function VineetPages() {
                 <path d="M24 1.2 46 20.4h-7.2L24 8.6 9.2 20.4H2Z" fill="#f4efe6" />
                 <path d="M24 15.2 46 34.4h-7.2L24 22.6 9.2 34.4H2Z" fill="#c39a4b" />
               </svg>
-              <b>
-                PRIMECREST<span>.</span>
+              <b aria-label="PrimeCrest">
+                <i>P</i>
+                <i>R</i>
+                <i>I</i>
+                <i>M</i>
+                <i>E</i>
+                <i>C</i>
+                <i>R</i>
+                <i>E</i>
+                <i>S</i>
+                <i>T</i>
+                <span>.</span>
               </b>
             </div>
             <p className="pc-mast-tag">Where Vision Meets Voice</p>
