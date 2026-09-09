@@ -8,9 +8,9 @@
  */
 
 .pc {
-  --pc-ink: #0a1113;
-  --pc-ink-2: #111d20;
-  --pc-ink-3: #16262a;
+  --pc-ink: #1c292d;
+  --pc-ink-2: #26363b;
+  --pc-ink-3: #304248;
   --pc-paper: #f2ede3;
   --pc-paper-2: #e8e0d1;
   --pc-peach: #f6e7dc;
@@ -42,8 +42,8 @@
   background-image:
     radial-gradient(120% 80% at 12% 0%, rgba(23, 149, 154, 0.14) 0%, transparent 60%),
     radial-gradient(90% 70% at 100% 100%, rgba(195, 154, 75, 0.12) 0%, transparent 62%),
-    linear-gradient(168deg, var(--pc-ink-2) 0%, var(--pc-ink) 58%, #060c0d 100%);
-  color: #ece5d8;
+    linear-gradient(168deg, var(--pc-ink-2) 0%, var(--pc-ink) 58%, #151c1e 100%);
+  color: #f4efe6;
 }
 
 .mag-page.pc-cream {
@@ -56,7 +56,7 @@
 }
 
 .mag-page.pc-bleed {
-  background: #07100f;
+  background: #1a2324;
   padding: 0;
 }
 
@@ -210,7 +210,7 @@
   font-weight: 500;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: rgba(236, 229, 216, 0.42);
+  color: rgba(244, 239, 230, 0.58);
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -254,7 +254,7 @@
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
-  color: rgba(236, 229, 216, 0.9);
+  color: rgba(244, 239, 230, 0.94);
 }
 
 .pc-cream .pc-cols {
@@ -565,7 +565,7 @@
 /* ============================================================== COVER */
 
 .mag-page.pc-cover {
-  background: #05090a;
+  background: #141a1c;
   padding: 0;
 }
 
@@ -576,7 +576,7 @@
   height: 100%;
   object-fit: cover;
   object-position: 42% 12%;
-  filter: saturate(0.82) contrast(1.06) brightness(0.94);
+  filter: saturate(0.9) contrast(1.02) brightness(1.08);
 }
 
 /* Four graded washes: masthead band, left rail, right rail, nameplate foot. */
@@ -585,10 +585,10 @@
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(180deg, rgba(4, 8, 9, 0.96) 0%, rgba(4, 8, 9, 0.74) 14%, rgba(4, 8, 9, 0) 26%),
-    linear-gradient(0deg, rgba(4, 8, 9, 0.97) 0%, rgba(4, 8, 9, 0.82) 16%, rgba(4, 8, 9, 0.3) 32%, rgba(4, 8, 9, 0) 44%),
-    linear-gradient(90deg, rgba(4, 8, 9, 0.82) 0%, rgba(4, 8, 9, 0.34) 18%, rgba(4, 8, 9, 0) 34%),
-    linear-gradient(270deg, rgba(4, 8, 9, 0.88) 0%, rgba(4, 8, 9, 0.42) 20%, rgba(4, 8, 9, 0) 38%),
+    linear-gradient(180deg, rgba(12, 18, 20, 0.82) 0%, rgba(12, 18, 20, 0.52) 14%, rgba(12, 18, 20, 0) 26%),
+    linear-gradient(0deg, rgba(12, 18, 20, 0.86) 0%, rgba(12, 18, 20, 0.62) 16%, rgba(12, 18, 20, 0.18) 32%, rgba(12, 18, 20, 0) 44%),
+    linear-gradient(90deg, rgba(12, 18, 20, 0.62) 0%, rgba(12, 18, 20, 0.22) 18%, rgba(12, 18, 20, 0) 34%),
+    linear-gradient(270deg, rgba(12, 18, 20, 0.68) 0%, rgba(12, 18, 20, 0.28) 20%, rgba(12, 18, 20, 0) 38%),
     radial-gradient(78% 58% at 44% 30%, rgba(23, 149, 154, 0.16) 0%, transparent 70%);
 }
 
@@ -1046,7 +1046,7 @@
   z-index: 2;
   background:
     radial-gradient(80% 60% at 24% 26%, rgba(23, 149, 154, 0.12) 0%, transparent 68%),
-    linear-gradient(160deg, rgba(10, 17, 19, 0.7) 0%, rgba(10, 17, 19, 0.9) 68%, rgba(6, 11, 12, 0.95) 100%);
+    linear-gradient(160deg, rgba(28, 41, 45, 0.55) 0%, rgba(28, 41, 45, 0.72) 68%, rgba(22, 32, 35, 0.82) 100%);
 }
 
 .pc-credit-rows {
@@ -1475,7 +1475,7 @@
 
 .pc-qr-card {
   margin-top: auto;
-  background: #0a1113;
+  background: #1c292d;
   border: 1px solid rgba(195, 154, 75, 0.44);
   padding: 16px 16px 0;
   text-align: center;

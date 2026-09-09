@@ -427,8 +427,8 @@ export function VineetPages() {
             <path d="M224 26 206 8M224 26 200 34" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>
 
-          <p
-            style={{
+            <p
+              style={{
               margin: "26px 0 0",
               maxWidth: 640,
               fontFamily: "var(--pc-didone)",
@@ -462,7 +462,7 @@ export function VineetPages() {
             ].map(([n, t, d]) => (
               <li
                 key={n}
-                style={{
+              style={{
                   display: "grid",
                   gridTemplateColumns: "46px 1fr",
                   gap: 14,
@@ -472,7 +472,7 @@ export function VineetPages() {
                 }}
               >
                 <b
-                  style={{
+              style={{
                     fontFamily: "var(--pc-sans)",
                     fontSize: 13,
                     fontWeight: 600,
@@ -484,7 +484,7 @@ export function VineetPages() {
                 </b>
                 <span>
                   <b
-                    style={{
+                style={{
                       display: "block",
                       fontFamily: "var(--pc-didone)",
                       fontWeight: 500,
@@ -496,12 +496,12 @@ export function VineetPages() {
                     {t}
                   </b>
                   <em
-                    style={{
+                style={{
                       display: "block",
                       marginTop: 2,
                       fontFamily: "var(--pc-serif)",
                       fontSize: 12.6,
-                      fontStyle: "italic",
+                  fontStyle: "italic",
                       color: "#5b6062",
                     }}
                   >
@@ -517,8 +517,8 @@ export function VineetPages() {
             The September Issue. One conversation about growth, execution,
             consumer insight and future readiness — printed in the order it was answered, with the
             working method drawn out around it.
-          </p>
-        </div>
+              </p>
+            </div>
       </article>
 
       {/* ============================================== 02 · EDITORIAL, RIGHT */}
@@ -797,20 +797,20 @@ export function VineetPages() {
               <li>
                 <b>02 · Editorial</b>
                 <span>A vision that outlasts the plan</span>
-              </li>
-              <li>
+            </li>
+            <li>
                 <b>13 · The File</b>
                 <span>The record, and the ten questions</span>
-              </li>
-              <li>
+            </li>
+            <li>
                 <b>17 · Insight</b>
                 <span>Research is not an offering</span>
-              </li>
-              <li>
+            </li>
+            <li>
                 <b>21 · The Close</b>
                 <span>No pure mistakes, only learnings</span>
-              </li>
-            </ul>
+            </li>
+          </ul>
           </div>
         </div>
       </article>
@@ -919,14 +919,13 @@ export function VineetPages() {
       </article>
 
       {/* ============================================== 07 · PLATE */}
-      <article className="mag-page pc pc-bleed pc-wedge-r" data-density="hard">
+      <article className="mag-page pc pc-bleed" data-density="hard">
         <img
           className="pc-img"
           src={`${IMG}/lobby.jpg`}
           alt="Vineet Trakroo"
-          style={{ objectPosition: "56% 18%" }}
+          style={{ objectPosition: "50% 18%" }}
         />
-        <div className="pc-corner-bl" />
         <p className="pc-vcap pc-vcap-l">
           “What are we selling, to whom, and has it become a commodity?”
         </p>
@@ -952,7 +951,8 @@ export function VineetPages() {
                 verify efficacy claims, and even category-defining brands have lost significant
                 market share on that shift. Entire categories — fairness creams among them — have
                 faced massive corrections driven by evolving consumer and social awareness, not by a
-                competitor out-advertising them.
+                competitor out-advertising them. If the offering no longer has a reason that survives
+                a phone screen, no amount of spend will put the number back.
               </p>
               <p className="pc-sub pc-sub-teal">Then the weather outside</p>
               <p>
@@ -971,7 +971,26 @@ export function VineetPages() {
                 four traditional Ps of marketing are being redefined at once, which is a harder
                 problem than any single one of them failing.
               </p>
-            </div>
+              <p className="pc-sub pc-sub-teal">A board that looks like impatience</p>
+              <p>
+                This is why established brands are increasingly replacing chief executives. In his
+                account the swap is not a personality contest. Boards have recognised that the
+                operating model no longer matches how younger demographics buy, and they are trying
+                to buy that alignment in a chair. It is a blunt instrument. It is also, often, the
+                only one they still trust.
+              </p>
+              <p>
+                The same logic runs in reverse for the digital-first challengers. Excellent online,
+                they find that pushing the same products through traditional offline channels
+                introduces severe margin and distribution challenges that often prove unprofitable
+                without a strategic restructuring. One house is living on a digital funnel. The other
+                is living on a van and a scheme. Neither playbook travels cleanly across the aisle —
+                which is why a company can look healthy in one channel and already be leaking in the
+                other. Yesterday’s moats — formulation, exclusive distribution, heavy spend, price —
+                are all under active challenge at once. That is the weather he wants a board to name
+                before it names a new chief executive.
+              </p>
+              </div>
           </div>
 
           <p className="pc-label" style={{ marginTop: 16 }}>
@@ -990,8 +1009,8 @@ export function VineetPages() {
               <p>
                 Shelf control matters less when the shelf is a search result and the warehouse
                 belongs to somebody else’s platform.
-              </p>
-            </div>
+            </p>
+          </div>
             <div>
               <b>Advertising weight</b>
               <p>
@@ -1392,9 +1411,9 @@ export function VineetPages() {
                   ["Package", "Interview feature and supporting visual portfolio"],
                 ].map(([k, v]) => (
                   <li
-                    key={k}
-                    style={{
-                      display: "grid",
+                key={k}
+                style={{
+                  display: "grid",
                       gridTemplateColumns: "84px 1fr",
                       gap: 14,
                       padding: "9px 0",
@@ -1402,28 +1421,28 @@ export function VineetPages() {
                     }}
                   >
                     <b
-                      style={{
+                  style={{
                         fontFamily: "var(--pc-sans)",
                         fontSize: 9.5,
                         fontWeight: 600,
                         letterSpacing: "0.2em",
-                        textTransform: "uppercase",
+                    textTransform: "uppercase",
                         color: "var(--pc-brass-dk)",
-                      }}
-                    >
-                      {k}
+                  }}
+                >
+                  {k}
                     </b>
-                    <span
-                      style={{
+                <span
+                  style={{
                         fontFamily: "var(--pc-serif)",
                         fontSize: 13,
                         lineHeight: 1.45,
                         color: "#23282a",
                         wordBreak: "break-word",
-                      }}
-                    >
-                      {v}
-                    </span>
+                  }}
+                >
+                  {v}
+                </span>
                   </li>
                 ))}
               </ul>
@@ -1431,7 +1450,7 @@ export function VineetPages() {
                 <p style={{ fontSize: 15.5 }}>
                   “In business, there are no pure mistakes — only learnings.”
                 </p>
-              </div>
+          </div>
             </div>
           </div>
           <Folio page="14" section="Recognition" />
@@ -1673,7 +1692,7 @@ export function VineetPages() {
             ].map(([h, b, f]) => (
               <div
                 key={h}
-                style={{
+                  style={{
                   padding: "20px 18px 18px",
                   background: "rgba(255,255,255,0.04)",
                   borderTop: "2px solid var(--pc-brass)",
@@ -1808,7 +1827,7 @@ export function VineetPages() {
                 source of enterprise value remains the customer’s end-to-end journey, usage
                 experience and overall satisfaction.
               </p>
-            </div>
+        </div>
           </div>
 
           <div className="pc-skew">
@@ -1829,7 +1848,7 @@ export function VineetPages() {
             No Pure Mistakes.
             <br />
             Only Learnings.
-          </h2>
+            </h2>
           <div className="pc-hair" style={{ margin: "14px 0 12px" }} />
 
           <div className="pc-colwrap">
@@ -1876,8 +1895,8 @@ export function VineetPages() {
                 against industry leaders — while remembering that sophisticated frameworks and
                 analytics are useless without a high-performance culture committed to accountability
                 and delivery.
-              </p>
-            </div>
+            </p>
+          </div>
           </div>
 
           <div className="pc-skew pc-skew-flat" style={{ marginTop: 16 }}>
@@ -1924,7 +1943,7 @@ export function VineetPages() {
               <strong>01</strong>
               <b>Nominate</b>
               <span>A leader, a method, and one number that changed.</span>
-            </div>
+        </div>
             <div>
               <strong>02</strong>
               <b>Sit for it</b>
@@ -1975,7 +1994,7 @@ export function VineetPages() {
       <article className="mag-page pc pc-bleed" data-density="hard">
         <img className="pc-img" src="/brand/backdrop-primecrest.jpg" alt="" />
         <div
-          style={{
+              style={{
             position: "absolute",
             inset: 0,
             zIndex: 2,
