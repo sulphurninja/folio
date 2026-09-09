@@ -1,5 +1,5 @@
 /*
- * PrimeCrest · Vol. IX — The Evolution Issue (Vineet Trakroo)
+ * PrimeCrest · The September Issue (Vineet Trakroo)
  *
  * A closed type-and-grid system for this issue only. Nothing here reads the
  * shared .mag-* density rules, so the issue can be art-directed to the
@@ -602,9 +602,9 @@
   position: absolute;
 }
 
-/* Masthead lockup */
+/* Masthead lockup — same float as before, mark sits on its own plate. */
 .pc-mast {
-  top: 40px;
+  top: 32px;
   left: 0;
   right: 0;
   display: flex;
@@ -612,10 +612,21 @@
   align-items: center;
 }
 
+.pc-mast-mark {
+  padding: 16px 28px 12px;
+  background: rgba(6, 10, 11, 0.82);
+  border: 1px solid rgba(229, 201, 140, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.45),
+    0 14px 36px rgba(0, 0, 0, 0.55);
+}
+
 .pc-mast img {
-  width: 470px;
+  width: 560px;
   height: auto;
-  filter: drop-shadow(0 6px 22px rgba(0, 0, 0, 0.7));
+  filter:
+    drop-shadow(0 0 0.6px #fff)
+    drop-shadow(0 8px 20px rgba(0, 0, 0, 0.7));
 }
 
 .pc-mast-tag {

@@ -95,10 +95,10 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   },
   vineet: {
     slug: "vineet",
-    title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. IX · The Evolution Issue",
+    title: "The September Issue — Vineet Trakroo",
+    kicker: "PrimeCrest · The September Issue · 2026",
     description:
-      "Vineet Trakroo — CEO & Chief Evolution Officer, Evolution Strategy Advisors LLP. Growth, strategy, execution, and future readiness, told in PrimeCrest's Evolution Issue.",
+      "Vineet Trakroo — CEO & Chief Evolution Officer, Evolution Strategy Advisors LLP. Growth, strategy, execution, and future readiness, in PrimeCrest's September Issue.",
     toc: VINEET_TOC,
     Pages: VineetPages,
   },

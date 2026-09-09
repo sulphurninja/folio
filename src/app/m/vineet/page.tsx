@@ -5,12 +5,12 @@ import { siteUrl } from "@/lib/utils";
 import "./vineet.css";
 
 const SEO = {
-  title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026 — Vineet Trakroo",
+  title: "The September Issue — Vineet Trakroo",
   description:
-    "Vineet Trakroo — CEO & Chief Evolution Officer, Evolution Strategy Advisors LLP. Growth, strategy, execution, and future readiness, told in PrimeCrest's Evolution Issue.",
+    "Vineet Trakroo — CEO & Chief Evolution Officer, Evolution Strategy Advisors LLP. Growth, strategy, execution, and future readiness, in PrimeCrest's September Issue.",
   slug: "vineet",
   ogImage: siteUrl("/issues/vineet/og.jpg"),
-  kicker: "PrimeCrest · Vol. IX · The Evolution Issue",
+  kicker: "PrimeCrest · The September Issue · 2026",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -19,7 +19,7 @@ export default function VineetIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The Evolution Issue" toc={VINEET_TOC} tone="vineet">
+      <HtmlFlipbook title="PrimeCrest — The September Issue" toc={VINEET_TOC} tone="vineet">
         <VineetPages />
       </HtmlFlipbook>
     </>

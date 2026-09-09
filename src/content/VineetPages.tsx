@@ -2,7 +2,7 @@
 import type { ReactNode } from "react";
 
 /**
- * PrimeCrest · Vol. IX — The Evolution Issue
+ * PrimeCrest · The September Issue
  * Vineet Trakroo, CEO & Chief Evolution Officer, Evolution Strategy Advisors LLP.
  *
  * Composed on the closed `pc-*` system in src/app/m/vineet/vineet.css. Facing
@@ -33,7 +33,7 @@ function Label({
 function Folio({ page, section }: { page: string; section: string }) {
   return (
     <p className="pc-folio">
-      <span>PrimeCrest · Vol. IX</span>
+      <span>PrimeCrest · September</span>
       <span>{section}</span>
       <span>{page}</span>
     </p>
@@ -330,7 +330,9 @@ export function VineetPages() {
 
         <div className="pc-cover-ui">
           <header className="pc-mast">
-            <img src="/brand/logo-primecrest.png" alt="PrimeCrest" />
+            <div className="pc-mast-mark">
+              <img src="/brand/logo-primecrest.png" alt="PrimeCrest" />
+            </div>
             <p className="pc-mast-tag">Where Vision Meets Voice</p>
             <div className="pc-mast-hair" />
           </header>
@@ -398,7 +400,7 @@ export function VineetPages() {
 
           <div className="pc-cover-foot">
             <p className="pc-cover-issn">
-              <b>The Evolution Issue</b> · eighteen features
+              <b>The September Issue</b>
               <br />
               theprimecrest.com
             </p>
@@ -512,7 +514,7 @@ export function VineetPages() {
 
           <div className="pc-hair" />
           <p className="pc-quiet" style={{ fontSize: 11.5 }}>
-            Vol. IX · No. 09 · The Evolution Issue. One conversation about growth, execution,
+            The September Issue. One conversation about growth, execution,
             consumer insight and future readiness — printed in the order it was answered, with the
             working method drawn out around it.
           </p>
@@ -557,7 +559,7 @@ export function VineetPages() {
               in the file. Somebody simply had to look deeper.
             </p>
             <p>
-              With this edition — <strong>Evolution Icon to Watch for in 2026</strong> — PrimeCrest
+              With this September issue, PrimeCrest
               publishes leaders whose method is worth copying, not only their results. Our cover
               subject makes an uncomfortable case: that strategy is ten percent of the effort and
               execution is the other ninety; that deciding what <em>not</em> to do is the most
@@ -606,7 +608,7 @@ export function VineetPages() {
             {[
               ["Editor-in-Chief", "PrimeCrest Editorial"],
               ["Managing Editor", "Fortiora Studio"],
-              ["Feature Editor", "The Evolution Desk"],
+              ["Feature Editor", "The Feature Desk"],
               ["Art & Design Head", "Fortiora Studio"],
               ["Type & Composition", "PrimeCrest Studio"],
               ["Cover Direction", "Fortiora Studio"],
@@ -702,14 +704,9 @@ export function VineetPages() {
             <div className="pc-hair" />
             <p
               className="pc-quiet"
-              style={{ textAlign: "center", fontSize: 10, fontStyle: "normal", lineHeight: 1.6 }}
+              style={{ textAlign: "center", fontSize: 11, fontStyle: "normal", lineHeight: 1.6 }}
             >
-              Vol. IX · No. 09 · The Evolution Issue · digital canvas 840 × 1120
-              <br />
-              Copyright © 2026 Fortiora Group LLC. All rights reserved. The content and images used
-              in this magazine may not be reproduced or transmitted in any form or by any means,
-              electronic, mechanical, photocopying, recording or otherwise, without prior written
-              permission from the publisher. Reprint rights remain solely with PrimeCrest.
+              The September Issue · 2026 · PrimeCrest
             </p>
           </div>
         </div>
@@ -884,14 +881,10 @@ export function VineetPages() {
                 operating in.
               </p>
               <p>
-                It also explains a boardroom pattern that looks like impatience from the outside.
-                Established brands are increasingly replacing chief executives; in his account,
-                boards are not swapping personalities so much as trying to align an operating model
-                with how younger demographics buy. The same logic runs in reverse for the
-                digital-first challengers: excellent online, they find that pushing the same
-                products through traditional offline channels introduces severe margin and
-                distribution challenges that often prove unprofitable without strategic
-                restructuring.
+                It also explains a boardroom pattern that reads, from outside, as impatience.
+                Established brands are increasingly replacing chief executives; boards, in his
+                account, are trying to align an operating model with how younger demographics buy —
+                not swapping personalities.
               </p>
             </div>
           </div>
@@ -2036,7 +2029,7 @@ export function VineetPages() {
             </p>
             <div className="pc-hair" style={{ width: 320 }} />
             <p className="pc-label" style={{ letterSpacing: "0.4em" }}>
-              The Evolution Issue · Vol. IX
+              The September Issue · 2026
             </p>
           </div>
         </div>
