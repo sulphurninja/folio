@@ -1990,11 +1990,33 @@
   padding: 74px 60px 52px;
 }
 
-.pc-back-logo {
-  width: 78%;
-  max-width: 600px;
-  height: auto;
+/* Back-cover lockup — same crest + wordmark as the cover masthead. */
+.pc-back-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
   filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.72));
+}
+
+.pc-back-crest {
+  width: 68px;
+  height: 60px;
+  flex: 0 0 auto;
+}
+
+.pc-back-word {
+  margin: 0;
+  font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.06em;
+  color: #f7f2e8;
+}
+
+.pc-back-word span {
+  color: #c43a32;
 }
 
 .pc-imprint {

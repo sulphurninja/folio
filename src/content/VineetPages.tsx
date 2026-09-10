@@ -40,7 +40,7 @@ function Folio({ page, section }: { page: string; section: string }) {
   );
 }
 
-/** A framed plate that keeps the whole photograph — 4:3 supplied, 4:3 shown. */
+/** A framed plate that keeps the whole photograph, 4:3 supplied, 4:3 shown. */
 function Plate({
   src,
   alt,
@@ -367,7 +367,7 @@ export function VineetPages() {
             </h3>
             <hr />
             <p>
-              Why a short sales line is almost never a sales problem — and where the leak is
+              Why a short sales line is almost never a sales problem, and where the leak is
               actually sitting.
             </p>
           </div>
@@ -459,7 +459,7 @@ export function VineetPages() {
             “Sales is merely the effect, the final leg of the entire commercial engine.”
           </p>
           <p className="pc-quiet" style={{ marginTop: 12, maxWidth: 560, fontSize: 13 }}>
-            Vineet Trakroo, CEO &amp; Chief Evolution Officer, Evolution Strategy Advisors LLP — on
+            Vineet Trakroo, CEO &amp; Chief Evolution Officer, Evolution Strategy Advisors LLP, on
             the first page of an eleven-page conversation.
           </p>
 
@@ -531,7 +531,7 @@ export function VineetPages() {
           <div className="pc-hair" />
           <p className="pc-quiet" style={{ fontSize: 11.5 }}>
             The September Issue. One conversation about growth, execution,
-            consumer insight and future readiness — printed in the order it was answered, with the
+            consumer insight and future readiness, printed in the order it was answered, with the
             working method drawn out around it.
               </p>
             </div>
@@ -553,21 +553,21 @@ export function VineetPages() {
             <p className="pc-drop">
               Most companies do not stall because nobody wrote a strategy. They stall because the
               strategy was the easy part. The document gets approved, the deck is circulated, the
-              quarter is named — and then the organisation goes back to doing what it already knows
+              quarter is named, and then the organisation goes back to doing what it already knows
               how to do. That gap, between the plan on the page and the behaviour on the floor, is
               the subject of this edition.
             </p>
             <p>
               We look for leaders who work inside that gap. Vineet Trakroo has spent a career there.
               As CEO and Chief Evolution Officer of Evolution Strategy Advisors LLP, he is called in
-              when a commercial number stops behaving — when a top line softens, when a category
+              when a commercial number stops behaving, when a top line softens, when a category
               thins, when a sales force is visibly busy and the result is stubbornly flat. His
               diagnosis rarely begins where the alarm was raised. Sales, he says, is merely the
               effect: the final leg of a much longer engine.
             </p>
             <p>
               That single sentence reorganises a great deal of thinking. If the number is an effect,
-              then arguing about the number is a wasted quarter. The work sits upstream — in
+              then arguing about the number is a wasted quarter. The work sits upstream, in
               culture, in leadership clarity, in a strategic choice made three years ago, in a
               delivery process nobody owns, in a customer experience that quietly costs more than it
               earns. Across FMCG, automobiles, pharma, consumer products and building materials, and
@@ -591,8 +591,8 @@ export function VineetPages() {
               needs a consultant to answer. Both tend to be answered badly.
             </p>
             <p>
-              We printed his answers in the order he gave them. What surrounds them here — the
-              diagnostics, the ten and the ninety, the iceberg, the road to 2030 — is our reading of
+              We printed his answers in the order he gave them. What surrounds them here, the
+              diagnostics, the ten and the ninety, the iceberg, the road to 2030, is our reading of
               a working method, not a rewrite of it. Where he named an example, we kept it. Where he
               declined to dress a failure up as a tragedy, we kept that too, because the sentence he
               used instead is the better one: in business there are no pure mistakes, only learnings.
@@ -622,17 +622,17 @@ export function VineetPages() {
 
           <div className="pc-credit-rows">
             {[
-              ["Editor-in-Chief", "PrimeCrest Editorial"],
-              ["Managing Editor", "Fortiora Studio"],
-              ["Feature Editor", "The Feature Desk"],
-              ["Art & Design Head", "Fortiora Studio"],
-              ["Type & Composition", "PrimeCrest Studio"],
-              ["Cover Direction", "Fortiora Studio"],
-              ["Photo Editor", "Supplied portfolio, used with permission"],
+              ["Editor-in-Chief", "Katherine A. Mercer"],
+              ["Managing Editor", "Daniel Whitfield"],
+              ["Feature Editor", "Rebecca Sloan"],
+              ["Art & Design Head", "Marcus Ellison"],
+              ["Type & Composition", "Nathan Brooks"],
+              ["Cover Direction", "Claire Donovan"],
+              ["Photo Editor", "Gregory Hale"],
               ["Interview", "Printed as answered by the subject"],
-              ["Fact Desk", "References as supplied by the contributor"],
-              ["Digital Production", "Fortiora Studio · flipbook and assets"],
-              ["Business Development", "Fortiora Group LLC"],
+              ["Fact Desk", "Emily Carter"],
+              ["Digital Production", "Aaron Pierce · flipbook and assets"],
+              ["Business Development", "Jonathan Reyes"],
               ["Subscriptions", "theprimecrest.com"],
               ["Circulation", "Digital edition · worldwide"],
             ].map(([k, v]) => (
@@ -646,7 +646,7 @@ export function VineetPages() {
           <div className="pc-hair" style={{ margin: "24px 0 20px" }} />
 
           <div className="pc-credits-mid">
-            <p>Hello@thefortiora.com</p>
+            <p>hello@theprimecrest.com</p>
             <p style={{ color: "rgba(236,229,216,0.66)" }}>September, 2026</p>
             <h5 style={{ marginTop: 20 }}>Corporate Office</h5>
             <p className="pc-tiny">
@@ -754,7 +754,7 @@ export function VineetPages() {
             <em>Vineet</em>
             <strong>TRAKROO</strong>
             <span>
-              Sales is the last number you see. A diagnosis of the commercial engine — growth,
+              Sales is the last number you see. A diagnosis of the commercial engine, growth,
               execution, and what a chief executive should stop.
             </span>
           </div>
@@ -775,7 +775,7 @@ export function VineetPages() {
                 or Leak
               </h4>
               <p>
-                How to tell a strategy problem from a structural one — and why the second takes
+                How to tell a strategy problem from a structural one, and why the second takes
                 longer to fix
               </p>
               <span className="pc-pagebox">11</span>
@@ -841,7 +841,7 @@ export function VineetPages() {
             Number You See
           </h2>
           <p className="pc-dek">
-            Vineet Trakroo on why a short top line is almost never a top-line problem — and what the
+            Vineet Trakroo on why a short top line is almost never a top-line problem, and what the
             data already knows.
           </p>
           <div className="pc-hair" style={{ margin: "16px 0 14px" }} />
@@ -850,7 +850,7 @@ export function VineetPages() {
             <div className="pc-cols pc-drop">
               <p>
                 A sales figure is the most public number a company owns and the least useful place to
-                begin an investigation. It is printed, circulated, compared and defended — and by
+                begin an investigation. It is printed, circulated, compared and defended, and by
                 the time it comes in short, the decisions that made it short are already months old.
                 Vineet Trakroo, CEO and Chief Evolution Officer of Evolution Strategy Advisors LLP,
                 treats it as the end of a chain rather than the start of one.{" "}
@@ -862,7 +862,7 @@ export function VineetPages() {
                 That framing changes what a review meeting is for. If figures fall short of targets,
                 the useful response is not a marketing plan but a rigorous inquiry into underlying
                 root causes. Multiple functions contribute to a commercial result, which means the
-                bottleneck rarely sits inside a single department — and almost never inside the one
+                bottleneck rarely sits inside a single department, and almost never inside the one
                 holding the number.
               </p>
               <p className="pc-sub">The friction is softer than the org chart</p>
@@ -878,7 +878,7 @@ export function VineetPages() {
               <p>
                 The compensation is that modern organisations generate rich departmental data, which
                 makes diagnostic discovery far faster than it used to be. Operational friction shows
-                itself if you go looking — whether the drag comes from supply chain inefficiency,
+                itself if you go looking, whether the drag comes from supply chain inefficiency,
                 customer satisfaction drop-offs, or poor sales productivity.{" "}
                 <span className="pc-run">
                   “The real story is always in the data; leadership just needs to look deeper.”
@@ -889,7 +889,7 @@ export function VineetPages() {
                 The second failure is measurement. Many legacy, brick-and-mortar companies still
                 evaluate their teams on key performance indicators designed for how business was
                 conducted two to three decades ago. Meanwhile a great many enterprises now take
-                thirty to fifty percent of their business from digital channels — and digital is
+                thirty to fifty percent of their business from digital channels, and digital is
                 where the incremental growth resides. When the scoreboard predates the market, effort
                 concentrates in the wrong place and the shortfall reads like a motivation problem.
                 It is a metrics problem. Departmental performance measures, he argues, have to be
@@ -899,7 +899,7 @@ export function VineetPages() {
               <p>
                 It also explains a boardroom pattern that reads, from outside, as impatience.
                 Established brands are increasingly replacing chief executives; boards, in his
-                account, are trying to align an operating model with how younger demographics buy —
+                account, are trying to align an operating model with how younger demographics buy,
                 not swapping personalities.
               </p>
             </div>
@@ -907,7 +907,7 @@ export function VineetPages() {
 
           <div className="pc-skew">
             <p>
-              Sales is merely the effect — the final leg of the entire commercial engine. If the
+              Sales is merely the effect, the final leg of the entire commercial engine. If the
               figure is short, the work is upstream.
             </p>
           </div>
@@ -929,7 +929,7 @@ export function VineetPages() {
           <h4>Growth, strategy, execution, future readiness.</h4>
           <p>
             Four watchwords, one brief. He has carried it across FMCG, automobiles, pharma, consumer
-            products and building materials — and more than a hundred brands.
+            products and building materials, and more than a hundred brands.
           </p>
         </div>
       </article>
@@ -965,7 +965,7 @@ export function VineetPages() {
                 a commodity? In most cases the honest answer is that product differentiation has
                 eroded. Consumers today are highly informed. They scrutinise ingredient decks and
                 verify efficacy claims, and even category-defining brands have lost significant
-                market share on that shift. Entire categories — fairness creams among them — have
+                market share on that shift. Entire categories, fairness creams among them, have
                 faced massive corrections driven by evolving consumer and social awareness, not by a
                 competitor out-advertising them. If the offering no longer has a reason that survives
                 a phone screen, no amount of spend will put the number back.
@@ -978,8 +978,8 @@ export function VineetPages() {
                 supply-chain volatility can close a core market and send a plan back to the drawing
                 board. Generations X, Y, Z and Alpha consume, evaluate and purchase through entirely
                 different journeys, resetting expectations of distribution speed and convenience.
-                And demand generation itself — the traditional B2C machinery of advertising, media
-                planning and creative messaging — is navigating its own existential crossroads.
+                And demand generation itself, the traditional B2C machinery of advertising, media
+                planning and creative messaging, is navigating its own existential crossroads.
               </p>
               <p>
                 The real question for leadership, in his words, is organisational agility: has the
@@ -1000,9 +1000,9 @@ export function VineetPages() {
                 they find that pushing the same products through traditional offline channels
                 introduces severe margin and distribution challenges that often prove unprofitable
                 without a strategic restructuring. One house is living on a digital funnel. The other
-                is living on a van and a scheme. Neither playbook travels cleanly across the aisle —
+                is living on a van and a scheme. Neither playbook travels cleanly across the aisle,
                 which is why a company can look healthy in one channel and already be leaking in the
-                other. Yesterday’s moats — formulation, exclusive distribution, heavy spend, price —
+                other. Yesterday’s moats, formulation, exclusive distribution, heavy spend, price,
                 are all under active challenge at once. That is the weather he wants a board to name
                 before it names a new chief executive.
               </p>
@@ -1057,7 +1057,7 @@ export function VineetPages() {
             <b>revenue line.</b>
           </h3>
           <p className="pc-ad-copy">
-            Your commercial engine leaks where nobody is listening — the call that rang out at 9:40
+            Your commercial engine leaks where nobody is listening, the call that rang out at 9:40
             pm, the dealer who wanted stock and got a voicemail, the quote that went cold over a
             weekend. We build the layer that answers, qualifies and books, in your brand’s voice,
             with the context intact.
@@ -1105,7 +1105,7 @@ export function VineetPages() {
             knows your channel, your SKUs, your maths.
           </h3>
           <p className="pc-ad-copy" style={{ maxWidth: 640 }}>
-            Custom-built on your data, your telephony and your CRM — then measured on the only thing
+            Custom-built on your data, your telephony and your CRM, then measured on the only thing
             that matters: recovered revenue per rupee of spend.
           </p>
           <div className="pc-svc" style={{ marginTop: 20 }}>
@@ -1123,7 +1123,7 @@ export function VineetPages() {
               <h4>Channel &amp; Dealer Copilot</h4>
               <p>
                 The first customer in distribution-led B2C is the trade. Give them instant answers on
-                stock, schemes, credit and dispatch — in the language the counter actually speaks.
+                stock, schemes, credit and dispatch, in the language the counter actually speaks.
               </p>
               <p className="pc-svc-foot">WhatsApp · voice · dealer portal</p>
             </div>
@@ -1131,8 +1131,8 @@ export function VineetPages() {
               <span className="pc-svc-n">03</span>
               <h4>Custom Copilots &amp; Automation</h4>
               <p>
-                Not a generic assistant. Workflows built around your operating model — collections,
-                claims, onboarding, after-sales — with approvals and audit trails where they belong.
+                Not a generic assistant. Workflows built around your operating model, collections,
+                claims, onboarding, after-sales, with approvals and audit trails where they belong.
               </p>
               <p className="pc-svc-foot">Private deployment · your cloud or ours</p>
             </div>
@@ -1207,7 +1207,7 @@ export function VineetPages() {
                 Having worked FMCG, automobiles, pharma, consumer products and building materials, he
                 finds the most universal commercial bottlenecks rooted in execution breakdowns.
                 They stem from poor strategic guidance, a lack of clear prioritisation, capability
-                gaps, and the absence of crisp operating frameworks — the same four, in categories
+                gaps, and the absence of crisp operating frameworks, the same four, in categories
                 that otherwise share almost nothing.
               </p>
               <p className="pc-sub">The communication disconnect</p>
@@ -1223,7 +1223,7 @@ export function VineetPages() {
                 Practical execution friction is inevitable. The differentiator between winning and
                 losing companies is how frequently leadership audits ground realities and implements
                 timely corrections. Planning has to be anchored in ground-level market realities,
-                sales-force competencies and channel partner incentives — not in the version of the
+                sales-force competencies and channel partner incentives, not in the version of the
                 market that exists in the plan.
               </p>
               <p className="pc-sub">The first customer is the trade</p>
@@ -1231,7 +1231,7 @@ export function VineetPages() {
                 Consumer-centricity is vital, but distribution-led B2C businesses must remember that
                 the distributor, stockist, dealer or retailer is the first customer to satisfy. If
                 channel partners are not aligned, incentivised and supported, the product will never
-                reach the consumer effectively — however good the consumer campaign.
+                reach the consumer effectively, however good the consumer campaign.
               </p>
             </div>
           </div>
@@ -1254,7 +1254,7 @@ export function VineetPages() {
             Above the Skyline, Off the Clock
           </h2>
           <p className="pc-quiet" style={{ marginTop: 8, maxWidth: 620 }}>
-            Photographs supplied with the feature package, reproduced whole — the full frame, as
+            Photographs supplied with the feature package, reproduced whole, the full frame, as
             shot, nothing trimmed to fit a grid.
           </p>
           <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 14 }}>
@@ -1412,7 +1412,7 @@ export function VineetPages() {
               >
                 It is a small discipline, and it belongs in an issue about execution. The subject’s
                 own argument is that leadership operates in a vacuum when information thins on its
-                way upstairs — that under a tenth of what happens on the ground survives the trip.
+                way upstairs, that under a tenth of what happens on the ground survives the trip.
                 A magazine is not exempt from its own cover story.
               </p>
               <div className="pc-hair" />
@@ -1464,7 +1464,7 @@ export function VineetPages() {
               </ul>
               <div className="pc-slab" style={{ marginTop: 18 }}>
                 <p style={{ fontSize: 15.5 }}>
-                  “In business, there are no pure mistakes — only learnings.”
+                  “In business, there are no pure mistakes, only learnings.”
                 </p>
           </div>
             </div>
@@ -1508,7 +1508,7 @@ export function VineetPages() {
                 As the management theorist Sidney Yoshida pointed out, less than ten percent of
                 frontline operational problems ever reach top management. Feedback from dealers and
                 frontline sales teams gets diluted like a game of telephone on its way to
-                headquarters, and leadership ends up operating in a vacuum — confident, well
+                headquarters, and leadership ends up operating in a vacuum, confident, well
                 briefed, and wrong.
               </p>
               <p className="pc-sub">Data without actionable analytics</p>
@@ -1555,7 +1555,7 @@ export function VineetPages() {
           <h2 className="pc-head pc-head-sm">Research Is Not an Offering</h2>
           <p className="pc-dek" style={{ fontSize: 15.5 }}>
             Converting research into commercial growth requires an institutionalised, repeatable
-            process — not a better deck.
+            process, not a better deck.
           </p>
           <div className="pc-hair" style={{ margin: "14px 0 12px" }} />
 
@@ -1591,7 +1591,7 @@ export function VineetPages() {
               </p>
               <p>
                 The test is unsentimental. If a quarter of research produced no pack change, no
-                variant, no new format and no retired SKU, the research did not happen — a report
+                variant, no new format and no retired SKU, the research did not happen, a report
                 happened. The difference between the two is the whole of this page.
               </p>
             </div>
@@ -1604,7 +1604,7 @@ export function VineetPages() {
             <div>
               <b>01</b>
               <h5>Track</h5>
-              <p>Usage and attitude, continuously — not once a launch.</p>
+              <p>Usage and attitude, continuously, not once a launch.</p>
             </div>
             <div>
               <b>02</b>
@@ -1639,7 +1639,7 @@ export function VineetPages() {
             Where the Correction Happens
           </h2>
           <p className="pc-quiet" style={{ marginTop: 8, maxWidth: 620 }}>
-            Boardroom, table, chair. The unglamorous geography of an in-market audit — and the rooms
+            Boardroom, table, chair. The unglamorous geography of an in-market audit, and the rooms
             where a priority stack gets cut down to the few drivers that move a number.
           </p>
           <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 14 }}>
@@ -1673,7 +1673,7 @@ export function VineetPages() {
           <div className="pc-rule pc-rule-left" style={{ width: 220, margin: "20px 0 18px" }} />
           <p className="pc-ad-copy" style={{ maxWidth: 600, fontSize: 14.4 }}>
             Enterprises measure sales productivity and still lose the top line in the gaps between
-            people — after hours, at peak, on the third follow-up, in the language the customer
+            people, after hours, at peak, on the third follow-up, in the language the customer
             actually speaks. Fortiora builds custom AI voice and copilot systems that close those
             gaps and report what they found. No generic assistant, no pilot that dies in
             procurement: a system wired into your telephony, your price masters and your CRM, with
@@ -1825,8 +1825,8 @@ export function VineetPages() {
               <p>
                 A future-ready organisation, in his account, is deeply customer-centric. It
                 systematically maps shifts in consumer journeys and leverages modern technology and
-                AI to deliver hyper-personalised value propositions. That agility — not a platform
-                purchase — is the foundation of sustainable long-term compounding.
+                AI to deliver hyper-personalised value propositions. That agility, not a platform
+                purchase, is the foundation of sustainable long-term compounding.
               </p>
               <p className="pc-sub pc-sub-teal">Through 2030</p>
               <p>
@@ -1849,7 +1849,7 @@ export function VineetPages() {
           <div className="pc-skew">
             <p>
               Sustainable success comes from identifying the few commercial drivers that truly move
-              the needle — and executing them with extreme rigour.
+              the needle, and executing them with extreme rigour.
             </p>
           </div>
           <Folio page="20" section="Through 2030" />
@@ -1871,7 +1871,7 @@ export function VineetPages() {
             <div className="pc-cols pc-drop">
               <p>
                 After more than a hundred brands, he refuses to dress a failure up as a tragedy. In
-                business, he says, there are no pure mistakes — only learnings. That said, the single
+                business, he says, there are no pure mistakes, only learnings. That said, the single
                 largest gap between sustained market leadership and stagnation is a specific one:
                 failing to adapt offerings and go-to-market models as consumer buying habits evolve.
                 It is not a missing slogan. It is a file that stayed still while the buyer did not.
@@ -1893,7 +1893,7 @@ export function VineetPages() {
                 Organisations frequently try to solve too many initiatives at once, creating
                 competing internal priorities. Real transformation requires matching strategic
                 ambition to internal capability constraints and executing systematically, phase by
-                phase — which brings the argument back to the decision he rates above all others.
+                phase, which brings the argument back to the decision he rates above all others.
               </p>
               <p className="pc-sub">Deciding what to stop</p>
               <p>
@@ -1908,7 +1908,7 @@ export function VineetPages() {
                 operational agenda, which is the only reliable cure for siloed cross-purposes.
                 Advanced analytics are used to surface frontline sales friction, channel margin pain
                 points and strategic execution gaps. And internal capability is benchmarked honestly
-                against industry leaders — while remembering that sophisticated frameworks and
+                against industry leaders, while remembering that sophisticated frameworks and
                 analytics are useless without a high-performance culture committed to accountability
                 and delivery.
             </p>
@@ -1949,9 +1949,9 @@ export function VineetPages() {
           <p className="pc-ad-copy" style={{ maxWidth: 620, fontSize: 14.6 }}>
             PrimeCrest publishes leaders whose method is worth reading, not only their results. Every
             edition is one long conversation, printed in the order it was answered, with the working
-            method drawn out around it. If that is the kind of record you want on file — for a
+            method drawn out around it. If that is the kind of record you want on file, for a
             founder, an operator, or a chief executive whose quarter deserves more than a press
-            release — the desk is open.
+            release, the desk is open.
           </p>
 
           <div className="pc-sub-tiers" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
@@ -1988,7 +1988,7 @@ export function VineetPages() {
               <p className="pc-imprint">
                 <b>PrimeCrest</b> · a product of Fortiora Group LLC
                 <br />
-                Hello@thefortiora.com · theprimecrest.com
+                hello@theprimecrest.com · theprimecrest.com
                 <br />
                 30 N Gould St Ste R, Sheridan, WY 82801, United States
               </p>
@@ -2008,19 +2008,32 @@ export function VineetPages() {
 
       {/* ============================================== 23 · BACK COVER */}
       <article className="mag-page pc pc-bleed" data-density="hard">
-        <img className="pc-img" src="/brand/backdrop-primecrest.jpg" alt="" />
+        <img
+          className="pc-img"
+          src="/brand/backdrop-primecrest.jpg"
+          alt=""
+          style={{ filter: "saturate(0.95) contrast(1.02) brightness(1.12)" }}
+        />
         <div
               style={{
             position: "absolute",
             inset: 0,
             zIndex: 2,
             background:
-              "radial-gradient(70% 50% at 50% 34%, rgba(23,149,154,0.16) 0%, transparent 70%), linear-gradient(180deg, rgba(7,10,11,0.82) 0%, rgba(7,10,11,0.62) 40%, rgba(7,10,11,0.92) 100%)",
+              "radial-gradient(72% 52% at 50% 32%, rgba(23,149,154,0.14) 0%, transparent 70%), linear-gradient(180deg, rgba(20,26,28,0.58) 0%, rgba(20,26,28,0.34) 42%, rgba(20,26,28,0.74) 100%)",
           }}
         />
         <div className="pc-well pc-back">
           <div style={{ margin: "auto 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <img className="pc-back-logo" src="/brand/logo-primecrest.png" alt="PrimeCrest" />
+            <div className="pc-back-mark">
+              <svg className="pc-back-crest" viewBox="0 0 48 42" aria-hidden>
+                <path d="M24 1.2 46 20.4h-7.2L24 8.6 9.2 20.4H2Z" fill="#f4efe6" />
+                <path d="M24 15.2 46 34.4h-7.2L24 22.6 9.2 34.4H2Z" fill="#c39a4b" />
+              </svg>
+              <b className="pc-back-word" aria-label="PrimeCrest">
+                PRIMECREST<span>.</span>
+              </b>
+            </div>
             <span className="pc-pill" style={{ marginTop: 26 }}>
               Where Vision Meets Voice
             </span>
@@ -2036,7 +2049,7 @@ export function VineetPages() {
                 color: "rgba(242,237,227,0.86)",
               }}
             >
-              A journal of affairs, business and culture — independent reporting, considered writing,
+              A journal of affairs, business and culture, independent reporting, considered writing,
               and the people who shape what comes next.
             </p>
           </div>
@@ -2060,7 +2073,7 @@ export function VineetPages() {
               <br />
               30 N Gould St Ste R, Sheridan, WY 82801, United States
               <br />
-              Hello@thefortiora.com · <b>theprimecrest.com</b>
+              hello@theprimecrest.com · <b>theprimecrest.com</b>
             </p>
             <div className="pc-hair" style={{ width: 320 }} />
             <p className="pc-label" style={{ letterSpacing: "0.4em" }}>
