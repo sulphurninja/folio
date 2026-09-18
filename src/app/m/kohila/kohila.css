@@ -1,0 +1,828 @@
+/*
+ * PrimeCrest · The September Issue (Kohila Sivas)
+ *
+ * Cover + back: the bespoke `kh-*` lockup with the copper / amber cover
+ * identity. Do not restyle.
+ * Interiors: the shared kit (src/app/m/kit.css) themed `.kt-kohila` —
+ * deep forest green, warm bone paper, champagne gold, terracotta.
+ * Fraunces · Libre Baskerville · Jost · Pinyon Script.
+ */
+
+/* ------------------------------------------------------ interior theme */
+
+.kt.kt-kohila {
+  --kt-paper: #f5f1e4;
+  --kt-paper-2: #eae3cf;
+  --kt-dark: #0e1b14;
+  --kt-dark-2: #1c2f22;
+
+  --kt-ink: #17211a;
+  --kt-body: #2c342c;
+  --kt-mute: #6d7268;
+  --kt-cream: #f5f1e4;
+  --kt-cream-mute: rgba(245, 241, 228, 0.68);
+
+  --kt-accent: #c9a45a;
+  --kt-accent-lt: #ecd8a4;
+  --kt-accent-2: #b05a32;
+
+  --kt-hair-l: rgba(23, 33, 26, 0.16);
+  --kt-hair-d: rgba(245, 241, 228, 0.17);
+
+  --kt-panel-l: rgba(176, 90, 50, 0.08);
+  --kt-panel-d: rgba(236, 216, 164, 0.07);
+
+  --kt-display: var(--font-fraunces), "Fraunces", Georgia, serif;
+  --kt-serif: var(--font-baskerville), "Libre Baskerville", Georgia, serif;
+  --kt-sans: var(--font-jost), "Jost", system-ui, sans-serif;
+  --kt-script: var(--font-pinyon), "Snell Roundhand", cursive;
+}
+
+/* Pinyon Script runs small on the cap height — nudge the script sizes up. */
+.kt-kohila .kt-ls-rail .kt-script {
+  font-size: 66px;
+}
+
+.kt-kohila .kt-letter-sign .kt-script {
+  font-size: 52px;
+}
+
+.kt-kohila .kt-spot-card .kt-script {
+  font-size: 76px;
+}
+
+/* Name plate sits on the dress, not the face. */
+.kt-kohila .kt-opener-boxed {
+  justify-content: space-between;
+}
+
+.kt-kohila .kt-opener-box {
+  margin: 0;
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  bottom: 118px;
+}
+
+/* Baskerville sets wide and tall — tune the long-form measures. */
+.kt-kohila .kt-ls-main .kt-letter-body {
+  font-size: 15.4px;
+  line-height: 1.74;
+}
+
+.kt-kohila .kt-story-body.kt-dense {
+  font-size: 13.6px;
+  line-height: 1.6;
+}
+
+.kt-kohila .kt-story-measure .kt-story-body.kt-dense {
+  font-size: 14.8px;
+  line-height: 1.68;
+  max-width: 640px;
+}
+
+.kt-kohila .kt-split-prose {
+  font-size: 13.4px;
+  line-height: 1.52;
+}
+
+.kt-kohila .kt-split-main {
+  padding: 42px 42px 28px;
+}
+
+.kt-kohila .kt-quote-panel {
+  margin: 10px 0;
+  padding: 14px 16px 12px;
+}
+
+.kt-kohila .kt-quote-panel::before {
+  font-size: 42px;
+  margin-bottom: 4px;
+}
+
+.kt-kohila .kt-split-band .kt-split-pic {
+  flex-basis: 36%;
+}
+
+.kt-kohila .kt-split-list {
+  margin-top: 8px;
+}
+
+.kt-kohila .kt-split-list li {
+  padding: 7px 0;
+}
+
+.kt-kohila .kt-split-list b {
+  font-size: 19px;
+}
+
+.kt-kohila .kt-split-list span {
+  font-size: 13.2px;
+  line-height: 1.38;
+}
+
+/* ------------------------------------------- signature · fleuron dividers
+   Kohila's mark: a fleuron centered between double hairlines, used on the
+   letter and the feature pages. */
+
+.kt-kohila .ko-fleuron {
+  break-inside: avoid;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 15px 0;
+  font-size: 19px;
+  line-height: 1;
+  color: var(--kt-accent-2);
+}
+
+.kt-kohila .ko-fleuron span {
+  transform: translateY(-1px);
+}
+
+.kt-kohila .ko-fleuron::before,
+.kt-kohila .ko-fleuron::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 5px;
+  border-top: 1px solid var(--kt-hair-l);
+  border-bottom: 1px solid var(--kt-hair-l);
+}
+
+.kt-kohila.kt-dark .ko-fleuron,
+.kt-kohila.kt-bleed .ko-fleuron {
+  color: var(--kt-accent);
+}
+
+.kt-kohila.kt-dark .ko-fleuron::before,
+.kt-kohila.kt-dark .ko-fleuron::after,
+.kt-kohila.kt-bleed .ko-fleuron::before,
+.kt-kohila.kt-bleed .ko-fleuron::after {
+  border-color: var(--kt-hair-d);
+}
+
+/* ------------------------------------------- signature · rounded insets */
+
+.kt-kohila .kt-inset img {
+  border-radius: 16px;
+  border: 1px solid var(--kt-hair-l);
+}
+
+.kt-kohila .kt-inset figcaption {
+  text-align: center;
+}
+
+/* ================================================================ .kh
+   Cover + back-cover system. Untouched from the bespoke issue build. */
+
+.kh {
+  --kh-ink: #2a1a11;
+  --kh-ink-2: #382215;
+  --kh-ink-3: #4a3020;
+  --kh-paper: #f4efe6;
+  --kh-paper-2: #ece0cf;
+  --kh-peach: #f8e9d8;
+  --kh-brass: #b0561f;
+  --kh-brass-lt: #e3a24c;
+  --kh-brass-dk: #8a3d12;
+  --kh-teal: #b5442a;
+  --kh-teal-dk: #7f2c18;
+  --kh-graphite: #40352b;
+  --kh-body: #2c231b;
+
+  --kh-didone: var(--font-instrument), "Instrument Serif", Georgia, serif;
+  --kh-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --kh-sans: var(--font-oswald), "Oswald", system-ui, sans-serif;
+  --kh-script: var(--font-pinyon), "Snell Roundhand", cursive;
+  --kh-hand: var(--font-caveat), "Segoe Script", cursive;
+
+  --kh-marg: 54px;
+
+  font-family: var(--kh-serif);
+  color: var(--kh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mag-page.kh-bleed {
+  background: #241612;
+  padding: 0;
+}
+
+.kh-bleed > .kh-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* page-flip rewrites the article's display, so every layout lives in an
+   absolutely positioned inner box the library never touches. */
+.kh-well {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--kh-marg) var(--kh-marg) 40px;
+  z-index: 3;
+}
+
+.kh-label {
+  margin: 0;
+  font-family: var(--kh-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--kh-brass);
+}
+
+.kh-hair {
+  height: 1px;
+  background: rgba(176, 86, 31, 0.34);
+  border: 0;
+  margin: 12px 0;
+}
+
+/* ============================================================== COVER */
+
+.mag-page.kh-cover {
+  background: #241612;
+  padding: 0;
+}
+
+.kh-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+  filter: saturate(1.03) contrast(1.01) brightness(1.03);
+}
+
+/* Four graded washes: masthead band, left rail, right rail, nameplate foot. */
+.kh-cover-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(26, 16, 10, 0.9) 0%, rgba(26, 16, 10, 0.5) 18%, rgba(26, 16, 10, 0) 30%),
+    linear-gradient(0deg, rgba(26, 16, 10, 0.86) 0%, rgba(26, 16, 10, 0.62) 16%, rgba(26, 16, 10, 0.18) 32%, rgba(26, 16, 10, 0) 44%),
+    linear-gradient(90deg, rgba(26, 16, 10, 0.5) 0%, rgba(26, 16, 10, 0.16) 16%, rgba(26, 16, 10, 0) 30%),
+    linear-gradient(270deg, rgba(26, 16, 10, 0.82) 0%, rgba(26, 16, 10, 0.56) 16%, rgba(26, 16, 10, 0.2) 30%, rgba(26, 16, 10, 0) 44%),
+    radial-gradient(78% 58% at 40% 30%, rgba(181, 68, 42, 0.16) 0%, transparent 70%);
+}
+
+.kh-cover-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.kh-cover-ui > * {
+  position: absolute;
+}
+
+/* Masthead - full width, small side inset. */
+.kh-mast {
+  top: 22px;
+  left: 36px;
+  right: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.kh-mast-word {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.78));
+}
+
+.kh-mast-crest {
+  width: 58px;
+  height: 51px;
+  flex: 0 0 auto;
+}
+
+.kh-mast-word b {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  font-family: var(--font-syne), "Syne", "Times New Roman", serif;
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 0.86;
+  color: #f7f2e8;
+}
+
+.kh-mast-word b i {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.kh-mast-word b span {
+  color: #b0561f;
+}
+
+.kh-mast-tag {
+  margin: 10px 0 0;
+  font-family: var(--kh-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.52em;
+  text-indent: 0.52em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(242, 237, 227, 0.82);
+}
+
+.kh-mast-hair {
+  margin: 12px 0 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(176, 86, 31, 0.9), transparent);
+}
+
+/* Dateline rail, top-left */
+.kh-cover-date {
+  top: 196px;
+  left: 36px;
+  width: 250px;
+  border-top: 2px solid var(--kh-brass);
+  padding-top: 14px;
+}
+
+.kh-cover-date p {
+  margin: 0 0 5px;
+  font-family: var(--kh-sans);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+.kh-cover-date p + p {
+  color: rgba(242, 237, 227, 0.72);
+  font-weight: 400;
+}
+
+/* Cover teasers */
+.kh-teaser {
+  width: 292px;
+}
+
+.kh-teaser-a {
+  top: 400px;
+  left: 36px;
+}
+
+.kh-teaser-b {
+  top: 736px;
+  right: 36px;
+  text-align: right;
+}
+
+.kh-teaser h3 {
+  margin: 0;
+  font-family: var(--kh-serif);
+  font-size: 28px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  color: var(--kh-brass-lt);
+}
+
+.kh-teaser hr {
+  border: 0;
+  height: 1px;
+  background: rgba(242, 237, 227, 0.42);
+  margin: 12px 0 12px;
+}
+
+.kh-teaser p {
+  margin: 0;
+  font-family: var(--kh-sans);
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.34;
+  color: rgba(242, 237, 227, 0.92);
+}
+
+/* Series badge, right rail - lifted into the top-right so the big word sits
+   over the background and hair, not her face. */
+.kh-cover-badge {
+  top: 180px;
+  right: 36px;
+  width: 320px;
+  text-align: right;
+}
+
+.kh-cover-badge .kh-badge-dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--kh-brass-lt), var(--kh-brass));
+  margin-bottom: 7px;
+}
+
+.kh-cover-badge h2 {
+  margin: 0;
+  font-family: var(--kh-serif);
+  font-size: 34px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: #f4eee2;
+  line-height: 1.08;
+}
+
+.kh-cover-badge strong {
+  display: block;
+  margin: -2px 0 -4px;
+  font-family: var(--kh-didone);
+  font-weight: 600;
+  font-size: 84px;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: var(--kh-brass-lt);
+}
+
+.kh-cover-badge span {
+  display: block;
+  font-family: var(--kh-sans);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.kh-cover-badge em {
+  display: block;
+  font-family: var(--kh-didone);
+  font-style: italic;
+  font-size: 40px;
+  color: var(--kh-brass-lt);
+  line-height: 1.08;
+}
+
+/* Role block, right rail */
+.kh-cover-role {
+  top: 578px;
+  right: 36px;
+  width: 300px;
+  text-align: right;
+  border-right: 2px solid var(--kh-brass);
+  padding-right: 16px;
+}
+
+.kh-cover-role p {
+  margin: 0;
+  font-family: var(--kh-sans);
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.26;
+  color: rgba(242, 237, 227, 0.92);
+}
+
+.kh-cover-role strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--kh-sans);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Nameplate, bottom-left */
+.kh-cover-name {
+  left: 46px;
+  bottom: 128px;
+  width: 560px;
+}
+
+.kh-cover-name em {
+  display: block;
+  font-family: var(--kh-didone);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 92px;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--kh-brass-lt);
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.66);
+}
+
+.kh-cover-name strong {
+  display: block;
+  margin: -2px 0 0 4px;
+  font-family: var(--kh-didone);
+  font-weight: 600;
+  font-size: 74px;
+  line-height: 0.94;
+  letter-spacing: 0.012em;
+  color: #fffdf8;
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.7);
+}
+
+.kh-cover-name p {
+  margin: 13px 0 0 5px;
+  max-width: 430px;
+  font-family: var(--kh-sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.32;
+  color: rgba(242, 237, 227, 0.94);
+}
+
+/* Foot: rail, QR chip, url */
+.kh-cover-foot {
+  left: 46px;
+  right: 46px;
+  bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.kh-cover-foot .kh-cover-issn {
+  margin: 0;
+  font-family: var(--kh-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(242, 237, 227, 0.6);
+  line-height: 1.7;
+}
+
+.kh-cover-foot .kh-cover-issn b {
+  color: rgba(242, 237, 227, 0.92);
+  font-weight: 600;
+}
+
+.kh-qr-chip {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.kh-qr-chip img {
+  width: 92px;
+  height: auto;
+  padding: 5px;
+  background: #f7f4ee;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
+
+.kh-qr-chip span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--kh-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--kh-brass-lt);
+}
+
+/* ========================================================= BACK COVER */
+
+.kh-back {
+  align-items: center;
+  text-align: center;
+  padding: 74px 60px 52px;
+}
+
+/* Back-cover lockup - same crest + wordmark as the cover masthead. */
+.kh-back-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.72));
+}
+
+.kh-back-crest {
+  width: 68px;
+  height: 60px;
+  flex: 0 0 auto;
+}
+
+.kh-back-word {
+  margin: 0;
+  font-family: var(--font-syne), "Syne", "Times New Roman", serif;
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.06em;
+  color: #f7f2e8;
+}
+
+.kh-back-word span {
+  color: #b0561f;
+}
+
+.kh-imprint {
+  margin: 0;
+  font-family: var(--kh-sans);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.86);
+}
+
+.kh-imprint b {
+  font-weight: 600;
+  color: #fff;
+}
+
+.kh-pill {
+  display: inline-block;
+  padding: 7px 20px;
+  background: rgba(242, 237, 227, 0.14);
+  border: 1px solid rgba(176, 86, 31, 0.4);
+  font-family: var(--kh-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+/* ----------------------------------------------------------- Fortiora ad */
+
+.mag-page.kh-ad {
+  background:
+    radial-gradient(80% 50% at 100% 0%, rgba(176, 86, 31, 0.2) 0%, transparent 62%),
+    linear-gradient(168deg, #243028 0%, #0e1b14 56%, #0a120d 100%);
+  padding: 0;
+}
+
+.kh-ad-well {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 48px 36px;
+}
+
+.kh-ad-kicker {
+  margin: 0;
+  font-family: var(--kh-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #d4a06a;
+}
+
+.kh-ad-head {
+  margin: 10px 0 0;
+  max-width: 640px;
+  font-family: var(--kh-serif);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.06;
+  letter-spacing: -0.024em;
+  color: #f5f1e4;
+}
+
+.kh-ad-dek {
+  margin: 12px 0 0;
+  max-width: 580px;
+  font-family: var(--kh-serif);
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.42;
+  color: rgba(245, 241, 228, 0.78);
+}
+
+.kh-ad-hair {
+  height: 1px;
+  margin: 16px 0 4px;
+  background: rgba(201, 160, 90, 0.32);
+}
+
+.kh-ad-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.kh-ad-list li {
+  padding: 12px 0;
+  border-top: 1px solid rgba(201, 160, 90, 0.22);
+  flex: 1 1 auto;
+}
+
+.kh-ad-list b {
+  display: block;
+  font-family: var(--kh-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d4a06a;
+}
+
+.kh-ad-list p {
+  margin: 5px 0 0;
+  font-family: var(--kh-serif);
+  font-size: 15px;
+  line-height: 1.38;
+  color: rgba(245, 241, 228, 0.9);
+}
+
+.kh-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+  flex: 0 0 auto;
+}
+
+.kh-lockup img {
+  height: 52px;
+  width: auto;
+}
+
+.kh-lockup b {
+  display: block;
+  font-family: var(--kh-sans);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f5f1e4;
+  line-height: 1;
+}
+
+.kh-lockup span {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--kh-sans);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #d4a06a;
+}
+
+.kh-ad-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 8px;
+  flex: 0 0 auto;
+}
+
+.kh-ad-contact {
+  margin: 12px 0 0;
+  font-family: var(--kh-serif);
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(245, 241, 228, 0.78);
+}
+
+.kh-ad-contact b { color: #f5f1e4; }
+
+.kh-ad-qr {
+  padding: 8px;
+  background: #f5f1e4;
+}
+
+.kh-ad-qr img {
+  display: block;
+  width: 110px;
+  height: auto;
+}
+
+.kh-ad-folio {
+  margin: 12px 0 0;
+  font-family: var(--kh-sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(245, 241, 228, 0.45);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}

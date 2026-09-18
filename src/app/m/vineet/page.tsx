@@ -19,7 +19,7 @@ export default function VineetIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The September Issue" toc={VINEET_TOC} tone="vineet">
+      <HtmlFlipbook title="PrimeCrest — The September Issue" toc={VINEET_TOC} tone="vineet" pdfHref="/pdf/vineet.pdf">
         <VineetPages />
       </HtmlFlipbook>
     </>

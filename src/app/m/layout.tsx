@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import "./kit.css";
 import {
   Bebas_Neue,
   Bodoni_Moda,

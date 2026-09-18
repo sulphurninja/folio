@@ -1,791 +1,562 @@
 /* eslint-disable @next/next/no-img-element */
-import { HouseAdSpread, IssueCover, IssueCredits, PhotoCopy } from "./IssueChrome";
+
+/**
+ * PrimeCrest · The September Issue, Vol. II
+ * Judy Stevens. Cover and back keep the flagship lockup.
+ * Interiors run on the shared kit (src/content/kit.tsx) themed `kt-judy`.
+ * Ads and Be Featured are custom `jd-*` leaves (Fortiora lockup, floor card).
+ */
+
+import {
+  ContentsPage,
+  CreditsPage,
+  LetterPage,
+  OpenerPage,
+  PlatePage,
+  QuotePanel,
+  SplitPage,
+  StoryPage,
+  Subhead,
+} from "./kit";
 
 const IMG = "/issues/judy";
+const T = "kt-judy";
+const ISSUE = "PrimeCrest · The September Issue";
 
-const GREEN = "#1e3d2f";
-const CREAM = "#f4efe6";
-const CREAM_DIM = "rgba(244, 239, 230, 0.72)";
-const KICK = {
-  letterSpacing: "0.28em" as const,
-  fontWeight: 700,
-};
+const CREDITS = [
+  ["Editor-in-Chief", "Katherine A. Mercer"],
+  ["Managing Editor", "Daniel Whitfield"],
+  ["Feature Editor", "Rebecca Sloan"],
+  ["Art & Design Head", "Marcus Ellison"],
+  ["Type & Composition", "Nathan Brooks"],
+  ["Cover Direction", "Claire Donovan"],
+  ["Photo Editor", "Gregory Hale"],
+  ["Interview", "Printed as answered"],
+  ["Fact Desk", "Emily Carter"],
+  ["Digital Production", "Aaron Pierce"],
+  ["Business Development", "Jonathan Reyes"],
+  ["Subscriptions", "theprimecrest.com"],
+] as const;
 
 export const JUDY_TOC = [
   { page: 0, label: "Cover" },
-  { page: 1, label: "Credits" },
-  { page: 2, label: "Letter" },
-  { page: 3, label: "Wisdom" },
-  { page: 4, label: "Contents" },
-  { page: 5, label: "The Field" },
-  { page: 6, label: "Santa Fe" },
-  { page: 7, label: "Philosophy" },
-  { page: 8, label: "The Record" },
-  { page: 9, label: "Classroom" },
-  { page: 10, label: "The Method" },
-  { page: 11, label: "The Numbers" },
-  { page: 12, label: "The Question" },
-  { page: 13, label: "Statement" },
-  { page: 14, label: "Close" },
-  { page: 15, label: "The Field" },
-  { page: 17, label: "PrimeCrest" },
-];
-
-const TOC_CARDS = [
-  ["03", "Letter", "How the field began"],
-  ["06", "The Field", "From gerontology to growth"],
-  ["07", "Santa Fe", "A week in the desert"],
-  ["08", "Philosophy", "The gold standard"],
-  ["09", "The Record", "What she built"],
-  ["11", "The Method", "Critique as curriculum"],
-  ["13", "The Question", "AI at the desk"],
-  ["15", "Close", "Never give up"],
-];
-
-const RECORD = [
-  ["1970s", "The peel", "Adult development arrives as a new area in psychology, peeling away from gerontology. Decline was the old question. What still grows after forty is the new one."],
-  ["1977", "Adult Life", "First edition. Described as the first textbook in adult development written for psychology students. A map when the professors were still drawing the coast."],
-  ["40s–50s", "The students", "Typical Fielding students: long work histories — organizational consulting, teaching, social work. They wanted theory and practice in the same room."],
-  ["1987", "Online degree", "A graduate program delivered entirely online except orientation — among the first in the country. The work moved to the screen."],
-  ["1987", "Santa Fe", "Fielding opened its doors. A week in the desert. Orientation in New Mexico. Then the seminars existed as text."],
-  ["—", "The method", "Critique and dialogue: students reviewed papers, offered feedback, led the discussions. The student’s own thinking still has to be visible."],
-  ["—", "Oxford Handbook", "Major contributor and editor of the Oxford International Handbook of Adult Development and Wisdom."],
-  ["—", "The standard", "Compassion and empathy are the gold standard of adult emotional development. Her line. Not a mood."],
-  ["Now", "The desk", "AI for research. The student’s own thinking and writing still has to be visible. That is the issue."],
-];
-
-const STATS = [
-  ["1977", "Adult Life first published"],
-  ["1987", "Online program opens"],
-  ["40s–50s", "Typical Fielding student"],
-  ["1st", "Textbook for psychology students"],
-  ["Santa Fe", "Weeklong orientation"],
-  ["Oxford", "Handbook of Adult Development"],
+  { page: 1, label: "Editorial" },
+  { page: 2, label: "The Editor's Letter" },
+  { page: 3, label: "Contents" },
+  { page: 4, label: "Credits" },
+  { page: 5, label: "The Signature Story" },
+  { page: 7, label: "The Record" },
+  { page: 8, label: "Fortiora · AI CRM" },
+  { page: 10, label: "Be Featured" },
+  { page: 11, label: "PrimeCrest" },
 ];
 
 export function JudyPages() {
   return (
     <>
-      <IssueCover
-        img={`${IMG}/coverart.jpg`}
-        alt="Judy Stevens"
-        vol="Vol. III · The Wisdom Issue · 2026"
-        accent={GREEN}
-        icon="book"
-        layout="band"
-        name="Judy Stevens"
-        role="Scholar & Educator"
-        place="Adult Development & Wisdom"
-        teasers={[
-          ["The field", "Adult Life, 1977 — written for psychology students, not the corridor."],
-          ["Santa Fe", "A week in the desert. Then the work moved to the screen."],
-        ]}
-      />
+      <article className="mag-page wc wc-cover" data-density="hard">
+        <img
+          className="wc-cover-img"
+          src={`${IMG}/coverart.jpg`}
+          alt="Judy Stevens, Scholar and Educator in Adult Development and Wisdom"
+          fetchPriority="high"
+        />
+        <div className="wc-cover-grade" />
+        <div className="wc-cover-ui">
+          <header className="wc-mast">
+            <div className="wc-mast-word">
+              <svg className="wc-mast-crest" viewBox="0 0 48 42" aria-hidden>
+                <path d="M24 1.2 46 20.4h-7.2L24 8.6 9.2 20.4H2Z" fill="#f4efe6" />
+                <path d="M24 15.2 46 34.4h-7.2L24 22.6 9.2 34.4H2Z" fill="#c0466f" />
+              </svg>
+              <b aria-label="PrimeCrest">
+                <i>P</i>
+                <i>R</i>
+                <i>I</i>
+                <i>M</i>
+                <i>E</i>
+                <i>C</i>
+                <i>R</i>
+                <i>E</i>
+                <i>S</i>
+                <i>T</i>
+                <span>.</span>
+              </b>
+            </div>
+            <p className="wc-mast-tag">Where Vision Meets Voice</p>
+            <div className="wc-mast-hair" />
+          </header>
+          <div className="wc-cover-date">
+            <p>The September Issue</p>
+            <p>Vol. II · No. 02</p>
+            <p>2026</p>
+          </div>
+          <div className="wc-teaser wc-teaser-a">
+            <h3>
+              Adult Life,
+              <br />
+              1977
+            </h3>
+            <hr />
+            <p>
+              The first textbook in adult development, written for psychology students, not the
+              corridor.
+            </p>
+          </div>
+          <div className="wc-cover-badge">
+            <span className="wc-badge-dot" />
+            <h2>Unstoppable</h2>
+            <strong>LEADER</strong>
+            <span>making a difference in</span>
+            <em>2026</em>
+          </div>
+          <div className="wc-cover-role">
+            <p>
+              Scholar &amp;
+              <br />
+              Educator
+            </p>
+            <strong>
+              Adult Development
+              <br />
+              &amp; Wisdom
+            </strong>
+          </div>
+          <div className="wc-teaser wc-teaser-b">
+            <h3>
+              A week in
+              <br />
+              Santa Fe
+            </h3>
+            <hr />
+            <p>
+              Then the seminar moved onto the wire, early, when online still had to prove it could
+              hold a room.
+            </p>
+          </div>
+          <div className="wc-cover-name">
+            <em>Judy</em>
+            <strong>STEVENS</strong>
+            <p>
+              The scholar who wrote a young field its first book, and taught it on a screen before
+              the rest of the corridor arrived.
+            </p>
+          </div>
+          <div className="wc-cover-foot">
+            <p className="wc-cover-issn">
+              <b>The September Issue</b>
+              <br />
+              theprimecrest.com
+            </p>
+            <span className="wc-qr-chip">
+              <span>Scan to read</span>
+              <img src="/brand/qr-primecrest.png" alt="Scan to read PrimeCrest online" />
+            </span>
+          </div>
+        </div>
+      </article>
 
-      <IssueCredits
-        accent={GREEN}
-        groundClass="mag-dark mag-forest"
-        subject="Judy Stevens — Scholar & Educator, Adult Development & Wisdom"
-        words="From the interviews and writings of Judy Stevens. Textbook years, Fielding, Santa Fe, and the Oxford Handbook as she gave them."
-        volume="Vol. III · The Wisdom Issue"
-        note={
+      {/* 01 · Editorial plate */}
+      <PlatePage
+        theme={T}
+        img={`${IMG}/scarf.jpg`}
+        imgPos="50% 10%"
+        kicker="PrimeCrest · The September Issue"
+        side="Vol. II · No. 02 · 2026"
+        script="Editorial"
+        title={
           <>
-            <p>
-              The Wisdom Issue is eighteen leaves on Judy Stevens and the field she helped write
-              into being. Adult Life, 1977 — described as the first textbook in adult development
-              written for psychology students. A graduate program delivered online except
-              orientation, 1987. A week in Santa Fe, then the work on the screen.
-            </p>
-            <p>
-              She is a major contributor and editor of the Oxford International Handbook of Adult
-              Development and Wisdom. The method was critique and dialogue: students reviewed
-              papers, offered feedback, led the discussions. AI sits at the desk now. The
-              student&apos;s own thinking still has to be visible. That is the issue.
-            </p>
+            The book was <em>the easy part.</em>
           </>
         }
+        dek="Judy Stevens wrote a young field its first textbook, then taught it on a screen before the rest of the corridor arrived. This edition is about the gap she works in."
+        footLeft={ISSUE}
+        footRight="Editorial · 01"
       />
 
-      {/* 03 Opening letter — right, single column, ghost J */}
-      <article className="mag-page mag-pad">
-        <div className="mag-body mag-fill-page">
-          <p
-            className="mag-giant"
-            style={{
-              position: "absolute",
-              left: -6,
-              top: 36,
-              margin: 0,
-              zIndex: 0,
-              background: "none",
-              color: GREEN,
-              WebkitTextFillColor: GREEN,
-              opacity: 0.12,
-            }}
-          >
-            J
+      {/* 02 · Editor's letter */}
+      <LetterPage
+        theme={T}
+        script="From the Editors"
+        title={
+          <>
+            A Field That
+            <br />
+            Outlasts the Syllabus
+          </>
+        }
+        signName="The Editors"
+        signRole="PrimeCrest Editorial Desk"
+        quote="Read it slowly. Then go and look at the student."
+        folio={[ISSUE, "The Editor's Letter", "02"]}
+      >
+        <p className="kt-drop">
+          Most classrooms do not stall because nobody wrote a theory. They stall because the theory
+          was the easy part. The syllabus gets approved, the week in Santa Fe is named, and then the
+          room goes back to doing what it already knows how to do. That gap, between the book on the
+          shelf and the thinking on the screen, is the subject of this edition.
+        </p>
+        <p>
+          We look for leaders who work inside that gap. Judy Stevens has spent a career there. She
+          wrote <em>Adult Life</em> in 1977, the first textbook in adult development written for
+          psychology students, when the corridor still treated adulthood as a plateau and then a
+          decline. The students who found her were typically in their forties and fifties. They
+          wanted the theory and the practice in the same hour.
+        </p>
+        <p>
+          With this September issue, PrimeCrest publishes leaders whose method is worth copying, not
+          only their results. Our cover subject makes an uncomfortable case: that compassion and
+          empathy are the gold standard of adult emotional development; that a seminar can hold a
+          room on a wire; and that a machine can retrieve, but it cannot sit for the thinking.
+        </p>
+        <p>
+          We printed her answers in the order she gave them. Where she named a year, we kept it.
+          Where she declined to dress a career up as a legend, we kept that too. If your own seminar
+          is short this term, the most useful page in this issue may be the one that tells you where
+          to stop looking.
+        </p>
+        <p>
+          A note on method. The interview was conducted in writing, at her request, and the
+          transcript went to press with its punctuation intact. What you are reading is the way she
+          actually answers a question, which is to say slowly, and in full sentences.
+        </p>
+      </LetterPage>
+
+      {/* 03 · Contents */}
+      <ContentsPage
+        theme={T}
+        img={`${IMG}/blue.jpg`}
+        imgPos="50% 16%"
+        caption="Judy Stevens · photographed for the September issue"
+        script="Contents"
+        issueLine="The September Issue · Vol. II"
+        entries={[
+          {
+            no: "02",
+            title: "The Editor's Letter",
+            dek: "A field that outlasts the syllabus, and why we printed her answers as given.",
+          },
+          {
+            no: "04",
+            title: "Credits",
+            dek: "The desk that put this edition on the page.",
+          },
+          {
+            no: "05",
+            title: "Judy Stevens",
+            dek: "The scholar who wrote the field its first book, then taught it on a wire.",
+          },
+          {
+            no: "07",
+            title: "The Record",
+            dek: "1977, 1987, Santa Fe, Oxford. Kept in the order she gave them.",
+          },
+          {
+            no: "08",
+            title: "Fortiora · AI CRM",
+            dek: "The account on one board, from the publisher's desk.",
+          },
+          {
+            no: "10",
+            title: "Be Featured",
+            dek: "Because your story deserves the record.",
+          },
+        ]}
+      />
+
+      {/* 04 · Credits */}
+      <CreditsPage
+        theme={T}
+        script="Credits"
+        issueLine="The September Issue · Vol. II · 2026"
+        credits={CREDITS}
+        imprint={
+          <>
+            Fortiora Group LLC · 30 N Gould St Ste R, Sheridan, WY 82801
+            <br />
+            hello@theprimecrest.com · theprimecrest.com
+            <br />
+            Printed as answered. No second career invented for the photograph.
+          </>
+        }
+        qr="/brand/qr-primecrest.png"
+      />
+
+      {/* 05 · Feature opener */}
+      <OpenerPage
+        theme={T}
+        img={`${IMG}/gaze.jpg`}
+        imgPos="50% 8%"
+        kicker="The Signature Story"
+        side="Scholar & Educator · Adult Development & Wisdom"
+        nameTop="Judy"
+        nameBottom="Stevens"
+        dek="The scholar who wrote a young field its first book, and taught it on a screen before the rest of the corridor arrived."
+        footLeft={ISSUE}
+        footRight="The Signature Story · 05"
+      />
+
+      {/* 06 · Feature essay */}
+      <StoryPage
+        theme={T}
+        dense
+        kicker="The Signature Story · Two"
+        title="The last number you see is not the field."
+        dek="Judy Stevens on why a short seminar is almost never a syllabus problem, and what the student already knows."
+        pull="Compassion and empathy are the gold standard of adult emotional development."
+        folio={[ISSUE, "The Signature Story", "06"]}
+      >
+        <p className="kt-drop">
+          A field is the most public idea a discipline owns and the least useful place to begin.
+          Adult development arrived late, peeling away from gerontology. The older discipline
+          measured decline. This one asked what still grows after forty. Judy Stevens was there at
+          the start, and not as a spectator. She wrote <em>Adult Life</em> in 1977, the first
+          textbook the field had, written for psychology students at a time when the professors were
+          still drawing the coastline of the subject.
+        </p>
+        <Subhead>The standard that can be missed</Subhead>
+        <p>
+          Ask her what the field settled on and the answer arrives without hedging.{" "}
+          <span className="kt-run">
+            “Compassion and empathy are the gold standard of adult emotional development.”
+          </span>{" "}
+          That sentence reorganises a great deal of thinking. If the standard is a standard, it can
+          be taught, measured and missed. Sentiment cannot. The students who sat with her were
+          already in the middle of a life, organisational consulting, teaching, social work, and
+          they could tell a framework from a slogan. They arrived in their forties and fifties with
+          a long work history behind them, wanting theory and practice in the same hour, and she
+          built the hour so both would fit.
+        </p>
+        <Subhead>1987, the room becomes text</Subhead>
+        <p>
+          She took the room apart in 1987 and rebuilt it as text. Fielding. A week of orientation in
+          Santa Fe, then the seminars existed on a wire, most likely among the first graduate
+          programs in the country delivered that way. Papers were posted where everyone could read
+          them. Hiding, the oldest habit of the back row, became almost impossible. The method
+          survived the move because the method was never the furniture. It was the visible thinking.
+        </p>
+        <QuotePanel>
+          A machine can retrieve. It cannot sit for the assumption underneath a sentence.
+        </QuotePanel>
+        <p>
+          AI now sits at the same desk, and she will not play the reactionary about it. Retrieval is
+          real work and the machine does it well. What it cannot do is show the student&apos;s own
+          reasoning, and the student&apos;s own reasoning is the whole assignment. We printed her
+          answers in the order she gave them. No second career invented for the photograph.
+        </p>
+        <Subhead>A reading list, not a legacy</Subhead>
+        <p>
+          Ask her about legacy and the answer comes back at practitioner height: the book still
+          assigned, the students still writing, the Oxford International Handbook of Adult
+          Development and Wisdom holding the field&apos;s record straight. She does not call it a
+          legacy. She calls it a reading list, and she keeps adding to it.
+        </p>
+      </StoryPage>
+
+      {/* 07 · The record */}
+      <SplitPage
+        theme={T}
+        img={`${IMG}/portrait.jpg`}
+        imgPos="58% 20%"
+        caption="Photographed for the September issue"
+        kicker="The File"
+        title={
+          <>
+            Dates. Rooms. <em>Books.</em>
+          </>
+        }
+        items={[
+          [
+            "1977",
+            "Adult Life, first edition. The first textbook in adult development written for psychology students. A map when the professors were still drawing the coast.",
+          ],
+          [
+            "40s–50s",
+            "The typical Fielding student arrives with a long work history, wanting theory and practice in the same room. Highly motivated. A working method, not a lecture.",
+          ],
+          [
+            "1987",
+            "A graduate program delivered entirely online except a weeklong orientation, most likely among the first in the country. The work moves to the screen.",
+          ],
+          [
+            "Santa Fe",
+            "Fielding opens with a week in the desert. Then the seminars exist as text, and later as video, without losing the method.",
+          ],
+          [
+            "Oxford",
+            "Major contributor and editor of the Oxford International Handbook of Adult Development and Wisdom, as the field catches up to the teaching.",
+          ],
+          [
+            "Now",
+            "AI sits at the desk. The student's own thinking and writing still has to be visible. That is the issue she keeps returning to.",
+          ],
+        ]}
+        folio={["PrimeCrest", "The Record", "07"]}
+      />
+
+      {/* 08 · Ad left */}
+      <article className="mag-page jd jd-ad" data-density="hard">
+        <div className="jd-ad-well">
+          <p className="jd-ad-kicker">Fortiora Group · Advertisement</p>
+          <h2 className="jd-ad-head">The account, on one board.</h2>
+          <p className="jd-ad-dek">
+            An AI CRM that keeps the deal, the ticket and the last conversation in the same place.
+            The next move is already drafted.
           </p>
-          <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", flex: 1 }}>
-            <img
-              src={`${IMG}/portrait.jpg`}
-              alt="Judy Stevens"
-              style={{ width: "100%", height: 280, objectFit: "cover", objectPosition: "center 22%", marginBottom: 22 }}
-            />
-            <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
-              Opening letter
-            </p>
-            <h2 className="mag-h" style={{ color: GREEN, fontSize: 36 }}>
-              A field that asked what still grows.
-            </h2>
-            <p className="mag-folio mag-dropcap">
-              Adult development is a young field. It arrived in the late 1970s, peeling away from
-              gerontology. The older discipline had been measuring decline. This one asked a
-              different question: what still grows after forty? Intellectual growth. Emotional
-              growth. The wider system, held still long enough to see. Compassion and empathy, she
-              would later write, are the gold standard of adult emotional development.
-            </p>
-            <p className="mag-folio">
-              Judy Stevens was there at the start. Not as a spectator. She wrote the book the field
-              needed. <em>Adult Life</em>, 1977. First textbook in adult development written for
-              psychology students. A map, when the professors were still drawing the coast. The
-              students who found her were typically in their forties and fifties, arriving with
-              long work histories — organizational consulting, teaching, social work. Highly
-              motivated. They wanted two things at once: why they did what they chose to do, the
-              theory; and how that theory should guide practice. Not a lecture. A working method.
-            </p>
-            <p className="mag-folio">
-              She has spent the years since in classrooms — first physical, then ones that existed
-              only as text on a screen. Fielding. A week in Santa Fe. Then the seminars moved onto
-              the wire, early, when online education still had to prove it could hold a room. The
-              Oxford Handbook chapter came later, as the field caught up to what she had been
-              teaching. The argument has not moved. The adult mind can still thicken. It can still
-              take on complexity. It can still learn to hold more than one truth at a time. The
-              student&apos;s own thinking still has to be visible. That is the issue.
-            </p>
-            <p className="mag-foot" style={{ color: GREEN }}>
-              The Wisdom Issue · 03
-            </p>
+          <div className="jd-ad-hair" />
+          <ul className="jd-ad-list">
+            <li>
+              <b>Pipeline</b>
+              <p>Deals stay current from the call and the mail. No extra entry.</p>
+            </li>
+            <li>
+              <b>The desk</b>
+              <p>Docs, tasks and approvals, searchable in the language you already use.</p>
+            </li>
+            <li>
+              <b>After the sale</b>
+              <p>Onboarding and follow-up as a workflow, with the trail still attached.</p>
+            </li>
+            <li>
+              <b>Signal</b>
+              <p>Where a deal stalls, and where the week actually went.</p>
+            </li>
+          </ul>
+          <div className="jd-lockup">
+            <img src="/brand/logo-fortiora.png" alt="Fortiora Group" />
+            <div>
+              <b>Fortiora</b>
+              <span>Group</span>
+            </div>
           </div>
+          <p className="jd-ad-folio">
+            <span>PrimeCrest · September</span>
+            <span>Advertisement</span>
+            <span>08</span>
+          </p>
         </div>
       </article>
 
-      {/* 04 Full-bleed + mag-vert WISDOM — left */}
-      <article className="mag-page mag-bleed">
-        <img className="mag-fill" src={`${IMG}/blue.jpg`} alt="Judy Stevens" />
-        <div className="mag-scrim" style={{ background: "linear-gradient(90deg, rgba(15,31,24,0.45) 0%, transparent 46%)" }} />
-        <p className="mag-vert" style={{ color: CREAM }}>
-          WISDOM
-        </p>
-        <PhotoCopy kicker="Wisdom" title="Intellectual growth. Emotional growth.">
-          <p>
-            Adult development differentiated itself from gerontology. Where the older field watched
-            the body fail, this one studied maturation, positive development, maturity, and wisdom
-            in adulthood. <em>Adult Life</em> gave students a book their professors could assign.
-            It gave a young discipline a spine.
+      {/* 09 · Ad right */}
+      <article className="mag-page jd jd-ad" data-density="hard">
+        <div className="jd-ad-well">
+          <p className="jd-ad-kicker">Built for the person who already has a stack</p>
+          <h2 className="jd-ad-head">Open the desk. The day is in order.</h2>
+          <p className="jd-ad-dek">
+            Not another login. Fortiora sits on the work you already do and makes it searchable,
+            briefable, and hard to lose.
           </p>
-          <p>
-            Stevens saw the work as teaching, not as a career in the usual sense. The students
-            were typically in their forties and fifties. They arrived with long work histories.
-            They wanted the theory and the practice in the same room. A week in Santa Fe, then a
-            degree on the wire. The questions did not get smaller.
-          </p>
-        </PhotoCopy>
-      </article>
-
-      {/* 05 TOC — 2×4 card grid, cream, right */}
-      <article className="mag-page mag-pad">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
-            In this issue
-          </p>
-          <h2
-            className="mag-h"
-            style={{
-              color: GREEN,
-              paddingBottom: 12,
-              borderBottom: `1px solid ${GREEN}`,
-              marginBottom: 22,
-            }}
-          >
-            Eight leaves to read.
-          </h2>
-          <div
-            style={{
-              flex: 1,
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gridTemplateRows: "repeat(4, 1fr)",
-              gap: 14,
-            }}
-          >
-            {TOC_CARDS.map(([num, title, line]) => (
-              <div
-                key={title}
-                style={{
-                  border: `1px solid ${GREEN}`,
-                  padding: "16px 18px 14px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  background: "rgba(30,61,47,0.04)",
-                }}
-              >
-                <p
-                  style={{
-                    margin: 0,
-                    fontFamily: "var(--font-sans), system-ui, sans-serif",
-                    fontSize: 11,
-                    fontWeight: 700,
-                    letterSpacing: "0.28em",
-                    textTransform: "uppercase",
-                    color: GREEN,
-                  }}
-                >
-                  {num}
-                </p>
+          <div className="jd-ad-hair" />
+          <ul className="jd-ad-list">
+            <li>
+              <b>Morning brief</b>
+              <p>What moved overnight, who is waiting, which thread now needs a decision.</p>
+            </li>
+            <li>
+              <b>The trail</b>
+              <p>Six months later you can still find who said yes, and why.</p>
+            </li>
+            <li>
+              <b>Your voice</b>
+              <p>Drafts that sound like the person who will send them. Edit, send, or ignore.</p>
+            </li>
+            <li>
+              <b>One bill</b>
+              <p>Pipeline, workspace, copilots. One search box. One place the work lives.</p>
+            </li>
+          </ul>
+          <div className="jd-ad-foot">
+            <div>
+              <div className="jd-lockup">
+                <img src="/brand/logo-fortiora.png" alt="Fortiora Group" />
                 <div>
-                  <p
-                    style={{
-                      margin: 0,
-                      fontFamily: "var(--font-display), Georgia, serif",
-                      fontSize: 22,
-                      fontWeight: 600,
-                      letterSpacing: "-0.02em",
-                      color: GREEN,
-                    }}
-                  >
-                    {title}
-                  </p>
-                  <p
-                    style={{
-                      margin: "4px 0 0",
-                      fontFamily: "var(--font-serif), Georgia, serif",
-                      fontSize: 14,
-                      fontStyle: "italic",
-                      color: "#4a453c",
-                    }}
-                  >
-                    {line}
-                  </p>
+                  <b>Fortiora</b>
+                  <span>Group</span>
                 </div>
               </div>
-            ))}
+              <p className="jd-ad-contact">
+                <b>Hello@thefortiora.com</b>
+                <br />
+                thefortiora.com · Sheridan, Wyoming
+                <br />
+                An advertisement by the publisher of PrimeCrest
+              </p>
+            </div>
+            <div className="jd-ad-qr">
+              <img src="/brand/qr-fortiora.png" alt="Scan to reach Fortiora Group" />
+            </div>
           </div>
-          <p className="mag-foot" style={{ color: GREEN }}>
-            The Wisdom Issue · 05
+          <p className="jd-ad-folio">
+            <span>PrimeCrest · September</span>
+            <span>Advertisement</span>
+            <span>09</span>
           </p>
         </div>
       </article>
 
-      {/* 06 The Field — three columns, green hairline — left */}
-      <article className="mag-page mag-pad">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
-            The field
-          </p>
-          <h2
-            className="mag-h"
-            style={{
-              color: GREEN,
-              paddingBottom: 12,
-              borderBottom: `1px solid ${GREEN}`,
-              marginBottom: 22,
-            }}
-          >
-            Why they came. How they used it.
-          </h2>
-          <div className="mag-cols mag-folio mag-dropcap mag-dense">
-            <p>
-              In the late 1970s, adult development emerged as an entirely new area in psychology.
-              It differentiated itself from gerontology. Where the older field watched the body
-              fail, this one studied maturation, positive development, maturity, and wisdom in
-              adulthood. The corridor still thought of adulthood as a plateau, then a decline.
-              The new books asked what still grows.
-            </p>
-            <p>
-              <em>Adult Life</em>, 1977, gave students a book their professors could assign. It
-              gave a young discipline a spine. Stevens saw the work as teaching, not as a career
-              in the usual sense. The students who found her were typically in their forties and
-              fifties. They arrived with long work histories — organizational consulting, teaching,
-              social work. Highly motivated. They wanted two things at once: why they did what
-              they chose to do, the theory; and how that theory should guide practice. Not a
-              lecture. A working method.
-            </p>
-            <p>
-              Fielding sat inside a program built for adults already in the middle of a life. The
-              method was conversation and case. Santa Fe was a week in the desert; then the work
-              moved to the screen. The Oxford Handbook chapter came later. Compassion and empathy
-              are the gold standard of adult emotional development — her line. This issue stays
-              with the years as she gave them. No second career invented for the photograph.
-            </p>
-          </div>
-          <p className="mag-foot" style={{ color: GREEN }}>
-            The Wisdom Issue · 06
-          </p>
-        </div>
-      </article>
-
-      {/* 07 Full-bleed + caption + mag-vert — right */}
-      <article className="mag-page mag-bleed">
+      {/* 10 · Be featured */}
+      <article className="mag-page jd jd-feat" data-density="hard">
         <img
-          className="mag-fill"
-          src={`${IMG}/scarf.jpg`}
-          alt="Judy Stevens"
-          style={{ objectPosition: "center 22%" }}
+          className="jd-feat-img"
+          src={`${IMG}/blue.jpg`}
+          alt="Judy Stevens, photographed for the September issue"
         />
-        <div className="mag-scrim" />
-        <p className="mag-vert" style={{ color: CREAM }}>
-          PRACTICE
-        </p>
-        <div className="mag-caption-bar">
-          1987 · Fielding Institute · Orientation in Santa Fe, then a degree on the wire.
-        </div>
-      </article>
-
-      {/* 08 Philosophy — unique full-page italic quote, racing green — left */}
-      <article className="mag-page mag-pad mag-dark mag-racing">
-        <div className="mag-body mag-fill-page" style={{ justifyContent: "center" }}>
-          <p className="mag-kicker mag-kicker-light" style={{ ...KICK, color: CREAM, marginBottom: 28 }}>
-            The standard
-          </p>
-          <blockquote
-            style={{
-              margin: 0,
-              padding: 0,
-              border: 0,
-              fontFamily: "var(--font-display), Georgia, serif",
-              fontSize: 36,
-              fontStyle: "italic",
-              fontWeight: 500,
-              lineHeight: 1.16,
-              letterSpacing: "-0.03em",
-              color: CREAM,
-            }}
-          >
-            Compassion and empathy are the gold standard of adult emotional development.
-          </blockquote>
-          <p
-            style={{
-              margin: "12px 0 14px",
-              fontFamily: "var(--font-sans), system-ui, sans-serif",
-              fontSize: 12,
-              fontWeight: 700,
-              letterSpacing: "0.28em",
-              textTransform: "uppercase",
-              color: CREAM_DIM,
-            }}
-          >
-            Judy Stevens
-          </p>
-          <div className="mag-cols mag-folio mag-dense" style={{ color: "rgba(244,239,230,0.88)" }}>
-            <p>
-              She wrote it as a standard, not a mood. The field had been about decline. Adult
-              development asked what still grows after forty — intellectual, emotional, the wider
-              system. The students who sat with her were already in the middle of a life. They
-              wanted the theory and the practice in the same hour.
-            </p>
-            <p>
-              <em>Adult Life</em>, 1977. Fielding. Santa Fe. Then the screen. The Oxford Handbook
-              later. The gold standard is the same sentence in every room: compassion and empathy
-              as the mark of adult emotional development. The student&apos;s own thinking still
-              has to be visible. That is the work. That is the issue.
-            </p>
+        <div className="jd-feat-grade" />
+        <div className="jd-feat-card">
+          <p className="jd-feat-script">Be Featured</p>
+          <h3>Get featured in the upcoming edition of PrimeCrest.</h3>
+          <p>Register now. Because your story deserves the record.</p>
+          <div className="jd-feat-row">
+            <span>Scan the QR code</span>
+            <img src="/brand/qr-primecrest.png" alt="Scan to register" />
           </div>
         </div>
       </article>
 
-      {/* 09 Record — two-column list, green year labels — right */}
-      <article className="mag-page mag-pad">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
-            The record
-          </p>
-          <h2
-            className="mag-h mag-h-sm"
-            style={{
-              color: GREEN,
-              paddingBottom: 12,
-              borderBottom: `1px solid ${GREEN}`,
-              marginBottom: 18,
-            }}
-          >
-            Dates, rooms, books.
-          </h2>
-          <div
-            style={{
-              flex: 1,
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: "0 28px",
-              alignContent: "stretch",
-            }}
-          >
-            {RECORD.map(([year, name, note]) => (
-              <div
-                key={`${year}-${name}`}
-                style={{
-                  padding: "16px 0",
-                  borderBottom: "1px solid rgba(30,61,47,0.18)",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                }}
-              >
-                <p
-                  style={{
-                    margin: 0,
-                    fontFamily: "var(--font-sans), system-ui, sans-serif",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: "0.28em",
-                    textTransform: "uppercase",
-                    color: GREEN,
-                  }}
-                >
-                  {year}
-                </p>
-                <p
-                  style={{
-                    margin: "6px 0 4px",
-                    fontFamily: "var(--font-display), Georgia, serif",
-                    fontSize: 22,
-                    fontWeight: 600,
-                    letterSpacing: "-0.02em",
-                    color: "#1a1510",
-                  }}
-                >
-                  {name}
-                </p>
-                <p
-                  style={{
-                    margin: 0,
-                    fontFamily: "var(--font-serif), Georgia, serif",
-                    fontSize: 14.5,
-                    lineHeight: 1.45,
-                    color: "#4a453c",
-                  }}
-                >
-                  {note}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="mag-foot" style={{ color: GREEN }}>
-            The Wisdom Issue · 09
-          </p>
-        </div>
-      </article>
-
-      {/* 10 Photo bleed — left */}
-      <article className="mag-page mag-bleed">
+      <article className="mag-page wc wc-bleed" data-density="hard">
         <img
-          className="mag-fill"
-          src={`${IMG}/gaze.jpg`}
-          alt="Judy Stevens"
-          style={{ objectPosition: "center 20%" }}
-        />
-        <div className="mag-scrim" style={{ background: "linear-gradient(180deg, transparent 40%, rgba(15,31,24,0.72) 100%)" }} />
-        <p className="mag-vert" style={{ color: CREAM }}>
-          FIELDING
-        </p>
-        <div className="mag-caption-bar">
-          Critique as the lesson. Papers passed between students. The professor in the thread.
-        </div>
-      </article>
-
-      {/* 11 Method — single wide column + left-rule quote — right */}
-      <article className="mag-page mag-pad">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
-            The method
-          </p>
-          <h2 className="mag-h mag-h-sm" style={{ color: GREEN }}>
-            When the classroom is a wire.
-          </h2>
-          <p className="mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.7 }}>
-            Online education can become transactional — content exchanged for credit. At Fielding,
-            Stevens built the opposite. Participation in critique and dialogue was the point:
-            students reviewed one another&apos;s papers, offered feedback, and led online discussions.
-            The master&apos;s program opened in 1987, most likely the first in the country delivered
-            entirely online except a weeklong orientation.
-          </p>
-          <blockquote className="mag-quote" style={{ borderLeftColor: GREEN, color: GREEN, flexShrink: 0 }}>
-            The curriculum was paired with a teaching strategy that put students in conversation
-            with one another, and with their professors.
-          </blockquote>
-          <p className="mag-folio" style={{ fontSize: 18, lineHeight: 1.7, marginBottom: 0 }}>
-            Later technologies such as Zoom made the exchange easier and more fluid. The principle
-            did not move. Graduate work is a conversation, or it is a filing cabinet. She chose
-            the conversation, year after year, in a medium that still tempted people to hide.
-          </p>
-          <p className="mag-foot" style={{ color: GREEN }}>
-            The Wisdom Issue · 11
-          </p>
-        </div>
-      </article>
-
-      {/* 12 Numbers — 2×3 card grid — left */}
-      <article className="mag-page mag-pad">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
-            The numbers
-          </p>
-          <h2
-            className="mag-h mag-h-sm"
-            style={{
-              color: GREEN,
-              paddingBottom: 12,
-              borderBottom: `1px solid ${GREEN}`,
-              marginBottom: 20,
-            }}
-          >
-            What the file will hold.
-          </h2>
-          <div
-            style={{
-              flex: 1,
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gridTemplateRows: "1fr 1fr 1fr",
-              gap: 16,
-            }}
-          >
-            {STATS.map(([num, label]) => (
-              <div
-                key={label}
-                style={{
-                  border: `1px solid ${GREEN}`,
-                  padding: "20px 18px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  background: "rgba(30,61,47,0.04)",
-                }}
-              >
-                <p
-                  style={{
-                    margin: 0,
-                    fontFamily: "var(--font-display), Georgia, serif",
-                    fontSize: 36,
-                    fontWeight: 600,
-                    letterSpacing: "-0.03em",
-                    lineHeight: 0.95,
-                    color: GREEN,
-                  }}
-                >
-                  {num}
-                </p>
-                <p
-                  style={{
-                    margin: "10px 0 0",
-                    fontFamily: "var(--font-sans), system-ui, sans-serif",
-                    fontSize: 12,
-                    fontWeight: 700,
-                    letterSpacing: "0.16em",
-                    textTransform: "uppercase",
-                    color: "#4a453c",
-                  }}
-                >
-                  {label}
-                </p>
-              </div>
-            ))}
-          </div>
-          <p className="mag-foot" style={{ color: GREEN }}>
-            The Wisdom Issue · 12
-          </p>
-        </div>
-      </article>
-
-      {/* 13 Vision + darkband — right */}
-      <article className="mag-page mag-pad mag-pb0">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
-            The question
-          </p>
-          <h2 className="mag-h mag-h-sm" style={{ color: GREEN }}>
-            What the machine cannot sit for.
-          </h2>
-          <p className="mag-folio mag-dropcap" style={{ fontSize: 18, lineHeight: 1.7 }}>
-            AI is a major challenge for higher education. Students should be able to use it for
-            research. It is a tool. Tools have always changed the desk. What cannot be handed off
-            is the thinking itself.
-          </p>
-          <p className="mag-folio" style={{ fontSize: 18, lineHeight: 1.7 }}>
-            Educators still need to see the level of thinking and writing demonstrated by the
-            students themselves. The sentence is plain. It does not forbid the tool. It insists
-            on a visible mind.
-          </p>
-          <p className="mag-folio" style={{ fontSize: 18, lineHeight: 1.7, marginBottom: 0 }}>
-            Graduate education, she has said for years, should go beyond acquiring information
-            and knowledge. Students should learn to assess underlying assumptions, critique
-            different points of view, and recognize unexpected consequences arising from those
-            assumptions. A machine can retrieve. It cannot sit for that.
-          </p>
-          <div
-            className="mag-darkband"
-            style={{ margin: "auto -58px 0", background: GREEN, color: CREAM }}
-          >
-            Educators still need to see the thinking.
-          </div>
-        </div>
-      </article>
-
-      {/* 14 Statement overlay — type lower-left only — left */}
-      <article className="mag-page mag-bleed">
-        <img
-          className="mag-fill"
-          src={`${IMG}/scarf.jpg`}
+          className="wc-img"
+          src="/brand/backdrop-primecrest.jpg"
           alt=""
-          style={{ objectPosition: "center 40%" }}
+          style={{ filter: "saturate(0.95) contrast(1.02) brightness(1.12)" }}
         />
         <div
-          className="mag-scrim"
           style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 2,
             background:
-              "linear-gradient(180deg, transparent 36%, rgba(15,31,24,0.55) 68%, rgba(15,31,24,0.88) 100%)",
+              "radial-gradient(72% 52% at 50% 32%, rgba(23,149,154,0.14) 0%, transparent 70%), linear-gradient(180deg, rgba(20,26,28,0.58) 0%, rgba(20,26,28,0.34) 42%, rgba(20,26,28,0.74) 100%)",
           }}
         />
-        <p className="mag-vert" style={{ color: CREAM }}>
-          HOLD
-        </p>
-        <div className="mag-overlay" style={{ justifyContent: "flex-end", alignItems: "flex-start" }}>
-          <div style={{ maxWidth: 360 }}>
-            <p className="mag-kicker mag-kicker-light" style={{ ...KICK, color: CREAM }}>
-              The work
-            </p>
-            <h2 className="mag-h mag-h-light" style={{ fontSize: 34, color: CREAM, marginBottom: 10 }}>
-              Understanding before responding.
-            </h2>
-            <p className="mag-folio" style={{ color: CREAM_DIM, margin: 0, textAlign: "left" }}>
-              Systems thinking. Reflection. The wider system, assessed before a word is spent.
-            </p>
-          </div>
-        </div>
-      </article>
-
-      {/* 15 Advice / close — right */}
-      <article className="mag-page mag-pad">
-        <div className="mag-body mag-fill-page">
-          <p className="mag-kicker" style={{ ...KICK, color: GREEN }}>
-            Close
-          </p>
-          <h2 className="mag-h" style={{ color: GREEN }}>
-            Never give up on the student.
-          </h2>
-          <p className="mag-folio mag-dropcap" style={{ fontSize: 18.5, lineHeight: 1.72 }}>
-            What does an unstoppable leader mean? Stevens answers without ornament. An unstoppable
-            leader never gives up on the goals and aspirations they have for their students as well
-            as themselves.
-          </p>
-          <p className="mag-folio" style={{ fontSize: 18.5, lineHeight: 1.72 }}>
-            The sentence names students first. Institutions do not appear. Rank does not appear.
-            The work is the refusal to quit on a mind that is still forming.
-          </p>
-          <blockquote className="mag-pull is-green" style={{ color: GREEN, margin: "auto 8px 0" }}>
-            Never give up on the goals and aspirations they have for their students.
-          </blockquote>
-          <p className="mag-foot" style={{ color: GREEN }}>
-            The Wisdom Issue · 15
-          </p>
-        </div>
-      </article>
-
-      <HouseAdSpread
-        variant="quote"
-        accent={GREEN}
-        kicker="The field, at length"
-        headlineLead="Written for students, not the corridor."
-        headlineHero="Adult Life, 1977"
-        tag="Wisdom"
-        foot="The Wisdom Issue"
-        photo={`${IMG}/lecture.jpg`}
-        photoAlt=""
-        caption=""
-        quote="The work moved from a week in the desert to the screen. The questions did not get smaller."
-        sections={[
-          {
-            heading: "The textbook",
-            body:
-              "Adult Life, 1977, was written for psychology students. Judy Stevens describes it as the first textbook in adult development — not a hallway pamphlet, not a gerontology leftover. The field had been about decline. She wrote it as growth that continues after the diploma.",
-          },
-          {
-            heading: "Fielding",
-            body:
-              "The doctoral work at Fielding sat inside a program built for adults who were already in the middle of a life. The method was conversation and case, not a lecture hall that pretended the student had no job, no children, no second act.",
-          },
-          {
-            heading: "Santa Fe",
-            body:
-              "A week in the desert. Then the seminars moved onto the screen — early, when online education still had to prove it could hold a room. The Oxford Handbook chapter came later, as the field caught up to what she had been teaching.",
-          },
-        ]}
-        continued={[
-          {
-            heading: "What the issue holds",
-            body:
-              "This spread is the long page: the years as she gave them, the titles, the move from print to screen. PrimeCrest did not invent a second career for the photograph. The Wisdom Issue stays with the work — adult development as a subject that still has something to say in 2026.",
-          },
-          {
-            heading: "How to read it",
-            body:
-              "Start at the letter. Then the field. The numbers and the close are the same argument in a shorter type. Scan the QR for theprimecrest.com.",
-          },
-        ]}
-      />
-
-      {/* 18 Back cover — PrimeCrest collage, hard */}
-      <article className="mag-page mag-bleed mag-dark mag-forest" data-density="hard">
-        <img className="mag-fill" src={`${IMG}/backcover.jpg`} alt="" />
-        <div
-          className="mag-overlay"
-          style={{ alignItems: "center", textAlign: "center", padding: "60px 52px 44px" }}
-        >
-          <div
-            style={{
-              margin: "auto 0",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <img
-              src="/brand/logo-primecrest.png"
-              alt="PrimeCrest"
-              style={{
-                width: "92%",
-                maxWidth: 700,
-                height: "auto",
-                filter: "drop-shadow(0 10px 34px rgba(0,0,0,0.65))",
-              }}
-            />
-            <p
-              style={{
-                margin: "26px 0 0",
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 13,
-                fontWeight: 700,
-                letterSpacing: "0.5em",
-                textIndent: "0.5em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
+        <div className="wc-well wc-back">
+          <div style={{ margin: "auto 0", display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <div className="wc-back-mark">
+              <svg className="wc-back-crest" viewBox="0 0 48 42" aria-hidden>
+                <path d="M24 1.2 46 20.4h-7.2L24 8.6 9.2 20.4H2Z" fill="#f4efe6" />
+                <path d="M24 15.2 46 34.4h-7.2L24 22.6 9.2 34.4H2Z" fill="#c39a4b" />
+              </svg>
+              <b className="wc-back-word" aria-label="PrimeCrest">
+                PRIMECREST<span>.</span>
+              </b>
+            </div>
+            <span className="wc-pill" style={{ marginTop: 26 }}>
               Where Vision Meets Voice
-            </p>
+            </span>
             <p
               style={{
-                margin: "34px 0 0",
-                fontFamily: "var(--font-serif), Georgia, serif",
-                fontSize: 19,
-                fontStyle: "italic",
-                lineHeight: 1.65,
-                color: "rgba(244,239,230,0.85)",
+                margin: "30px 0 0",
                 maxWidth: 470,
+                fontFamily: "var(--wc-cover-serif)",
+                fontSize: 20,
+                fontStyle: "italic",
+                lineHeight: 1.62,
+                letterSpacing: "-0.006em",
+                color: "rgba(242,237,227,0.9)",
               }}
             >
-              A journal of affairs, business, and culture — independent reporting, considered
-              writing, and the people who shape what comes next.
+              A journal of affairs, business and culture, independent reporting, considered writing,
+              and the people who shape what comes next.
             </p>
           </div>
           <div
@@ -800,26 +571,18 @@ export function JudyPages() {
             <img
               src="/brand/qr-primecrest.png"
               alt="Scan to visit theprimecrest.com"
-              style={{ width: 160, height: "auto", boxShadow: "0 10px 26px rgba(0,0,0,0.45)" }}
+              style={{ width: 132, height: 132, padding: 7, background: "#f7f4ee", boxShadow: "0 10px 26px rgba(0,0,0,0.5)" }}
             />
-            <p className="mag-imprint" style={{ color: CREAM_DIM }}>
-              <strong style={{ color: CREAM }}>PrimeCrest</strong> · a product of Fortiora Group LLC
+            <p className="wc-imprint">
+              <b>PrimeCrest</b> · a product of Fortiora Group LLC
               <br />
               30 N Gould St Ste R, Sheridan, WY 82801, United States
               <br />
-              Hello@thefortiora.com · <strong style={{ color: CREAM }}>theprimecrest.com</strong>
+              hello@theprimecrest.com · <b>theprimecrest.com</b>
             </p>
-            <p
-              style={{
-                margin: 0,
-                fontFamily: "var(--font-sans), system-ui, sans-serif",
-                fontSize: 12,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                color: CREAM,
-              }}
-            >
-              The Wisdom Issue · Vol. III
+            <div className="wc-hair" style={{ width: 320 }} />
+            <p className="wc-label" style={{ letterSpacing: "0.4em" }}>
+              The September Issue · 2026
             </p>
           </div>
         </div>

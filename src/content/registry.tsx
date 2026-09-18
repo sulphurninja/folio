@@ -6,6 +6,8 @@ import { JoanPages, JOAN_TOC } from "./JoanPages";
 import { JudyPages, JUDY_TOC } from "./JudyPages";
 import { KohilaPages, KOHILA_TOC } from "./KohilaPages";
 import { FoskarisPages, FOSKARIS_TOC } from "./FoskarisPages";
+import { KatiePages, KATIE_TOC } from "./KatiePages";
+import { NicholePages, NICHOLE_TOC } from "./NicholePages";
 import { PallaviPages, PALLAVI_TOC } from "./PallaviPages";
 import { SajPages, SAJ_TOC } from "./SajPages";
 import { VineetPages, VINEET_TOC } from "./VineetPages";
@@ -24,7 +26,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   bethany: {
     slug: "bethany",
     title: "Top 10 Unstoppable Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. IV · The Purpose Issue",
+    kicker: "PrimeCrest · Vol. III · The September Issue",
     description:
       "Nick Hill — President & Chief Executive Officer, Bethany Children's Home, Philadelphia, Pennsylvania. Twelve years from the cottage floor to the chair.",
     toc: BETHANY_TOC,
@@ -33,9 +35,9 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   espey: {
     slug: "espey",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. II · The Legacy Issue",
+    kicker: "PrimeCrest · Vol. VIII · The September Issue",
     description:
-      "James Espey — Investor & Chairman, Wiltshire Whisky Distillery, England. Sixty years behind the world's back bar, told in PrimeCrest's Legacy Issue.",
+      "James Espey — Investor & Chairman, Wiltshire Whisky Distillery, England. Sixty years behind the world's back bar, told in PrimeCrest's September Issue.",
     toc: ESPEY_TOC,
     Pages: EspeyPages,
   },
@@ -51,25 +53,25 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   judy: {
     slug: "judy",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. III · The Wisdom Issue",
+    kicker: "PrimeCrest · Vol. II · The September Issue",
     description:
-      "Judy Stevens — Scholar & Educator, Adult Development & Wisdom. Five decades shaping the field and pioneering online education, told in PrimeCrest's Wisdom Issue.",
+      "Judy Stevens — Scholar & Educator, Adult Development & Wisdom. Five decades shaping the field and pioneering online education, told in PrimeCrest's September Issue.",
     toc: JUDY_TOC,
     Pages: JudyPages,
   },
   kohila: {
     slug: "kohila",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. V · The Readiness Issue",
+    kicker: "PrimeCrest · Vol. VI · The September Issue",
     description:
-      "Kohila Sivas — Founder & Master Coach, Wholistic SuccessCodes. Two decades on readiness before performance, told in PrimeCrest's Readiness Issue.",
+      "Kohila Sivas, Founder & Master Coach, Wholistic SuccessCodes. Two decades on readiness before performance, told in PrimeCrest's September Issue.",
     toc: KOHILA_TOC,
     Pages: KohilaPages,
   },
   foskaris: {
     slug: "foskaris",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. VIII · The Vitality Issue",
+    kicker: "PrimeCrest · Vol. IV · The September Issue",
     description:
       "Penny Foskaris — Founder, Red Light Pro Devices & Foskaris Wellness, Anaheim Hills, California. The room she could not find, and the light her clients could take home.",
     toc: FOSKARIS_TOC,
@@ -78,7 +80,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   pallavi: {
     slug: "pallavi",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. VI · The Table Issue",
+    kicker: "PrimeCrest · Vol. VII · The September Issue",
     description:
       "Pallavi Pande — Mompreneur, Owner & Founder, Dtocs & Dtocs Consulting, Portland, Oregon. Banana leaves, a kitchen sink, and two companies that treat disposable tableware as a design problem.",
     toc: PALLAVI_TOC,
@@ -87,7 +89,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   joan: {
     slug: "joan",
     title: "Top 10 Unstoppable Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. VII · The Classroom Issue",
+    kicker: "PrimeCrest · Vol. V · The September Issue",
     description:
       "Joan Gillman — Science Teacher, The Browning School, New York. Forty-four years in the science classroom, the Green Team, and the work of making room for wonder.",
     toc: JOAN_TOC,
@@ -101,5 +103,23 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
       "Vineet Trakroo — CEO & Chief Evolution Officer, Evolution Strategy Advisors LLP. Growth, strategy, execution, and future readiness, in PrimeCrest's September Issue.",
     toc: VINEET_TOC,
     Pages: VineetPages,
+  },
+  katie: {
+    slug: "katie",
+    title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
+    kicker: "PrimeCrest · Vol. IX · The September Issue",
+    description:
+      "Katie Holmes — Founder & CEO, Brand Studio Creative. Branding with Heart, and the owners who start sharing their businesses again.",
+    toc: KATIE_TOC,
+    Pages: KatiePages,
+  },
+  nichole: {
+    slug: "nichole",
+    title: "Top 10 Unstoppable Leaders Making a Difference in 2026",
+    kicker: "PrimeCrest · Vol. X · The September Issue",
+    description:
+      "Dr. Nichole Pettway — Deputy Director at Building Opportunities for Self-Sufficiency, California. WERC, the Trauma Recovery Center, and the Pre-trial Expansion Program.",
+    toc: NICHOLE_TOC,
+    Pages: NicholePages,
   },
 };

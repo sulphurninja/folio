@@ -1,0 +1,1765 @@
+/*
+ * PrimeCrest · Interior page kit
+ * ------------------------------------------------------------------
+ * Shared, themable layout grammar for issue interiors. Covers and
+ * back covers stay bespoke per issue; everything between runs here.
+ *
+ * A theme is a single class (e.g. `.kt-judy`) that overrides the
+ * `--kt-*` tokens below. New issues = theme block + content file.
+ *
+ * Every layout fills the 840x1120 leaf by construction:
+ *   - photography plates are full-bleed with bottom-anchored type
+ *   - text pages carry an inset frame, flexible middles, and folios
+ *   - lists distribute along the column with hairline separators
+ */
+
+.kt {
+  /* grounds */
+  --kt-paper: #f4f0e6;
+  --kt-paper-2: #ece7d9;
+  --kt-dark: #10141f;
+  --kt-dark-2: #1a2130;
+
+  /* ink on light / on dark */
+  --kt-ink: #171c26;
+  --kt-body: #2c313b;
+  --kt-mute: #6d7381;
+  --kt-cream: #f4f0e6;
+  --kt-cream-mute: rgba(244, 240, 230, 0.66);
+
+  /* accents */
+  --kt-accent: #c99a3f;
+  --kt-accent-lt: #ecd39a;
+  --kt-accent-2: #3a6cb0;
+
+  /* hairlines */
+  --kt-hair-l: rgba(23, 28, 38, 0.16);
+  --kt-hair-d: rgba(244, 240, 230, 0.18);
+
+  /* tinted panels (quote blocks) on light / dark grounds */
+  --kt-panel-l: rgba(58, 108, 176, 0.08);
+  --kt-panel-d: rgba(236, 211, 154, 0.07);
+
+  /* type */
+  --kt-display: var(--font-playfair), Georgia, serif;
+  --kt-serif: var(--font-spectral), Georgia, serif;
+  --kt-sans: var(--font-franklin), system-ui, sans-serif;
+  --kt-script: var(--font-pinyon), cursive;
+
+  --kt-pad: 56px;
+  --kt-frame: 18px;
+
+  font-family: var(--kt-serif);
+  color: var(--kt-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ------------------------------------------------------------ grounds */
+
+.mag-page.kt-light {
+  background-color: var(--kt-paper);
+  background-image: linear-gradient(180deg, #f9f6ef 0%, var(--kt-paper) 46%, var(--kt-paper-2) 100%);
+  color: var(--kt-body);
+}
+
+.mag-page.kt-dark {
+  background-color: var(--kt-dark);
+  background-image:
+    radial-gradient(85% 55% at 100% 0%, var(--kt-dark-2) 0%, transparent 60%),
+    radial-gradient(70% 45% at 0% 100%, rgba(201, 154, 63, 0.1) 0%, transparent 55%);
+  color: var(--kt-cream);
+}
+
+.mag-page.kt-bleed {
+  background: var(--kt-dark);
+  padding: 0;
+}
+
+/* inset printed frame on framed pages */
+.kt-frame-box {
+  position: absolute;
+  inset: var(--kt-frame);
+  border: 1px solid var(--kt-hair-l);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.kt-dark .kt-frame-box,
+.kt-bleed .kt-frame-box {
+  border-color: var(--kt-hair-d);
+}
+
+.kt-well {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--kt-pad) 60px 40px;
+  z-index: 3;
+}
+
+/* -------------------------------------------------------------- atoms */
+
+.kt-kicker {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--kt-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--kt-accent);
+}
+
+.kt-kicker::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: var(--kt-accent);
+}
+
+.kt-light .kt-kicker {
+  color: var(--kt-accent-2);
+}
+
+.kt-light .kt-kicker::before {
+  background: var(--kt-accent-2);
+}
+
+.kt-script {
+  margin: 0;
+  font-family: var(--kt-script);
+  font-weight: 400;
+  color: var(--kt-accent);
+}
+
+.kt-hairline {
+  border: 0;
+  height: 1px;
+  margin: 0;
+  background: var(--kt-hair-l);
+}
+
+.kt-dark .kt-hairline,
+.kt-bleed .kt-hairline {
+  background: var(--kt-hair-d);
+}
+
+.kt-folio {
+  margin-top: auto;
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  font-family: var(--kt-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--kt-mute);
+  flex: 0 0 auto;
+  border-top: 1px solid var(--kt-hair-l);
+}
+
+.kt-dark .kt-folio,
+.kt-bleed .kt-folio {
+  color: var(--kt-cream-mute);
+  border-top-color: var(--kt-hair-d);
+}
+
+/* =============================================================== PLATE
+   Full-bleed photograph, kicker top, display stack anchored bottom. */
+
+.kt-plate-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.kt-plate-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(10, 13, 20, 0.42) 0%, rgba(10, 13, 20, 0) 26%),
+    linear-gradient(0deg, rgba(10, 13, 20, 0.92) 0%, rgba(10, 13, 20, 0.62) 22%, rgba(10, 13, 20, 0.12) 48%, rgba(10, 13, 20, 0) 62%);
+}
+
+.kt-plate-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 44px 52px 46px;
+  color: var(--kt-cream);
+}
+
+.kt-plate-ui .kt-kicker {
+  color: var(--kt-accent-lt);
+}
+
+.kt-plate-ui .kt-kicker::before {
+  background: var(--kt-accent-lt);
+}
+
+.kt-plate-side {
+  position: absolute;
+  top: 44px;
+  right: 46px;
+  writing-mode: vertical-rl;
+  font-family: var(--kt-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(244, 240, 230, 0.72);
+}
+
+.kt-plate-stack {
+  margin-top: auto;
+}
+
+.kt-plate-stack .kt-script {
+  font-size: 96px;
+  line-height: 0.8;
+  color: var(--kt-accent-lt);
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.kt-plate-title {
+  margin: 14px 0 0;
+  font-family: var(--kt-display);
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: #fdfaf2;
+  text-shadow: 0 8px 26px rgba(0, 0, 0, 0.5);
+}
+
+.kt-plate-title em {
+  font-style: italic;
+  color: var(--kt-accent-lt);
+}
+
+.kt-plate-dek {
+  margin: 14px 0 0;
+  max-width: 520px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: rgba(244, 240, 230, 0.92);
+}
+
+.kt-plate-foot {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(244, 240, 230, 0.3);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--kt-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(244, 240, 230, 0.66);
+}
+
+/* ============================================================== LETTER
+   Book-plate editor's letter: centered head, columned body, sign-off. */
+
+.kt-letter-head {
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.kt-letter-head .kt-script {
+  font-size: 58px;
+  line-height: 1;
+}
+
+.kt-letter-head h2 {
+  margin: 10px 0 0;
+  font-family: var(--kt-display);
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  color: var(--kt-ink);
+}
+
+.kt-letter-rules {
+  margin: 20px auto 22px;
+  width: 200px;
+  border-top: 1px solid var(--kt-hair-l);
+  border-bottom: 1px solid var(--kt-hair-l);
+  height: 5px;
+}
+
+.kt-letter-body {
+  columns: 2;
+  column-gap: 36px;
+  flex: 1 1 auto;
+  min-height: 0;
+  font-size: 17.2px;
+  line-height: 1.82;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.kt-letter-body p {
+  margin: 0 0 14px;
+}
+
+.kt-letter-body .kt-drop::first-letter {
+  float: left;
+  font-family: var(--kt-display);
+  font-size: 58px;
+  line-height: 0.8;
+  padding: 6px 10px 0 0;
+  color: var(--kt-accent-2);
+}
+
+.kt-letter-sign {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 6px;
+  padding-top: 16px;
+  border-top: 1px solid var(--kt-hair-l);
+}
+
+.kt-letter-sign .kt-script {
+  font-size: 44px;
+  line-height: 0.9;
+  color: var(--kt-ink);
+}
+
+.kt-letter-sign small {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--kt-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--kt-mute);
+}
+
+.kt-letter-sign blockquote {
+  margin: 0;
+  max-width: 300px;
+  font-family: var(--kt-display);
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.4;
+  text-align: right;
+  color: var(--kt-accent-2);
+}
+
+/* ============================================================= CREDITS */
+
+.kt-credits-head {
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.kt-credits-word {
+  margin: 0;
+  font-family: var(--kt-sans);
+  font-size: 72px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-indent: 0.24em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #eee9dc;
+}
+
+.kt-credits-issueline {
+  margin: 14px 0 0;
+  font-family: var(--kt-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--kt-cream-mute);
+}
+
+.kt-credits-rows {
+  margin: 26px 0 0;
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 44px;
+  align-content: space-evenly;
+}
+
+.kt-credits-rows > div {
+  padding: 11px 2px;
+  border-top: 1px solid var(--kt-hair-d);
+}
+
+.kt-credits-rows dt {
+  margin: 0;
+  font-family: var(--kt-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kt-accent);
+}
+
+.kt-credits-rows dd {
+  margin: 4px 0 0;
+  font-size: 16px;
+  color: var(--kt-cream);
+}
+
+.kt-credits-foot {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--kt-hair-d);
+}
+
+.kt-credits-foot p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--kt-cream-mute);
+}
+
+.kt-credits-foot img {
+  width: 104px;
+  height: 104px;
+  padding: 6px;
+  background: #fff;
+  flex: 0 0 auto;
+}
+
+/* ============================================================ CONTENTS
+   Split page: full-height photograph, entries column beside it. */
+
+.kt-contents {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 46% 1fr;
+}
+
+.kt-contents-pic {
+  position: relative;
+  overflow: hidden;
+}
+
+.kt-contents-pic img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kt-contents-pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10, 13, 20, 0.55) 0%, transparent 34%);
+}
+
+.kt-contents-cap {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 20px;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--kt-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(244, 240, 230, 0.9);
+}
+
+.kt-contents-main {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 44px 36px;
+}
+
+.kt-contents-main .kt-script {
+  font-size: 84px;
+  line-height: 0.86;
+}
+
+.kt-contents-issue {
+  margin: 12px 0 0;
+  font-family: var(--kt-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--kt-cream-mute);
+}
+
+.kt-contents-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.kt-contents-list li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 13px 0;
+  border-top: 1px solid var(--kt-hair-d);
+}
+
+.kt-contents-list li:first-child {
+  border-top: 0;
+}
+
+.kt-contents-list em {
+  font-family: var(--kt-display);
+  font-style: normal;
+  font-size: 40px;
+  line-height: 0.9;
+  color: var(--kt-accent);
+}
+
+.kt-contents-list h4 {
+  margin: 0;
+  font-family: var(--kt-display);
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: var(--kt-cream);
+}
+
+.kt-contents-list p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--kt-cream-mute);
+}
+
+/* ============================================================== OPENER
+   Full-bleed portrait, giant name anchored bottom. */
+
+.kt-opener-name {
+  margin: 0;
+}
+
+.kt-opener-name b {
+  display: block;
+  font-family: var(--kt-display);
+  font-weight: 500;
+  font-size: 108px;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: #fdfaf2;
+  text-shadow: 0 10px 36px rgba(0, 0, 0, 0.6);
+}
+
+.kt-opener-name em {
+  display: block;
+  font-family: var(--kt-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--kt-accent-lt);
+  text-shadow: 0 10px 36px rgba(0, 0, 0, 0.6);
+}
+
+/* =============================================================== STORY */
+
+.kt-story-head {
+  flex: 0 0 auto;
+}
+
+.kt-story-head h2 {
+  margin: 14px 0 0;
+  font-family: var(--kt-display);
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+  color: var(--kt-ink);
+}
+
+.kt-story-head .kt-dek {
+  margin: 12px 0 0;
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--kt-mute);
+  max-width: 620px;
+}
+
+.kt-story-body {
+  columns: 2;
+  column-gap: 34px;
+  margin-top: 20px;
+  flex: 1 1 auto;
+  min-height: 0;
+  font-size: 17.2px;
+  line-height: 1.84;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.kt-story-body p {
+  margin: 0 0 14px;
+}
+
+.kt-story-body .kt-drop::first-letter {
+  float: left;
+  font-family: var(--kt-display);
+  font-size: 56px;
+  line-height: 0.82;
+  padding: 5px 9px 0 0;
+  color: var(--kt-accent-2);
+}
+
+.kt-story-body .kt-run {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--kt-accent-2);
+}
+
+/* dense variant: long-form features that pack more words per leaf */
+.kt-story-body.kt-dense {
+  font-size: 14.9px;
+  line-height: 1.64;
+}
+
+.kt-story-body.kt-dense p {
+  margin: 0 0 11px;
+}
+
+/* ------------------------------------------------- dense prose elements */
+
+/* run-in subhead inside body columns */
+.kt-subhead {
+  break-inside: avoid;
+  margin: 16px 0 8px;
+  font-family: var(--kt-sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--kt-accent-2);
+}
+
+.kt-dark .kt-subhead,
+.kt-bleed .kt-subhead {
+  color: var(--kt-accent);
+}
+
+/* tinted pull-quote panel with an oversized mark, sits inside columns */
+.kt-quote-panel {
+  break-inside: avoid;
+  margin: 14px 0;
+  padding: 20px 22px 18px;
+  background: var(--kt-panel-l);
+  border-left: 3px solid var(--kt-accent);
+  text-align: left;
+}
+
+.kt-dark .kt-quote-panel,
+.kt-bleed .kt-quote-panel {
+  background: var(--kt-panel-d);
+}
+
+.kt-quote-panel::before {
+  content: "\201C";
+  display: block;
+  font-family: var(--kt-display);
+  font-size: 54px;
+  line-height: 0.55;
+  margin-bottom: 8px;
+  color: var(--kt-accent);
+}
+
+.kt-quote-panel p {
+  margin: 0;
+  font-family: var(--kt-display);
+  font-style: italic;
+  font-size: 16.5px;
+  line-height: 1.45;
+  color: var(--kt-ink);
+}
+
+.kt-dark .kt-quote-panel p,
+.kt-bleed .kt-quote-panel p {
+  color: var(--kt-cream);
+}
+
+/* photograph embedded in body columns */
+.kt-inset {
+  break-inside: avoid;
+  margin: 12px 0 14px;
+}
+
+.kt-inset img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.kt-inset figcaption {
+  margin-top: 8px;
+  font-family: var(--kt-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--kt-mute);
+  text-align: left;
+}
+
+.kt-dark .kt-inset figcaption {
+  color: var(--kt-cream-mute);
+}
+
+.kt-pull {
+  flex: 0 0 auto;
+  margin: 10px 0 0;
+  padding: 18px 30px;
+  border-top: 2px solid var(--kt-accent);
+  border-bottom: 1px solid var(--kt-hair-l);
+  text-align: center;
+  font-family: var(--kt-display);
+  font-style: italic;
+  font-size: 23px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--kt-ink);
+}
+
+/* =============================================================== SPLIT
+   Half photograph, half copy — record, interview, timeline pages. */
+
+.kt-split {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 44% 1fr;
+}
+
+.kt-split.kt-split-rev {
+  grid-template-columns: 1fr 44%;
+}
+
+.kt-split-pic {
+  position: relative;
+  overflow: hidden;
+}
+
+.kt-split-pic img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kt-split-pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10, 13, 20, 0.5) 0%, transparent 30%);
+}
+
+.kt-split-cap {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 18px;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--kt-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(244, 240, 230, 0.88);
+}
+
+.kt-split-main {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 46px 36px;
+  min-width: 0;
+}
+
+.kt-split-main h2 {
+  margin: 14px 0 0;
+  font-family: var(--kt-display);
+  font-size: 34px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.kt-split-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.kt-split-list li {
+  padding: 13px 0;
+  border-top: 1px solid var(--kt-hair-l);
+}
+
+.kt-dark .kt-split-list li {
+  border-top-color: var(--kt-hair-d);
+}
+
+.kt-split-list li:first-child {
+  border-top: 0;
+}
+
+.kt-split-list b {
+  display: block;
+  font-family: var(--kt-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--kt-accent);
+}
+
+.kt-light .kt-split-list b {
+  color: var(--kt-accent-2);
+}
+
+.kt-split-list span {
+  display: block;
+  margin-top: 5px;
+  font-size: 14.4px;
+  line-height: 1.5;
+}
+
+/* prose variant of the split page: dense single-column feature text */
+.kt-split-prose {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  margin-top: 14px;
+  font-size: 14.9px;
+  line-height: 1.62;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.kt-split-prose p {
+  margin: 0 0 11px;
+}
+
+.kt-split-prose .kt-run {
+  font-style: italic;
+  font-weight: 600;
+  color: var(--kt-accent-2);
+}
+
+.kt-dark .kt-split-prose .kt-run {
+  color: var(--kt-accent-lt);
+}
+
+/* ================================================================= AD */
+
+.kt-ad-mark {
+  margin: 0;
+  font-family: var(--kt-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--kt-accent);
+}
+
+.kt-light .kt-ad-mark {
+  color: var(--kt-accent-2);
+}
+
+.kt-ad-hero {
+  margin: 16px 0 0;
+  font-family: var(--kt-display);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.022em;
+}
+
+.kt-ad-hero em {
+  font-style: italic;
+  color: var(--kt-accent);
+}
+
+.kt-light .kt-ad-hero em {
+  color: var(--kt-accent-2);
+}
+
+.kt-ad-copy {
+  margin: 16px 0 0;
+  font-size: 18px;
+  line-height: 1.58;
+  max-width: 620px;
+}
+
+.kt-ad-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.kt-ad-list li {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 20px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-top: 1px solid var(--kt-hair-l);
+}
+
+.kt-dark .kt-ad-list li {
+  border-top-color: var(--kt-hair-d);
+}
+
+.kt-ad-list em {
+  font-family: var(--kt-display);
+  font-style: normal;
+  font-size: 46px;
+  line-height: 0.9;
+  color: var(--kt-accent);
+}
+
+.kt-light .kt-ad-list em {
+  color: var(--kt-accent-2);
+}
+
+.kt-ad-list b {
+  display: block;
+  font-family: var(--kt-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.kt-ad-list span {
+  display: block;
+  margin-top: 7px;
+  font-size: 16.6px;
+  line-height: 1.52;
+}
+
+.kt-ad-foot {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--kt-hair-l);
+}
+
+.kt-dark .kt-ad-foot {
+  border-top-color: var(--kt-hair-d);
+}
+
+.kt-ad-foot p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+.kt-ad-foot p b {
+  font-family: var(--kt-sans);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kt-ad-foot img {
+  width: 100px;
+  height: 100px;
+  padding: 6px;
+  background: #fff;
+  flex: 0 0 auto;
+}
+
+/* ======================================================== LAYOUT VARIANTS
+   Alternate compositions so issues can differ structurally, not just in
+   theme. Each issue composes its own combination. */
+
+/* ---- contents · overlay: entries panel over a full-bleed photograph */
+
+.kt-co-word {
+  position: absolute;
+  top: 44px;
+  right: 46px;
+  z-index: 3;
+  writing-mode: vertical-rl;
+  font-family: var(--kt-display);
+  font-size: 64px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fdfaf2;
+  text-shadow: 0 8px 26px rgba(0, 0, 0, 0.55);
+}
+
+.kt-co-panel {
+  position: absolute;
+  left: 46px;
+  bottom: 46px;
+  z-index: 3;
+  width: 520px;
+  padding: 30px 34px 26px;
+  background: rgba(10, 13, 20, 0.82);
+  border-top: 3px solid var(--kt-accent);
+  color: var(--kt-cream);
+}
+
+.kt-co-panel .kt-contents-issue {
+  margin: 0 0 4px;
+}
+
+.kt-co-panel ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.kt-co-panel li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-top: 1px solid var(--kt-hair-d);
+}
+
+.kt-co-panel li:first-child {
+  border-top: 0;
+}
+
+.kt-co-panel em {
+  font-family: var(--kt-display);
+  font-style: normal;
+  font-size: 30px;
+  line-height: 0.9;
+  color: var(--kt-accent-lt);
+}
+
+.kt-co-panel h4 {
+  margin: 0;
+  font-family: var(--kt-display);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.12;
+  color: #fdfaf2;
+}
+
+.kt-co-panel p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--kt-cream-mute);
+}
+
+/* ---- contents · rail: giant rotated word beside a photo band + entries */
+
+.kt-contents-rail {
+  grid-template-columns: 128px 1fr;
+}
+
+.kt-rail {
+  background: rgba(0, 0, 0, 0.32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kt-rail b {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--kt-sans);
+  font-size: 68px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: #fdfaf2;
+}
+
+.kt-rail-pic {
+  width: 100%;
+  height: 264px;
+  object-fit: cover;
+  margin-bottom: 18px;
+}
+
+/* ---- contents · band: photo band on top, two-column entries below */
+
+.kt-cb {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.kt-cb-pic {
+  position: relative;
+  height: 42%;
+  overflow: hidden;
+}
+
+.kt-cb-pic img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kt-cb-pic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(10, 13, 20, 0.6) 0%, transparent 36%);
+}
+
+.kt-cb-main {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 52px 34px;
+  text-align: center;
+}
+
+.kt-cb-main .kt-script {
+  font-size: 72px;
+  line-height: 0.9;
+}
+
+.kt-cb-grid {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+  align-content: space-evenly;
+  text-align: left;
+}
+
+.kt-cb-grid li {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 14px;
+  align-items: baseline;
+  padding: 12px 0;
+  border-top: 1px solid var(--kt-hair-d);
+}
+
+.kt-cb-grid em {
+  font-family: var(--kt-display);
+  font-style: normal;
+  font-size: 32px;
+  line-height: 0.9;
+  color: var(--kt-accent);
+}
+
+.kt-cb-grid h4 {
+  margin: 0;
+  font-family: var(--kt-display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--kt-cream);
+}
+
+.kt-cb-grid p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--kt-cream-mute);
+}
+
+/* ---- letter · side: rail head on the left, single-measure body right */
+
+.kt-letter-side {
+  flex-direction: row;
+  gap: 42px;
+}
+
+.kt-ls-rail {
+  flex: 0 0 236px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--kt-hair-l);
+  padding-right: 34px;
+}
+
+.kt-ls-rail .kt-script {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.kt-ls-rail h2 {
+  margin: 14px 0 0;
+  font-family: var(--kt-display);
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.14;
+  color: var(--kt-ink);
+}
+
+.kt-ls-rail .kt-letter-sign {
+  margin-top: auto;
+  border-top: 1px solid var(--kt-hair-l);
+  display: block;
+}
+
+.kt-ls-main {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.kt-ls-main .kt-letter-body {
+  columns: 1;
+  font-size: 16.8px;
+  line-height: 1.8;
+}
+
+/* ---- letter · dark: centered plate on the dark ground */
+
+.kt-letter-dark .kt-letter-head h2 {
+  color: var(--kt-cream);
+}
+
+.kt-letter-dark .kt-letter-rules {
+  border-color: var(--kt-hair-d);
+}
+
+.kt-letter-dark .kt-letter-body {
+  columns: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 16.6px;
+  line-height: 1.86;
+  color: var(--kt-cream);
+}
+
+.kt-letter-dark .kt-letter-body .kt-drop::first-letter {
+  color: var(--kt-accent);
+}
+
+.kt-letter-dark .kt-letter-sign {
+  border-top-color: var(--kt-hair-d);
+}
+
+.kt-letter-dark .kt-letter-sign .kt-script {
+  color: var(--kt-accent-lt);
+}
+
+.kt-letter-dark .kt-letter-sign blockquote {
+  color: var(--kt-accent-lt);
+}
+
+/* ---- credits · ledger: narrow centered masthead with dotted leaders */
+
+.kt-credits-ledger {
+  margin: 26px auto 0;
+  width: 100%;
+  max-width: 560px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.kt-credits-ledger > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 18px;
+  padding: 10px 2px;
+  border-bottom: 1px dotted var(--kt-hair-d);
+}
+
+.kt-light .kt-credits-ledger > div {
+  border-bottom-color: var(--kt-hair-l);
+}
+
+.kt-credits-ledger dt {
+  margin: 0;
+  font-family: var(--kt-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kt-accent);
+}
+
+.kt-credits-ledger dd {
+  margin: 0;
+  font-size: 16px;
+  color: var(--kt-cream);
+  text-align: right;
+}
+
+.kt-light .kt-credits-ledger dd {
+  color: var(--kt-ink);
+}
+
+/* ---- credits · grid: three-column card masthead */
+
+.kt-credits-grid {
+  margin: 26px 0 0;
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 30px;
+  align-content: space-evenly;
+}
+
+.kt-credits-grid > div {
+  padding: 12px 2px;
+  border-top: 1px solid var(--kt-hair-d);
+}
+
+.kt-light .kt-credits-grid > div {
+  border-top-color: var(--kt-hair-l);
+}
+
+.kt-credits-grid dt {
+  margin: 0;
+  font-family: var(--kt-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--kt-accent);
+}
+
+.kt-credits-grid dd {
+  margin: 5px 0 0;
+  font-size: 15px;
+  color: var(--kt-cream);
+}
+
+.kt-light .kt-credits-grid dd {
+  color: var(--kt-ink);
+}
+
+/* credits on the light ground */
+.kt-light .kt-credits-word {
+  color: var(--kt-ink);
+}
+
+.kt-light .kt-credits-issueline {
+  color: var(--kt-mute);
+}
+
+.kt-light .kt-credits-foot {
+  border-top-color: var(--kt-hair-l);
+}
+
+.kt-light .kt-credits-foot p {
+  color: var(--kt-body);
+}
+
+/* ---- opener · boxed: framed name plate centered over the photograph */
+
+.kt-opener-boxed {
+  align-items: center;
+  text-align: center;
+}
+
+.kt-opener-boxed .kt-kicker {
+  align-self: center;
+}
+
+.kt-opener-box {
+  margin: auto 0;
+  padding: 44px 54px 40px;
+  border: 1px solid var(--kt-accent-lt);
+  outline: 1px solid rgba(255, 255, 255, 0.25);
+  outline-offset: 7px;
+  background: rgba(10, 13, 20, 0.42);
+}
+
+.kt-opener-box .kt-opener-name b {
+  font-size: 88px;
+}
+
+.kt-opener-box .kt-opener-name em {
+  font-size: 78px;
+}
+
+.kt-opener-box .kt-plate-dek {
+  margin: 16px auto 0;
+}
+
+.kt-opener-boxed .kt-plate-foot {
+  width: 100%;
+}
+
+/* ---- opener · side: name runs vertically up the edge */
+
+.kt-opener-vert {
+  position: absolute;
+  left: 40px;
+  bottom: 44px;
+  top: 44px;
+  z-index: 3;
+  display: flex;
+  align-items: flex-end;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.kt-opener-vert b {
+  font-family: var(--kt-display);
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+  color: #fdfaf2;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+.kt-opener-vert em {
+  font-family: var(--kt-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 96px;
+  line-height: 0.94;
+  color: var(--kt-accent-lt);
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+.kt-opener-sidecopy {
+  margin-left: 170px;
+}
+
+.kt-opener-sidecopy .kt-plate-dek {
+  margin-left: auto;
+  text-align: right;
+}
+
+/* ---- opener · center: centered lockup at the lower third */
+
+.kt-opener-center {
+  text-align: center;
+  align-items: center;
+}
+
+.kt-opener-center .kt-plate-stack {
+  width: 100%;
+}
+
+.kt-opener-center .kt-opener-name b,
+.kt-opener-center .kt-opener-name em {
+  display: inline;
+  font-size: 92px;
+}
+
+.kt-opener-center .kt-opener-name em {
+  margin-left: 22px;
+}
+
+.kt-opener-center .kt-plate-dek {
+  margin: 16px auto 0;
+}
+
+/* ---- story · measure: single wide column, centered head */
+
+.kt-story-measure .kt-story-head {
+  text-align: center;
+}
+
+.kt-story-measure .kt-story-head .kt-kicker {
+  justify-content: center;
+}
+
+.kt-story-measure .kt-story-head .kt-dek {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kt-story-measure .kt-story-body {
+  columns: 1;
+  max-width: 620px;
+  width: 100%;
+  margin: 20px auto 0;
+  font-size: 16.8px;
+  line-height: 1.8;
+}
+
+/* ---- story · three: three dense columns */
+
+.kt-story-three .kt-story-body {
+  columns: 3;
+  column-gap: 26px;
+  font-size: 13.4px;
+  line-height: 1.58;
+}
+
+.kt-story-three .kt-story-body .kt-drop::first-letter {
+  font-size: 44px;
+}
+
+/* ---- split · band: photograph banded across the top */
+
+.kt-split-band {
+  display: flex;
+  flex-direction: column;
+}
+
+.kt-split-band .kt-split-pic {
+  flex: 0 0 44%;
+}
+
+.kt-split-band .kt-split-main {
+  flex: 1 1 auto;
+}
+
+/* ---- split · wide picture */
+
+.kt-split-55 {
+  grid-template-columns: 55% 1fr;
+}
+
+.kt-split-55.kt-split-rev {
+  grid-template-columns: 1fr 55%;
+}
+
+/* ---- ad · poster: centered lockup with a 2x2 card grid */
+
+.kt-ad-poster {
+  text-align: center;
+}
+
+.kt-ad-poster .kt-ad-mark {
+  align-self: center;
+}
+
+.kt-ad-poster .kt-ad-copy {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kt-ad-poster .kt-ad-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-content: stretch;
+}
+
+.kt-ad-poster .kt-ad-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 22px 24px;
+  border: 1px solid var(--kt-hair-l);
+  text-align: left;
+}
+
+.kt-dark .kt-ad-poster .kt-ad-list li,
+.kt-ad-poster.kt-well-dark .kt-ad-list li {
+  border-color: var(--kt-hair-d);
+}
+
+.kt-ad-poster .kt-ad-list em {
+  margin-bottom: 8px;
+}
+
+/* ---- ad · cards: tinted panels with a heavy accent edge */
+
+.kt-ad-cards .kt-ad-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  align-content: stretch;
+}
+
+.kt-ad-cards .kt-ad-list li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 20px 22px;
+  border: 0;
+  border-left: 3px solid var(--kt-accent);
+  background: var(--kt-panel-l);
+  text-align: left;
+}
+
+.kt-dark .kt-ad-cards .kt-ad-list li {
+  background: var(--kt-panel-d);
+}
+
+.kt-ad-cards .kt-ad-list em {
+  margin-bottom: 8px;
+}
+
+/* ---- spot · corner + band cards */
+
+.kt-spot-corner {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 0 64px 56px;
+}
+
+.kt-spot-corner .kt-spot-card {
+  text-align: left;
+}
+
+.kt-spot-corner .kt-spot-card img {
+  margin-left: 0;
+}
+
+.kt-spot-band {
+  align-items: flex-end;
+  padding-bottom: 56px;
+}
+
+.kt-spot-band .kt-spot-card {
+  width: calc(100% - 112px);
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  text-align: left;
+  padding: 38px 44px;
+}
+
+.kt-spot-band .kt-spot-card img {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.kt-spot-band .kt-spot-main {
+  flex: 1 1 auto;
+}
+
+/* ================================================================ SPOT
+   Full-bleed ground with a framed invitation card. */
+
+.kt-spot {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.kt-spot-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.kt-spot-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(70% 55% at 50% 46%, rgba(10, 13, 20, 0.18) 0%, rgba(10, 13, 20, 0.72) 100%);
+}
+
+.kt-spot-card {
+  position: relative;
+  z-index: 3;
+  width: 540px;
+  padding: 56px 58px 48px;
+  background: rgba(13, 17, 27, 0.9);
+  border: 1px solid rgba(201, 154, 63, 0.5);
+  outline: 1px solid rgba(201, 154, 63, 0.2);
+  outline-offset: 6px;
+  text-align: center;
+  color: var(--kt-cream);
+}
+
+.kt-spot-card .kt-script {
+  font-size: 62px;
+  line-height: 0.9;
+}
+
+.kt-spot-card h3 {
+  margin: 16px 0 0;
+  font-family: var(--kt-display);
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
+.kt-spot-card img {
+  width: 150px;
+  height: 150px;
+  margin: 28px auto 20px;
+  padding: 8px;
+  background: #fff;
+}
+
+.kt-spot-card p {
+  font-size: 15.5px;
+}
+
+.kt-spot-card b {
+  display: block;
+  font-family: var(--kt-sans);
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--kt-accent-lt);
+}
+
+.kt-spot-card p {
+  margin: 12px 0 0;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--kt-cream-mute);
+}

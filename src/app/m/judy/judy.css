@@ -1,0 +1,776 @@
+/*
+ * PrimeCrest · Judy Stevens · Vol. II
+ *
+ * Cover + back: flagship lockup. Do not restyle.
+ * Interiors: the shared kit (src/app/m/kit.css) themed `.kt-judy` —
+ * indigo night / ivory / leaf-gold, DM Serif · Cardo · Syne · Caveat.
+ */
+
+/* ------------------------------------------------------ interior theme */
+
+.kt.kt-judy {
+  --kt-paper: #f4f0e6;
+  --kt-paper-2: #eae4d4;
+  --kt-dark: #0b1220;
+  --kt-dark-2: #182338;
+
+  --kt-ink: #121820;
+  --kt-body: #2a3038;
+  --kt-mute: #6a7180;
+  --kt-cream: #f4f0e6;
+  --kt-cream-mute: rgba(244, 240, 230, 0.68);
+
+  --kt-accent: #d9a441;
+  --kt-accent-lt: #f0d089;
+  --kt-accent-2: #3a6cb0;
+
+  --kt-hair-l: rgba(18, 24, 32, 0.16);
+  --kt-hair-d: rgba(244, 240, 230, 0.16);
+
+  --kt-display: var(--font-dmserif), "DM Serif Display", Georgia, serif;
+  --kt-serif: var(--font-cardo), Cardo, Georgia, serif;
+  --kt-sans: var(--font-syne), Syne, system-ui, sans-serif;
+  --kt-script: var(--font-caveat), "Segoe Script", cursive;
+}
+
+/* Caveat runs small on the cap height — nudge the script sizes up. */
+.kt-judy .kt-plate-stack .kt-script {
+  font-size: 110px;
+}
+
+.kt-judy .kt-letter-sign .kt-script {
+  font-size: 40px;
+}
+
+/* Name sits on the jacket, not the mouth. */
+.kt-judy .kt-opener-name b {
+  font-size: 86px;
+}
+
+.kt-judy .kt-opener-name em {
+  font-size: 76px;
+}
+
+.kt-judy .kt-plate-stack .kt-plate-dek {
+  max-width: 480px;
+}
+
+.kt-judy .kt-plate-title {
+  font-size: 42px;
+}
+
+/* ----------------------------------------------------------- Fortiora ads */
+
+.jd {
+  --jd-serif: var(--font-dmserif), "DM Serif Display", Georgia, serif;
+  --jd-body: var(--font-cardo), Cardo, Georgia, serif;
+  --jd-sans: var(--font-syne), Syne, system-ui, sans-serif;
+  --jd-script: var(--font-caveat), "Segoe Script", cursive;
+}
+
+.mag-page.jd-ad {
+  background:
+    radial-gradient(80% 50% at 100% 0%, rgba(217, 164, 65, 0.16) 0%, transparent 62%),
+    linear-gradient(168deg, #1a2744 0%, #0e1628 56%, #0a101c 100%);
+  padding: 0;
+}
+
+.jd-ad-well {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 48px 36px;
+}
+
+.jd-ad-kicker {
+  margin: 0;
+  font-family: var(--jd-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #d9a441;
+}
+
+.jd-ad-head {
+  margin: 10px 0 0;
+  max-width: 640px;
+  font-family: var(--jd-serif);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.06;
+  letter-spacing: -0.024em;
+  color: #f4f0e6;
+}
+
+.jd-ad-dek {
+  margin: 12px 0 0;
+  max-width: 580px;
+  font-family: var(--jd-body);
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.42;
+  color: rgba(244, 240, 230, 0.78);
+}
+
+.jd-ad-hair {
+  height: 1px;
+  margin: 16px 0 4px;
+  background: rgba(217, 164, 65, 0.32);
+}
+
+.jd-ad-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: space-evenly;
+}
+
+.jd-ad-list li {
+  padding: 12px 0;
+  border-top: 1px solid rgba(217, 164, 65, 0.22);
+  flex: 1 1 auto;
+}
+
+.jd-ad-list b {
+  display: block;
+  font-family: var(--jd-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d9a441;
+}
+
+.jd-ad-list p {
+  margin: 5px 0 0;
+  font-family: var(--jd-body);
+  font-size: 15px;
+  line-height: 1.38;
+  color: rgba(244, 240, 230, 0.9);
+}
+
+.jd-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+  flex: 0 0 auto;
+}
+
+.jd-lockup img {
+  height: 52px;
+  width: auto;
+}
+
+.jd-lockup b {
+  display: block;
+  font-family: var(--jd-sans);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f4f0e6;
+  line-height: 1;
+}
+
+.jd-lockup span {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--jd-sans);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #d9a441;
+}
+
+.jd-ad-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 8px;
+  flex: 0 0 auto;
+}
+
+.jd-ad-contact {
+  margin: 12px 0 0;
+  font-family: var(--jd-body);
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(244, 240, 230, 0.78);
+}
+
+.jd-ad-contact b { color: #f4f0e6; }
+
+.jd-ad-qr {
+  padding: 8px;
+  background: #f4f0e6;
+}
+
+.jd-ad-qr img {
+  display: block;
+  width: 110px;
+  height: auto;
+}
+
+.jd-ad-folio {
+  margin: 12px 0 0;
+  font-family: var(--jd-sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(244, 240, 230, 0.45);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Card on the floor so her face stays in the upper half. */
+.mag-page.jd-feat {
+  background: #0b1220;
+  padding: 0;
+}
+
+.jd-feat-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+}
+
+.jd-feat-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, transparent 0%, transparent 48%, rgba(11, 18, 32, 0.9) 100%);
+}
+
+.jd-feat-card {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  bottom: 36px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 26px 20px;
+  background: rgba(11, 18, 32, 0.92);
+  border: 1px solid rgba(217, 164, 65, 0.45);
+}
+
+.jd-feat-script {
+  margin: 0;
+  font-family: var(--jd-script);
+  font-size: 48px;
+  line-height: 0.9;
+  color: #f0d089;
+}
+
+.jd-feat-card h3 {
+  margin: 0;
+  font-family: var(--jd-serif);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #f4f0e6;
+}
+
+.jd-feat-card p {
+  margin: 0;
+  font-family: var(--jd-body);
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(244, 240, 230, 0.8);
+}
+
+.jd-feat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.jd-feat-row span {
+  font-family: var(--jd-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d9a441;
+}
+
+.jd-feat-row img {
+  width: 88px;
+  height: auto;
+  padding: 6px;
+  background: #f4f0e6;
+}
+
+/* ------------------------------------------------- cover/back tokens */
+
+.wc {
+  --wc-cover-didone: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --wc-cover-serif: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --wc-cover-sans: var(--font-franklin), "Libre Franklin", system-ui, sans-serif;
+
+  font-family: var(--wc-cover-serif);
+  color: #f4f0e6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mag-page.wc-bleed {
+  background: #1f1712;
+  padding: 0;
+}
+
+.wc-bleed > .wc-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wc-well {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 52px 36px;
+  z-index: 3;
+}
+
+.wc-hair {
+  height: 1px;
+  background: rgba(195, 154, 75, 0.34);
+  border: 0;
+  margin: 12px 0;
+}
+
+.wc-label {
+  margin: 0;
+  font-family: var(--wc-cover-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: #e8c885;
+}
+
+.wc-imprint {
+  margin: 0;
+  font-family: var(--wc-cover-sans);
+  font-size: 12.5px;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.86);
+}
+
+.wc-imprint b {
+  font-weight: 600;
+  color: #fff;
+}
+
+.wc-pill {
+  display: inline-block;
+  padding: 7px 20px;
+  background: rgba(242, 237, 227, 0.14);
+  border: 1px solid rgba(195, 154, 75, 0.4);
+  font-family: var(--wc-cover-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+/* ================================================================= COVER
+   Flagship lockup — same architecture as Vineet's cover. Do not restyle. */
+
+.mag-page.wc-cover {
+  background: #141a1c;
+  padding: 0;
+}
+
+.wc-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 12%;
+  filter: saturate(0.95) contrast(1.02) brightness(1.06);
+}
+
+.wc-cover-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(20, 26, 40, 0.9) 0%, rgba(20, 26, 40, 0.5) 18%, rgba(20, 26, 40, 0) 30%),
+    linear-gradient(0deg, rgba(20, 26, 40, 0.86) 0%, rgba(20, 26, 40, 0.62) 16%, rgba(20, 26, 40, 0.18) 32%, rgba(20, 26, 40, 0) 44%),
+    linear-gradient(90deg, rgba(20, 26, 40, 0.62) 0%, rgba(20, 26, 40, 0.22) 18%, rgba(20, 26, 40, 0) 34%),
+    linear-gradient(270deg, rgba(20, 26, 40, 0.68) 0%, rgba(20, 26, 40, 0.28) 20%, rgba(20, 26, 40, 0) 38%),
+    radial-gradient(78% 58% at 44% 30%, rgba(176, 58, 102, 0.16) 0%, transparent 70%);
+}
+
+.wc-cover-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.wc-cover-ui > * {
+  position: absolute;
+}
+
+.wc-mast {
+  top: 22px;
+  left: 36px;
+  right: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.wc-mast-word {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.78));
+}
+
+.wc-mast-crest {
+  width: 58px;
+  height: 51px;
+  flex: 0 0 auto;
+}
+
+.wc-mast-word b {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 0.86;
+  color: #f7f2e8;
+}
+
+.wc-mast-word b i {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.wc-mast-word b span {
+  color: #c43a32;
+}
+
+.wc-mast-tag {
+  margin: 10px 0 0;
+  font-family: var(--wc-cover-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.52em;
+  text-indent: 0.52em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(242, 237, 227, 0.82);
+}
+
+.wc-mast-hair {
+  margin: 12px 0 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(195, 154, 75, 0.9), transparent);
+}
+
+.wc-cover-date {
+  top: 196px;
+  left: 36px;
+  width: 250px;
+  border-top: 2px solid #bf8f3c;
+  padding-top: 14px;
+}
+
+.wc-cover-date p {
+  margin: 0 0 5px;
+  font-family: var(--wc-cover-sans);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+.wc-cover-date p + p {
+  color: rgba(242, 237, 227, 0.72);
+  font-weight: 400;
+}
+
+.wc-teaser {
+  width: 292px;
+}
+
+.wc-teaser-a {
+  top: 400px;
+  left: 36px;
+}
+
+.wc-teaser-b {
+  top: 736px;
+  right: 36px;
+  text-align: right;
+}
+
+.wc-teaser h3 {
+  margin: 0;
+  font-family: var(--wc-cover-serif);
+  font-size: 28px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  color: #e8c885;
+}
+
+.wc-teaser hr {
+  border: 0;
+  height: 1px;
+  background: rgba(242, 237, 227, 0.42);
+  margin: 12px 0 12px;
+}
+
+.wc-teaser p {
+  margin: 0;
+  font-family: var(--wc-cover-sans);
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.34;
+  color: rgba(242, 237, 227, 0.92);
+}
+
+.wc-cover-badge {
+  top: 180px;
+  right: 36px;
+  width: 332px;
+  text-align: right;
+}
+
+.wc-cover-badge .wc-badge-dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e8c885, #bf8f3c);
+  margin-bottom: 7px;
+}
+
+.wc-cover-badge h2 {
+  margin: 0;
+  font-family: var(--wc-cover-serif);
+  font-size: 34px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: #f4eee2;
+  line-height: 1.08;
+}
+
+.wc-cover-badge strong {
+  display: block;
+  margin: -2px 0 -4px;
+  font-family: var(--wc-cover-didone);
+  font-weight: 600;
+  font-size: 84px;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: #e8c885;
+}
+
+.wc-cover-badge span {
+  display: block;
+  font-family: var(--wc-cover-sans);
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.wc-cover-badge em {
+  display: block;
+  font-family: var(--wc-cover-didone);
+  font-style: italic;
+  font-size: 40px;
+  color: #e8c885;
+  line-height: 1.08;
+}
+
+.wc-cover-role {
+  top: 578px;
+  right: 36px;
+  width: 300px;
+  text-align: right;
+  border-right: 2px solid #bf8f3c;
+  padding-right: 16px;
+}
+
+.wc-cover-role p {
+  margin: 0;
+  font-family: var(--wc-cover-sans);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.26;
+  color: rgba(242, 237, 227, 0.92);
+}
+
+.wc-cover-role strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--wc-cover-sans);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.wc-cover-name {
+  left: 46px;
+  bottom: 128px;
+  width: 560px;
+}
+
+.wc-cover-name em {
+  display: block;
+  font-family: var(--wc-cover-didone);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 92px;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: #e8c885;
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.66);
+}
+
+.wc-cover-name strong {
+  display: block;
+  margin: -2px 0 0 4px;
+  font-family: var(--wc-cover-didone);
+  font-weight: 600;
+  font-size: 74px;
+  line-height: 0.94;
+  letter-spacing: 0.012em;
+  color: #fffdf8;
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.7);
+}
+
+.wc-cover-name p {
+  margin: 13px 0 0 5px;
+  max-width: 430px;
+  font-family: var(--wc-cover-sans);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.32;
+  color: rgba(242, 237, 227, 0.94);
+}
+
+.wc-cover-foot {
+  left: 46px;
+  right: 46px;
+  bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.wc-cover-foot .wc-cover-issn {
+  margin: 0;
+  font-family: var(--wc-cover-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(242, 237, 227, 0.6);
+  line-height: 1.7;
+}
+
+.wc-cover-foot .wc-cover-issn b {
+  color: rgba(242, 237, 227, 0.92);
+  font-weight: 600;
+}
+
+.wc-qr-chip {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.wc-qr-chip img {
+  width: 92px;
+  height: auto;
+  padding: 5px;
+  background: #f7f4ee;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
+
+.wc-qr-chip span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--wc-cover-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #e8c885;
+}
+
+.wc-back {
+  align-items: center;
+  text-align: center;
+  padding: 74px 60px 52px;
+}
+
+.wc-back-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.72));
+}
+
+.wc-back-crest {
+  width: 68px;
+  height: 60px;
+  flex: 0 0 auto;
+}
+
+.wc-back-word {
+  margin: 0;
+  font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.06em;
+  color: #f7f2e8;
+}
+
+.wc-back-word span {
+  color: #c43a32;
+}

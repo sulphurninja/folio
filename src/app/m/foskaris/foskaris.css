@@ -1,0 +1,1717 @@
+/*
+ * PrimeCrest · The September Issue (Penny Foskaris)
+ *
+ * Closed .fk-* system. Cover and back keep the house PrimeCrest lockup
+ * (crest, letterspaced word, badge, teasers, QR chip). Interiors: blush
+ * paper, warm charcoal, Instrument Serif + Spectral + Syne, a contents
+ * photo + numeral index, and photo/type splits that never crop a face.
+ */
+
+.fk {
+  --fk-ink: #241610;
+  --fk-ink-2: #3a241c;
+  --fk-ink-3: #5a3228;
+  --fk-paper: #f7f0e8;
+  --fk-paper-2: #efe3d6;
+  --fk-peach: #f3d4c4;
+  --fk-coral: #d4563a;
+  --fk-coral-lt: #e8896a;
+  --fk-coral-dk: #8a2e1e;
+  --fk-olive: #2a1c18;
+  --fk-olive-dk: #1c1412;
+  --fk-sage: #8a6a58;
+  --fk-body: #32241c;
+  --fk-mute: #746056;
+
+  --fk-didone: var(--font-instrument), "Instrument Serif", Georgia, serif;
+  --fk-serif: var(--font-spectral), "Spectral", Georgia, serif;
+  --fk-sans: var(--font-syne), "Syne", system-ui, sans-serif;
+  --fk-mast: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  --fk-script: var(--font-pinyon), "Snell Roundhand", cursive;
+  --fk-hand: var(--font-caveat), "Segoe Script", cursive;
+
+  --fk-marg: 48px;
+
+  font-family: var(--fk-serif);
+  color: var(--fk-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------------------------------------------------------------- grounds */
+
+.mag-page.fk-blush {
+  background-color: var(--fk-paper);
+  background-image:
+    radial-gradient(rgba(36, 22, 16, 0.035) 0.6px, transparent 0.6px),
+    linear-gradient(180deg, #fbf6ef 0%, var(--fk-paper) 48%, #f0e4d6 100%);
+  background-size: 4px 4px, auto;
+  color: var(--fk-body);
+}
+
+.mag-page.fk-char {
+  background-color: var(--fk-olive-dk);
+  background-image:
+    radial-gradient(80% 50% at 100% 0%, rgba(212, 86, 58, 0.18) 0%, transparent 62%),
+    linear-gradient(168deg, #261814 0%, #1c1412 58%, #120e0c 100%);
+  color: #f2ede3;
+}
+
+.mag-page.fk-ivory {
+  background-color: var(--fk-paper);
+  background-image:
+    radial-gradient(rgba(36, 22, 16, 0.035) 0.6px, transparent 0.6px),
+    linear-gradient(180deg, #fbf6ef 0%, var(--fk-paper) 48%, #f0e4d6 100%);
+  background-size: 4px 4px, auto;
+  color: var(--fk-body);
+}
+
+.mag-page.fk-olive {
+  background-color: var(--fk-olive-dk);
+  background-image:
+    radial-gradient(80% 50% at 100% 0%, rgba(212, 86, 58, 0.18) 0%, transparent 62%),
+    linear-gradient(168deg, #261814 0%, #1c1412 58%, #120e0c 100%);
+  color: #f2ede3;
+}
+
+.mag-page.fk-bleed {
+  background: var(--fk-olive-dk);
+  padding: 0;
+}
+
+.fk-bleed > .fk-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* page-flip rewrites the article's display, so every layout lives in an
+   absolutely positioned inner box the library never touches. */
+.fk-well {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--fk-marg) var(--fk-marg) 36px;
+  z-index: 3;
+}
+
+/* --------------------------------------------------------------- fixtures */
+
+.fk-kicker {
+  margin: 0;
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--fk-coral);
+}
+
+.fk-olive .fk-kicker {
+  color: var(--fk-coral-lt);
+}
+
+.fk-head {
+  margin: 8px 0 0;
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 44px;
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  color: var(--fk-ink);
+}
+
+.fk-olive .fk-head {
+  color: #f4eee2;
+}
+
+.fk-dek {
+  margin: 10px 0 0;
+  font-family: var(--fk-serif);
+  font-size: 15.5px;
+  font-style: italic;
+  line-height: 1.46;
+  color: var(--fk-mute);
+}
+
+.fk-olive .fk-dek {
+  color: rgba(236, 229, 216, 0.72);
+}
+
+.fk-folio {
+  margin: 0;
+  padding-top: 12px;
+  font-family: var(--fk-sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(26, 33, 20, 0.42);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex: 0 0 auto;
+}
+
+.fk-olive .fk-folio {
+  color: rgba(242, 237, 227, 0.48);
+}
+
+.fk-sub {
+  margin: 11px 0 6px;
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fk-coral);
+  break-after: avoid;
+}
+
+.fk-olive .fk-sub {
+  color: var(--fk-coral-lt);
+}
+
+.fk-hair {
+  height: 1px;
+  background: rgba(26, 33, 20, 0.16);
+  border: 0;
+  margin: 12px 0;
+  flex: 0 0 auto;
+}
+
+.fk-olive .fk-hair {
+  background: rgba(232, 137, 106, 0.28);
+}
+
+.fk-cols {
+  column-count: 2;
+  column-gap: 26px;
+  column-fill: auto;
+  font-family: var(--fk-serif);
+  font-size: 13.5px;
+  line-height: 1.56;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  color: var(--fk-body);
+}
+
+.fk-olive .fk-cols {
+  color: rgba(242, 237, 227, 0.92);
+}
+
+.fk-cols p {
+  margin: 0 0 9px;
+}
+
+.fk-cols p:last-child {
+  margin-bottom: 0;
+}
+
+.fk-cols .fk-run {
+  font-weight: 700;
+  color: var(--fk-ink);
+}
+
+.fk-olive .fk-cols .fk-run {
+  color: #fff;
+}
+
+.fk-drop::first-letter {
+  float: left;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 0.8;
+  padding: 4px 9px 0 0;
+  color: var(--fk-coral);
+}
+
+.fk-olive .fk-drop::first-letter {
+  color: var(--fk-coral-lt);
+}
+
+.fk-colwrap {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.fk-colwrap > .fk-cols {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Light-bar motif: stacked therapy-panel ticks. */
+.fk-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 0 0 auto;
+}
+
+.fk-bars i {
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--fk-coral), var(--fk-coral-lt));
+  border-radius: 1px;
+}
+
+.fk-olive .fk-bars i {
+  background: linear-gradient(90deg, var(--fk-coral-lt), rgba(232, 137, 106, 0.35));
+}
+
+/* ============================================================== COVER
+   House lockup, same furniture as Vineet and Bethany: crest, letterspaced
+   PRIMECREST, date, badge, teasers, name, QR chip. coverart.jpg is a wide
+   studio plate (blur left, her on the right). We crop to keep her whole
+   head, and park type on the blur rail + the lower third. */
+
+.mag-page.fk-cover {
+  background: #12160e;
+  padding: 0;
+}
+
+.fk-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 10%;
+  filter: saturate(1.04) contrast(1.02) brightness(1.02);
+}
+
+.fk-cover-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(18, 22, 14, 0.92) 0%, rgba(18, 22, 14, 0.48) 16%, rgba(18, 22, 14, 0) 28%),
+    linear-gradient(0deg, rgba(18, 22, 14, 0.9) 0%, rgba(18, 22, 14, 0.62) 18%, rgba(18, 22, 14, 0.16) 34%, rgba(18, 22, 14, 0) 46%),
+    linear-gradient(90deg, rgba(18, 22, 14, 0.78) 0%, rgba(18, 22, 14, 0.42) 22%, rgba(18, 22, 14, 0) 40%),
+    linear-gradient(270deg, rgba(18, 22, 14, 0.28) 0%, rgba(18, 22, 14, 0) 22%),
+    radial-gradient(70% 50% at 72% 28%, rgba(201, 74, 50, 0.12) 0%, transparent 70%);
+}
+
+.fk-cover-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.fk-cover-ui > * {
+  position: absolute;
+}
+
+.fk-mast {
+  top: 22px;
+  left: 36px;
+  right: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.fk-mast-word {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.78));
+}
+
+.fk-mast-crest {
+  width: 58px;
+  height: 51px;
+  flex: 0 0 auto;
+}
+
+.fk-mast-word b {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  font-family: var(--fk-mast);
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 0.86;
+  color: #f7f2e8;
+}
+
+.fk-mast-word b i {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.fk-mast-word b span {
+  color: var(--fk-coral-lt);
+}
+
+.fk-mast-tag {
+  margin: 10px 0 0;
+  font-family: var(--fk-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.52em;
+  text-indent: 0.52em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(242, 237, 227, 0.82);
+}
+
+.fk-mast-hair {
+  margin: 12px 0 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 137, 106, 0.9), transparent);
+}
+
+.fk-cover-left {
+  top: 176px;
+  left: 36px;
+  width: 286px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fk-cover-date {
+  position: static;
+  width: auto;
+  border-top: 2px solid var(--fk-coral);
+  padding-top: 12px;
+}
+
+.fk-cover-date p {
+  margin: 0 0 5px;
+  font-family: var(--fk-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+.fk-cover-date p + p {
+  color: rgba(242, 237, 227, 0.72);
+  font-weight: 400;
+}
+
+.fk-teaser {
+  width: 292px;
+}
+
+.fk-cover-left .fk-teaser {
+  width: auto;
+}
+
+.fk-teaser-b {
+  top: 720px;
+  right: 36px;
+  text-align: right;
+}
+
+.fk-teaser h3 {
+  margin: 0;
+  font-family: var(--fk-serif);
+  font-size: 28px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  color: var(--fk-coral-lt);
+}
+
+.fk-teaser hr {
+  border: 0;
+  height: 1px;
+  background: rgba(242, 237, 227, 0.42);
+  margin: 12px 0 12px;
+}
+
+.fk-teaser p {
+  margin: 0;
+  font-family: var(--fk-sans);
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.34;
+  color: rgba(242, 237, 227, 0.92);
+}
+
+/* Badge sits on the left blur, well below the mast, clear of her face. */
+.fk-cover-badge {
+  position: static;
+  width: auto;
+  text-align: left;
+}
+
+.fk-cover-badge .fk-badge-dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--fk-coral-lt), var(--fk-coral));
+  margin-bottom: 7px;
+}
+
+.fk-cover-badge h2 {
+  margin: 0;
+  font-family: var(--fk-serif);
+  font-size: 34px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: #f4eee2;
+  line-height: 1.08;
+}
+
+.fk-cover-badge strong {
+  display: block;
+  margin: -2px 0 -4px;
+  font-family: var(--fk-didone);
+  font-weight: 600;
+  font-size: 58px;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: var(--fk-coral-lt);
+}
+
+.fk-cover-badge span {
+  display: block;
+  font-family: var(--fk-sans);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.fk-cover-badge em {
+  display: block;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--fk-coral-lt);
+  line-height: 1.08;
+}
+
+/* Role lives on her dress, not her face. */
+.fk-cover-role {
+  top: 520px;
+  right: 36px;
+  width: 300px;
+  text-align: right;
+  border-right: 2px solid var(--fk-coral);
+  padding-right: 16px;
+}
+
+.fk-cover-role p {
+  margin: 0;
+  font-family: var(--fk-sans);
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.26;
+  color: rgba(242, 237, 227, 0.92);
+}
+
+.fk-cover-role strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--fk-sans);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.fk-cover-name {
+  left: 46px;
+  bottom: 118px;
+  width: 380px;
+}
+
+.fk-cover-name em {
+  display: block;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--fk-coral-lt);
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.66);
+}
+
+.fk-cover-name strong {
+  display: block;
+  margin: -2px 0 0 4px;
+  font-family: var(--fk-didone);
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 0.94;
+  letter-spacing: 0.012em;
+  color: #fffdf8;
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.7);
+}
+
+.fk-cover-name p {
+  margin: 13px 0 0 5px;
+  max-width: 390px;
+  font-family: var(--fk-sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.32;
+  color: rgba(242, 237, 227, 0.94);
+}
+
+.fk-cover-foot {
+  left: 46px;
+  right: 46px;
+  bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.fk-cover-foot .fk-cover-issn {
+  margin: 0;
+  font-family: var(--fk-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(242, 237, 227, 0.6);
+  line-height: 1.7;
+}
+
+.fk-cover-foot .fk-cover-issn b {
+  color: rgba(242, 237, 227, 0.92);
+  font-weight: 600;
+}
+
+.fk-qr-chip {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.fk-qr-chip img {
+  width: 92px;
+  height: auto;
+  padding: 5px;
+  background: #f7f4ee;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
+
+.fk-qr-chip span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--fk-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--fk-coral-lt);
+}
+
+/* ========================================================= BACK COVER */
+
+.fk-back {
+  align-items: center;
+  text-align: center;
+  padding: 68px 56px 48px;
+}
+
+.fk-back-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.72));
+}
+
+.fk-back-crest {
+  width: 62px;
+  height: 54px;
+  flex: 0 0 auto;
+}
+
+.fk-back-word {
+  margin: 0;
+  font-family: var(--fk-mast);
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.06em;
+  color: #f7f2e8;
+}
+
+.fk-back-word span {
+  color: var(--fk-coral-lt);
+}
+
+.fk-imprint {
+  margin: 0;
+  font-family: var(--fk-sans);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.86);
+}
+
+.fk-imprint b {
+  font-weight: 600;
+  color: #fff;
+}
+
+.fk-pill {
+  display: inline-block;
+  padding: 7px 20px;
+  background: rgba(242, 237, 227, 0.12);
+  border: 1px solid rgba(232, 137, 106, 0.42);
+  font-family: var(--fk-sans);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+.fk-label {
+  margin: 0;
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--fk-coral-lt);
+}
+
+.fk-char .fk-kicker,
+.fk-char .fk-sub { color: var(--fk-coral-lt); }
+.fk-char .fk-head { color: #f4eee2; }
+.fk-char .fk-dek { color: rgba(236, 229, 216, 0.72); }
+.fk-char .fk-folio { color: rgba(242, 237, 227, 0.48); }
+.fk-char .fk-hair { background: rgba(232, 137, 106, 0.28); }
+
+/* =================================================== CONTENTS SPREAD
+   Portrait leaf + numeral index. Inspired by magazine contents
+   placements, not copied: coral charcoal, her head kept whole. */
+
+.mag-page.fk-cphoto {
+  background: #1c1412;
+  padding: 0;
+}
+
+.fk-cphoto-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 54% 6%;
+}
+
+.fk-cphoto-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, rgba(28, 20, 18, 0.08) 0%, transparent 18%);
+}
+
+.fk-cword {
+  position: absolute;
+  left: 18px;
+  top: 40px;
+  bottom: 40px;
+  z-index: 4;
+  margin: 0;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--fk-sans);
+  font-size: 104px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 0.82;
+  color: #1c1412;
+}
+
+.fk-cchip {
+  position: absolute;
+  right: 36px;
+  bottom: 36px;
+  z-index: 4;
+  margin: 0;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(247, 240, 232, 0.92);
+  font-family: var(--fk-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #1c1412;
+}
+
+.fk-index-k {
+  margin: 0 0 6px;
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--fk-coral-lt);
+}
+
+.fk-lead {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 22px 0 28px;
+  border-top: 1px solid rgba(232, 137, 106, 0.28);
+  flex: 0 0 auto;
+}
+
+.fk-lead > b {
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-size: 92px;
+  line-height: 0.78;
+  letter-spacing: -0.04em;
+  color: #f4eee2;
+}
+
+.fk-lead h3 {
+  margin: 8px 0 0;
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 0.96;
+  letter-spacing: -0.024em;
+  color: #f4eee2;
+}
+
+.fk-lead p {
+  margin: 12px 0 0;
+  max-width: 420px;
+  font-family: var(--fk-serif);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.32;
+  color: rgba(236, 229, 216, 0.78);
+}
+
+.fk-index {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.fk-index li {
+  display: grid;
+  grid-template-columns: 118px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 0 14px;
+  border-top: 1px solid rgba(232, 137, 106, 0.22);
+  flex: 1 1 auto;
+}
+
+.fk-index b {
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 0.82;
+  letter-spacing: -0.03em;
+  color: #f4eee2;
+}
+
+.fk-index h4 {
+  margin: 4px 0 0;
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  color: #f4eee2;
+}
+
+.fk-index p {
+  margin: 6px 0 0;
+  font-family: var(--fk-serif);
+  font-size: 14px;
+  line-height: 1.38;
+  color: rgba(236, 229, 216, 0.72);
+}
+
+.fk-mastcredits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 20px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(232, 137, 106, 0.22);
+  flex: 0 0 auto;
+}
+
+.fk-mastcredits span {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: var(--fk-sans);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: rgba(236, 229, 216, 0.62);
+}
+
+.fk-mastcredits b {
+  font-weight: 500;
+  color: #f2ede3;
+}
+
+/* ============================================== PHOTO / TYPE SPLIT
+   One leaf: portrait plate + a packed measure. Quote sits on the
+   dress, never the face. */
+
+.fk-split {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 3;
+}
+
+.fk-split-photo {
+  position: relative;
+  flex: 0 0 46%;
+  background: #1c1412;
+}
+
+.fk-split-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+.fk-split-photo::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 38%;
+  z-index: 1;
+  background: linear-gradient(180deg, transparent, rgba(28, 20, 18, 0.55));
+}
+
+.fk-split-photo.is-right { order: 2; }
+
+.fk-split-quote {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 32px;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.22;
+  letter-spacing: -0.016em;
+  color: #f7f0e8;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.fk-split-type {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 34px 32px;
+}
+
+.fk-flow {
+  flex: 1 1 auto;
+  min-height: 0;
+  column-count: 2;
+  column-gap: 22px;
+  column-fill: balance;
+  font-family: var(--fk-serif);
+  font-size: 13.2px;
+  line-height: 1.5;
+  text-align: justify;
+  hyphens: auto;
+  color: var(--fk-body);
+}
+
+.fk-char .fk-flow,
+.fk-split-type .fk-flow {
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.fk-flow p { margin: 0 0 8px; }
+.fk-flow p:last-child { margin-bottom: 0; }
+
+.fk-flow .fk-run {
+  font-weight: 700;
+  color: #fff;
+}
+
+.fk-blush .fk-flow .fk-run { color: var(--fk-ink); }
+
+.fk-flow.fk-drop::first-letter {
+  float: left;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 62px;
+  line-height: 0.78;
+  padding: 4px 8px 0 0;
+  color: var(--fk-coral-lt);
+}
+
+.fk-blush .fk-flow.fk-drop::first-letter { color: var(--fk-coral); }
+
+/* Center-portrait leaf: type | plate | type. Quote sits on the dress. */
+.fk-stage {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 34% 1fr;
+  z-index: 3;
+}
+
+.fk-stage-rail {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 34px 20px 26px;
+}
+
+.fk-stage-rail.is-end { padding-top: 34px; }
+
+.fk-rail {
+  flex: 1 1 auto;
+  min-height: 0;
+  font-family: var(--fk-serif);
+  font-size: 13.6px;
+  line-height: 1.48;
+  text-align: justify;
+  hyphens: auto;
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.fk-rail p { margin: 0 0 9px; }
+.fk-rail p:last-child { margin-bottom: 0; }
+
+.fk-rail.fk-drop::first-letter {
+  float: left;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 52px;
+  line-height: 0.78;
+  padding: 3px 7px 0 0;
+  color: var(--fk-coral-lt);
+}
+
+.fk-stage-photo {
+  position: relative;
+  background: #1c1412;
+}
+
+.fk-stage-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
+.fk-stage-photo::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 42%;
+  background: linear-gradient(180deg, transparent, rgba(28, 20, 18, 0.58));
+}
+
+.fk-stage-quote {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 36px;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.016em;
+  color: #f7f0e8;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.fk-stage-quote::before,
+.fk-plate-quote::before {
+  content: "“";
+  display: block;
+  font-size: 36px;
+  line-height: 0.7;
+  margin-bottom: 6px;
+  color: var(--fk-coral-lt);
+}
+
+/* Full-leaf plate. Kitchen stays whole: cover, pinned to the hairline. */
+.mag-page.fk-plate {
+  background: #1c1412;
+  padding: 0;
+}
+
+.fk-plate-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center 38%;
+  background: #1c1412;
+}
+
+.fk-plate-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(0deg, #1c1412 0%, #1c1412 11%, transparent 22%);
+}
+
+.fk-plate-quote {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 22px;
+  z-index: 4;
+  margin: 0;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.18;
+  letter-spacing: -0.016em;
+  color: #f7f0e8;
+}
+
+.fk-steps {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  gap: 12px;
+}
+
+.fk-steps li {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 20px;
+  background: var(--fk-peach);
+}
+
+.fk-steps b {
+  display: block;
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fk-coral);
+}
+
+.fk-steps p {
+  margin: 8px 0 0;
+  font-family: var(--fk-serif);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--fk-body);
+}
+
+.fk-blush > .fk-well > .fk-flow {
+  font-size: 15.5px;
+  line-height: 1.5;
+  column-fill: auto;
+}
+
+.fk-pull {
+  flex: 0 0 auto;
+  margin: 14px 0 4px;
+  padding: 16px 4px 14px;
+  border-top: 1px solid rgba(36, 22, 16, 0.14);
+  border-bottom: 1px solid rgba(36, 22, 16, 0.14);
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.18;
+  letter-spacing: -0.018em;
+  color: var(--fk-ink);
+}
+
+.fk-file {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.fk-file li {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 11px 0 9px;
+  border-top: 1px solid rgba(36, 22, 16, 0.12);
+  flex: 1 1 auto;
+}
+
+.fk-file b {
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--fk-coral);
+}
+
+.fk-file h4 {
+  margin: 2px 0 0;
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.016em;
+  color: var(--fk-ink);
+}
+
+.fk-file p {
+  margin: 4px 0 0;
+  font-family: var(--fk-serif);
+  font-size: 13.5px;
+  line-height: 1.36;
+  color: var(--fk-body);
+}
+
+/* ========================================================== PULSE INDEX
+   Reveal / Restore / Reverse as three full-width method bands. Not a
+   vertical CONTENTS spine and not a numbered TOC list. */
+
+.fk-pulse {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 16px -48px 0;
+}
+
+.fk-pulse-band {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 22px 48px 20px;
+}
+
+.fk-pulse-band.is-reveal { background: #f3d4c4; color: var(--fk-ink); }
+.fk-pulse-band.is-restore { background: #d4563a; color: #f7f0e8; }
+.fk-pulse-band.is-reverse { background: #1c1412; color: #f2ede3; }
+
+.fk-pulse-band > em {
+  display: block;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 36px;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+}
+
+.fk-pulse-band.is-restore > em,
+.fk-pulse-band.is-reverse > em { color: #f7f0e8; }
+
+.fk-pulse-band p {
+  margin: 0 0 8px;
+  font-family: var(--fk-serif);
+  font-size: 17.5px;
+  line-height: 1.38;
+}
+
+.fk-pulse-band p:last-child { margin-bottom: 0; }
+
+.fk-pulse-band ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 22px;
+}
+
+.fk-pulse-band li {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.fk-pulse-band b {
+  font-family: var(--fk-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  flex: 0 0 28px;
+}
+
+.fk-pulse-band span {
+  font-family: var(--fk-serif);
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+/* =========================================================== COLOPHON */
+
+.fk-script {
+  margin: 0;
+  font-family: var(--fk-script);
+  font-size: 86px;
+  line-height: 0.82;
+  color: var(--fk-ink);
+}
+
+.fk-colo {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 28px;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 14px;
+}
+
+.fk-colo-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fk-colo-rows li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(36, 22, 16, 0.12);
+}
+
+.fk-colo-rows small {
+  font-family: var(--fk-sans);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fk-mute);
+}
+
+.fk-colo-rows b {
+  font-family: var(--fk-didone);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--fk-ink);
+}
+
+.fk-side {
+  background: var(--fk-peach);
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fk-side p {
+  margin: 0 0 10px;
+  font-family: var(--fk-serif);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--fk-body);
+}
+
+.fk-side img {
+  width: 100%;
+  height: auto;
+  padding: 6px;
+  background: #f7f0e8;
+}
+
+/* ====================================================== MOUNTED PLATE
+   object-fit: contain. The whole photograph stays in the frame. */
+
+.fk-mount {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 14px 0 0;
+  padding: 12px;
+  background: #efe3d6;
+  display: flex;
+  flex-direction: column;
+}
+
+.fk-mount figure {
+  margin: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.fk-mount img {
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center 8%;
+  background: #e8ddd0;
+}
+
+.fk-mount figcaption {
+  margin: 8px 0 0;
+  font-family: var(--fk-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fk-sage);
+}
+
+/* ============================================================== LETTER */
+
+.fk-measure {
+  flex: 1 1 auto;
+  min-height: 0;
+  font-family: var(--fk-serif);
+  font-size: 15.5px;
+  line-height: 1.52;
+  color: var(--fk-body);
+}
+
+.fk-measure p { margin: 0 0 10px; }
+.fk-measure p:last-child { margin-bottom: 0; }
+
+.fk-measure.fk-drop::first-letter {
+  float: left;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 92px;
+  line-height: 0.78;
+  padding: 6px 10px 0 0;
+  color: var(--fk-coral);
+}
+
+.fk-saybox {
+  margin: 12px 0;
+  padding: 16px 18px;
+  background: var(--fk-peach);
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.018em;
+  color: var(--fk-ink);
+}
+
+.fk-sign b {
+  display: block;
+  font-family: var(--fk-hand);
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--fk-ink);
+}
+
+.fk-sign small {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--fk-coral);
+}
+
+/* ============================================================= METHOD */
+
+.fk-slabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 12px;
+}
+
+.fk-slab {
+  flex: 1 1 auto;
+  background: var(--fk-peach);
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fk-slab em {
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--fk-ink);
+}
+
+.fk-slab p {
+  margin: 6px 0 0;
+  font-family: var(--fk-serif);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* ========================================================== STATEMENT */
+
+.fk-statement {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.fk-statement-copy {
+  column-count: 2;
+  column-gap: 26px;
+  margin-top: 16px;
+}
+
+.fk-statement-copy p {
+  margin: 0 0 10px;
+  font-family: var(--fk-serif);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: rgba(236, 229, 216, 0.86);
+}
+
+.fk-statement q {
+  display: block;
+  quotes: none;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 42px;
+  line-height: 1.12;
+  letter-spacing: -0.024em;
+  color: #f4eee2;
+}
+
+.fk-nums {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.fk-nums b {
+  display: block;
+  font-family: var(--fk-didone);
+  font-size: 48px;
+  line-height: 0.9;
+  color: var(--fk-coral-lt);
+}
+
+.fk-nums span {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(236, 229, 216, 0.7);
+}
+
+/* =============================================================== CARDS */
+
+.fk-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin-top: 12px;
+  align-content: stretch;
+}
+
+.fk-cards .fk-card {
+  min-height: 0;
+}
+
+.fk-card {
+  background: var(--fk-peach);
+  padding: 16px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.fk-card em {
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--fk-coral);
+}
+
+.fk-card p {
+  margin: 8px 0 0;
+  font-family: var(--fk-serif);
+  font-size: 13.4px;
+  line-height: 1.38;
+}
+
+/* ================================================================== AD */
+
+.fk-ad-art {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.fk-ad-art svg { position: absolute; }
+
+.fk-ad-copy {
+  margin: 0;
+  font-family: var(--fk-serif);
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.fk-ad-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.fk-ad-list li {
+  padding: 12px 0;
+  border-top: 1px solid rgba(232, 137, 106, 0.28);
+  flex: 1 1 auto;
+}
+
+.fk-ad-list b {
+  display: block;
+  font-family: var(--fk-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fk-coral-lt);
+}
+
+.fk-ad-list p {
+  margin: 5px 0 0;
+  font-family: var(--fk-serif);
+  font-size: 13.6px;
+  line-height: 1.42;
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.fk-lockup {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.fk-lockup-mark {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.fk-lockup-mark b {
+  font-family: var(--fk-sans);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f4eee2;
+  line-height: 1;
+}
+
+.fk-lockup-mark span {
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--fk-coral-lt);
+}
+
+.fk-qr-card {
+  padding: 8px;
+  background: #f7f0e8;
+  width: fit-content;
+}
+
+.fk-qr-card img {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================== INVITE */
+
+.fk-invite {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: var(--fk-peach);
+  padding: 18px 22px;
+  margin-top: 12px;
+}
+
+.fk-invite h3 {
+  margin: 0;
+  font-family: var(--fk-didone);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.fk-invite p {
+  margin: 10px 0 0;
+  font-family: var(--fk-serif);
+  font-size: 15px;
+  line-height: 1.45;
+}
+

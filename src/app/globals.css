@@ -1658,13 +1658,13 @@ textarea:focus-visible {
   --font-serif: var(--font-baskerville);
 }
 .mag-tone-judy {
-  --font-display: var(--font-fraunces);
+  --font-display: var(--font-dmserif);
   --font-serif: var(--font-cardo);
-  --font-sans: var(--font-cardo);
+  --font-sans: var(--font-syne);
 }
 .mag-tone-bethany {
-  --font-display: var(--font-baskerville);
-  --font-serif: var(--font-cardo);
+  --font-display: var(--font-fraunces);
+  --font-serif: var(--font-baskerville);
   --font-sans: var(--font-oswald);
 }
 .mag-tone-kohila {
@@ -1681,9 +1681,9 @@ textarea:focus-visible {
   --font-serif: var(--font-baskerville);
 }
 .mag-tone-foskaris {
-  --font-display: var(--font-bebas);
+  --font-display: var(--font-instrument);
   --font-serif: var(--font-spectral);
-  --font-sans: var(--font-oswald);
+  --font-sans: var(--font-syne);
 }
 .mag-tone-vineet {
   --font-display: var(--font-instrument);
@@ -1694,21 +1694,31 @@ textarea:focus-visible {
   --font-display: var(--font-dmserif);
   --font-serif: var(--font-spectral);
 }
+.mag-tone-katie {
+  --font-display: var(--font-playfair);
+  --font-serif: var(--font-franklin);
+  --font-sans: var(--font-cinzel);
+}
+.mag-tone-nichole {
+  --font-display: var(--font-dmserif);
+  --font-serif: var(--font-baskerville);
+  --font-sans: var(--font-oswald);
+}
 
 .mag-tone-foskaris .mag-h,
 .mag-tone-foskaris .mag-display,
 .mag-tone-foskaris .mag-issue-title {
-  font-family: var(--font-bebas), Impact, sans-serif;
+  font-family: var(--font-instrument), "Instrument Serif", Georgia, serif;
   font-weight: 400;
   font-style: normal;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  line-height: 0.88;
+  text-transform: none;
+  letter-spacing: -0.028em;
+  line-height: 1.02;
 }
 .mag-tone-foskaris .mag-issue-name {
-  font-family: var(--font-bebas), Impact, sans-serif;
-  font-style: normal;
-  letter-spacing: 0.06em;
+  font-family: var(--font-instrument), "Instrument Serif", Georgia, serif;
+  font-style: italic;
+  letter-spacing: -0.02em;
 }
 .mag-tone-pallavi .mag-h,
 .mag-tone-pallavi .mag-issue-name,

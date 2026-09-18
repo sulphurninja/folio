@@ -128,12 +128,14 @@ used — that pattern joins the vocabulary for later issues.
 | `saj` — Master of the Deal | Caribbean warmth: red banner, warm paper, split-spread resort photography, gold pulls |
 | `espey` — Ego Trip | Whisky and mahogany: dark-dominant, gold-on-black ledgers and numerals, cinematic crops of one portrait |
 | `judy` — The Wisdom Issue | Racing green and cream: condensed kickers, vertical spine words, card-grid TOC/stats, one full-page italic philosophy panel |
-| `bethany` — Making a Difference | Steel and cream: left-ribbon cover, half-bleed opener, vertical timeline contents, 2×2 impact grid, cool blue photo scrims |
+| `bethany` — Making a Difference | Civic steel `#2c4a63` / `#8aa8bd` on cream and navy `#16283a`: Fraunces display, Baskerville text, Oswald kickers, vertical CONTENTS spine, two-column measure with a pull-quote rail, 2-page Fortiora ledger ad |
 | `kohila` — The Readiness Issue | Burnt copper `#b0561f` on cream paper and dark `#1a1008`: serif heads with 80px copper hairlines, one split-spread, credentials mosaic 2×2 |
 | `pallavi` — The Table Issue | Oxblood `#7a1d3a` on cream and dark `#1a0a10`: italic display heads, ghost letters, hairline running-head contents, leaf 9 year-numeral timeline |
 | `joan` — The Classroom Issue | Deep navy `#1a2744` + classic gold `#c9a227`: cream paper, roman heads, 0.32em kickers, gold ledger rules on every list, horizontal milestone boxes |
-| `foskaris` — The Vitality Issue | Charcoal `#1c1c1c` + hot magenta `#e84393`: cream paper, 96px drop caps, 60/40 slab cover, magenta numbered TOC, full-page statement panels, leaf-8 manifesto |
+| `foskaris` — The Vitality Issue | Warm charcoal `#1c1412` + coral `#d4563a` on blush `#f7f0e8`: Instrument Serif, Spectral, Syne; house cover/back lockup; contents photo + featured-numeral index; center-portrait feature; Reveal/Restore/Reverse method bands; full-leaf kitchen plate |
 | `vineet` — The Evolution Issue | Rich teal `#0d7377` on cream and dark `#062e30`: tighter serif, teal-cap kickers, 8px squares and L-corners, vision-board photo grid |
+| `katie` — The Studio Issue | Ice paper + ink + studio teal `#0c6574`: Playfair / Franklin / Cinzel, crop-mark corners, two-page Fortiora Relay ad |
+| `nichole` — The Restoration Issue | Forest night `#0a1610` + bone + brass `#c9a35a`: DM Serif / Baskerville / Oswald, brass double-rules, two-page Fortiora Casework ad |
 
 ### House furniture — required in every issue
 

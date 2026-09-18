@@ -5,6 +5,7 @@ import { PageFlip } from "page-flip";
 import {
   ChevronLeft,
   ChevronRight,
+  Download,
   List,
   Search,
   Share2,
@@ -38,6 +39,8 @@ type Props = {
   toc: MagTocItem[];
   /** Per-issue type system. Applied to every cloned leaf. */
   tone?: string;
+  /** Static PDF of the issue; renders a download button when set. */
+  pdfHref?: string;
 };
 
 function waitImages(root: ParentNode) {
@@ -57,7 +60,7 @@ function waitImages(root: ParentNode) {
   );
 }
 
-export function HtmlFlipbook({ children, title, toc = [], tone }: Props) {
+export function HtmlFlipbook({ children, title, toc = [], tone, pdfHref }: Props) {
   const outerRef = useRef<HTMLDivElement>(null);
   const bookRef = useRef<HTMLDivElement>(null);
   const flipRef = useRef<PageFlip | null>(null);
@@ -410,6 +413,11 @@ export function HtmlFlipbook({ children, title, toc = [], tone }: Props) {
           >
             <Share2 className="h-4 w-4" />
           </button>
+          {pdfHref ? (
+            <a className="tool-btn" href={pdfHref} download aria-label="Download PDF">
+              <Download className="h-4 w-4" />
+            </a>
+          ) : null}
 
           <span className="mx-1 hidden h-5 w-px bg-line sm:block" />
 

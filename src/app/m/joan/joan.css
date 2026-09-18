@@ -1,0 +1,989 @@
+/*
+ * PrimeCrest · The September Issue (Joan Gillman) · Vol. V
+ *
+ * Cover + back: flagship lockup on the `jn-*` system. Do not restyle.
+ * Interiors: the shared kit (src/app/m/kit.css) themed `.kt-joan` —
+ * oxblood ink / parchment / antique gold / slate blue,
+ * Cinzel · Spectral · Libre Franklin · Caveat.
+ */
+
+/* ------------------------------------------------------ interior theme */
+
+.kt.kt-joan {
+  --kt-paper: #f5eedd;
+  --kt-paper-2: #ebdfc6;
+  --kt-dark: #22101a;
+  --kt-dark-2: #3a1a26;
+
+  --kt-ink: #26161c;
+  --kt-body: #3b2c31;
+  --kt-mute: #7d6c65;
+  --kt-cream: #f5eedd;
+  --kt-cream-mute: rgba(245, 238, 221, 0.68);
+
+  --kt-accent: #b98d3e;
+  --kt-accent-lt: #e5c780;
+  --kt-accent-2: #49648c;
+
+  --kt-hair-l: rgba(48, 28, 34, 0.18);
+  --kt-hair-d: rgba(245, 238, 221, 0.17);
+
+  --kt-panel-l: rgba(73, 100, 140, 0.09);
+  --kt-panel-d: rgba(229, 199, 128, 0.08);
+
+  --kt-display: var(--font-cinzel), Cinzel, "Times New Roman", serif;
+  --kt-serif: var(--font-spectral), Spectral, Georgia, serif;
+  --kt-sans: var(--font-franklin), "Libre Franklin", system-ui, sans-serif;
+  --kt-script: var(--font-caveat), "Segoe Script", cursive;
+}
+
+/* Parchment gradient tuned to the warmer paper. */
+.mag-page.kt-light.kt-joan {
+  background-image: linear-gradient(180deg, #faf4e3 0%, var(--kt-paper) 46%, var(--kt-paper-2) 100%);
+}
+
+/* ------------------------------------------------- signature element
+   Joan only: engraved-caps section words above every headline, and a
+   double antique-gold border on the printed frame boxes. */
+
+.kt-joan .kt-kicker {
+  font-family: var(--kt-display);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.42em;
+  gap: 14px;
+}
+
+.kt-joan .kt-kicker::before {
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+.kt-joan .kt-kicker::after {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+.kt-joan .kt-ad-mark,
+.kt-joan .kt-contents-issue,
+.kt-joan .kt-credits-issueline {
+  font-family: var(--kt-display);
+  letter-spacing: 0.34em;
+}
+
+.kt-joan .kt-frame-box {
+  border: 1px solid rgba(185, 141, 62, 0.55);
+  outline: 1px solid rgba(185, 141, 62, 0.26);
+  outline-offset: 5px;
+}
+
+.kt-dark.kt-joan .kt-frame-box,
+.kt-bleed.kt-joan .kt-frame-box {
+  border-color: rgba(229, 199, 128, 0.42);
+  outline-color: rgba(229, 199, 128, 0.18);
+}
+
+/* Cinzel is an engraved caps face: display sizes come down, italics off. */
+.kt-joan .kt-plate-title {
+  font-size: 36px;
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+.kt-joan .kt-plate-title em {
+  font-style: normal;
+}
+
+.kt-joan .kt-opener-name b {
+  font-size: 80px;
+  letter-spacing: 0;
+}
+
+.kt-joan .kt-opener-name em {
+  font-style: normal;
+  font-size: 58px;
+  letter-spacing: 0.02em;
+}
+
+.kt-joan .kt-opener-vert b {
+  font-size: 72px;
+  letter-spacing: 0.01em;
+}
+
+.kt-joan .kt-opener-vert em {
+  font-style: normal;
+  font-size: 58px;
+  letter-spacing: 0.02em;
+}
+
+.kt-joan .kt-co-word {
+  font-size: 48px;
+  letter-spacing: 0.3em;
+}
+
+.kt-joan .kt-co-panel em {
+  font-size: 25px;
+}
+
+.kt-joan .kt-co-panel h4 {
+  font-size: 15px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.kt-joan .kt-story-three .kt-story-body {
+  font-size: 13px;
+  line-height: 1.52;
+}
+
+.kt-joan .kt-story-three .kt-inset img {
+  height: 170px;
+}
+
+.kt-joan .kt-letter-head h2 {
+  font-size: 25px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.kt-joan .kt-story-head h2 {
+  font-size: 28px;
+  line-height: 1.22;
+  letter-spacing: 0;
+}
+
+.kt-joan .kt-story-body.kt-dense {
+  font-size: 14.2px;
+  line-height: 1.56;
+  margin-top: 14px;
+}
+
+.kt-joan .kt-story-body.kt-dense p {
+  margin: 0 0 8px;
+}
+
+.kt-joan .kt-pull {
+  font-size: 20px;
+  padding: 12px 24px;
+  margin-top: 8px;
+}
+
+.kt-joan .kt-split-main h2 {
+  font-size: 22px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.kt-joan .kt-split-main h2 em {
+  font-style: normal;
+  color: var(--kt-accent);
+}
+
+.kt-joan .kt-ad-hero {
+  font-size: 32px;
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.kt-joan .kt-ad-hero em {
+  font-style: normal;
+}
+
+.kt-joan .kt-contents-list h4 {
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.kt-joan .kt-contents-list em {
+  font-size: 30px;
+}
+
+.kt-joan .kt-ad-list em {
+  font-size: 36px;
+}
+
+.kt-joan .kt-spot-card h3 {
+  font-size: 22px;
+  line-height: 1.38;
+}
+
+/* Italic display passages read better in the Spectral. */
+.kt-joan .kt-quote-panel p {
+  font-family: var(--kt-serif);
+  font-size: 15.5px;
+}
+
+.kt-joan .kt-pull {
+  font-family: var(--kt-serif);
+  font-size: 20px;
+}
+
+.kt-joan .kt-letter-sign blockquote {
+  font-family: var(--kt-serif);
+  font-size: 16px;
+}
+
+/* Caveat runs small on the cap height — nudge the script sizes up. */
+.kt-joan .kt-plate-stack .kt-script {
+  font-size: 112px;
+}
+
+.kt-joan .kt-letter-head .kt-script {
+  font-size: 66px;
+}
+
+.kt-joan .kt-letter-sign .kt-script {
+  font-size: 44px;
+}
+
+.kt-joan .kt-contents-main .kt-script {
+  font-size: 94px;
+}
+
+.kt-joan .kt-spot-card .kt-script {
+  font-size: 70px;
+}
+
+/* ------------------------------------------------- cover/back tokens */
+
+.jn {
+  --jn-ink: #1a2744;
+  --jn-ink-2: #243662;
+  --jn-ink-3: #2f4675;
+  --jn-paper: #f4efe6;
+  --jn-paper-2: #eae0cf;
+  --jn-peach: #f7ecdc;
+  --jn-brass: #c9a227;
+  --jn-brass-lt: #e8cd6e;
+  --jn-brass-dk: #8a6a12;
+  --jn-teal: #9a3b47;
+  --jn-teal-dk: #6a2731;
+  --jn-graphite: #333a46;
+  --jn-body: #24304a;
+
+  --jn-didone: var(--font-dmserif), "DM Serif Display", Georgia, serif;
+  --jn-serif: var(--font-baskerville), "Libre Baskerville", Georgia, serif;
+  --jn-sans: var(--font-franklin), "Libre Franklin", system-ui, sans-serif;
+  --jn-script: var(--font-pinyon), "Snell Roundhand", cursive;
+  --jn-hand: var(--font-caveat), "Segoe Script", cursive;
+
+  --jn-marg: 54px;
+
+  font-family: var(--jn-serif);
+  color: var(--jn-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+.mag-page.jn-bleed {
+  background: #1a2744;
+  padding: 0;
+}
+
+.jn-bleed > .jn-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* page-flip rewrites the article's display, so every layout lives in an
+   absolutely positioned inner box the library never touches. */
+.jn-well {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--jn-marg) var(--jn-marg) 40px;
+  z-index: 3;
+}
+
+.jn-label {
+  margin: 0;
+  font-family: var(--jn-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--jn-brass);
+}
+
+.jn-hair {
+  height: 1px;
+  background: rgba(195, 154, 75, 0.34);
+  border: 0;
+  margin: 12px 0;
+}
+
+/* ============================================================== COVER */
+
+.mag-page.jn-cover {
+  background: #1a2744;
+  padding: 0;
+}
+
+.jn-cover-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+  filter: saturate(1.03) contrast(1.01) brightness(1.04);
+}
+
+/* Four graded washes: masthead band, left rail, right rail, nameplate foot. */
+.jn-cover-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(26, 39, 68, 0.9) 0%, rgba(26, 39, 68, 0.5) 18%, rgba(26, 39, 68, 0) 30%),
+    linear-gradient(0deg, rgba(26, 39, 68, 0.88) 0%, rgba(26, 39, 68, 0.64) 16%, rgba(26, 39, 68, 0.2) 32%, rgba(26, 39, 68, 0) 44%),
+    linear-gradient(90deg, rgba(26, 39, 68, 0.5) 0%, rgba(26, 39, 68, 0.16) 16%, rgba(26, 39, 68, 0) 30%),
+    linear-gradient(270deg, rgba(26, 39, 68, 0.82) 0%, rgba(26, 39, 68, 0.56) 16%, rgba(26, 39, 68, 0.2) 30%, rgba(26, 39, 68, 0) 44%),
+    radial-gradient(78% 58% at 40% 30%, rgba(201, 162, 39, 0.14) 0%, transparent 70%);
+}
+
+.jn-cover-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+}
+
+.jn-cover-ui > * {
+  position: absolute;
+}
+
+/* Masthead — full width, small side inset. */
+.jn-mast {
+  top: 22px;
+  left: 36px;
+  right: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.jn-mast-word {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.78));
+}
+
+.jn-mast-crest {
+  width: 58px;
+  height: 51px;
+  flex: 0 0 auto;
+}
+
+.jn-mast-word b {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 0.86;
+  color: #f7f2e8;
+}
+
+.jn-mast-word b i {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.jn-mast-word b span {
+  color: #c9a227;
+}
+
+.jn-mast-tag {
+  margin: 10px 0 0;
+  font-family: var(--jn-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.52em;
+  text-indent: 0.52em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(242, 237, 227, 0.82);
+}
+
+.jn-mast-hair {
+  margin: 12px 0 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(195, 154, 75, 0.9), transparent);
+}
+
+/* Dateline rail, top-left */
+.jn-cover-date {
+  top: 196px;
+  left: 36px;
+  width: 250px;
+  border-top: 2px solid var(--jn-brass);
+  padding-top: 14px;
+}
+
+.jn-cover-date p {
+  margin: 0 0 5px;
+  font-family: var(--jn-sans);
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+.jn-cover-date p + p {
+  color: rgba(242, 237, 227, 0.72);
+  font-weight: 400;
+}
+
+/* Cover teasers */
+.jn-teaser {
+  width: 292px;
+}
+
+.jn-teaser-a {
+  top: 400px;
+  left: 36px;
+}
+
+.jn-teaser-b {
+  top: 736px;
+  right: 36px;
+  text-align: right;
+}
+
+.jn-teaser h3 {
+  margin: 0;
+  font-family: var(--jn-serif);
+  font-size: 28px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+  color: var(--jn-brass-lt);
+}
+
+.jn-teaser hr {
+  border: 0;
+  height: 1px;
+  background: rgba(242, 237, 227, 0.42);
+  margin: 12px 0 12px;
+}
+
+.jn-teaser p {
+  margin: 0;
+  font-family: var(--jn-sans);
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.34;
+  color: rgba(242, 237, 227, 0.92);
+}
+
+/* Series badge, right rail — lifted into the top-right so the big word sits
+   over the background and hair, not her face. */
+.jn-cover-badge {
+  top: 180px;
+  right: 36px;
+  width: 320px;
+  text-align: right;
+}
+
+.jn-cover-badge .jn-badge-dot {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--jn-brass-lt), var(--jn-brass));
+  margin-bottom: 7px;
+}
+
+.jn-cover-badge h2 {
+  margin: 0;
+  font-family: var(--jn-serif);
+  font-size: 34px;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: #f4eee2;
+  line-height: 1.08;
+}
+
+.jn-cover-badge strong {
+  display: block;
+  margin: -2px 0 -4px;
+  font-family: var(--jn-didone);
+  font-weight: 600;
+  font-size: 84px;
+  line-height: 0.96;
+  letter-spacing: -0.03em;
+  color: var(--jn-brass-lt);
+}
+
+.jn-cover-badge span {
+  display: block;
+  font-family: var(--jn-sans);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.jn-cover-badge em {
+  display: block;
+  font-family: var(--jn-didone);
+  font-style: italic;
+  font-size: 40px;
+  color: var(--jn-brass-lt);
+  line-height: 1.08;
+}
+
+/* Role block, right rail */
+.jn-cover-role {
+  top: 578px;
+  right: 36px;
+  width: 300px;
+  text-align: right;
+  border-right: 2px solid var(--jn-brass);
+  padding-right: 16px;
+}
+
+.jn-cover-role p {
+  margin: 0;
+  font-family: var(--jn-sans);
+  font-size: 21px;
+  font-weight: 300;
+  line-height: 1.26;
+  color: rgba(242, 237, 227, 0.92);
+}
+
+.jn-cover-role strong {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--jn-sans);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+/* Nameplate, bottom-left */
+.jn-cover-name {
+  left: 46px;
+  bottom: 128px;
+  width: 560px;
+}
+
+.jn-cover-name em {
+  display: block;
+  font-family: var(--jn-didone);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 92px;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--jn-brass-lt);
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.66);
+}
+
+.jn-cover-name strong {
+  display: block;
+  margin: -2px 0 0 4px;
+  font-family: var(--jn-didone);
+  font-weight: 600;
+  font-size: 74px;
+  line-height: 0.94;
+  letter-spacing: 0.012em;
+  color: #fffdf8;
+  text-shadow: 0 8px 34px rgba(0, 0, 0, 0.7);
+}
+
+.jn-cover-name p {
+  margin: 13px 0 0 5px;
+  max-width: 430px;
+  font-family: var(--jn-sans);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.32;
+  color: rgba(242, 237, 227, 0.94);
+}
+
+/* Foot: rail, QR chip, url */
+.jn-cover-foot {
+  left: 46px;
+  right: 46px;
+  bottom: 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.jn-cover-foot .jn-cover-issn {
+  margin: 0;
+  font-family: var(--jn-sans);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(242, 237, 227, 0.6);
+  line-height: 1.7;
+}
+
+.jn-cover-foot .jn-cover-issn b {
+  color: rgba(242, 237, 227, 0.92);
+  font-weight: 600;
+}
+
+.jn-qr-chip {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.jn-qr-chip img {
+  width: 92px;
+  height: auto;
+  padding: 5px;
+  background: #f7f4ee;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5);
+}
+
+.jn-qr-chip span {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: var(--jn-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--jn-brass-lt);
+}
+
+/* ========================================================= BACK COVER */
+
+.jn-back {
+  align-items: center;
+  text-align: center;
+  padding: 74px 60px 52px;
+}
+
+/* Back-cover lockup — same crest + wordmark as the cover masthead. */
+.jn-back-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.72));
+}
+
+.jn-back-crest {
+  width: 68px;
+  height: 60px;
+  flex: 0 0 auto;
+}
+
+.jn-back-word {
+  margin: 0;
+  font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.06em;
+  color: #f7f2e8;
+}
+
+.jn-back-word span {
+  color: #c9a227;
+}
+
+.jn-imprint {
+  margin: 0;
+  font-family: var(--jn-sans);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.86);
+}
+
+.jn-imprint b {
+  font-weight: 600;
+  color: #fff;
+}
+
+.jn-pill {
+  display: inline-block;
+  padding: 7px 20px;
+  background: rgba(242, 237, 227, 0.14);
+  border: 1px solid rgba(195, 154, 75, 0.4);
+  font-family: var(--jn-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+/* ----------------------------------------------------------- Fortiora ads */
+
+.mag-page.jn-ad {
+  background:
+    radial-gradient(80% 50% at 100% 0%, rgba(201, 162, 39, 0.16) 0%, transparent 62%),
+    linear-gradient(168deg, #243454 0%, #1a2744 56%, #121828 100%);
+  padding: 0;
+}
+
+.jn-ad-well {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 48px 36px;
+}
+
+.jn-ad-kicker {
+  margin: 0;
+  font-family: var(--jn-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.jn-ad-head {
+  margin: 10px 0 0;
+  max-width: 640px;
+  font-family: var(--jn-serif);
+  font-weight: 500;
+  font-size: 38px;
+  line-height: 1.06;
+  letter-spacing: -0.024em;
+  color: #f4efe6;
+}
+
+.jn-ad-dek {
+  margin: 12px 0 0;
+  max-width: 580px;
+  font-family: var(--jn-serif);
+  font-size: 16px;
+  font-style: italic;
+  line-height: 1.42;
+  color: rgba(244, 239, 230, 0.78);
+}
+
+.jn-ad-hair {
+  height: 1px;
+  margin: 18px 0 4px;
+  background: rgba(201, 162, 39, 0.32);
+}
+
+.jn-ad-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.jn-ad-list li {
+  padding: 14px 0;
+  border-top: 1px solid rgba(201, 162, 39, 0.22);
+  flex: 1 1 auto;
+}
+
+.jn-ad-list b {
+  display: block;
+  font-family: var(--jn-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.jn-ad-list p {
+  margin: 6px 0 0;
+  font-family: var(--jn-serif);
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(244, 239, 230, 0.9);
+}
+
+.jn-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+  flex: 0 0 auto;
+}
+
+.jn-lockup img {
+  height: 52px;
+  width: auto;
+}
+
+.jn-lockup b {
+  display: block;
+  font-family: var(--jn-sans);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f4efe6;
+  line-height: 1;
+}
+
+.jn-lockup span {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--jn-sans);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.jn-ad-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 8px;
+  flex: 0 0 auto;
+}
+
+.jn-ad-contact {
+  margin: 12px 0 0;
+  font-family: var(--jn-serif);
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(244, 239, 230, 0.78);
+}
+
+.jn-ad-contact b { color: #f4efe6; }
+
+.jn-ad-qr {
+  padding: 8px;
+  background: #f4efe6;
+}
+
+.jn-ad-qr img {
+  display: block;
+  width: 110px;
+  height: auto;
+}
+
+.jn-ad-folio {
+  margin: 14px 0 0;
+  font-family: var(--jn-sans);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 230, 0.45);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Card sits on the floor so her face stays in the upper half. */
+.mag-page.jn-feat {
+  background: #1a2744;
+  padding: 0;
+}
+
+.jn-feat-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 6% 18%;
+}
+
+.jn-feat-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, transparent 0%, transparent 48%, rgba(16, 22, 36, 0.88) 100%);
+}
+
+.jn-feat-card {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  bottom: 36px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 26px 20px;
+  background: rgba(16, 22, 36, 0.92);
+  border: 1px solid rgba(201, 162, 39, 0.45);
+}
+
+.jn-feat-script {
+  margin: 0;
+  font-family: var(--jn-script);
+  font-size: 42px;
+  line-height: 0.9;
+  color: #e5c780;
+}
+
+.jn-feat-card h3 {
+  margin: 0;
+  font-family: var(--jn-serif);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #f4efe6;
+}
+
+.jn-feat-card p {
+  margin: 0;
+  font-family: var(--jn-serif);
+  font-size: 15px;
+  line-height: 1.4;
+  color: rgba(244, 239, 230, 0.8);
+}
+
+.jn-feat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.jn-feat-row span {
+  font-family: var(--jn-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a227;
+}
+
+.jn-feat-row img {
+  width: 88px;
+  height: auto;
+  padding: 6px;
+  background: #f4efe6;
+}

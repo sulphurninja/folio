@@ -17,6 +17,8 @@ type IssueCard = {
 };
 
 const HOME_ORDER = [
+  "nichole",
+  "katie",
   "espey",
   "judy",
   "bethany",

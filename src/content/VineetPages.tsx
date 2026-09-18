@@ -934,17 +934,53 @@ export function VineetPages() {
         </div>
       </article>
 
-      {/* ============================================== 07 · PLATE */}
-      <article className="mag-page pc pc-bleed" data-density="hard">
-        <img
-          className="pc-img"
-          src={`${IMG}/lobby.jpg`}
-          alt="Vineet Trakroo"
-          style={{ objectPosition: "50% 18%" }}
-        />
-        <p className="pc-vcap pc-vcap-l">
-          “What are we selling, to whom, and has it become a commodity?”
-        </p>
+      {/* ============================================== 07 · PLATES, THE ROOMS OF THE WORK */}
+      <article className="mag-page pc pc-ink" data-density="hard">
+        <div className="pc-well" style={{ padding: "44px 46px 34px" }}>
+          <Label teal>The rooms of the work</Label>
+          <h2 className="pc-head pc-head-sm">Where the questions get asked.</h2>
+          <div className="pc-hair" style={{ margin: "12px 0 16px" }} />
+
+          <figure className="pc-plate" style={{ height: 322, margin: 0 }}>
+            <img
+              src={`${IMG}/photo_p3_0.jpg`}
+              alt="Vineet Trakroo in conversation with two colleagues at the advisory table"
+              style={{ objectPosition: "50% 30%" }}
+            />
+          </figure>
+          <p className="pc-plate-cap">
+            <span>The advisory table, mid-diagnosis. The first question is always the naive one.</span>
+            <span>01</span>
+          </p>
+
+          <div style={{ display: "flex", gap: 14, marginTop: 16, flex: "0 0 auto" }}>
+            <figure className="pc-plate" style={{ width: 318, height: 322, margin: 0 }}>
+              <img
+                src={`${IMG}/photo_p4_0.jpg`}
+                alt="Vineet Trakroo on the conference floor at a national sales conference"
+                style={{ objectPosition: "50% 24%" }}
+              />
+            </figure>
+            <figure className="pc-plate" style={{ flex: "1 1 auto", height: 322, margin: 0 }}>
+              <img
+                src={`${IMG}/photo_p2_0.jpg`}
+                alt="The Evolution Strategy Advisors partners at the office desks"
+                style={{ objectPosition: "50% 34%" }}
+              />
+            </figure>
+          </div>
+          <p className="pc-plate-cap">
+            <span>The conference circuit, where the room hears it first</span>
+            <span>The partners, at the desks where the work sits</span>
+            <span>02 · 03</span>
+          </p>
+
+          <div className="pc-skew pc-skew-flat" style={{ marginTop: 18 }}>
+            <p>What are we selling, to whom, and has it become a commodity?</p>
+          </div>
+
+          <Folio page="07" section="The rooms of the work" />
+        </div>
       </article>
 
       {/* ============================================== 08 · MOMENTUM */}
