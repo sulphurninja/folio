@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 /**
- * PrimeCrest · The September Issue, Vol. X
+ * PrimeCrest · The September Issue, Vol. III
  * Dr. Nichole Pettway, Deputy Director, BOSS, California.
  * WERC is one facility; she also manages the Trauma Recovery Center
  * and the Pre-trial Expansion Program.
@@ -73,7 +73,7 @@ export function NicholePages() {
 
           <div className="np-cover-date">
             <p>The September Issue</p>
-            <p>Vol. X · No. 10</p>
+            <p>Vol. III · No. 03</p>
             <p>2026</p>
           </div>
 
@@ -143,7 +143,7 @@ export function NicholePages() {
       </article>
 
       <article className="mag-page np np-forest-leaf" data-density="hard">
-        <p className="np-spine">The September Issue · Vol. X</p>
+        <p className="np-spine">The September Issue · Vol. III</p>
         <div className="np-well">
           <p className="np-kicker">Masthead</p>
           <h2 className="np-h">The desk that put this edition on the page.</h2>
@@ -238,7 +238,7 @@ export function NicholePages() {
         <div className="np-frame" />
         <p className="np-stamp">
           The September Issue
-          <b>Vol. X · Portrait</b>
+          <b>Vol. III · Portrait</b>
         </p>
         <p className="np-stamp is-right">
           Deputy Director
@@ -576,7 +576,7 @@ export function NicholePages() {
             <img src={`${IMG}/green.jpg`} alt="Dr. Nichole Pettway" style={{ objectPosition: "50% 18%" }} />
             <p className="np-stamp" style={{ top: 22, left: 22 }}>
               Be Featured
-              <b>Vol. X</b>
+              <b>Vol. III</b>
             </p>
           </div>
           <div className="np-half-copy">
@@ -584,7 +584,7 @@ export function NicholePages() {
             <h3>Get featured in the upcoming edition of PrimeCrest.</h3>
             <p>
               We print answers in the order they are given. We keep the sitting as it was
-              directed. This edition is Vol. X of The September Issue. The next one is
+              directed. This edition is Vol. III of The September Issue. The next one is
               open. Register now. Because your story deserves the record.
             </p>
             <ul className="np-half-perks">
@@ -610,7 +610,7 @@ export function NicholePages() {
               </li>
             </ul>
             <p>
-              This sitting is from Vol. X. The next edition is open to the people who
+              This sitting is from Vol. III. The next edition is open to the people who
               still have a file worth printing. Scan the mark. The desk will take the
               rest from there.
             </p>

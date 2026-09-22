@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 /**
- * PrimeCrest · The September Issue, Vol. VI
+ * PrimeCrest · The September Issue, Vol. IV
  * Kohila Sivas, Founder & Master Coach, Wholistic SuccessCodes.
  * Cover and back keep the bespoke `kh-*` lockup. Interiors run on the
  * shared kit (src/content/kit.tsx) themed `kt-kohila` with a layout
@@ -106,7 +106,7 @@ export function KohilaPages() {
 
           <div className="kh-cover-date">
             <p>The September Issue</p>
-            <p>Vol. VI · No. 06</p>
+            <p>Vol. IV · No. 04</p>
             <p>2026</p>
           </div>
 
@@ -187,7 +187,7 @@ export function KohilaPages() {
         imgPos="50% 30%"
         caption="Kohila Sivas · photographed for the September issue"
         script="Contents"
-        issueLine="The September Issue · Vol. VI · 2026"
+        issueLine="The September Issue · Vol. IV · 2026"
         entries={[
           {
             no: "02",
@@ -232,7 +232,7 @@ export function KohilaPages() {
         theme={T}
         variant="ledger"
         script="Credits"
-        issueLine="The September Issue · Vol. VI · 2026"
+        issueLine="The September Issue · Vol. IV · 2026"
         credits={CREDITS}
         imprint={
           <>

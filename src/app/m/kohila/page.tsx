@@ -10,7 +10,7 @@ const SEO = {
     "Kohila Sivas, Founder & Master Coach, Wholistic SuccessCodes. Two decades on readiness before performance, told in PrimeCrest's September Issue.",
   slug: "kohila",
   ogImage: siteUrl("/issues/kohila/og.jpg"),
-  kicker: "PrimeCrest · Vol. VI · The September Issue",
+  kicker: "PrimeCrest · Vol. IV · The September Issue",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -19,7 +19,7 @@ export default function KohilaIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest · The September Issue · Vol. VI" toc={KOHILA_TOC} tone="kohila" pdfHref="/pdf/kohila.pdf">
+      <HtmlFlipbook title="PrimeCrest · The September Issue · Vol. IV" toc={KOHILA_TOC} tone="kohila" pdfHref="/pdf/kohila.pdf">
         <KohilaPages />
       </HtmlFlipbook>
     </>

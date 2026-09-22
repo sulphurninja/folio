@@ -10,7 +10,7 @@ const SEO = {
     "Dr. Nichole Pettway — Deputy Director at Building Opportunities for Self-Sufficiency, California. WERC, the Trauma Recovery Center, and the Pre-trial Expansion Program, in PrimeCrest's September Issue.",
   slug: "nichole",
   ogImage: siteUrl("/issues/nichole/cover.jpg"),
-  kicker: "PrimeCrest · Vol. X · The September Issue",
+  kicker: "PrimeCrest · Vol. III · The September Issue",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -20,7 +20,7 @@ export default function NicholeIssuePage() {
     <>
       <IssueJsonLdScript input={SEO} />
       <HtmlFlipbook
-        title="PrimeCrest · The September Issue · Vol. X"
+        title="PrimeCrest · The September Issue · Vol. III"
         toc={NICHOLE_TOC}
         tone="nichole"
         pdfHref="/pdf/nichole.pdf"

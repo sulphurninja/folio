@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 /**
- * PrimeCrest · The September Issue, Vol. V
+ * PrimeCrest · The September Issue, Vol. II
  * Joan Gillman, Science Teacher, The Browning School, New York.
  * Cover and back keep the flagship lockup (`jn-*`, joan.css).
  * Interiors run on the shared kit (src/content/kit.tsx) themed `kt-joan`
@@ -94,7 +94,7 @@ export function JoanPages() {
 
           <div className="jn-cover-date">
             <p>The September Issue</p>
-            <p>Vol. V · No. 05</p>
+            <p>Vol. II · No. 02</p>
             <p>2026</p>
           </div>
 
@@ -172,7 +172,7 @@ export function JoanPages() {
         img={`${IMG}/portrait-studio.jpg`}
         imgPos="50% 26%"
         kicker="PrimeCrest · The September Issue"
-        side="Vol. V · No. 05 · 2026"
+        side="Vol. II · No. 02 · 2026"
         script="Editorial"
         title={
           <>
@@ -239,7 +239,7 @@ export function JoanPages() {
         imgPos="50% 42%"
         caption="IAOTP · Woman of the Year, presented to Joan Ava Gillman"
         script="Contents"
-        issueLine="The September Issue · Vol. V · 2026"
+        issueLine="The September Issue · Vol. II · 2026"
         entries={[
           {
             no: "02",
@@ -285,7 +285,7 @@ export function JoanPages() {
         variant="ledger"
         light
         script="Credits"
-        issueLine="The September Issue · Vol. V · 2026"
+        issueLine="The September Issue · Vol. II · 2026"
         credits={CREDITS}
         imprint={
           <>

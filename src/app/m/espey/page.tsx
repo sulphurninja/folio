@@ -10,7 +10,7 @@ const SEO = {
     "James Espey — Investor & Chairman, Wiltshire Whisky Distillery, England. Sixty years behind the world's back bar, told in PrimeCrest's September Issue.",
   slug: "espey",
   ogImage: siteUrl("/issues/espey/og.jpg"),
-  kicker: "PrimeCrest · Vol. VIII · The September Issue",
+  kicker: "PrimeCrest · Vol. I · The September Issue",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -20,7 +20,7 @@ export default function EspeyIssuePage() {
     <>
       <IssueJsonLdScript input={SEO} />
       <HtmlFlipbook
-        title="PrimeCrest · The September Issue · Vol. VIII"
+        title="PrimeCrest · The September Issue · Vol. I"
         toc={ESPEY_TOC}
         tone="espey"
         pdfHref="/pdf/espey.pdf"

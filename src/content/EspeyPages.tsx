@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 /**
- * PrimeCrest · The September Issue, Vol. VIII
+ * PrimeCrest · The September Issue, Vol. I
  * James Espey OBE, Investor & Chairman, Wiltshire Whisky Distillery, England.
  * Cover and back carry the flagship `es-cover` lockup on the house
  * architecture. Interiors are a closed `es-*` system (src/app/m/espey/espey.css):
@@ -85,7 +85,7 @@ export function EspeyPages() {
 
           <div className="es-cover-date">
             <p>The September Issue</p>
-            <p>Vol. VIII · No. 08</p>
+            <p>Vol. I · No. 01</p>
             <p>2026</p>
           </div>
 
@@ -162,7 +162,7 @@ export function EspeyPages() {
       <article className="mag-page es es-oak-leaf" data-density="hard">
         <div className="es-well">
           <p className="es-credits-word">Credits</p>
-          <p className="es-credits-issue">The September Issue · Vol. VIII · 2026</p>
+          <p className="es-credits-issue">The September Issue · Vol. I · 2026</p>
           <dl className="es-credits-list">
             {CREDITS.map(([k, v]) => (
               <div key={k}>

@@ -10,7 +10,7 @@ const SEO = {
     "Joan Gillman — Science Teacher, The Browning School, New York. Forty-four years in the science classroom, the Green Team, and the work of making room for wonder.",
   slug: "joan",
   ogImage: siteUrl("/issues/joan/og.jpg"),
-  kicker: "PrimeCrest · Vol. V · The September Issue",
+  kicker: "PrimeCrest · Vol. II · The September Issue",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -19,7 +19,7 @@ export default function JoanIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest · The September Issue · Vol. V" toc={JOAN_TOC} tone="joan" pdfHref="/pdf/joan.pdf">
+      <HtmlFlipbook title="PrimeCrest · The September Issue · Vol. II" toc={JOAN_TOC} tone="joan" pdfHref="/pdf/joan.pdf">
         <JoanPages />
       </HtmlFlipbook>
     </>

@@ -35,7 +35,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   espey: {
     slug: "espey",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. VIII · The September Issue",
+    kicker: "PrimeCrest · Vol. I · The September Issue",
     description:
       "James Espey — Investor & Chairman, Wiltshire Whisky Distillery, England. Sixty years behind the world's back bar, told in PrimeCrest's September Issue.",
     toc: ESPEY_TOC,
@@ -62,7 +62,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   kohila: {
     slug: "kohila",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. VI · The September Issue",
+    kicker: "PrimeCrest · Vol. IV · The September Issue",
     description:
       "Kohila Sivas, Founder & Master Coach, Wholistic SuccessCodes. Two decades on readiness before performance, told in PrimeCrest's September Issue.",
     toc: KOHILA_TOC,
@@ -80,7 +80,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   pallavi: {
     slug: "pallavi",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. VII · The September Issue",
+    kicker: "PrimeCrest · Vol. V · The September Issue",
     description:
       "Pallavi Pande — Mompreneur, Owner & Founder, Dtocs & Dtocs Consulting, Portland, Oregon. Banana leaves, a kitchen sink, and two companies that treat disposable tableware as a design problem.",
     toc: PALLAVI_TOC,
@@ -89,7 +89,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   joan: {
     slug: "joan",
     title: "Top 10 Unstoppable Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. V · The September Issue",
+    kicker: "PrimeCrest · Vol. II · The September Issue",
     description:
       "Joan Gillman — Science Teacher, The Browning School, New York. Forty-four years in the science classroom, the Green Team, and the work of making room for wonder.",
     toc: JOAN_TOC,
@@ -116,7 +116,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   nichole: {
     slug: "nichole",
     title: "Top 10 Unstoppable Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. X · The September Issue",
+    kicker: "PrimeCrest · Vol. III · The September Issue",
     description:
       "Dr. Nichole Pettway — Deputy Director at Building Opportunities for Self-Sufficiency, California. WERC, the Trauma Recovery Center, and the Pre-trial Expansion Program.",
     toc: NICHOLE_TOC,

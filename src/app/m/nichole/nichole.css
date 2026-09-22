@@ -1,5 +1,5 @@
 /*
- * PrimeCrest · The September Issue (Dr. Nichole Pettway) · Vol. X
+ * PrimeCrest · The September Issue (Dr. Nichole Pettway) · Vol. III
  * Closed `np-*` system. Forest night, bone paper, brass. DM Serif display,
  * Baskerville text, Oswald labels. Signature: brass double-rules.
  * Cover + back keep the flagship lockup.
@@ -1060,7 +1060,7 @@
   text-transform: uppercase; color: var(--np-teal-lt);
 }
 
-/* ========== VOL. X ONLY: dossier interiors, not the Katie template ========== */
+/* ========== VOL. III ONLY: dossier interiors, not the Katie template ========== */
 
 .np-spine {
   position: absolute;

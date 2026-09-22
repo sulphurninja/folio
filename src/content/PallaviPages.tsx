@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 /**
- * PrimeCrest · The September Issue, Vol. VII
+ * PrimeCrest · The September Issue, Vol. V
  * Pallavi Pande, Founder & Owner, DTOCS & DTOCS Consulting, Portland, Oregon.
  * Cover and back keep the flagship `pl-*` lockup. Interiors are a closed
  * `pv-*` system (src/app/m/pallavi/pallavi.css): plum noir with a rose glow,
@@ -83,7 +83,7 @@ export function PallaviPages() {
 
           <div className="pl-cover-date">
             <p>The September Issue</p>
-            <p>Vol. VII · No. 07</p>
+            <p>Vol. V · No. 05</p>
             <p>2026</p>
           </div>
 
@@ -160,7 +160,7 @@ export function PallaviPages() {
       <article className="mag-page pv pv-bleed-leaf" data-density="hard">
         <img className="pv-plate-img" src={`${IMG}/cover.jpg`} alt="Pallavi Pande" style={{ objectPosition: "50% 20%" }} />
         <div className="pv-plate-grade" />
-        <span className="pv-plate-side">Vol. VII · No. 07 · 2026</span>
+        <span className="pv-plate-side">Vol. V · No. 05 · 2026</span>
         <ul className="pv-plate-chip">
           <li>
             <b>20M+</b>
@@ -266,7 +266,7 @@ export function PallaviPages() {
           <div className="pv-toc-main">
             <p className="pv-kicker">In this issue</p>
             <p className="pv-toc-word">Contents</p>
-            <p className="pv-toc-issue">The September Issue · Vol. VII · 2026</p>
+            <p className="pv-toc-issue">The September Issue · Vol. V · 2026</p>
             <ol className="pv-toc-list">
               <li>
                 <em>02</em>
@@ -319,7 +319,7 @@ export function PallaviPages() {
       <article className="mag-page pv pv-noir-leaf" data-density="hard">
         <div className="pv-well">
           <p className="pv-credits-word">Credits</p>
-          <p className="pv-credits-issue">The September Issue · Vol. VII · 2026</p>
+          <p className="pv-credits-issue">The September Issue · Vol. V · 2026</p>
           <dl className="pv-credits-list">
             {CREDITS.map(([k, v]) => (
               <div key={k}>
