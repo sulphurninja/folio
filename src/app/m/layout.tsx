@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
+import localFont from "next/font/local";
 import "./kit.css";
 import {
   Bebas_Neue,
   Bodoni_Moda,
   Cardo,
-  Caveat,
   Cinzel,
   Cormorant_Garamond,
   DM_Serif_Display,
@@ -128,11 +128,12 @@ const pinyon = Pinyon_Script({
   weight: "400",
 });
 
-/* Hand for signatures. */
-const caveat = Caveat({
+/* Hand for signatures. Self-hosted so the build does not fetch Caveat from Google. */
+const caveat = localFont({
+  src: "./fonts/Caveat-latin.woff2",
   variable: "--font-caveat",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: "400 700",
+  display: "swap",
 });
 
 const fontVars = [
