@@ -2,7 +2,7 @@
 import type { ReactNode } from "react";
 
 /**
- * PrimeCrest · The October Issue, Vol. III
+ * PrimeCrest · The October Issue, Vol. VII
  * Nick Hill, President & Chief Executive Officer, Bethany Children's Home.
  *
  * Closed `bc-*` system in src/app/m/bethany/bethany.css. Cover and back keep
@@ -220,7 +220,7 @@ export function BethanyPages() {
 
           <div className="bc-cover-date">
             <p>The October Issue</p>
-            <p>Vol. III · No. 03</p>
+            <p>Vol. VII · No. 07</p>
             <p>2026</p>
           </div>
 
@@ -306,7 +306,7 @@ export function BethanyPages() {
       {/* ============================================== 02 · CONTENTS, RIGHT */}
       <article className="mag-page bc bc-navy">
         <div className="bc-well" style={{ padding: "48px 50px 38px" }}>
-          <Kicker>The October Issue · Vol. III</Kicker>
+          <Kicker>The October Issue · Vol. VII</Kicker>
           <h2 className="bc-head" style={{ fontSize: 40, marginTop: 10 }}>
             In this issue
           </h2>
@@ -369,7 +369,7 @@ export function BethanyPages() {
         <div className="bc-well" style={{ padding: "40px 46px 34px", zIndex: 3 }}>
           <p className="bc-credits-word">CREDITS</p>
           <p className="bc-kicker" style={{ marginTop: 10 }}>
-            The October Issue · Vol. III · 2026
+            The October Issue · Vol. VII · 2026
           </p>
           <div className="bc-hair" style={{ margin: "12px 0 0" }} />
 

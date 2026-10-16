@@ -10,7 +10,7 @@ const SEO = {
     "Katie Holmes — Founder & CEO, Brand Studio Creative. Branding with Heart, told in PrimeCrest's October Issue.",
   slug: "katie",
   ogImage: siteUrl("/issues/katie/cover.jpg"),
-  kicker: "PrimeCrest · Vol. IX · The October Issue",
+  kicker: "PrimeCrest · Vol. VI · The October Issue",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -20,7 +20,7 @@ export default function KatieIssuePage() {
     <>
       <IssueJsonLdScript input={SEO} />
       <HtmlFlipbook
-        title="PrimeCrest · The October Issue · Vol. IX"
+        title="PrimeCrest · The October Issue · Vol. VI"
         toc={KATIE_TOC}
         tone="katie"
         pdfHref="/pdf/katie.pdf"

@@ -26,7 +26,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   bethany: {
     slug: "bethany",
     title: "Top 10 Unstoppable Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. III · The October Issue",
+    kicker: "PrimeCrest · Vol. VII · The October Issue",
     description:
       "Nick Hill — President & Chief Executive Officer, Bethany Children's Home, Philadelphia, Pennsylvania. He started as Cottage Support Staff and came up through the programs.",
     toc: BETHANY_TOC,
@@ -107,7 +107,7 @@ export const ISSUE_REGISTRY: Record<string, IssueDefinition> = {
   katie: {
     slug: "katie",
     title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026",
-    kicker: "PrimeCrest · Vol. IX · The October Issue",
+    kicker: "PrimeCrest · Vol. VI · The October Issue",
     description:
       "Katie Holmes — Founder & CEO, Brand Studio Creative. Branding with Heart, and the owners who start sharing their businesses again.",
     toc: KATIE_TOC,

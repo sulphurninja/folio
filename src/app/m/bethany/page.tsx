@@ -10,7 +10,7 @@ const SEO = {
     "Nick Hill, President & Chief Executive Officer, Bethany Children's Home, Philadelphia, Pennsylvania. He started as Cottage Support Staff and came up through the programs, told in PrimeCrest's October Issue.",
   slug: "bethany",
   ogImage: siteUrl("/issues/bethany/og.jpg"),
-  kicker: "PrimeCrest · Vol. III · The October Issue",
+  kicker: "PrimeCrest · Vol. VII · The October Issue",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -19,7 +19,7 @@ export default function BethanyIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest · The October Issue · Vol. III" toc={BETHANY_TOC} tone="bethany" pdfHref="/pdf/bethany.pdf">
+      <HtmlFlipbook title="PrimeCrest · The October Issue · Vol. VII" toc={BETHANY_TOC} tone="bethany" pdfHref="/pdf/bethany.pdf">
         <BethanyPages />
       </HtmlFlipbook>
     </>

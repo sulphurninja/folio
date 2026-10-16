@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 /**
- * PrimeCrest · The October Issue, Vol. IX
+ * PrimeCrest · The October Issue, Vol. VI
  * Katie Holmes, Founder & CEO, Brand Studio Creative.
  * Cover and back keep the flagship lockup. Interiors are a closed `kh-*`
  * system: ice paper, ink, studio teal, Playfair / Franklin / Cinzel.
@@ -71,7 +71,7 @@ export function KatiePages() {
 
           <div className="kh-cover-date">
             <p>The October Issue</p>
-            <p>Vol. IX · No. 09</p>
+            <p>Vol. VI · No. 06</p>
             <p>2026</p>
           </div>
 
@@ -142,7 +142,7 @@ export function KatiePages() {
       <article className="mag-page kh kh-ink-leaf" data-density="hard">
         <div className="kh-well">
           <p className="kh-credits-word">Credits</p>
-          <p className="kh-credits-issue">The October Issue · Vol. IX · 2026</p>
+          <p className="kh-credits-issue">The October Issue · Vol. VI · 2026</p>
           <dl className="kh-credits-list">
             {CREDITS.map(([k, v]) => (
               <div key={k}>
