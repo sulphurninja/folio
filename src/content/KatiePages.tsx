@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 /**
- * PrimeCrest · The September Issue, Vol. IX
+ * PrimeCrest · The October Issue, Vol. IX
  * Katie Holmes, Founder & CEO, Brand Studio Creative.
  * Cover and back keep the flagship lockup. Interiors are a closed `kh-*`
  * system: ice paper, ink, studio teal, Playfair / Franklin / Cinzel.
@@ -9,7 +9,7 @@
  */
 
 const IMG = "/issues/katie";
-const ISSUE = "PrimeCrest · The September Issue";
+const ISSUE = "PrimeCrest · The October Issue";
 
 const CREDITS = [
   ["Editor-in-Chief", "Katherine A. Mercer"],
@@ -70,7 +70,7 @@ export function KatiePages() {
           </header>
 
           <div className="kh-cover-date">
-            <p>The September Issue</p>
+            <p>The October Issue</p>
             <p>Vol. IX · No. 09</p>
             <p>2026</p>
           </div>
@@ -127,7 +127,7 @@ export function KatiePages() {
 
           <div className="kh-cover-foot">
             <p className="kh-cover-issn">
-              <b>The September Issue</b>
+              <b>The October Issue</b>
               <br />
               theprimecrest.com
             </p>
@@ -142,7 +142,7 @@ export function KatiePages() {
       <article className="mag-page kh kh-ink-leaf" data-density="hard">
         <div className="kh-well">
           <p className="kh-credits-word">Credits</p>
-          <p className="kh-credits-issue">The September Issue · Vol. IX · 2026</p>
+          <p className="kh-credits-issue">The October Issue · Vol. IX · 2026</p>
           <dl className="kh-credits-list">
             {CREDITS.map(([k, v]) => (
               <div key={k}>
@@ -625,7 +625,7 @@ export function KatiePages() {
               Built for firms that cannot lose a conversation. The jobs are on the next page.
             </p>
             <div className="kh-ad-foot-line">
-              <span>PrimeCrest · September</span>
+              <span>PrimeCrest · October</span>
               <span>Advertisement · 11</span>
             </div>
           </div>
@@ -697,7 +697,7 @@ export function KatiePages() {
               </div>
             </div>
             <div className="kh-ad-foot-line">
-              <span>PrimeCrest · September</span>
+              <span>PrimeCrest · October</span>
               <span>Advertisement · 12</span>
             </div>
           </div>
@@ -753,7 +753,7 @@ export function KatiePages() {
               Hello@thefortiora.com · <b>theprimecrest.com</b>
             </p>
             <div className="kh-back-hair" />
-            <p className="kh-back-label">The September Issue · 2026</p>
+            <p className="kh-back-label">The October Issue · 2026</p>
           </div>
         </div>
       </article>

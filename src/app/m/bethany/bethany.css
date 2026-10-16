@@ -1,5 +1,5 @@
 /*
- * PrimeCrest · The September Issue (Nick Hill, Bethany Children's Home)
+ * PrimeCrest · The October Issue (Nick Hill, Bethany Children's Home)
  *
  * Bethany's own closed system: a steel / navy civic palette on bright warm
  * cream paper, set in Fraunces, Libre Baskerville and Oswald. Cover and back
@@ -694,6 +694,12 @@
   inset: 0;
   overflow: hidden;
   column-count: 2;
+  font-size: 13.2px;
+  line-height: 1.52;
+}
+
+.bc-story-main > .bc-cols p {
+  margin: 0 0 7px;
 }
 
 .bc-pull-rail {

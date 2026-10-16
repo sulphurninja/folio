@@ -2,7 +2,7 @@
 import type { ReactNode } from "react";
 
 /**
- * PrimeCrest · The September Issue, Vol. III
+ * PrimeCrest · The October Issue, Vol. III
  * Nick Hill, President & Chief Executive Officer, Bethany Children's Home.
  *
  * Closed `bc-*` system in src/app/m/bethany/bethany.css. Cover and back keep
@@ -31,7 +31,7 @@ const CREDITS = [
 function Folio({ page, section }: { page: string; section: string }) {
   return (
     <p className="bc-folio">
-      <span>PrimeCrest · September</span>
+      <span>PrimeCrest · October</span>
       <span>{section}</span>
       <span>{page}</span>
     </p>
@@ -219,7 +219,7 @@ export function BethanyPages() {
           </header>
 
           <div className="bc-cover-date">
-            <p>The September Issue</p>
+            <p>The October Issue</p>
             <p>Vol. III · No. 03</p>
             <p>2026</p>
           </div>
@@ -240,8 +240,8 @@ export function BethanyPages() {
             </h3>
             <hr />
             <p>
-              Twelve years in the cottages before the board handed him the chief executive&apos;s
-              chair.
+              He started as Cottage Support Staff, then moved through the programs before the board
+              handed him the chair.
             </p>
           </div>
 
@@ -262,14 +262,14 @@ export function BethanyPages() {
             <em>Nick</em>
             <strong>HILL</strong>
             <p>
-              The chief executive who learned the house from the cottage floor, and still measures
+              The chief executive who learned the programs from the floor up, and still measures
               the job by the young person at the door.
             </p>
           </div>
 
           <div className="bc-cover-foot">
             <p className="bc-cover-issn">
-              <b>The September Issue</b>
+              <b>The October Issue</b>
               <br />
               theprimecrest.com
             </p>
@@ -300,18 +300,18 @@ export function BethanyPages() {
         />
         <div className="bc-vrail" />
         <p className="bc-vword">CONTENTS</p>
-        <p className="bc-contents-cap">Nick Hill · photographed for the September issue</p>
+        <p className="bc-contents-cap">Nick Hill · photographed for the October issue</p>
       </article>
 
       {/* ============================================== 02 · CONTENTS, RIGHT */}
       <article className="mag-page bc bc-navy">
         <div className="bc-well" style={{ padding: "48px 50px 38px" }}>
-          <Kicker>The September Issue · Vol. III</Kicker>
+          <Kicker>The October Issue · Vol. III</Kicker>
           <h2 className="bc-head" style={{ fontSize: 40, marginTop: 10 }}>
             In this issue
           </h2>
           <p className="bc-dek">
-            A house learned from the inside. Twelve years on the cottage floor, then the chair.
+            Programs learned from the inside. Direct care first, then the other posts, then the chair.
           </p>
 
           <ol className="bc-toc">
@@ -369,7 +369,7 @@ export function BethanyPages() {
         <div className="bc-well" style={{ padding: "40px 46px 34px", zIndex: 3 }}>
           <p className="bc-credits-word">CREDITS</p>
           <p className="bc-kicker" style={{ marginTop: 10 }}>
-            The September Issue · Vol. III · 2026
+            The October Issue · Vol. III · 2026
           </p>
           <div className="bc-hair" style={{ margin: "12px 0 0" }} />
 
@@ -403,7 +403,7 @@ export function BethanyPages() {
                 {[
                   ["Leaves", "Twelve"],
                   ["Questions", "Ten, in the order asked"],
-                  ["Years on the floor", "Twelve"],
+                  ["The posts", "Floor and desk"],
                   ["Counties served", "Almost thirty"],
                 ].map(([k, v]) => (
                   <li
@@ -453,8 +453,9 @@ export function BethanyPages() {
           <em>Nick</em>
           <strong>Hill</strong>
           <p>
-            President and Chief Executive Officer, Bethany Children&apos;s Home. Twelve years on
-            the cottage floor before the board named him to the chair.
+            President and Chief Executive Officer, Bethany Children&apos;s Home. He started on the
+            cottage floor, then carried the work through administrative posts before the board
+            named him to the chair.
           </p>
         </div>
       </article>
@@ -465,8 +466,8 @@ export function BethanyPages() {
           <Kicker>The Signature Story · One</Kicker>
           <h2 className="bc-head">The first line on the file.</h2>
           <p className="bc-dek">
-            Cottage Support Staff, twelve years, one house. Nothing about the chair makes sense
-            without the floor that came before it.
+            He began as Cottage Support Staff, then carried the work through the programs. Nothing
+            about the chair makes sense without the work that came before it.
           </p>
           <div className="bc-hair" style={{ margin: "14px 0 12px" }} />
 
@@ -476,28 +477,30 @@ export function BethanyPages() {
                 <p>
                   Bethany Children&apos;s Home sits on the Philadelphia side of Pennsylvania. It
                   takes young people in when the systems around them run thin: shelter beds for the
-                  night a young person has nowhere else to go, residential cottages for the longer
-                  road, transitional living for the step toward independence, and community based
-                  services that reach families before a crisis becomes a placement. The range is
-                  wide on purpose. A young person does not arrive with a tidy problem.
+                  night, residential cottages for the longer road, and transitional living for the
+                  step toward independence. The services are in-house, not community-based.
+                  Aftercare stays with a young person after they leave, and the staff educate the
+                  public. A young person does not arrive with a tidy problem.
                 </p>
                 <p>
-                  Nick Hill came up inside that house. He started as Cottage Support Staff, on the
-                  floor, doing the direct work with youth. Relationships. Consistency. A room that
-                  felt safe. Twelve years inside one institution before the board moved him to the
-                  chair, and he still talks like a man who worked the cottages, because he did.
+                  Nick Hill came up inside those programs. Cottage Support Staff first: the floor,
+                  the direct work with youth. Then the other posts, administrative and on the floor,
+                  until the board moved him to the chair. He still talks like a man who worked the
+                  cottages, because he did.
                 </p>
                 <p className="bc-sub">The order of the file</p>
                 <p>
-                  Direct care is unglamorous and exact. The same shift, the same room, the same
-                  young person, held steady until steadiness starts to mean something. He watched
-                  how often the difference between giving up and going on was a single adult who
-                  refused to leave.
+                  The cottages are thirteen buildings, like big houses: living rooms, kitchens,
+                  bedrooms. They hold more than one young person. Some licenses go as high as
+                  thirty-two. Most hold up to twelve. Direct care is unglamorous and exact. The
+                  same shift, the same cottage, the same group, held steady until steadiness starts
+                  to mean something. He watched how often the difference between giving up and going
+                  on was a single adult who refused to leave.
                 </p>
                 <p>
                   He moved through leadership posts, served as Deputy Chief Executive and Chief
                   Human Resources Officer, and in July 2026 the board named him President and Chief
-                  Executive Officer. The title changed. The floor did not.
+                  Executive Officer. The title changed. The work with youth did not.
                 </p>
                 <p>
                   Ask him what he wants from a leader when the week turns hard and the answer
@@ -508,12 +511,12 @@ export function BethanyPages() {
                 </p>
                 <p>
                   The work now is to protect the mission, hold the teams, keep programs honest, and
-                  make sure each decision lands on a young person. Shelter for the night. Cottages
-                  for the longer stay. Transitional living for the step out. Community services that
-                  try to reach a family before the door is the last one open. Four rooms, one house.
+                  make sure each decision lands on a young person. Shelter. Cottages. Transitional
+                  living. Aftercare, and the public work of explaining what the programs do. All of
+                  it in-house.
                 </p>
                 <p>
-                  If he is any good at this, he will tell you, the house is stronger because of the
+                  If he is any good at this, he will tell you, the programs are stronger because of the
                   people he has developed. High expectations. Still human. Ask for excellent work
                   and still see that the people doing it need support.
                 </p>
@@ -592,7 +595,7 @@ export function BethanyPages() {
                 An unstoppable leader, in his phrasing, is someone who never gives up on the goals
                 they hold for the people in their care, and for themselves. It does not mean never
                 meeting a hard week. It means refusing to let the hard week write the file. He
-                starts the morning with a single question: what can I do today to make the house
+                starts the morning with a single question: what can I do today to make the programs
                 stronger, and to give a young person a better next year.
               </p>
               <p>
@@ -607,7 +610,7 @@ export function BethanyPages() {
           <div className="bc-slab">
             <p>
               If a young person leaves with confidence, a usable skill, a sense of belonging, and a
-              belief they can build a life, the house did the work.
+              belief they can build a life, the programs did the work.
             </p>
             <span>Nick Hill · on the measure that still holds</span>
           </div>
@@ -619,7 +622,7 @@ export function BethanyPages() {
       <article className="mag-page bc bc-cream">
         <div className="bc-well">
           <Kicker>The Record</Kicker>
-          <h2 className="bc-head">Dates. Rooms. The file.</h2>
+          <h2 className="bc-head">Dates. Cottages. The file.</h2>
           <p className="bc-dek">
             What the interview will stand behind. Kept in the order he gave it.
           </p>
@@ -634,10 +637,10 @@ export function BethanyPages() {
               </span>
             </li>
             <li>
-              <b>Twelve years</b>
+              <b>The posts</b>
               <span>
-                One house before the chair, through posts including Deputy Chief Executive and
-                Chief Human Resources Officer.
+                Cottage Support Staff first. Then administrative posts and the floor, including
+                Deputy Chief Executive and Chief Human Resources Officer.
               </span>
             </li>
             <li>
@@ -650,8 +653,8 @@ export function BethanyPages() {
             <li>
               <b>Thirty counties</b>
               <span>
-                Youth arrive from across Pennsylvania into shelter, residential, transitional living
-                and community based services.
+                Youth arrive from across Pennsylvania into shelter, residential cottages, and
+                transitional living. The services are in-house.
               </span>
             </li>
             <li>
@@ -672,14 +675,14 @@ export function BethanyPages() {
               <b>The systems</b>
               <span>
                 Leadership structure tightened. Human resources and performance systems rebuilt.
-                Staff, technology, and the ordinary machinery of a house that has to last.
+                Staff, technology, and the ordinary machinery of programs that have to last.
               </span>
             </li>
             <li>
               <b>The measure</b>
               <span>
                 If a young person leaves with confidence, a usable skill, a sense of belonging, and
-                a belief they can build a life, the house did the work.
+                a belief they can build a life, the programs did the work.
               </span>
             </li>
           </ul>
@@ -698,8 +701,8 @@ export function BethanyPages() {
               <p>Living that steps toward independence without dropping the name.</p>
             </div>
             <div>
-              <b>Community</b>
-              <p>Services that reach a family before a crisis becomes a placement.</p>
+              <b>Aftercare</b>
+              <p>Roles that stay with a young person after they leave, and public education.</p>
             </div>
           </div>
           <Folio page="07" section="The Record" />
@@ -915,7 +918,7 @@ export function BethanyPages() {
           </p>
           <div className="bc-slab" style={{ flex: "1 1 auto", display: "flex", flexDirection: "column", justifyContent: "center", margin: "18px 0 0" }}>
             <p>Because your story deserves the record. One conversation, printed as answered.</p>
-            <span>PrimeCrest · The September desk</span>
+            <span>PrimeCrest · The October desk</span>
           </div>
           <ol className="bc-spot-steps">
             <li>
@@ -935,7 +938,7 @@ export function BethanyPages() {
             <li>
               <b>03 · Published</b>
               <p>
-                Digital edition, portfolio plate, and a permanent link. The September desk is
+                Digital edition, portfolio plate, and a permanent link. The October desk is
                 open. Register now.
               </p>
             </li>
@@ -1030,7 +1033,7 @@ export function BethanyPages() {
             </p>
             <div className="bc-hair" style={{ width: 320 }} />
             <p className="bc-label" style={{ letterSpacing: "0.4em" }}>
-              The September Issue · 2026
+              The October Issue · 2026
             </p>
           </div>
         </div>
