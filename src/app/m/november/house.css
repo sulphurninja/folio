@@ -1,0 +1,266 @@
+/*
+ * PrimeCrest · The November Issues · shared masthead and back cover.
+ *
+ * Each issue sets these on its scope class (e.g. `.bh { … }`):
+ *   --nv-accent      hot accent (lower crest chevron, full stop, rules)
+ *   --nv-accent-2    second accent
+ *   --nv-ink         dark ground
+ *   --nv-display     display face
+ *   --nv-sans        label face
+ * The masthead lettering and the back cover are fixed so the seven issues
+ * read as one edition, exactly like the Foskaris cover and back page.
+ */
+
+:where(.mag-page) {
+  --nv-accent: #e8896a;
+  --nv-accent-2: #f2d27a;
+  --nv-ink: #1c1412;
+  --nv-display: var(--font-bodoni), Georgia, serif;
+  --nv-sans: var(--font-jost), system-ui, sans-serif;
+}
+
+/* ============================================================ MASTHEAD */
+
+.pc-mast {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.pc-mast-word {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.7));
+}
+
+.pc-mast.is-light .pc-mast-word {
+  filter: drop-shadow(0 8px 20px rgba(255, 255, 255, 0.45));
+}
+
+.pc-mast-crest {
+  width: calc(var(--pc-mast-size, 92px) * 0.7);
+  height: auto;
+  flex: 0 0 auto;
+}
+
+.pc-crest-top { fill: #f6f0e6; }
+.pc-crest-low { fill: var(--nv-accent); }
+.pc-mast.is-light .pc-crest-top { fill: #15110f; }
+
+.pc-mast-word b {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+  font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  font-size: var(--pc-mast-size, 92px);
+  font-weight: 700;
+  line-height: 0.86;
+  color: #f7f2e8;
+}
+
+.pc-mast.is-light .pc-mast-word b { color: #15110f; }
+
+.pc-mast-word b i {
+  font-style: normal;
+  font-weight: 700;
+}
+
+.pc-mast-word b span { color: var(--nv-accent); }
+
+/* Cover masthead. The word already fills the measure, so it grows in
+   height: letters drawn 1.34x tall (the newsstand masthead), a heavier
+   shadow, and a stacking order above every photograph and cut-out. */
+.pc-mast.is-hero {
+  position: relative;
+  z-index: 60;
+}
+
+.pc-mast.is-hero .pc-mast-word {
+  align-items: flex-start;
+  filter: none;
+}
+
+.pc-mast.is-hero .pc-mast-word b {
+  transform: scaleY(1.34);
+  transform-origin: 50% 0;
+  margin-bottom: calc(var(--pc-mast-size, 92px) * 0.86 * 0.34);
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.35),
+    0 6px 14px rgba(0, 0, 0, 0.45),
+    0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+.pc-mast.is-hero.is-light .pc-mast-word b {
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.5),
+    0 10px 30px rgba(255, 255, 255, 0.5);
+}
+
+.pc-mast.is-hero .pc-mast-crest {
+  width: calc(var(--pc-mast-size, 92px) * 0.86);
+  margin-top: calc(var(--pc-mast-size, 92px) * 0.08);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+}
+
+.pc-mast-tag {
+  margin: 10px 0 0;
+  font-family: var(--nv-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.52em;
+  text-indent: 0.52em;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgba(247, 242, 232, 0.86);
+}
+
+.pc-mast.is-light .pc-mast-tag { color: rgba(21, 17, 15, 0.8); }
+
+.pc-mast-hair {
+  margin: 12px 0 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--nv-accent), transparent);
+}
+
+/* ========================================================== BACK COVER */
+
+.mag-page.nv-back {
+  padding: 0;
+  overflow: hidden;
+  background: var(--nv-ink);
+}
+
+.nv-back-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.02) brightness(1.12);
+}
+
+.nv-back-grade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    radial-gradient(72% 52% at 50% 32%, color-mix(in srgb, var(--nv-accent) 18%, transparent) 0%, transparent 70%),
+    linear-gradient(180deg, color-mix(in srgb, var(--nv-ink) 62%, transparent) 0%, color-mix(in srgb, var(--nv-ink) 38%, transparent) 42%, color-mix(in srgb, var(--nv-ink) 80%, transparent) 100%);
+}
+
+.nv-back-well {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 68px 56px 48px;
+  text-align: center;
+  color: #f2ede3;
+  font-family: var(--nv-sans);
+}
+
+.nv-back-center {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nv-back-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.72));
+}
+
+.nv-back-crest {
+  width: 62px;
+  height: 54px;
+  flex: 0 0 auto;
+}
+
+.nv-back-word {
+  margin: 0;
+  font-family: var(--font-cinzel), "Cinzel", "Times New Roman", serif;
+  font-size: 82px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.06em;
+  color: #f7f2e8;
+}
+
+.nv-back-word span { color: var(--nv-accent); }
+
+.nv-back-pill {
+  display: inline-block;
+  margin-top: 26px;
+  padding: 7px 20px;
+  background: rgba(242, 237, 227, 0.12);
+  border: 1px solid color-mix(in srgb, var(--nv-accent) 55%, transparent);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f2ede3;
+}
+
+.nv-back-line {
+  margin: 30px 0 0;
+  max-width: 470px;
+  font-family: var(--font-spectral), Georgia, serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1.62;
+  letter-spacing: -0.006em;
+  color: rgba(242, 237, 227, 0.9);
+}
+
+.nv-back-foot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.nv-back-qr {
+  width: 132px;
+  height: auto;
+  padding: 7px;
+  background: #f7f4ee;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
+}
+
+.nv-back-imprint {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  color: rgba(242, 237, 227, 0.86);
+}
+
+.nv-back-imprint b { font-weight: 600; color: #fff; }
+
+.nv-back-hair {
+  width: 320px;
+  height: 1px;
+  background: color-mix(in srgb, var(--nv-accent) 45%, transparent);
+}
+
+.nv-back-issue {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--nv-accent);
+}

@@ -17,6 +17,13 @@ type IssueCard = {
 };
 
 const HOME_ORDER = [
+  "bhatia",
+  "erica",
+  "geeta",
+  "joneric",
+  "liutciia",
+  "sergey",
+  "verna",
   "nichole",
   "katie",
   "espey",

@@ -136,6 +136,14 @@ used — that pattern joins the vocabulary for later issues.
 | `vineet` — The Evolution Issue | Rich teal `#0d7377` on cream and dark `#062e30`: tighter serif, teal-cap kickers, 8px squares and L-corners, vision-board photo grid |
 | `katie` — The Studio Issue | Ice paper + ink + studio teal `#0c6574`: Playfair / Franklin / Cinzel, crop-mark corners, two-page Fortiora Relay ad |
 | `nichole` — The Restoration Issue | Forest night `#0a1610` + bone + brass `#c9a35a`: DM Serif / Baskerville / Oswald, brass double-rules, two-page Fortiora Casework ad |
+| November house kit | Shared bold PRIMECREST masthead (`PrimeCrestMast`, `hero` on covers: 1.34× tall letters, always above the photo), Foskaris credits names (`novemberCredits`), Foskaris back page (`NovemberBack`) — `src/content/november/House.tsx`; checker `scripts/qa-issue.mjs` (crops, empty bands/holes, cut text) |
+| `bhatia` — Vol. IX | Plum `#3b1236` + marigold `#e3a21a` + magenta: Yeseva One / Lora / Manrope; cut-out cover on a marigold disc; event-wall mosaics, ribbon citations |
+| `erica` — Vol. X | Ocean blue / sun yellow / green on white: Abril Fatface / Karla / Space Grotesk; airmail stamps, postmarks, boarding-pass contents, die-cut stickers |
+| `geeta` — Vol. XI | "Noir Atelier": espresso `#120c09` + champagne gold on cream type: EB Garamond / Montserrat; gold keyline frames, deco fan ornament, gold face-zones plate |
+| `joneric` — Vol. XII | Navy `#0f1c3e` + gold `#f2b705` + crimson: Anton / Merriweather / Barlow Condensed; keynote-stage cut-out cover, 3·2·1 structural numerals, fight-card record |
+| `liutciia` — Vol. XIII | Midnight `#0a1a3a` + eagle gold: Prata / Crimson Pro / Raleway; passport data page, visa-stamp record, luggage-tag year heads |
+| `sergey` — Vol. XIV | Graphite + bone + signal orange `#ff6a1a`: Unbounded / IBM Plex Serif / Plex Mono; measurement grid, telemetry folios, ecosystem Fig. 01 |
+| `verna` — Vol. XV | Navy `#14213d` + the game's four card colours on paper: Libre Caslon / Work Sans; card-deck tabs, drawn-card pull quotes |
 
 ### House furniture — required in every issue
 
