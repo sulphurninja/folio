@@ -1,5 +1,5 @@
 /*
- * PrimeCrest · The September Issue (Penny Foskaris)
+ * PrimeCrest · The October Issue, Vol. VIII (Penny Foskaris)
  *
  * Closed .fk-* system. Cover and back keep the house PrimeCrest lockup
  * (crest, letterspaced word, badge, teasers, QR chip). Interiors: blush
@@ -1143,10 +1143,10 @@
 }
 
 .fk-steps p {
-  margin: 8px 0 0;
+  margin: 10px 0 0;
   font-family: var(--fk-serif);
-  font-size: 16px;
-  line-height: 1.4;
+  font-size: 26px;
+  line-height: 1.36;
   color: var(--fk-body);
 }
 
@@ -1203,16 +1203,16 @@
   margin: 2px 0 0;
   font-family: var(--fk-didone);
   font-weight: 400;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 1.1;
   letter-spacing: -0.016em;
   color: var(--fk-ink);
 }
 
 .fk-file p {
-  margin: 4px 0 0;
+  margin: 5px 0 0;
   font-family: var(--fk-serif);
-  font-size: 13.5px;
+  font-size: 16.5px;
   line-height: 1.36;
   color: var(--fk-body);
 }
@@ -1255,9 +1255,9 @@
 .fk-pulse-band.is-reverse > em { color: #f7f0e8; }
 
 .fk-pulse-band p {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-family: var(--fk-serif);
-  font-size: 17.5px;
+  font-size: 20px;
   line-height: 1.38;
 }
 
@@ -1554,6 +1554,13 @@
   color: rgba(236, 229, 216, 0.7);
 }
 
+.fk-blush .fk-nums {
+  padding-top: 18px;
+  border-top: 1px solid rgba(36, 22, 16, 0.14);
+}
+.fk-blush .fk-nums b { font-size: 58px; color: var(--fk-coral); }
+.fk-blush .fk-nums span { color: var(--fk-mute); }
+
 /* =============================================================== CARDS */
 
 .fk-cards {
@@ -1686,6 +1693,276 @@
   height: auto;
   display: block;
 }
+
+/* ======================================================== INTERVIEW
+   The October pattern: eight answers printed whole, in the order asked.
+   One question per leaf under an oversized coral numeral; the answer
+   flows in balanced columns, a lifted line closes the leaf. */
+
+.fk-q {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 20px;
+  align-items: end;
+  margin-top: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(36, 22, 16, 0.16);
+  flex: 0 0 auto;
+}
+
+.fk-q b {
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-size: 138px;
+  line-height: 0.7;
+  letter-spacing: -0.05em;
+  color: var(--fk-coral);
+}
+
+.fk-q h3 {
+  margin: 0;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 1.1;
+  letter-spacing: -0.018em;
+  color: var(--fk-ink);
+}
+
+.fk-char .fk-q { border-bottom-color: rgba(232, 137, 106, 0.28); }
+.fk-char .fk-q b { color: var(--fk-coral-lt); }
+.fk-char .fk-q h3 { color: #f4eee2; }
+
+.fk-qa {
+  flex: 0 1 auto;
+  min-height: 0;
+  margin-top: 20px;
+  overflow: hidden;
+  column-count: 2;
+  column-gap: 26px;
+  column-fill: balance;
+  font-family: var(--fk-serif);
+  font-size: var(--fk-qa-size, 14px);
+  line-height: 1.56;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  color: var(--fk-body);
+}
+
+.fk-qa.is-one { column-count: 1; }
+
+.fk-char .fk-qa { color: rgba(242, 237, 227, 0.9); }
+
+.fk-qa p { margin: 0 0 10px; }
+.fk-qa p:last-child { margin-bottom: 0; }
+
+.fk-char .fk-drop::first-letter { color: var(--fk-coral-lt); }
+
+.fk-char .fk-pull {
+  color: #f4eee2;
+  border-color: rgba(232, 137, 106, 0.3);
+}
+
+.fk-qa-end {
+  margin-top: auto;
+  flex: 0 0 auto;
+}
+
+/* Band keeps the photograph's own ratio, so nothing is cropped. */
+.fk-qa-band {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 22px -48px 0;
+  overflow: hidden;
+}
+
+.fk-qa-band img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.fk-qa-band figcaption {
+  position: absolute;
+  left: 48px;
+  bottom: 14px;
+  z-index: 2;
+  font-family: var(--fk-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f7f0e8;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Stacked plate: the photograph at its own proportions (never cropped),
+   a coral panel underneath carrying the quote and one sourced figure. */
+.fk-split-photo.is-stack {
+  display: flex;
+  flex-direction: column;
+  background: var(--fk-coral);
+}
+
+.fk-split-photo.is-stack::after { display: none; }
+
+.fk-split-photo.is-stack img {
+  position: static;
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+}
+
+.fk-blush .fk-split-photo.is-stack { background: var(--fk-olive-dk); }
+
+.fk-stack-panel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 34px 30px 32px;
+  color: #f7f0e8;
+}
+
+.fk-stack-panel q {
+  display: block;
+  quotes: none;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: var(--fk-stack-q, 32px);
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+}
+
+.fk-stack-panel q::before {
+  content: "“";
+  display: block;
+  font-size: 1.7em;
+  line-height: 0.6;
+  margin-bottom: 8px;
+  opacity: 0.72;
+}
+
+.fk-stack-panel small {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--fk-sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.86;
+}
+
+.fk-stack-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fk-stack-stats div {
+  border-top: 1px solid rgba(247, 240, 232, 0.4);
+  padding-top: 14px;
+}
+
+.fk-stack-stats b {
+  display: block;
+  font-family: var(--fk-didone);
+  font-weight: 400;
+  font-size: 68px;
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+.fk-stack-stats span {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--fk-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.5;
+}
+
+.fk-blush .fk-stack-panel q::before,
+.fk-blush .fk-stack-stats b { color: var(--fk-coral-lt); }
+.fk-blush .fk-stack-stats div { border-top-color: rgba(232, 137, 106, 0.32); }
+
+/* Contents photo at its true width; the spine word sits on a strip
+   matched to the studio backdrop instead of over a crop. */
+.fk-cphoto-strip {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 93px;
+  z-index: 1;
+  background: linear-gradient(180deg, #b09a82 0%, #ab967c 50%, #a58f70 100%);
+}
+
+/* Photo row: a whole portrait at its own ratio beside a coral quote panel. */
+.fk-qa-row {
+  display: grid;
+  grid-template-columns: 330px 1fr;
+  margin: 22px -48px 0;
+  flex: 0 0 auto;
+}
+
+.fk-qa-row img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.fk-qa-rowpanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 48px 30px 34px;
+  background: var(--fk-coral);
+  color: #f7f0e8;
+}
+
+.fk-qa-rowpanel q {
+  display: block;
+  quotes: none;
+  font-family: var(--fk-didone);
+  font-style: italic;
+  font-size: 36px;
+  line-height: 1.14;
+  letter-spacing: -0.018em;
+}
+
+.fk-qa-rowpanel q::before {
+  content: "“";
+  display: block;
+  font-size: 1.6em;
+  line-height: 0.6;
+  margin-bottom: 8px;
+  opacity: 0.72;
+}
+
+.fk-qa-rowpanel small {
+  display: block;
+  margin-top: 16px;
+  font-family: var(--fk-sans);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.86;
+}
+
+/* Split leaves for the shorter answers: plate one side, type the other. */
+.fk-split-type .fk-q { grid-template-columns: 96px 1fr; gap: 14px; margin-top: 12px; }
+.fk-split-type .fk-q b { font-size: 108px; }
+.fk-split-type .fk-q h3 { font-size: 26px; }
+.fk-blush .fk-split-photo::after { display: none; }
 
 /* =========================================================== INVITE */
 

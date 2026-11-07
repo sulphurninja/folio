@@ -7,10 +7,10 @@ import "./foskaris.css";
 const SEO = {
   title: "Top 10 Unstoppable Business Leaders Making a Difference in 2026 — Penny Foskaris",
   description:
-    "Penny Foskaris — Founder, Red Light Pro Devices & Foskaris Wellness, Anaheim Hills, California. The room she could not find, and the light her clients could take home, told in PrimeCrest's September Issue.",
+    "Penny Foskaris — Founder, Red Light Pro Devices & Foskaris Wellness, Anaheim Hills, California. The room she could not find, and the light her clients could take home, told in PrimeCrest's October Issue.",
   slug: "foskaris",
   ogImage: siteUrl("/issues/foskaris/og.jpg"),
-  kicker: "PrimeCrest · Vol. IV · The September Issue",
+  kicker: "PrimeCrest · Vol. VIII · The October Issue",
 };
 
 export const metadata = issueMetadata(SEO);
@@ -19,7 +19,7 @@ export default function FoskarisIssuePage() {
   return (
     <>
       <IssueJsonLdScript input={SEO} />
-      <HtmlFlipbook title="PrimeCrest — The September Issue · Vol. IV" toc={FOSKARIS_TOC} tone="foskaris" pdfHref="/pdf/foskaris.pdf">
+      <HtmlFlipbook title="PrimeCrest · The October Issue · Vol. VIII" toc={FOSKARIS_TOC} tone="foskaris" pdfHref="/pdf/foskaris.pdf">
         <FoskarisPages />
       </HtmlFlipbook>
     </>

@@ -4,8 +4,8 @@ import "../foskaris.css";
 export const dynamic = "force-static";
 
 /**
- * Flat proof sheet for the September Issue (Penny Foskaris). House cover
- * and back. Closed interiors: contents spread, two-column stories, splits.
+ * Flat proof sheet for the October Issue, Vol. VIII (Penny Foskaris). House cover
+ * and back. Closed interiors: contents spread, stories, the interview printed whole.
  */
 export default function FoskarisProofSheet() {
   return (
