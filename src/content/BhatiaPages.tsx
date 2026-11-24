@@ -215,7 +215,7 @@ export function BhatiaPages() {
         </svg>
 
         <header className="bh-cover-mast">
-          <PrimeCrestMast tone="dark" tagline={false} hero />
+          <PrimeCrestMast newLogo tone="dark" tagline={false} hero />
         </header>
 
         <img
@@ -1396,7 +1396,7 @@ export function BhatiaPages() {
       <article className="mag-page bh bh-ivory">
         <div className="bh-well bh-feat">
           <div className="bh-feat-mast">
-            <PrimeCrestMast tone="light" tagline={false} />
+            <PrimeCrestMast newLogo tone="light" tagline={false} />
           </div>
           <Kicker style={{ marginTop: 22 }}>The November Issue · Be Featured</Kicker>
           <h2 className="bh-head" style={{ fontSize: 66, lineHeight: 1 }}>
@@ -1452,7 +1452,7 @@ export function BhatiaPages() {
       </article>
 
       {/* ============================================== 21 · BACK COVER */}
-      <NovemberBack scope="bh" vol="IX" />
+      <NovemberBack scope="bh" vol="IX" newLogo />
     </>
   );
 }

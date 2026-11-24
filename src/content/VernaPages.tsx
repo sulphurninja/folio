@@ -354,7 +354,7 @@ export function VernaPages() {
           <i className="d-red" />
         </div>
         <div className="vf-cover-mast">
-          <PrimeCrestMast tone="dark" tagline={false} hero />
+          <PrimeCrestMast newLogo tone="dark" tagline={false} hero />
         </div>
         <img
           className="vf-cover-cut"
@@ -1310,7 +1310,7 @@ export function VernaPages() {
           <div className="vf-feat-foot">
             <div>
               <div className="vf-feat-mast">
-                <PrimeCrestMast tone="dark" tagline={false} />
+                <PrimeCrestMast newLogo tone="dark" tagline={false} />
               </div>
               <p
                 style={{
@@ -1511,7 +1511,7 @@ export function VernaPages() {
       </article>
 
       {/* ============================================== 23 · BACK COVER */}
-      <NovemberBack scope="vf" vol="XV" />
+      <NovemberBack scope="vf" vol="XV" newLogo />
     </>
   );
 }

@@ -1,5 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import type { ReactNode } from "react";
+import {
+  CREST_LOWER,
+  CREST_UPPER,
+  FULL_STOP,
+  LETTERS_CREST,
+  LETTERS_PRIME,
+  LOGO_VIEWBOX,
+} from "@/content/november/logo-paths";
 
 /**
  * PrimeCrest · The November Issues (Vol. IX – XV) · house furniture.
@@ -30,6 +38,29 @@ export function novemberCredits(onTheCover: string): [string, string][] {
   ];
 }
 
+/**
+ * The current PrimeCrest logo, as on theprimecrest.com: Cinzel capitals with
+ * PRIME and the upper chevron in the page tone, CREST and the lower chevron in
+ * gold, and a red full stop. Fills the width of its container.
+ */
+function NewLogo({ className, ink }: { className?: string; ink: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox={LOGO_VIEWBOX}
+      role="img"
+      aria-label="PrimeCrest"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d={CREST_UPPER} fill={ink} />
+      <path d={CREST_LOWER} fill="#c39a4b" />
+      <path d={LETTERS_PRIME} fill={ink} />
+      <path d={LETTERS_CREST} fill="#c39a4b" />
+      <path d={FULL_STOP} fill="#c8102e" />
+    </svg>
+  );
+}
+
 function Crest({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 48 42" aria-hidden>
@@ -48,14 +79,32 @@ export function PrimeCrestMast({
   tone = "dark",
   tagline = true,
   hero = false,
+  newLogo = false,
   className = "",
 }: {
   tone?: "dark" | "light";
   tagline?: boolean;
   /** cover masthead: taller letters, heavier shadow, always above the photo */
   hero?: boolean;
+  /** use the current theprimecrest.com logo (gold CREST, red full stop) */
+  newLogo?: boolean;
   className?: string;
 }) {
+  if (newLogo) {
+    return (
+      <div className={`pc-mast is-${tone}${hero ? " is-hero" : ""} is-new ${className}`}>
+        <div className="pc-mast-new">
+          <NewLogo className="pc-mast-svg" ink={tone === "light" ? "#15110f" : "#f7f2e8"} />
+        </div>
+        {tagline ? (
+          <>
+            <p className="pc-mast-tag">Where Vision Meets Voice</p>
+            <div className="pc-mast-hair" />
+          </>
+        ) : null}
+      </div>
+    );
+  }
   return (
     <div className={`pc-mast is-${tone}${hero ? " is-hero" : ""} ${className}`}>
       <div className="pc-mast-word">
@@ -78,19 +127,33 @@ export function PrimeCrestMast({
 }
 
 /** Back cover: the Foskaris back page, coloured by the issue's accent. */
-export function NovemberBack({ scope, vol }: { scope: string; vol: string }) {
+export function NovemberBack({
+  scope,
+  vol,
+  newLogo = false,
+}: {
+  scope: string;
+  vol: string;
+  newLogo?: boolean;
+}) {
   return (
     <article className={`mag-page nv-back ${scope}`} data-density="hard">
       <img className="nv-back-img" src="/brand/backdrop-primecrest.jpg" alt="" />
       <div className="nv-back-grade" />
       <div className="nv-back-well">
         <div className="nv-back-center">
-          <div className="nv-back-mark">
-            <Crest className="nv-back-crest" />
-            <b className="nv-back-word" aria-label="PrimeCrest">
-              PRIMECREST<span>.</span>
-            </b>
-          </div>
+          {newLogo ? (
+            <div className="nv-back-mark">
+              <NewLogo className="nv-back-svg" ink="#f7f2e8" />
+            </div>
+          ) : (
+            <div className="nv-back-mark">
+              <Crest className="nv-back-crest" />
+              <b className="nv-back-word" aria-label="PrimeCrest">
+                PRIMECREST<span>.</span>
+              </b>
+            </div>
+          )}
           <span className="nv-back-pill">Where Vision Meets Voice</span>
           <p className="nv-back-line">
             A journal of affairs, business and culture, independent reporting, considered

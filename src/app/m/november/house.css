@@ -128,6 +128,35 @@
   background: linear-gradient(90deg, transparent, var(--nv-accent), transparent);
 }
 
+/* Current theprimecrest.com logo (newLogo): the outlined SVG fills the
+   measure; PRIME in the page tone, CREST gold, a red full stop. */
+.pc-mast-new {
+  width: 100%;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.6));
+}
+.pc-mast.is-light .pc-mast-new {
+  filter: drop-shadow(0 8px 20px rgba(255, 255, 255, 0.45));
+}
+.pc-mast.is-hero .pc-mast-new {
+  filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.3)) drop-shadow(0 12px 30px rgba(0, 0, 0, 0.55));
+}
+.pc-mast.is-hero.is-light .pc-mast-new {
+  filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.5));
+}
+.pc-mast-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nv-back-svg {
+  display: block;
+  flex: 0 0 auto;
+  width: 540px;
+  max-width: 100%;
+  height: auto;
+}
+
 /* ========================================================== BACK COVER */
 
 .mag-page.nv-back {

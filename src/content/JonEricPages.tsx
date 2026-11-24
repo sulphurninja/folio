@@ -191,7 +191,7 @@ export function JonEricPages() {
         <div className="je-cover-floor" />
 
         <header className="je-cmast">
-          <PrimeCrestMast tone="dark" tagline={false} hero />
+          <PrimeCrestMast newLogo tone="dark" tagline={false} hero />
           <p>
             <span>November 2026 · Vol. XII · No. 12</span>
             <span>Where Vision Meets Voice</span>
@@ -340,7 +340,7 @@ export function JonEricPages() {
       <article className="mag-page je je-navy">
         <div className="je-well je-credits">
           <div className="je-credits-mast">
-            <PrimeCrestMast tone="dark" tagline={false} />
+            <PrimeCrestMast newLogo tone="dark" tagline={false} />
           </div>
           <p className="je-credits-issue">The November Issue · Vol. XII · No. 12 · 2026</p>
           <h2 className="je-credits-h">Credits.</h2>
@@ -1598,7 +1598,7 @@ export function JonEricPages() {
         </svg>
         <div className="je-well">
           <div className="je-feat-mast">
-            <PrimeCrestMast tone="dark" />
+            <PrimeCrestMast newLogo tone="dark" />
           </div>
           <p className="je-adk">PrimeCrest · Be Featured</p>
           <h2 className="je-feat-h">
@@ -1645,7 +1645,7 @@ export function JonEricPages() {
       </article>
 
       {/* ============================================== 23 · BACK COVER */}
-      <NovemberBack scope="je" vol="XII" />
+      <NovemberBack scope="je" vol="XII" newLogo />
     </>
   );
 }

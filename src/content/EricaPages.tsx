@@ -357,7 +357,7 @@ export function EricaPages() {
 
         <div className="er-cover-band" aria-hidden />
         <header className="er-cover-mast">
-          <PrimeCrestMast tone="dark" tagline={false} hero />
+          <PrimeCrestMast newLogo tone="dark" tagline={false} hero />
           <div className="er-cover-date">
             <span>November 2026 · Vol. X · No. 10</span>
             <span>The November Issue</span>
@@ -1582,7 +1582,7 @@ export function EricaPages() {
         />
         <div className="er-well">
           <div className="er-bf-mast">
-            <PrimeCrestMast tone="dark" tagline={false} />
+            <PrimeCrestMast newLogo tone="dark" tagline={false} />
           </div>
           <Kicker style={{ color: "var(--er-sun)", marginTop: 16 }}>Be Featured · The November Issue</Kicker>
           <h2 className="er-bf-h">
@@ -1632,7 +1632,7 @@ export function EricaPages() {
       </article>
 
       {/* ============================================== 23 · BACK COVER */}
-      <NovemberBack scope="er" vol="X" />
+      <NovemberBack scope="er" vol="X" newLogo />
     </>
   );
 }

@@ -294,7 +294,7 @@ export function LiutciiaPages() {
         <Eagle className="lb-cover-eagle" />
 
         <header className="lb-mast">
-          <PrimeCrestMast tone="dark" tagline={false} hero />
+          <PrimeCrestMast newLogo tone="dark" tagline={false} hero />
           <div className="lb-mast-row">
             <span>November 2026 · Vol. XIII · No. 13</span>
             <span className="lb-mast-dots" />
@@ -1657,7 +1657,7 @@ export function LiutciiaPages() {
         <Eagle className="lb-ghost-eagle is-light" />
         <div className="lb-well">
           <div className="lb-feat-logo">
-            <PrimeCrestMast tone="dark" tagline={false} />
+            <PrimeCrestMast newLogo tone="dark" tagline={false} />
           </div>
           <p className="lb-kicker">Be Featured · The next edition</p>
           <h2 className="lb-head is-light" style={{ fontSize: 64 }}>
@@ -1717,7 +1717,7 @@ export function LiutciiaPages() {
       </article>
 
       {/* ============================================== 23 · BACK */}
-      <NovemberBack scope="lb" vol="XIII" />
+      <NovemberBack scope="lb" vol="XIII" newLogo />
     </>
   );
 }
