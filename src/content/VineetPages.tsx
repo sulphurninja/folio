@@ -7,7 +7,7 @@ import type { ReactNode } from "react";
  *
  * Composed on the closed `pc-*` system in src/app/m/vineet/vineet.css. Facing
  * leaves are designed as one 1680-wide spread: 1|2 editorial, 3|4 credits and
- * contents, 5|6 and 7|8 the signature story, 9|10 the Fortiora house spread.
+ * contents, 5|6 the signature story, 7 momentum, 8|9 the Fortiora house spread.
  * Every photograph is either an exact 3:4 fill or a framed plate, so nothing
  * in the supplied portfolio is cropped through a face.
  */
@@ -298,19 +298,16 @@ export const VINEET_TOC = [
   { page: 4, label: "Contents" },
   { page: 5, label: "The Signature Story" },
   { page: 7, label: "When the Momentum Goes" },
-  { page: 9, label: "Fortiora · Applied AI" },
-  { page: 11, label: "Growth or Leak" },
-  { page: 12, label: "The Balcony" },
-  { page: 13, label: "The File" },
-  { page: 14, label: "Recognition" },
-  { page: 15, label: "The Iceberg Effect" },
-  { page: 17, label: "Research Is Not an Offering" },
-  { page: 18, label: "The Rooms" },
-  { page: 19, label: "Fortiora · Revenue Desk" },
-  { page: 20, label: "Through 2030" },
-  { page: 21, label: "No Pure Mistakes" },
-  { page: 22, label: "The Next Edition" },
-  { page: 23, label: "PrimeCrest" },
+  { page: 8, label: "Fortiora · Applied AI" },
+  { page: 10, label: "Growth or Leak" },
+  { page: 11, label: "Portfolio" },
+  { page: 12, label: "The Iceberg Effect" },
+  { page: 14, label: "Research Is Not an Offering" },
+  { page: 15, label: "Fortiora · Revenue Desk" },
+  { page: 16, label: "Through 2030" },
+  { page: 17, label: "No Pure Mistakes" },
+  { page: 18, label: "The Next Edition" },
+  { page: 19, label: "PrimeCrest" },
 ];
 
 /* ----------------------------------------------------------------- issue */
@@ -361,14 +358,14 @@ export function VineetPages() {
 
           <div className="pc-teaser pc-teaser-a">
             <h3>
-              Under the
+              Behind the
               <br />
               Number
             </h3>
             <hr />
             <p>
-              Why a short sales line is almost never a sales problem, and where the leak is
-              actually sitting.
+              A short sales figure is almost never a sales problem. The leak is almost always
+              upstream.
             </p>
           </div>
 
@@ -395,14 +392,14 @@ export function VineetPages() {
 
           <div className="pc-teaser pc-teaser-b">
             <h3>
-              Ten and
+              Ten versus
               <br />
               Ninety
             </h3>
             <hr />
             <p>
-              Strategy is a tenth of the work. The other ninety is where sound plans quietly go to
-              die.
+              Strategy is a tenth of the work. The other ninety percent is where sound plans
+              quietly fail.
             </p>
           </div>
 
@@ -410,7 +407,7 @@ export function VineetPages() {
             <em>Vineet</em>
             <strong>TRAKROO</strong>
             <p>
-              The strategist rebuilding the commercial engine for how people actually buy in 2026
+              The strategist rebuilding the commercial engine for the way people actually buy in 2026.
             </p>
           </div>
 
@@ -778,7 +775,7 @@ export function VineetPages() {
                 How to tell a strategy problem from a structural one, and why the second takes
                 longer to fix
               </p>
-              <span className="pc-pagebox">11</span>
+              <span className="pc-pagebox">10</span>
             </div>
             <div>
               <h4>
@@ -790,7 +787,7 @@ export function VineetPages() {
                 Why under a tenth of frontline friction ever reaches the board, and what that costs
                 a quarter
               </p>
-              <span className="pc-pagebox">15</span>
+              <span className="pc-pagebox">12</span>
             </div>
             <div>
               <h4>
@@ -801,7 +798,7 @@ export function VineetPages() {
               <p>
                 The few commercial drivers that move an Indian B2C number, executed with rigour
               </p>
-              <span className="pc-pagebox">20</span>
+              <span className="pc-pagebox">16</span>
             </div>
           </div>
 
@@ -814,16 +811,16 @@ export function VineetPages() {
                 <b>02 · Editorial</b>
                 <span>A vision that outlasts the plan</span>
             </li>
-            <li>
-                <b>13 · The File</b>
-                <span>The record, and the ten questions</span>
+              <li>
+                <b>11 · Portfolio</b>
+                <span>The long view, and the rooms</span>
             </li>
             <li>
-                <b>17 · Insight</b>
+                <b>14 · Insight</b>
                 <span>Research is not an offering</span>
             </li>
             <li>
-                <b>21 · The Close</b>
+                <b>17 · The Close</b>
                 <span>No pure mistakes, only learnings</span>
             </li>
           </ul>
@@ -934,56 +931,7 @@ export function VineetPages() {
         </div>
       </article>
 
-      {/* ============================================== 07 · PLATES, THE ROOMS OF THE WORK */}
-      <article className="mag-page pc pc-ink" data-density="hard">
-        <div className="pc-well" style={{ padding: "44px 46px 34px" }}>
-          <Label teal>The rooms of the work</Label>
-          <h2 className="pc-head pc-head-sm">Where the questions get asked.</h2>
-          <div className="pc-hair" style={{ margin: "12px 0 16px" }} />
-
-          <figure className="pc-plate" style={{ height: 322, margin: 0 }}>
-            <img
-              src={`${IMG}/photo_p3_0.jpg`}
-              alt="Vineet Trakroo in conversation with two colleagues at the advisory table"
-              style={{ objectPosition: "50% 30%" }}
-            />
-          </figure>
-          <p className="pc-plate-cap">
-            <span>The advisory table, mid-diagnosis. The first question is always the naive one.</span>
-            <span>01</span>
-          </p>
-
-          <div style={{ display: "flex", gap: 14, marginTop: 16, flex: "0 0 auto" }}>
-            <figure className="pc-plate" style={{ width: 318, height: 322, margin: 0 }}>
-              <img
-                src={`${IMG}/photo_p4_0.jpg`}
-                alt="Vineet Trakroo on the conference floor at a national sales conference"
-                style={{ objectPosition: "50% 24%" }}
-              />
-            </figure>
-            <figure className="pc-plate" style={{ flex: "1 1 auto", height: 322, margin: 0 }}>
-              <img
-                src={`${IMG}/photo_p2_0.jpg`}
-                alt="The Evolution Strategy Advisors partners at the office desks"
-                style={{ objectPosition: "50% 34%" }}
-              />
-            </figure>
-          </div>
-          <p className="pc-plate-cap">
-            <span>The conference circuit, where the room hears it first</span>
-            <span>The partners, at the desks where the work sits</span>
-            <span>02 · 03</span>
-          </p>
-
-          <div className="pc-skew pc-skew-flat" style={{ marginTop: 18 }}>
-            <p>What are we selling, to whom, and has it become a commodity?</p>
-          </div>
-
-          <Folio page="07" section="The rooms of the work" />
-        </div>
-      </article>
-
-      {/* ============================================== 08 · MOMENTUM */}
+      {/* ============================================== 07 · MOMENTUM */}
       <article className="mag-page pc pc-ink">
         <div className="pc-well">
           <Label teal>The signature story · two</Label>
@@ -1078,11 +1026,11 @@ export function VineetPages() {
               </p>
             </div>
           </div>
-          <Folio page="08" section="When the momentum goes" />
+          <Folio page="07" section="When the momentum goes" />
         </div>
       </article>
 
-      {/* ============================================== 09 · HOUSE AD, LEFT */}
+      {/* ============================================== 08 · HOUSE AD, LEFT */}
       <article className="mag-page pc pc-ink" data-density="hard">
         <AdArt />
         <div className="pc-ad-panel">
@@ -1130,7 +1078,7 @@ export function VineetPages() {
         </div>
       </article>
 
-      {/* ============================================== 10 · HOUSE AD, RIGHT */}
+      {/* ============================================== 09 · HOUSE AD, RIGHT */}
       <article className="mag-page pc pc-ink" data-density="hard">
         <AdArt shift={-840} />
         <div className="pc-well" style={{ padding: "56px 46px 38px" }}>
@@ -1196,7 +1144,7 @@ export function VineetPages() {
         </div>
       </article>
 
-      {/* ============================================== 11 · GROWTH OR LEAK */}
+      {/* ============================================== 10 · GROWTH OR LEAK */}
       <article className="mag-page pc pc-cream">
         <div className="pc-well">
           <Label>Diagnosis</Label>
@@ -1278,238 +1226,52 @@ export function VineetPages() {
               bucket. Fixing the leak takes longer.”
             </p>
           </div>
-          <Folio page="11" section="Growth or leak" />
+          <Folio page="10" section="Growth or leak" />
         </div>
       </article>
 
-      {/* ============================================== 12 · THE BALCONY */}
+      {/* ============================================== 11 · PORTFOLIO */}
       <article className="mag-page pc pc-ink" data-density="hard">
         <div className="pc-well" style={{ padding: "44px 54px 34px" }}>
-          <Label>Portfolio · the balcony</Label>
+          <Label>Portfolio</Label>
           <h2 className="pc-head pc-head-sm" style={{ fontSize: 30, marginTop: 4 }}>
-            Above the Skyline, Off the Clock
+            The Long View, and the Rooms
           </h2>
           <p className="pc-quiet" style={{ marginTop: 8, maxWidth: 620 }}>
-            Photographs supplied with the feature package, reproduced whole, the full frame, as
-            shot, nothing trimmed to fit a grid.
+            The balcony at last light, the boardroom, the conference floor. As photographed.
           </p>
           <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 14 }}>
             <Plate
               src="arms.jpg"
               alt="Vineet Trakroo on a balcony above the city skyline"
               w={732}
-              h={549}
+              h={500}
               cap="The long view · arms folded, city behind"
               credit="Supplied"
             />
             <div style={{ display: "flex", gap: 16 }}>
               <Plate
-                src="balcony.jpg"
-                alt="Vineet Trakroo on the balcony"
+                src="office.jpg"
+                alt="Vineet Trakroo in the boardroom"
                 w={358}
-                h={269}
-                cap="Off the record"
+                h={300}
+                cap="The boardroom"
               />
               <Plate
-                src="sunset.jpg"
-                alt="Vineet Trakroo at sunset"
+                src="photo_p4_0.jpg"
+                alt="Vineet Trakroo on the conference floor at a national sales conference"
                 w={358}
-                h={269}
-                cap="Last light"
+                h={300}
+                pos="50% 24%"
+                cap="The conference floor"
               />
             </div>
           </div>
-          <Folio page="12" section="Portfolio" />
+          <Folio page="11" section="Portfolio" />
         </div>
       </article>
 
-      {/* ============================================== 13 · THE FILE */}
-      <article className="mag-page pc pc-cream">
-        <div className="pc-well">
-          <Label>The file</Label>
-          <h2 className="pc-head pc-head-sm">As Given</h2>
-          <div className="pc-hair" style={{ margin: "14px 0 10px" }} />
-          <ul className="pc-dossier" style={{ flex: "0 0 auto" }}>
-            {[
-              ["Name", "Vineet Trakroo"],
-              ["Designation", "CEO & Chief Evolution Officer"],
-              ["Organisation", "Evolution Strategy Advisors LLP"],
-              ["Watchwords", "Growth · Strategy · Execution · Future readiness"],
-              ["Industries", "FMCG, automobiles, pharma, consumer products, building materials"],
-              ["Scale of work", "100+ brands"],
-              [
-                "Interview focus",
-                "Growth strategy, execution, consumer insight, organisational agility, sustainable growth",
-              ],
-              ["Supporting material", "Professional photographs, recognition image, supplied logo"],
-              ["References", "theevolutionconsulting.com/awards.php · linkedin.com/in/vineettrakroo"],
-            ].map(([k, v]) => (
-              <li key={k}>
-                <b>{k}</b>
-                <span>{v}</span>
-              </li>
-            ))}
-          </ul>
-
-          <p className="pc-label" style={{ marginTop: 20 }}>
-            The ten questions, in the order they were asked
-          </p>
-          <ol
-            style={{
-              flex: "1 1 auto",
-              minHeight: 0,
-              columnCount: 2,
-              columnGap: 30,
-              margin: "12px 0 0",
-              padding: "0 0 0 22px",
-              fontFamily: "var(--pc-serif)",
-              fontSize: 13,
-              lineHeight: 1.5,
-              color: "#3a3f41",
-            }}
-          >
-            <li style={{ marginBottom: 7 }}>What is usually hiding underneath a weak growth line.</li>
-            <li style={{ marginBottom: 7 }}>The first thing to look for when a large B2C business loses momentum.</li>
-            <li style={{ marginBottom: 7 }}>How to tell a growth problem from an execution problem.</li>
-            <li style={{ marginBottom: 7 }}>
-              The growth lesson that travels across FMCG, automobiles, pharma, consumer products and
-              building materials.
-            </li>
-            <li style={{ marginBottom: 7 }}>How a chief executive decides what to stop.</li>
-            <li style={{ marginBottom: 7 }}>
-              Turning consumer insight into growth rather than another research report.
-            </li>
-            <li style={{ marginBottom: 7 }}>Why strong strategies fail during execution.</li>
-            <li style={{ marginBottom: 7 }}>
-              What separates a business growing today from one that is genuinely future-ready.
-            </li>
-            <li style={{ marginBottom: 7 }}>
-              The recurring mistake in established B2C businesses, after 100+ brands.
-            </li>
-            <li style={{ marginBottom: 0 }}>
-              What Indian B2C leaders should start changing today to build sustainable growth through
-              2030.
-            </li>
-          </ol>
-
-          <div className="pc-logochip" style={{ marginTop: 16 }}>
-            <img src={`${IMG}/logo-esa.jpg`} alt="Evolution Strategy Advisors" />
-          </div>
-          <Folio page="13" section="The file" />
-        </div>
-      </article>
-
-      {/* ============================================== 14 · RECOGNITION */}
-      <article className="mag-page pc pc-cream">
-        <div className="pc-well">
-          <Label>Recognition</Label>
-          <h2 className="pc-head pc-head-sm">The Plate, As Supplied</h2>
-          <p className="pc-dek" style={{ fontSize: 15 }}>
-            Reproduced from the feature package. The references below are the contributor’s own.
-          </p>
-          <div className="pc-hair" style={{ margin: "14px 0 12px" }} />
-          <div style={{ display: "flex", gap: 26, flex: "1 1 auto", minHeight: 0 }}>
-            <div className="pc-award-frame" style={{ width: 396, alignSelf: "flex-start" }}>
-              <img src={`${IMG}/awards.jpg`} alt="Awards and recognition, as supplied" />
-              <p
-                className="pc-plate-cap"
-                style={{ marginTop: 12, color: "rgba(43,47,49,0.6)", justifyContent: "center" }}
-              >
-                <span>Recognition image · supplied with the feature</span>
-              </p>
-            </div>
-            <div style={{ flex: "1 1 auto", minWidth: 0 }}>
-              <p className="pc-sub">On the record</p>
-              <p
-                style={{
-                  margin: "0 0 10px",
-                  fontFamily: "var(--pc-serif)",
-                  fontSize: 13.6,
-                  lineHeight: 1.6,
-                  textAlign: "justify",
-                  color: "#33383a",
-                }}
-              >
-                PrimeCrest prints what it is given and says so. The plate opposite arrived with the
-                feature materials as a single recognition image; the two references beneath it were
-                supplied by the contributor as the place where the awards themselves are listed.
-                Individual honours have not been independently verified for this edition, and we
-                would rather write that line than imply a check we did not run.
-              </p>
-              <p
-                style={{
-                  margin: "0 0 14px",
-                  fontFamily: "var(--pc-serif)",
-                  fontSize: 13.6,
-                  lineHeight: 1.6,
-                  textAlign: "justify",
-                  color: "#33383a",
-                }}
-              >
-                It is a small discipline, and it belongs in an issue about execution. The subject’s
-                own argument is that leadership operates in a vacuum when information thins on its
-                way upstairs, that under a tenth of what happens on the ground survives the trip.
-                A magazine is not exempt from its own cover story.
-              </p>
-              <div className="pc-hair" />
-              <p className="pc-sub" style={{ marginTop: 12 }}>
-                References
-              </p>
-              <ul style={{ margin: "8px 0 0", padding: 0, listStyle: "none" }}>
-                {[
-                  ["Awards", "theevolutionconsulting.com/awards.php"],
-                  ["Honours", "linkedin.com/in/vineettrakroo/details/honors/"],
-                  ["Firm", "Evolution Strategy Advisors LLP"],
-                  ["Package", "Interview feature and supporting visual portfolio"],
-                ].map(([k, v]) => (
-                  <li
-                key={k}
-                style={{
-                  display: "grid",
-                      gridTemplateColumns: "84px 1fr",
-                      gap: 14,
-                      padding: "9px 0",
-                      borderTop: "1px solid rgba(60,65,68,0.18)",
-                    }}
-                  >
-                    <b
-                  style={{
-                        fontFamily: "var(--pc-sans)",
-                        fontSize: 9.5,
-                        fontWeight: 600,
-                        letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                        color: "var(--pc-brass-dk)",
-                  }}
-                >
-                  {k}
-                    </b>
-                <span
-                  style={{
-                        fontFamily: "var(--pc-serif)",
-                        fontSize: 13,
-                        lineHeight: 1.45,
-                        color: "#23282a",
-                        wordBreak: "break-word",
-                  }}
-                >
-                  {v}
-                </span>
-                  </li>
-                ))}
-              </ul>
-              <div className="pc-slab" style={{ marginTop: 18 }}>
-                <p style={{ fontSize: 15.5 }}>
-                  “In business, there are no pure mistakes, only learnings.”
-                </p>
-          </div>
-            </div>
-          </div>
-          <Folio page="14" section="Recognition" />
-        </div>
-      </article>
-
-      {/* ============================================== 15 · THE ICEBERG */}
+      {/* ============================================== 12 · THE ICEBERG */}
       <article className="mag-page pc pc-ink">
         <div className="pc-well">
           <Label>Why strategies fail</Label>
@@ -1559,11 +1321,11 @@ export function VineetPages() {
           </div>
 
           <Iceberg />
-          <Folio page="15" section="The iceberg effect" />
+          <Folio page="12" section="The iceberg effect" />
         </div>
       </article>
 
-      {/* ============================================== 16 · PLATE */}
+      {/* ============================================== 13 · PLATE */}
       <article className="mag-page pc pc-bleed pc-wedge-l" data-density="hard">
         <img
           className="pc-img"
@@ -1584,7 +1346,7 @@ export function VineetPages() {
         <p className="pc-vcap">Supplied portfolio · reproduced full frame</p>
       </article>
 
-      {/* ============================================== 17 · INSIGHT */}
+      {/* ============================================== 14 · INSIGHT */}
       <article className="mag-page pc pc-cream">
         <div className="pc-well">
           <Label>Consumer insight</Label>
@@ -1663,40 +1425,11 @@ export function VineetPages() {
               <p>Result returns to the mix. The loop closes.</p>
             </div>
           </div>
-          <Folio page="17" section="Consumer insight" />
+          <Folio page="14" section="Consumer insight" />
         </div>
       </article>
 
-      {/* ============================================== 18 · THE ROOMS */}
-      <article className="mag-page pc pc-ink" data-density="hard">
-        <div className="pc-well" style={{ padding: "44px 54px 34px" }}>
-          <Label teal>Portfolio · the rooms</Label>
-          <h2 className="pc-head pc-head-sm" style={{ fontSize: 30, marginTop: 4 }}>
-            Where the Correction Happens
-          </h2>
-          <p className="pc-quiet" style={{ marginTop: 8, maxWidth: 620 }}>
-            Boardroom, table, chair. The unglamorous geography of an in-market audit, and the rooms
-            where a priority stack gets cut down to the few drivers that move a number.
-          </p>
-          <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 14 }}>
-            <Plate
-              src="office.jpg"
-              alt="Vineet Trakroo in the boardroom"
-              w={732}
-              h={549}
-              cap="The boardroom · where assumptions get audited"
-              credit="Supplied"
-            />
-            <div style={{ display: "flex", gap: 16 }}>
-              <Plate src="desk.jpg" alt="Vineet Trakroo at the table" w={358} h={269} cap="The table" />
-              <Plate src="chair.jpg" alt="Vineet Trakroo seated" w={358} h={269} cap="The pause" />
-            </div>
-          </div>
-          <Folio page="18" section="Portfolio" />
-        </div>
-      </article>
-
-      {/* ============================================== 19 · HOUSE AD */}
+      {/* ============================================== 15 · HOUSE AD */}
       <article className="mag-page pc pc-ink" data-density="hard">
         <AdArt shift={-420} />
         <div className="pc-well" style={{ padding: "54px 50px 38px" }}>
@@ -1819,7 +1552,7 @@ export function VineetPages() {
         </div>
       </article>
 
-      {/* ============================================== 20 · THROUGH 2030 */}
+      {/* ============================================== 16 · THROUGH 2030 */}
       <article className="mag-page pc pc-ink">
         <div className="pc-well">
           <Label>Future readiness</Label>
@@ -1888,11 +1621,11 @@ export function VineetPages() {
               the needle, and executing them with extreme rigour.
             </p>
           </div>
-          <Folio page="20" section="Through 2030" />
+          <Folio page="16" section="Through 2030" />
         </div>
       </article>
 
-      {/* ============================================== 21 · CLOSE */}
+      {/* ============================================== 17 · CLOSE */}
       <article className="mag-page pc pc-cream">
         <div className="pc-well">
           <Label>The close</Label>
@@ -1965,11 +1698,11 @@ export function VineetPages() {
               <img src={`${IMG}/logo-esa.jpg`} alt="Evolution Strategy Advisors" style={{ width: 150 }} />
             </div>
           </div>
-          <Folio page="21" section="The close" />
+          <Folio page="17" section="The close" />
         </div>
       </article>
 
-      {/* ============================================== 22 · NEXT EDITION */}
+      {/* ============================================== 18 · NEXT EDITION */}
       <article className="mag-page pc pc-ink" data-density="hard">
         <img className="pc-credits-bg" src="/brand/backdrop-primecrest.jpg" alt="" />
         <div className="pc-credits-veil" />
@@ -2042,7 +1775,7 @@ export function VineetPages() {
         </div>
       </article>
 
-      {/* ============================================== 23 · BACK COVER */}
+      {/* ============================================== 19 · BACK COVER */}
       <article className="mag-page pc pc-bleed" data-density="hard">
         <img
           className="pc-img"
