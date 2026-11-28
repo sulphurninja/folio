@@ -245,6 +245,7 @@ function Band({
   deck,
   size = 26,
   foot,
+  cut = false,
   children,
 }: {
   src: string;
@@ -254,11 +255,13 @@ function Band({
   deck: Deck;
   size?: number;
   foot?: ReactNode;
+  /** a cut-out PNG: no frame, a shadow that follows its edges */
+  cut?: boolean;
   children: ReactNode;
 }) {
   return (
     <div className="vf-band">
-      <img src={src} alt={alt} style={{ width: w, aspectRatio: ratio }} />
+      <img src={src} alt={alt} className={cut ? "is-cut" : undefined} style={{ width: w, aspectRatio: ratio }} />
       <Card deck={deck} size={size} foot={foot}>
         {children}
       </Card>
@@ -671,8 +674,8 @@ export function VernaPages() {
       <article className="mag-page vf vf-bare">
         <img
           className="vf-plate-img"
-          src={`${IMG}/game.jpg`}
-          alt="Verna Felder at a table with Can You Survive Poverty? The Game™ and its four card decks"
+          src={`${IMG}/detroit.jpg`}
+          alt="Verna Felder on the Detroit riverfront"
           style={{ aspectRatio: 1126 / 1397 }}
         />
         <div className="vf-capbar" style={{ top: 1042 }}>
@@ -683,8 +686,8 @@ export function VernaPages() {
             <i className="d-red" />
           </span>
           <span>
-            Verna Felder with Can You Survive Poverty? The Game™. On the box: a sensitivity
-            experience for educators.
+            Verna Felder on the Detroit riverfront. Educator, author, and co-creator of Can You
+            Survive Poverty? The Game™.
           </span>
         </div>
       </article>
@@ -848,14 +851,25 @@ export function VernaPages() {
             </figure>
             <figure className="vf-fig-photo">
               <img
-                src={`${IMG}/box.jpg`}
+                className="is-cut"
+                src={`${IMG}/box-cut.png`}
                 alt="The box of Can You Survive Poverty? The Game™"
                 style={{ width: 258, aspectRatio: 414 / 344 }}
               />
               <figcaption>On the table: the box and its four decks.</figcaption>
-              <Card deck="blue" label="Reflection Discussion Card" size={19} style={{ marginTop: 14 }}>
-                Any player may read this card aloud.
-              </Card>
+              <a
+                className="vf-contact"
+                href="https://vernafelder.com/can-you-survive-poverty-the-game/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={`${IMG}/qr-game.png`} alt="QR code for vernafelder.com" />
+                <span>
+                  <b>Bring the game to your team</b>
+                  <i>Scan to contact us</i>
+                  <em>vernafelder.com</em>
+                </span>
+              </a>
             </figure>
           </div>
             <div className="vf-body vf-cols" style={{ marginTop: 24, fontSize: 16.8, lineHeight: 1.66 }}>
@@ -925,8 +939,9 @@ export function VernaPages() {
         lead={1.62}
         bottom={
           <Band
-            src={`${IMG}/box.jpg`}
+            src={`${IMG}/box-cut.png`}
             alt="The box of Can You Survive Poverty? The Game™"
+            cut
             w={300}
             ratio={414 / 344}
             deck="blue"
@@ -947,10 +962,10 @@ export function VernaPages() {
         lead={1.58}
         bottom={
           <Band
-            src={`${IMG}/detroit.jpg`}
-            alt="Verna Felder on the Detroit riverfront"
-            w={190}
-            ratio={1126 / 1397}
+            src={`${IMG}/earrings.jpg`}
+            alt="Verna Felder"
+            w={210}
+            ratio={1}
             deck="green"
             size={25}
             foot="Question 04 · Community Vision"
