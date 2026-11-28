@@ -346,14 +346,13 @@ export function EricaPages() {
     <>
       {/* ============================================== 00 · COVER */}
       <article className="mag-page er er-cover" data-density="hard">
-        <div className="er-cover-sun" />
-        <div className="er-cover-rings" />
         <img
-          className="er-cover-cut"
-          src={CUT.lotusSeated.src}
-          alt="Erica Lanka Borba"
+          className="er-cover-photo"
+          src="/issues/erica/cover-photo.jpg"
+          alt="Erica Lanka Borba in a lotus-petal bodice"
           fetchPriority="high"
         />
+        <div className="er-cover-shade" aria-hidden />
 
         <div className="er-cover-band" aria-hidden />
         <header className="er-cover-mast">

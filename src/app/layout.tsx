@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Newsreader, Source_Serif_4, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { siteUrl } from "@/lib/utils";
 import { PUBLISHER } from "@/lib/issue-seo";
@@ -25,24 +25,30 @@ function OrganizationSchema() {
   );
 }
 
-const display = Newsreader({
+const display = localFont({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "./fonts/g/newsreader-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "./fonts/g/newsreader-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const serif = Source_Serif_4({
+const serif = localFont({
   variable: "--font-serif",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "./fonts/g/source-serif-4-400-600-italic.woff2", weight: "400 600", style: "italic" },
+    { path: "./fonts/g/source-serif-4-400-600.woff2", weight: "400 600", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const sans = Inter({
+const sans = localFont({
   variable: "--font-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  src: [
+    { path: "./fonts/g/inter-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

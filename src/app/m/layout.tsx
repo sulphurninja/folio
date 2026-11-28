@@ -1,310 +1,371 @@
 import type { ReactNode } from "react";
 import localFont from "next/font/local";
 import "./kit.css";
-import {
-  Bebas_Neue,
-  Bodoni_Moda,
-  Cardo,
-  Cinzel,
-  Cormorant_Garamond,
-  DM_Serif_Display,
-  Fraunces,
-  Instrument_Serif,
-  Jost,
-  Libre_Baskerville,
-  Libre_Franklin,
-  Oswald,
-  Pinyon_Script,
-  Playfair_Display,
-  Spectral,
-  Syne,
-  Yeseva_One,
-  Lora,
-  Manrope,
-  Abril_Fatface,
-  Karla,
-  Space_Grotesk,
-  Italiana,
-  EB_Garamond,
-  Montserrat,
-  Anton,
-  Merriweather,
-  Barlow_Condensed,
-  Prata,
-  Crimson_Pro,
-  Raleway,
-  Unbounded,
-  IBM_Plex_Serif,
-  IBM_Plex_Mono,
-  Libre_Caslon_Display,
-  Libre_Caslon_Text,
-  Work_Sans,
-} from "next/font/google";
 
-const cinzel = Cinzel({
+const cinzel = localFont({
   variable: "--font-cinzel",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  src: [
+    { path: "../fonts/g/cinzel-500-700.woff2", weight: "500 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const baskerville = Libre_Baskerville({
+const baskerville = localFont({
   variable: "--font-baskerville",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/libre-baskerville-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "../fonts/g/libre-baskerville-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const fraunces = Fraunces({
+const fraunces = localFont({
   variable: "--font-fraunces",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/fraunces-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "../fonts/g/fraunces-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const cardo = Cardo({
+const cardo = localFont({
   variable: "--font-cardo",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/cardo-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/g/cardo-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/g/cardo-700.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const oswald = Oswald({
+const oswald = localFont({
   variable: "--font-oswald",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  src: [
+    { path: "../fonts/g/oswald-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
+const cormorant = localFont({
   variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/cormorant-garamond-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "../fonts/g/cormorant-garamond-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const playfair = Playfair_Display({
+const playfair = localFont({
   variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/playfair-display-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "../fonts/g/playfair-display-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const bodoni = Bodoni_Moda({
+const bodoni = localFont({
   variable: "--font-bodoni",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/bodoni-moda-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "../fonts/g/bodoni-moda-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const bebas = Bebas_Neue({
+const bebas = localFont({
   variable: "--font-bebas",
-  subsets: ["latin"],
-  weight: "400",
+  src: [
+    { path: "../fonts/g/bebas-neue-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const spectral = Spectral({
+const spectral = localFont({
   variable: "--font-spectral",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/spectral-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/g/spectral-500-italic.woff2", weight: "500", style: "italic" },
+    { path: "../fonts/g/spectral-600-italic.woff2", weight: "600", style: "italic" },
+    { path: "../fonts/g/spectral-700-italic.woff2", weight: "700", style: "italic" },
+    { path: "../fonts/g/spectral-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/g/spectral-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/g/spectral-600.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/g/spectral-700.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const instrument = Instrument_Serif({
+const instrument = localFont({
   variable: "--font-instrument",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/instrument-serif-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/g/instrument-serif-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const dmSerif = DM_Serif_Display({
+const dmSerif = localFont({
   variable: "--font-dmserif",
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/dm-serif-display-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/g/dm-serif-display-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const franklin = Libre_Franklin({
+const franklin = localFont({
   variable: "--font-franklin",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  src: [
+    { path: "../fonts/g/libre-franklin-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
-const syne = Syne({
+const syne = localFont({
   variable: "--font-syne",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  src: [
+    { path: "../fonts/g/syne-500-700.woff2", weight: "500 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
 /* Geometric grotesque for cover furniture, labels, and folios. */
-const jost = Jost({
+const jost = localFont({
   variable: "--font-jost",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/jost-300-700-italic.woff2", weight: "300 700", style: "italic" },
+    { path: "../fonts/g/jost-300-700.woff2", weight: "300 700", style: "normal" },
+  ],
+  display: "swap",
 });
 
 /* Engraved script for section words — Editorial, Credits, Subscription. */
-const pinyon = Pinyon_Script({
+const pinyon = localFont({
   variable: "--font-pinyon",
-  subsets: ["latin"],
-  weight: "400",
+  src: [
+    { path: "../fonts/g/pinyon-script-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
 });
 
 /* November issues. preload: false — each issue only pulls the faces it sets. */
-const yeseva = Yeseva_One({
+const yeseva = localFont({
   variable: "--font-yeseva",
-  subsets: ["latin"],
-  weight: "400",
+  src: [
+    { path: "../fonts/g/yeseva-one-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const lora = Lora({
+const lora = localFont({
   variable: "--font-lora",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/lora-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "../fonts/g/lora-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const manrope = Manrope({
+const manrope = localFont({
   variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  src: [
+    { path: "../fonts/g/manrope-400-800.woff2", weight: "400 800", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const abril = Abril_Fatface({
+const abril = localFont({
   variable: "--font-abril",
-  subsets: ["latin"],
-  weight: "400",
+  src: [
+    { path: "../fonts/g/abril-fatface-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const karla = Karla({
+const karla = localFont({
   variable: "--font-karla",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/karla-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "../fonts/g/karla-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const spaceGrotesk = Space_Grotesk({
+const spaceGrotesk = localFont({
   variable: "--font-spacegrotesk",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  src: [
+    { path: "../fonts/g/space-grotesk-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const italiana = Italiana({
+const italiana = localFont({
   variable: "--font-italiana",
-  subsets: ["latin"],
-  weight: "400",
+  src: [
+    { path: "../fonts/g/italiana-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const garamond = EB_Garamond({
+const garamond = localFont({
   variable: "--font-garamond",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/eb-garamond-400-700-italic.woff2", weight: "400 700", style: "italic" },
+    { path: "../fonts/g/eb-garamond-400-700.woff2", weight: "400 700", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const montserrat = Montserrat({
+const montserrat = localFont({
   variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/montserrat-300-800-italic.woff2", weight: "300 800", style: "italic" },
+    { path: "../fonts/g/montserrat-300-800.woff2", weight: "300 800", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const anton = Anton({
+const anton = localFont({
   variable: "--font-anton",
-  subsets: ["latin"],
-  weight: "400",
+  src: [
+    { path: "../fonts/g/anton-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const merriweather = Merriweather({
+const merriweather = localFont({
   variable: "--font-merriweather",
-  subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/merriweather-300-900-italic.woff2", weight: "300 900", style: "italic" },
+    { path: "../fonts/g/merriweather-300-900.woff2", weight: "300 900", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const barlowCond = Barlow_Condensed({
+const barlowCond = localFont({
   variable: "--font-barlowcond",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/barlow-condensed-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/g/barlow-condensed-500-italic.woff2", weight: "500", style: "italic" },
+    { path: "../fonts/g/barlow-condensed-600-italic.woff2", weight: "600", style: "italic" },
+    { path: "../fonts/g/barlow-condensed-700-italic.woff2", weight: "700", style: "italic" },
+    { path: "../fonts/g/barlow-condensed-800-italic.woff2", weight: "800", style: "italic" },
+    { path: "../fonts/g/barlow-condensed-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/g/barlow-condensed-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/g/barlow-condensed-600.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/g/barlow-condensed-700.woff2", weight: "700", style: "normal" },
+    { path: "../fonts/g/barlow-condensed-800.woff2", weight: "800", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const prata = Prata({
+const prata = localFont({
   variable: "--font-prata",
-  subsets: ["latin"],
-  weight: "400",
+  src: [
+    { path: "../fonts/g/prata-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const crimson = Crimson_Pro({
+const crimson = localFont({
   variable: "--font-crimson",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/crimson-pro-300-700-italic.woff2", weight: "300 700", style: "italic" },
+    { path: "../fonts/g/crimson-pro-300-700.woff2", weight: "300 700", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const raleway = Raleway({
+const raleway = localFont({
   variable: "--font-raleway",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/raleway-300-800-italic.woff2", weight: "300 800", style: "italic" },
+    { path: "../fonts/g/raleway-300-800.woff2", weight: "300 800", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const unbounded = Unbounded({
+const unbounded = localFont({
   variable: "--font-unbounded",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  src: [
+    { path: "../fonts/g/unbounded-300-800.woff2", weight: "300 800", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const plexSerif = IBM_Plex_Serif({
+const plexSerif = localFont({
   variable: "--font-plexserif",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/ibm-plex-serif-300-italic.woff2", weight: "300", style: "italic" },
+    { path: "../fonts/g/ibm-plex-serif-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/g/ibm-plex-serif-500-italic.woff2", weight: "500", style: "italic" },
+    { path: "../fonts/g/ibm-plex-serif-600-italic.woff2", weight: "600", style: "italic" },
+    { path: "../fonts/g/ibm-plex-serif-700-italic.woff2", weight: "700", style: "italic" },
+    { path: "../fonts/g/ibm-plex-serif-300.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/g/ibm-plex-serif-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/g/ibm-plex-serif-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/g/ibm-plex-serif-600.woff2", weight: "600", style: "normal" },
+    { path: "../fonts/g/ibm-plex-serif-700.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const plexMono = IBM_Plex_Mono({
+const plexMono = localFont({
   variable: "--font-plexmono",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  src: [
+    { path: "../fonts/g/ibm-plex-mono-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/g/ibm-plex-mono-500.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/g/ibm-plex-mono-600.woff2", weight: "600", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const caslonDisplay = Libre_Caslon_Display({
+const caslonDisplay = localFont({
   variable: "--font-caslondisplay",
-  subsets: ["latin"],
-  weight: "400",
+  src: [
+    { path: "../fonts/g/libre-caslon-display-400.woff2", weight: "400", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const caslonText = Libre_Caslon_Text({
+const caslonText = localFont({
   variable: "--font-caslontext",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/libre-caslon-text-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/g/libre-caslon-text-400.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/g/libre-caslon-text-700.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 
-const workSans = Work_Sans({
+const workSans = localFont({
   variable: "--font-worksans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
+  src: [
+    { path: "../fonts/g/work-sans-300-800-italic.woff2", weight: "300 800", style: "italic" },
+    { path: "../fonts/g/work-sans-300-800.woff2", weight: "300 800", style: "normal" },
+  ],
+  display: "swap",
   preload: false,
 });
 

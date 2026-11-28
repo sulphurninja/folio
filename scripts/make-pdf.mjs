@@ -3,25 +3,31 @@
  *
  *   node scripts/make-pdf.mjs vineet            one issue
  *   node scripts/make-pdf.mjs vineet judy ...   several
+ *   node scripts/make-pdf.mjs --clean --out <dir> erica   no watermark, written to <dir>
  *
  * Each .mag-page leaf is captured at 2x on the design canvas (840x1120) and
  * bound into public/pdf/<slug>.pdf (page size 630x840pt, i.e. the canvas at
  * 96dpi), so the reader's "Download PDF" button can serve it statically.
- * Every page is stamped with a diagonal DEMO watermark; the flipbook is clean.
+ * Every page is stamped with a diagonal DEMO watermark (unless --clean); the
+ * flipbook is clean.
  */
 import { chromium } from "playwright";
 import { PDFDocument, StandardFonts, rgb, degrees } from "pdf-lib";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-const slugs = process.argv.slice(2);
+const args = process.argv.slice(2);
+const clean = args.includes("--clean");
+const outIndex = args.indexOf("--out");
+const outArg = outIndex >= 0 ? args[outIndex + 1] : null;
+const slugs = args.filter((a, i) => !a.startsWith("--") && (outIndex < 0 || i !== outIndex + 1));
 if (!slugs.length) {
   console.error("usage: node scripts/make-pdf.mjs <slug> [slug...]");
   process.exit(1);
 }
 
 const base = process.env.PROOF_BASE ?? "http://localhost:3001";
-const outDir = join("public", "pdf");
+const outDir = outArg ?? join("public", "pdf");
 mkdirSync(outDir, { recursive: true });
 
 const browser = await chromium.launch();
@@ -55,7 +61,7 @@ for (const slug of slugs) {
   }
 
   const doc = await PDFDocument.create();
-  doc.setTitle(`PrimeCrest — ${slug}`);
+  doc.setTitle(`PrimeCrest | ${slug}`);
   doc.setProducer("PrimeCrest");
   const markFont = await doc.embedFont(StandardFonts.HelveticaBold);
   const mark = "DEMO";
@@ -70,6 +76,10 @@ for (const slug of slugs) {
     // 840x1120 css px at 96dpi -> 630x840 pt
     const pdfPage = doc.addPage([630, 840]);
     pdfPage.drawImage(img, { x: 0, y: 0, width: 630, height: 840 });
+    if (clean) {
+      process.stdout.write(`[${slug}] leaf ${i + 1}/${count}`);
+      continue;
+    }
     // PDF-only stamp — never appears in the flipbook. Two passes so it
     // reads on both cream interiors and ink / cover plates.
     const angle = 32;

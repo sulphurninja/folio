@@ -1,5 +1,5 @@
 /**
- * Export the front cover of each issue as a JPEG.
+ * Export the front cover of each issue as a JPEG, from its proof route.
  * Usage: node scripts/export-covers-new.mjs <baseUrl> <outDir> <slug> [slug...]
  * Writes <outDir>/<slug>/magcover.jpg (900x1200 CSS px at 2x).
  */
@@ -16,37 +16,14 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 900, height: 1200 }, deviceScaleFactor: 2 });
 
 for (const slug of slugs) {
-  await page.goto(`${baseUrl}/m/${slug}`, { waitUntil: "networkidle", timeout: 120000 });
-  await page.waitForSelector(".mag-page", { timeout: 60000 });
-  await page.evaluate(async () => {
-    const cover = document.querySelector(".invisible .mag-page");
-    cover.id = "export-cover";
-    Object.assign(cover.style, {
-      position: "fixed",
-      left: "0",
-      top: "0",
-      margin: "0",
-      zIndex: "100000",
-      visibility: "visible",
-      transform: "none",
-    });
-    document.body.appendChild(cover);
-    await Promise.all(
-      [...cover.querySelectorAll("img")].map((img) =>
-        img.complete
-          ? Promise.resolve()
-          : new Promise((resolve) => {
-              img.addEventListener("load", resolve, { once: true });
-              img.addEventListener("error", resolve, { once: true });
-            }),
-      ),
-    );
-    if (document.fonts?.ready) await document.fonts.ready;
-  });
-  await page.waitForTimeout(500);
+  // The proof route loads the issue's own fonts; the reader's hidden copy may not.
+  await page.goto(`${baseUrl}/m/${slug}/proof`, { waitUntil: "networkidle", timeout: 180000 });
+  await page.evaluate(() => document.fonts.ready);
+  await page.evaluate(() => document.querySelectorAll("nextjs-portal").forEach((el) => el.remove()));
+  await page.waitForTimeout(900);
   mkdirSync(`${outDir}/${slug}`, { recursive: true });
   const dest = `${outDir}/${slug}/magcover.jpg`;
-  await page.locator("#export-cover").screenshot({ path: dest, type: "jpeg", quality: 90 });
+  await page.locator(".mag-page").first().screenshot({ path: dest, type: "jpeg", quality: 90 });
   console.log("saved", dest);
 }
 

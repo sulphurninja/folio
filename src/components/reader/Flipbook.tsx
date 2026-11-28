@@ -33,6 +33,8 @@ export function Flipbook({ magazine }: Props) {
   const stageRef = useRef<HTMLDivElement>(null);
 
   const urls = urlKey ? urlKey.split("\n") : [];
+  // Follow the edition's own page shape (3:4, A4 ...); fall back to 3:4.
+  const ratio = pages[0]?.width && pages[0]?.height ? pages[0].height / pages[0].width : 1.333;
   const [ready, setReady] = useState(false);
   const [progress, setProgress] = useState(0);
   const [index, setIndex] = useState(0);
@@ -69,7 +71,7 @@ export function Flipbook({ magazine }: Props) {
     });
   }, [urlKey]);
 
-  const mountBook = useCallback(() => {
+  const mountBook = useCallback((startPage = 0) => {
     const host = hostRef.current;
     const urls = urlKey ? urlKey.split("\n") : [];
     if (!host || !urls.length) return;
@@ -78,24 +80,49 @@ export function Flipbook({ magazine }: Props) {
     const inner = document.createElement("div");
     host.appendChild(inner);
 
-    const width = Math.min(520, Math.max(280, Math.floor(window.innerWidth * 0.38)));
-    const height = Math.round(width * 1.333);
+    // Pages are real <img> elements (HTML mode), not canvas drawings, so they
+    // stay sharp on high-density screens and when the reader is zoomed.
+    const leaves = urls.map((src, i) => {
+      const leaf = document.createElement("div");
+      leaf.className = "flip-leaf";
+      leaf.dataset.density = i === 0 || i === urls.length - 1 ? "hard" : "soft";
+      leaf.style.background = "#fff";
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = `Page ${i + 1}`;
+      img.draggable = false;
+      img.decoding = "async";
+      img.style.cssText =
+        "display:block;width:100%;height:100%;object-fit:fill;user-select:none;pointer-events:none;";
+      leaf.appendChild(img);
+      inner.appendChild(leaf);
+      return leaf;
+    });
+
+    // Fit the book to the stage: as tall as the room between the toolbar and
+    // the thumbnail strip allows, two pages wide on desktop, one on phones.
+    const narrow = window.innerWidth < 768;
+    const spread = narrow ? 1 : 2;
+    const maxH = Math.max(320, window.innerHeight - (narrow ? 200 : 250));
+    const maxW = Math.max(260, Math.floor((window.innerWidth * (narrow ? 0.94 : 0.86)) / spread));
+    const height = Math.round(Math.min(maxH, maxW * ratio));
+    const width = Math.round(height / ratio);
+    host.style.width = `${width * spread}px`;
+    host.style.height = `${height}px`;
 
     const pf = new PageFlip(inner, {
       width,
       height,
-      size: "stretch",
-      minWidth: 280,
-      maxWidth: 620,
-      minHeight: 380,
-      maxHeight: 860,
+      size: "fixed",
+      startPage,
       drawShadow: true,
       flippingTime: 900,
-      usePortrait: false,
+      usePortrait: narrow,
       startZIndex: 1,
       autoSize: true,
       maxShadowOpacity: 0.55,
-      showCover: false,
+      // The cover stands alone on the right, so inside spreads pair as printed.
+      showCover: true,
       mobileScrollSupport: false,
       swipeDistance: 28,
       showPageCorners: true,
@@ -103,7 +130,7 @@ export function Flipbook({ magazine }: Props) {
       useMouseEvents: true,
     });
 
-    pf.loadFromImages(urls);
+    pf.loadFromHTML(leaves);
     pf.on("flip", (e) => {
       const page = Number(e.data) || 0;
       setIndex(page);
@@ -125,20 +152,28 @@ export function Flipbook({ magazine }: Props) {
 
     flipRef.current = pf;
     setCount(urls.length);
-  }, [urlKey]);
+  }, [urlKey, ratio]);
 
   useEffect(() => {
     if (!ready) return;
     mountBook();
+    // The book is sized to the window, so rebuild it (on the same page) after a resize.
+    let timer: ReturnType<typeof setTimeout> | undefined;
     const onResize = () => {
-      try {
-        flipRef.current?.update();
-      } catch {
-        /* empty */
-      }
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const page = flipRef.current?.getCurrentPageIndex() ?? 0;
+        try {
+          flipRef.current?.destroy();
+        } catch {
+          /* empty */
+        }
+        mountBook(page);
+      }, 200);
     };
     window.addEventListener("resize", onResize);
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("resize", onResize);
       try {
         flipRef.current?.destroy();
