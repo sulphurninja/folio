@@ -674,8 +674,8 @@ export function VernaPages() {
       <article className="mag-page vf vf-bare">
         <img
           className="vf-plate-img"
-          src={`${IMG}/detroit.jpg`}
-          alt="Verna Felder on the Detroit riverfront"
+          src={`${IMG}/waist-up.jpg`}
+          alt="Verna Felder with Can You Survive Poverty? The Game™ and its four card decks"
           style={{ aspectRatio: 1126 / 1397 }}
         />
         <div className="vf-capbar" style={{ top: 1042 }}>
@@ -686,8 +686,8 @@ export function VernaPages() {
             <i className="d-red" />
           </span>
           <span>
-            Verna Felder on the Detroit riverfront. Educator, author, and co-creator of Can You
-            Survive Poverty? The Game™.
+            Verna Felder with Can You Survive Poverty? The Game™ and its four decks. On the box: a
+            professional learning experience for educators.
           </span>
         </div>
       </article>
@@ -841,7 +841,7 @@ export function VernaPages() {
           <div className="vf-gamefoot">
             <figure className="vf-fig-photo">
               <img
-                src={`${IMG}/with-charlene.jpg`}
+                src={`${IMG}/with-charlene-2.jpg`}
                 alt="Verna Felder and Charlene Cutler with Can You Survive Poverty? The Game™"
                 style={{ width: 440, aspectRatio: 1397 / 1126 }}
               />
@@ -962,10 +962,10 @@ export function VernaPages() {
         lead={1.58}
         bottom={
           <Band
-            src={`${IMG}/earrings.jpg`}
-            alt="Verna Felder"
-            w={210}
-            ratio={1}
+            src={`${IMG}/detroit.jpg`}
+            alt="Verna Felder on the Detroit riverfront"
+            w={190}
+            ratio={1126 / 1397}
             deck="green"
             size={25}
             foot="Question 04 · Community Vision"
